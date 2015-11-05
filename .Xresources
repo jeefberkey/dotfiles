@@ -1,0 +1,26 @@
+URxvt*color0: #272822
+URxvt*color1: #75715e
+URxvt*color2: #f92672
+URxvt*color3: #f92672
+URxvt*color4: #a6e22e
+URxvt*color5: #a6e22e
+URxvt*color6: #f4bf75
+URxvt*color7: #f4bf75
+URxvt*color8: #66d9ef
+URxvt*color9: #66d9ef
+URxvt*color10: #ae81ff
+URxvt*color11: #ae81ff
+URxvt*color12: #a1efe4
+URxvt*color13: #a1efe4
+URxvt*color14: #f8f8f2
+URxvt*color15: #f9f8f5
+
+set $black   #272822
+set $grey    #75715e
+set $magenta #f92672
+set $green   #a6e22e
+set $brown   #f4bf75
+set $blue    #66d9ef
+set $cyan    #ae81ff
+set $cfoam   #a1efe4
+set $white   #f9f8f5

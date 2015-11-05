@@ -1,0 +1,6 @@
+#!/bin/bash
+# vim:filetype=sh
+
+scrot /tmp/lock-screenshot.png
+convert /tmp/lock-screenshot.png -blur 0x7 /tmp/blur-screenshot.png
+i3lock -i /tmp/blur-screenshot.png

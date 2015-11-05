@@ -1,0 +1,258 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# ============
+# = settings =
+# ============
+
+# startup
+#exec compton
+#exec xfce4-panel
+exec unclutter
+exec seafile-applet
+
+# wallpaper
+exec feh --bg-tile ~/.config/i3/congruent_outline.png
+
+# apply my xmodmap, switching caps to mod4 and shift+caps to caps
+exec xmodmap ~/.Xmodmap
+
+# set modifier, this in the windows key
+set $mod Mod4
+
+# window focus follows mouse
+focus_follows_mouse yes
+
+# automatically go back to the previous workspace
+workspace_auto_back_and_forth yes
+
+# fix popups, specifically for hangouts
+for_window [window_role="pop-up"] floating enabled
+
+# ===========
+# = display =
+# ===========
+
+# font
+font pango:Source Code Pro for Powerline, miller-symbols 10
+
+# colors from background:
+set $backgr  #333333
+set $hlight  #9f9f9f
+
+set $black   #272822
+set $grey    #75715e
+set $magenta #f92672
+set $green   #a6e22e
+set $brown   #f4bf75
+set $blue    #66d9ef
+set $cyan    #ae81ff
+set $cfoam   #a1efe4
+set $white   #f9f8f5
+
+# colors
+client.background $black
+# class                 border backgr. text   indicator
+client.focused          $cyan  $cyan   $white $cfoam
+client.focused_inactive $grey  $grey   $white $cfoam
+client.unfocused        $grey  $grey   $white $cfoam
+client.urgent           $green $green  $black $cfoam
+client.placeholder      $cyan  $black  $white $cfoam
+
+# ====================
+# = borders and gaps =
+# ====================
+
+for_window [class="^.*"] border pixel 5
+#gaps inner 15
+
+bindsym $mod+Ctrl+F1 gaps outer all set 0
+bindsym $mod+Ctrl+F2 gaps outer all set 50
+
+bindsym $mod+Shift+F1 gaps inner all set 15
+bindsym $mod+Shift+F2 gaps inner all set 50
+
+# ===========
+# = hotkeys =
+# ===========
+
+# start a terminal
+bindsym $mod+Return exec gnome-terminal
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --use-xdg-de --term="gnome-terminal" --dmenu="dmenu -i -fn 'Source Code Pro for Powerline:10' "
+bindsym $mod+d exec --no-startup-id ruby /home/nick/.config/i3/launcher.rb
+
+# lock and suspend button
+bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/py3lock && systemctl suspend
+
+# lock
+bindsym Control+Mod1+l exec --no-startup-id py3lock
+
+# ============
+# = keybinds =
+# ============
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+t focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# move workspaces between monitors
+bindsym $mod+Mod1+Left move workspace to output left
+bindsym $mod+Mod1+Right move workspace to output right
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# =================
+# = function keys =
+# =================
+
+# emergency key combo for turning main screen back on
+bindsym $mod+Shift+m exec xrandr --output DP1 --mode 1920x1080
+
+# none of these work in Spotify anyway
+#bindsym XF86AudioPrev
+#bindsym XF86AudioPlay
+#bindsym XF86AudioNext
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%-
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+
+bindsym XF86AudioMute exec amixer -q sset Master toggle
+bindsym XF86MonBrightnessDown exec xbacklight -time 300 -steps 14 -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -time 300 -steps 14 -inc 5
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+  # These bindings trigger as soon as you enter the resize mode
+
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym h resize shrink width 10 px or 5 ppt
+  bindsym j resize grow height 10 px or 5 ppt
+  bindsym k resize shrink height 10 px or 5 ppt
+  bindsym l resize grow width 10 px or 5 ppt
+
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 5 ppt
+  bindsym Down resize grow height 10 px or 5 ppt
+  bindsym Up resize shrink height 10 px or 5 ppt
+  bindsym Right resize grow width 10 px or 5 ppt
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# =======
+# = bar =
+# =======
+bar {
+  colors {
+   background $backgr
+   statusline $hlight
+   separator  $white
+
+   # key              border  backgr. text
+   focused_workspace  $hlight $hlight $white
+   active_workspace   $hlight $hlight $white
+   inactive_workspace $backgr $backgr $hlight
+   urgent_workspace   $green  $green  $backgr
+  }
+
+  #status_command i3status -c ~/.config/i3/i3status.conf
+  status_command SCRIPT_DIR=/home/nick/.config/i3/scripts i3blocks -c ~/.config/i3/i3blocks.conf
+
+  position top
+
+  # mouse wheel scrolls on the bar
+  bindsym button4 workspace prev
+  bindsym button5 workspace next
+}

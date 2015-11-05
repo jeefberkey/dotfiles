@@ -1,0 +1,30 @@
+[submodule "dmenu-q-xywh-xft"]
+	path = dmenu-q-xywh-xft
+	url = https://github.com/mil/dmenu-q-xywh-xft.git
+[submodule "fonts"]
+	path = fonts
+	url = https://github.com/powerline/fonts.git
+[submodule "i3"]
+	path = i3
+	url = https://github.com/Airblader/i3.git
+[submodule "i3blocks"]
+	path = i3blocks
+	url = https://github.com/vivien/i3blocks.git
+[submodule "j4-dmenu-desktop"]
+	path = j4-dmenu-desktop
+	url = https://github.com/enkore/j4-dmenu-desktop.git
+[submodule ".yadm-data/j4-menu-desktop"]
+	path = .yadm-data/j4-menu-desktop
+	url = https://github.com/enkore/j4-dmenu-desktop.git
+[submodule ".yadm-data/dmenu-q-xywh-xft"]
+	path = .yadm-data/dmenu-q-xywh-xft
+	url = https://github.com/mil/dmenu-q-xywh-xft.git
+[submodule ".yadm-data/fonts"]
+	path = .yadm-data/fonts
+	url = https://github.com/powerline/fonts.git
+[submodule ".yadm-data/i3-gaps"]
+	path = .yadm-data/i3-gaps
+	url = https://github.com/Airblader/i3.git
+[submodule ".yadm-data/i3blocks"]
+	path = .yadm-data/i3blocks
+	url = https://github.com/vivien/i3blocks.git

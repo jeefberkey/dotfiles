@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# tool to manage the length of the current window string sent to i3blocks
+
+# rails truncate function from String, modified for local use
+def truncate(string, truncate_at, options = {})
+  return string.dup unless string.length > truncate_at
+
+  options[:omission] ||= '...'
+  length_with_room_for_omission = truncate_at - options[:omission].length
+  stop =        if options[:separator]
+      rindex(options[:separator], length_with_room_for_omission) || length_with_room_for_omission
+    else
+      length_with_room_for_omission
+    end
+
+  "#{self[0...stop]}#{options[:omission]}"
+end
+
+cmd = "xdotool getactivewindow getwindowname 2>/dev/null || echo 'None'"
+
+title = `#{cmd}`
+title.chomp!
+
+puts truncate(title,80)
+

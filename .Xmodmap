@@ -1,0 +1,4 @@
+clear lock
+clear mod4
+add mod4 = Caps_Lock Super_L Super_R 
+keycode 66 = Super_L Caps_Lock NoSymbol NoSymbol

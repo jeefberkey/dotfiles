@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=School profile - Google Chrome
+Comment=Launch the School profile configured in Chrome
+Exec=google-chrome --profile-directory=Profile\ 2
+Icon=~/.config/google-chrome/Profile\ 2/Google\ Profile\ Picture.png
+Type=Application
+Categories=Internet
+Terminal=false

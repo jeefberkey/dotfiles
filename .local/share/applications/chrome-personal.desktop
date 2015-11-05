@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Personal profile - Google Chrome
+Comment=Launch the Personal profile configured in Chrome
+Exec=google-chrome --profile-directory=Profile\ 1
+Icon=~/.config/google-chrome/Profile\ 1/Google\ Profile\ Picture.png
+Type=Application
+Categories=Internet
+Terminal=false
