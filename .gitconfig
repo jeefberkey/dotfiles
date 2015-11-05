@@ -2,7 +2,7 @@
 	email = nick.miller@onyxpoint.com
 	name = Nick Miller
 [credential]
-	helper = /usr/libexec/git-core/git-credential-gnome-keyring
+	helper = /usr/share/doc/git-core-doc/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 [push]
 	default = simple
 [core]
