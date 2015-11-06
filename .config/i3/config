@@ -13,7 +13,7 @@ exec unclutter
 exec seafile-applet
 
 # wallpaper
-exec feh --bg-tile ~/.config/i3/congruent_outline.png
+exec feh --bg-tile ~/.yadm-data/congruent_outline.png
 
 # apply my xmodmap, switching caps to mod4 and shift+caps to caps
 exec xmodmap ~/.Xmodmap
@@ -86,7 +86,7 @@ bindsym $mod+Return exec gnome-terminal
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --use-xdg-de --term="gnome-terminal" --dmenu="dmenu -i -fn 'Source Code Pro for Powerline:10' "
-bindsym $mod+d exec --no-startup-id ruby /home/nick/.config/i3/launcher.rb
+bindsym $mod+d exec --no-startup-id ruby /home/nick/bin/launcher.rb
 
 # lock and suspend button
 bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/py3lock && systemctl suspend
@@ -248,7 +248,7 @@ bar {
   }
 
   #status_command i3status -c ~/.config/i3/i3status.conf
-  status_command SCRIPT_DIR=/home/nick/.config/i3/scripts i3blocks -c ~/.config/i3/i3blocks.conf
+  status_command SCRIPT_DIR=/home/nick/.yadm-data/scripts i3blocks -c ~/.config/i3/i3blocks.conf
 
   position top
 
