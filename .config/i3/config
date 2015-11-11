@@ -86,7 +86,9 @@ bindsym $mod+Return exec gnome-terminal
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --use-xdg-de --term="gnome-terminal" --dmenu="dmenu -i -fn 'Source Code Pro for Powerline:10' "
-bindsym $mod+d exec --no-startup-id ruby /home/nick/bin/launcher.rb
+#bindsym $mod+d exec --no-startup-id ruby /home/nick/bin/launcher.rb
+bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run:'
+bindsym $mod+d exec --no-startup-id rofi -show run
 
 # lock and suspend button
 bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/py3lock && systemctl suspend

@@ -5,7 +5,8 @@ export ZSH=/home/nick/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="junkfood"
+#ZSH_THEME="junkfood"
+ZSH_THEME="nanotech"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -107,12 +108,4 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-# added by travis gem
-[ -f /home/nick/.travis/travis.sh ] && source /home/nick/.travis/travis.sh
-
-export GOPATH=/home/nick/.go
-export PATH="$PATH:$HOME/.go/bin" # Add go to PATH for scripting
-
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source $HOME/.rvm/scripts/rvm

@@ -24,4 +24,4 @@ dmenu_cmd = ['"dmenu -i',
 launcher_opts = "--use-xdg-de --term=\"gnome-terminal\" --dmenu=#{dmenu_cmd.join(" ")}"
 
 cmd = [launcher,launcher_opts].join(" ")
-`#{cmd}`
+system(cmd)
