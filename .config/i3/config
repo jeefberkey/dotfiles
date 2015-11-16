@@ -2,9 +2,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# ============
-# = settings =
-# ============
+# ==================
+# ==== settings ====
+# ==================
 
 # startup
 #exec compton
@@ -30,9 +30,9 @@ workspace_auto_back_and_forth yes
 # fix popups, specifically for hangouts
 for_window [window_role="pop-up"] floating enabled
 
-# ===========
-# = display =
-# ===========
+# =================
+# ==== display ====
+# =================
 
 # font
 font pango:Source Code Pro for Powerline, miller-symbols 10
@@ -60,9 +60,9 @@ client.unfocused        $grey  $grey   $white $cfoam
 client.urgent           $green $green  $black $cfoam
 client.placeholder      $cyan  $black  $white $cfoam
 
-# ====================
-# = borders and gaps =
-# ====================
+# ==========================
+# ==== borders and gaps ====
+# ==========================
 
 for_window [class="^.*"] border pixel 5
 #gaps inner 15
@@ -73,9 +73,9 @@ bindsym $mod+Ctrl+F2 gaps outer all set 50
 bindsym $mod+Shift+F1 gaps inner all set 15
 bindsym $mod+Shift+F2 gaps inner all set 50
 
-# ===========
-# = hotkeys =
-# ===========
+# =================
+# ==== hotkeys ====
+# =================
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
@@ -96,9 +96,9 @@ bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/py3lock && systemctl su
 # lock
 bindsym Control+Mod1+l exec --no-startup-id py3lock
 
-# ============
-# = keybinds =
-# ============
+# ==================
+# ==== keybinds ====
+# ==================
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -184,9 +184,9 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# =================
-# = function keys =
-# =================
+# =======================
+# ==== function keys ====
+# =======================
 
 # emergency key combo for turning main screen back on
 bindsym $mod+Shift+m exec xrandr --output DP1 --mode 1920x1080
@@ -233,9 +233,9 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# =======
-# = bar =
-# =======
+# =============
+# ==== bar ====
+# =============
 bar {
   colors {
    background $backgr

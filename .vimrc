@@ -25,14 +25,10 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " the BEST git integration for vim
 Plugin 'tpope/vim-fugitive'
-" reduces eye-strain AND looks trendy
-Plugin 'altercation/vim-colors-solarized'
 " enables the :SCROLLCOLOR command
 Plugin 'ScrollColors'
 " vim IDE
 Plugin 'project.tar.gz'
-" vim Wiki w/lurvely checklists and wiki syntax, killer combo with Project
-Plugin 'vimwiki'
 " pretty pretty status bar; integrates with other services
 Plugin 'bling/vim-airline'
 " auto-formatting for Puppet
@@ -44,6 +40,10 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'msanders/snipmate.vim'
 Plugin 'surround.vim'
 Plugin 'matchit.zip'
+" Makes navigating code easier
+Plugin 'easymotion/vim-easymotion'
+" Highlight trailing whitespace    
+Plugin 'ntpeters/vim-better-whitespace'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -113,6 +113,8 @@ syntax on
 set tabstop=2 shiftwidth=2 expandtab  " make tabs spaces
 set autoindent
 set ruler
+set number
+set title
 
 
 " key bindings
@@ -138,7 +140,3 @@ endif
 
 set t_Co=256
 set background=dark
-"let g:solarized_termcolors=256
-"colorscheme solarized  " NOTE: this interferes with base16 gnome colors
-
-set number
