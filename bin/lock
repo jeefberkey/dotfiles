@@ -1,6 +1,12 @@
 #!/bin/bash
 # vim:filetype=sh
 
-scrot /tmp/lock-screenshot.png
-convert /tmp/lock-screenshot.png -blur 0x7 /tmp/blur-screenshot.png
-i3lock -i /tmp/blur-screenshot.png
+#scrot /tmp/lock-screenshot.png
+#convert /tmp/lock-screenshot.png -blur 0x7 /tmp/blur-screenshot.png
+#i3lock -i /tmp/blur-screenshot.png
+
+scrot /tmp/screen.png
+convert /tmp/screen.png -scale 5% -scale 2020% /tmp/screen.png
+convert -gravity center -composite /tmp/screen.png ~/.yadm-data/lock.png /tmp/screen.png
+i3lock -u -i /tmp/screen.png
+rm /tmp/screen.png

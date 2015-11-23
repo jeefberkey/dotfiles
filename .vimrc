@@ -27,8 +27,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 " enables the :SCROLLCOLOR command
 Plugin 'ScrollColors'
-" vim IDE
-Plugin 'project.tar.gz'
 " pretty pretty status bar; integrates with other services
 Plugin 'bling/vim-airline'
 " auto-formatting for Puppet
@@ -66,27 +64,6 @@ filetype plugin indent on    " required
 " ------------------------------------------------------------------------------
 " Plugin settings
 " ------------------------------------------------------------------------------
-
-" vimproject
-" --------------------------------------
-" g = <F12> toggles Project sidebar
-let g:proj_flags="imstbgv"
-
-
-" vimwiki
-" --------------------------------------
-let wiki_notes = {}
-let wiki_notes.path = '~/notes/'
-let wiki_notes.html_header = '~/public_html/header.tpl'
-let wiki_notes.nested_syntaxes = {'ruby': 'ruby', 'puppet': 'puppet', 'yaml': 'yaml', 'bash': 'sh', 'sh': 'sh', 'python': 'python', 'c++': 'cpp', 'erb': 'eruby', 'eruby': 'eruby'}
-
-" Example additional wiki
-"let wiki_2 = {}
-"let wiki_2.path = '~/another_wiki/'
-"let wiki_2.index = 'main'
-
-" list of active wikis
-let g:vimwiki_list = [wiki_notes]
 
 "
 let g:table_mode_corner = '+'

@@ -13,7 +13,8 @@ exec unclutter
 exec seafile-applet
 
 # wallpaper
-exec feh --bg-tile ~/.yadm-data/congruent_outline.png
+#exec feh --bg-tile ~/.yadm-data/congruent_outline.png
+exec feh --bg-scale ~/.yadm-data/forest.jpg
 
 # apply my xmodmap, switching caps to mod4 and shift+caps to caps
 exec xmodmap ~/.Xmodmap
@@ -38,27 +39,23 @@ for_window [window_role="pop-up"] floating enabled
 font pango:Source Code Pro for Powerline, miller-symbols 10
 
 # colors from background:
-set $backgr  #333333
-set $hlight  #9f9f9f
+set $backgr  #496267
+set $hlight  #4fc27f
 
-set $black   #272822
-set $grey    #75715e
-set $magenta #f92672
-set $green   #a6e22e
-set $brown   #f4bf75
-set $blue    #66d9ef
-set $cyan    #ae81ff
-set $cfoam   #a1efe4
+set $black   #3d2b37
+set $grey    #946a78
+set $bright  #b5c080
+set $cyan    #4fc27f
 set $white   #f9f8f5
 
 # colors
 client.background $black
-# class                 border backgr. text   indicator
-client.focused          $cyan  $cyan   $white $cfoam
-client.focused_inactive $grey  $grey   $white $cfoam
-client.unfocused        $grey  $grey   $white $cfoam
-client.urgent           $green $green  $black $cfoam
-client.placeholder      $cyan  $black  $white $cfoam
+# class                 border  backgr. text   indicator
+client.focused          $cyan   $cyan   $white $bright
+client.focused_inactive $grey   $grey   $white $bright
+client.unfocused        $grey   $grey   $white $bright
+client.urgent           $bright $bright $black $bright
+client.placeholder      $cyan   $black  $white $bright
 
 # ==========================
 # ==== borders and gaps ====
@@ -87,8 +84,8 @@ bindsym $mod+Return exec gnome-terminal
 # installed.
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --use-xdg-de --term="gnome-terminal" --dmenu="dmenu -i -fn 'Source Code Pro for Powerline:10' "
 #bindsym $mod+d exec --no-startup-id ruby /home/nick/bin/launcher.rb
-bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run:'
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+space exec j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run: -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10"'
+bindsym $mod+d exec rofi -show run -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10"
 
 # lock and suspend button
 bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/py3lock && systemctl suspend
@@ -142,8 +139,6 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -244,9 +239,9 @@ bar {
 
    # key              border  backgr. text
    focused_workspace  $hlight $hlight $white
-   active_workspace   $hlight $hlight $white
+   active_workspace   $cyan   $cyan   $white
    inactive_workspace $backgr $backgr $hlight
-   urgent_workspace   $green  $green  $backgr
+   urgent_workspace   $bright $bright $backgr
   }
 
   #status_command i3status -c ~/.config/i3/i3status.conf

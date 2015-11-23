@@ -13,3 +13,9 @@
 [submodule ".yadm-data/i3blocks"]
 	path = .yadm-data/i3blocks
 	url = https://github.com/vivien/i3blocks.git
+[submodule ".yadm-data/rofi"]
+	path = .yadm-data/rofi
+	url = https://github.com/DaveDavenport/rofi.git
+[submodule ".yadm-data/pipes.sh"]
+	path = .yadm-data/pipes.sh
+	url = https://github.com/pipeseroni/pipes.sh.git
