@@ -19,6 +19,9 @@ exec feh --bg-scale ~/.yadm-data/forest.jpg
 # apply my xmodmap, switching caps to mod4 and shift+caps to caps
 exec xmodmap ~/.Xmodmap
 
+# compton, shadows and transparency
+exec compton -b --backend glx --config ~/.config/i3/compton.conf
+
 # set modifier, this in the windows key
 set $mod Mod4
 
