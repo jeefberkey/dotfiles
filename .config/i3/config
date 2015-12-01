@@ -7,14 +7,11 @@
 # ==================
 
 # startup
-#exec compton
 #exec xfce4-panel
-exec unclutter
 exec seafile-applet
 
 # wallpaper
-#exec feh --bg-tile ~/.yadm-data/congruent_outline.png
-exec feh --bg-scale ~/.yadm-data/forest.jpg
+exec feh --bg-fill ~/.yadm-data/forest.jpg
 
 # apply my xmodmap, switching caps to mod4 and shift+caps to caps
 exec xmodmap ~/.Xmodmap
@@ -47,18 +44,18 @@ set $hlight  #4fc27f
 
 set $black   #3d2b37
 set $grey    #946a78
-set $bright  #b5c080
+set $bright  #91ab7c
 set $cyan    #4fc27f
 set $white   #f9f8f5
 
 # colors
 client.background $black
 # class                 border  backgr. text   indicator
-client.focused          $cyan   $cyan   $white $bright
-client.focused_inactive $grey   $grey   $white $bright
-client.unfocused        $grey   $grey   $white $bright
-client.urgent           $bright $bright $black $bright
-client.placeholder      $cyan   $black  $white $bright
+client.focused          $cyan   $cyan   $white $grey
+client.focused_inactive $grey   $grey   $white $grey
+client.unfocused        $grey   $grey   $white $grey
+client.urgent           $bright $bright $black $grey
+client.placeholder      $cyan   $black  $white $grey
 
 # ==========================
 # ==== borders and gaps ====
@@ -82,7 +79,6 @@ bindsym $mod+Return exec gnome-terminal
 
 # start a dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --use-xdg-de --term="gnome-terminal" --dmenu="dmenu -i -fn 'Source Code Pro for Powerline:10' "
-#bindsym $mod+d exec --no-startup-id ruby /home/nick/bin/launcher.rb
 bindsym $mod+space exec j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run: -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy'
 bindsym $mod+d exec rofi -show run -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy
 
@@ -186,14 +182,14 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+m exec xrandr --output DP1 --mode 1920x1080
 
 # none of these work in Spotify anyway
-#bindsym XF86AudioPrev
-#bindsym XF86AudioPlay
-#bindsym XF86AudioNext
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%-
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+
-bindsym XF86AudioMute exec amixer -q sset Master toggle
-bindsym XF86MonBrightnessDown exec xbacklight -time 300 -steps 14 -dec 10
-bindsym XF86MonBrightnessUp exec xbacklight -time 300 -steps 14 -inc 5
+bindsym XF86AudioPrev exec --no-startup-id playerctl prev
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 3%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 3%+
+bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -time 300 -steps 14 -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -time 300 -steps 14 -inc 5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -244,7 +240,7 @@ bar {
   }
 
   #status_command i3status -c ~/.config/i3/i3status.conf
-  status_command SCRIPT_DIR=/home/nick/.yadm-data/scripts i3blocks -c ~/.config/i3/i3blocks.conf
+  status_command SCRIPT_DIR=/home/nick/.yadm-data/i3blocks/scripts i3blocks -c ~/.config/i3/i3blocks.conf
 
   position top
 

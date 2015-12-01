@@ -1,9 +1,6 @@
 [submodule ".yadm-data/j4-menu-desktop"]
 	path = .yadm-data/j4-menu-desktop
 	url = https://github.com/enkore/j4-dmenu-desktop.git
-[submodule ".yadm-data/dmenu-q-xywh-xft"]
-	path = .yadm-data/dmenu-q-xywh-xft
-	url = https://github.com/mil/dmenu-q-xywh-xft.git
 [submodule ".yadm-data/fonts"]
 	path = .yadm-data/fonts
 	url = https://github.com/powerline/fonts.git
@@ -19,3 +16,6 @@
 [submodule ".yadm-data/pipes.sh"]
 	path = .yadm-data/pipes.sh
 	url = https://github.com/pipeseroni/pipes.sh.git
+[submodule ".yadm-data/playerctl"]
+	path = .yadm-data/playerctl
+	url = https://github.com/acrisci/playerctl.git
