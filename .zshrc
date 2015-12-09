@@ -89,15 +89,6 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# i3-sensible-terminal
-export TERMINAL=gnome-terminal
-
-# unlock gnome-keyring upon login
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -112,3 +103,13 @@ source $HOME/.rvm/scripts/rvm
 
 # go
 export GOPATH="$HOME/.go"
+
+# i3-sensible-terminal
+export TERMINAL=gnome-terminal
+export EDITOR=vim
+
+# unlock gnome-keyring upon login
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi

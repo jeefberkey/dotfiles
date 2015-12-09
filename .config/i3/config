@@ -2,13 +2,28 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# colors:
+set $backgr  #496267
+set $hlight  #4fc27f
+
+set $black   #3d2b37
+set $grey    #946a78
+set $bright  #91ab7c
+set $cyan    #4fc27f
+set $white   #f9f8f5
+
 # ==================
 # ==== settings ====
 # ==================
 
 # startup
-#exec xfce4-panel
 exec seafile-applet
+exec nm-applet
+
+# notifiation deamon
+exec dunst -fn "Source Code Pro for Powerline, miller-symbols 10" \
+  -lb $black -nb $black -cb $bright \
+  -lf $white -nf $white -cf $black
 
 # wallpaper
 exec feh --bg-fill ~/.yadm-data/forest.jpg
@@ -37,16 +52,6 @@ for_window [window_role="pop-up"] floating enabled
 
 # font
 font pango:Source Code Pro for Powerline, miller-symbols 10
-
-# colors from background:
-set $backgr  #496267
-set $hlight  #4fc27f
-
-set $black   #3d2b37
-set $grey    #946a78
-set $bright  #91ab7c
-set $cyan    #4fc27f
-set $white   #f9f8f5
 
 # colors
 client.background $black
@@ -82,14 +87,15 @@ bindsym $mod+Return exec gnome-terminal
 
 # start a dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --use-xdg-de --term="gnome-terminal" --dmenu="dmenu -i -fn 'Source Code Pro for Powerline:10' "
-bindsym $mod+space exec j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run: -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy'
-bindsym $mod+d exec rofi -show run -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy
+#bindsym $mod+space exec j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run: -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy'
+bindsym $mod+space exec rofi -modi drun -show drun -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy
+bindsym $mod+d exec "rofi -modi \\"run,drun\\" -show run -lines 5 -width 400 -bw 0 -bc \\"$hlight\\" -bg \\"$backgr\\" -fg \\"$white\\" -hlbg \\"$backgr\\" -hlfg \\"#9575cd\\" -font \\"Source Code Pro for Powerline 10\\" -separator-style solid -fuzzy"
 
 # lock and suspend button
-bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/py3lock && systemctl suspend
+bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/lock && systemctl suspend
 
 # lock
-bindsym Control+Mod1+l exec --no-startup-id py3lock
+bindsym Control+Mod1+l exec --no-startup-id lock
 
 # ==================
 # ==== keybinds ====
@@ -135,8 +141,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -144,7 +150,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+t focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child

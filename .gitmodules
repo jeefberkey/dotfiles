@@ -1,21 +1,27 @@
-[submodule ".yadm-data/j4-menu-desktop"]
-	path = .yadm-data/j4-menu-desktop
+[submodule "config/j4-menu-desktop"]
+	path = config/j4-menu-desktop
 	url = https://github.com/enkore/j4-dmenu-desktop.git
-[submodule ".yadm-data/fonts"]
-	path = .yadm-data/fonts
+[submodule "config/fonts"]
+	path = config/fonts
 	url = https://github.com/powerline/fonts.git
-[submodule ".yadm-data/i3-gaps"]
-	path = .yadm-data/i3-gaps
+[submodule "config/i3-gaps"]
+	path = config/i3-gaps
 	url = https://github.com/Airblader/i3.git
-[submodule ".yadm-data/i3blocks"]
-	path = .yadm-data/i3blocks
+[submodule "config/i3blocks"]
+	path = config/i3blocks
 	url = https://github.com/vivien/i3blocks.git
-[submodule ".yadm-data/rofi"]
-	path = .yadm-data/rofi
+[submodule "config/rofi"]
+	path = config/rofi
 	url = https://github.com/DaveDavenport/rofi.git
-[submodule ".yadm-data/pipes.sh"]
-	path = .yadm-data/pipes.sh
+[submodule "config/pipes.sh"]
+	path = config/pipes.sh
 	url = https://github.com/pipeseroni/pipes.sh.git
-[submodule ".yadm-data/playerctl"]
-	path = .yadm-data/playerctl
+[submodule "config/playerctl"]
+	path = config/playerctl
 	url = https://github.com/acrisci/playerctl.git
+[submodule "/home/nick/config/i3blocks-contrib"]
+	path = config/i3blocks-contrib
+	url = https://github.com/vivien/i3blocks-contrib.git
+[submodule "config/dunst"]
+	path = config/dunst
+	url = https://github.com/knopwob/dunst.git
