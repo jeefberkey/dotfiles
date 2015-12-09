@@ -1,0 +1,6 @@
+#bintray--thelocehiliosan-rpm - packages by  from Bintray
+[bintray--thelocehiliosan-rpm]
+name=bintray--thelocehiliosan-rpm
+baseurl=http://dl.bintray.com/thelocehiliosan/rpm
+gpgcheck=0
+enabled=1

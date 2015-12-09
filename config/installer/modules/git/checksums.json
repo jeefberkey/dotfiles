@@ -1,0 +1,19 @@
+{
+  "CONTRIBUTING.markdown": "3e5ae524028650b0c48c697f94ab2871",
+  "Gemfile": "46084c6be6ac0f2c5c6d32b77f181ead",
+  "README.markdown": "80f9443705f53acaeffabcfad20bb9b0",
+  "Rakefile": "0ae6b694867a3d46fb593924bcb2cc05",
+  "gpl.txt": "97ff9683aa36f333c7d2295d6520090f",
+  "manifests/config.pp": "aaf0ee0bb41c22ab348b737e8014f2a0",
+  "manifests/init.pp": "4595ef5d5b03352712e7c0052c107854",
+  "manifests/params.pp": "6d269227555ac28267802335a143c0d0",
+  "manifests/repo.pp": "f6dbea947727ce6c8506fd3fb71d5740",
+  "manifests/user.pp": "c5a3bb8c7c0a442b015b3be8e8e3aa8e",
+  "metadata.json": "b2d0ebb449a1bbb9870e8d0d81d2fc2f",
+  "spec/classes/init_spec.rb": "cebd78ffc8ef58619818a9abb8c703ea",
+  "spec/defines/config_spec.rb": "faba9f9acdc5321099ea5b7a2aba12a5",
+  "spec/defines/user_spec.rb": "6b2836cc5c680e957025f4d22951e4f0",
+  "spec/spec.opts": "c407193b3d9028941ef59edd114f5968",
+  "spec/spec_helper.rb": "4006594de91961570e91eb70d607a2c4",
+  "tests/init.pp": "bcee788a7d204e07e265aeafce4dc88f"
+}
