@@ -32,7 +32,7 @@ Plugin 'bling/vim-airline'
 " auto-formatting for Puppet
 Plugin 'rodjek/vim-puppet'
 " Lovely whitespace alignment
-Plugin 'Tabular'
+Plugin 'godlygeek/tabular'
 " Makes ASCII tables easy (for ReST, etc)
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'msanders/snipmate.vim'
@@ -40,8 +40,10 @@ Plugin 'surround.vim'
 Plugin 'matchit.zip'
 " Makes navigating code easier
 Plugin 'easymotion/vim-easymotion'
-" Highlight trailing whitespace    
+" Highlight trailing whitespace
 Plugin 'ntpeters/vim-better-whitespace'
+" Markdown support
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

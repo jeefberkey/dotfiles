@@ -1,3 +1,8 @@
 class profiles {
-  class { 'base::git': }
+  class { '::git':
+    remote_username => 'jeefberkey',
+    username        => 'Nick Miller',
+    email           => 'nick.miller@onyxpoint.com',
+  }
+  
 }

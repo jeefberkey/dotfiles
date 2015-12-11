@@ -1,13 +1,13 @@
-class base::git (
-  $remote_username = $user
-  $name = $user
-  $email = undef
+class git (
+  $remote_username = $::user,
+  $userame = $::user,
+  $email = undef,
 ) {
   include '::git'
 
   git::user { 'nick':
-    user_name  => 'Nick Miller',
-    user_email => 'nick.miller@onyxpoint.com',
+    user_name  => $username,
+    user_email => $email,
   }
 
   exec { 'git_config_credential_username':

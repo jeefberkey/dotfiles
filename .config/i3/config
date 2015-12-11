@@ -26,7 +26,7 @@ exec dunst -fn "Source Code Pro for Powerline, miller-symbols 10" \
   -lf $white -nf $white -cf $black
 
 # wallpaper
-exec feh --bg-fill ~/.yadm-data/forest.jpg
+exec feh --bg-fill ~/config/forest.jpg
 
 # apply my xmodmap, switching caps to mod4 and shift+caps to caps
 exec xmodmap ~/.Xmodmap
@@ -249,7 +249,7 @@ bar {
   }
 
   #status_command i3status -c ~/.config/i3/i3status.conf
-  status_command SCRIPT_DIR=/home/nick/.yadm-data/i3blocks/scripts i3blocks -c ~/.config/i3/i3blocks.conf
+  status_command SCRIPT_DIR=/home/nick/config/i3blocks/scripts i3blocks -c ~/.config/i3/i3blocks.conf
 
   position top
 
