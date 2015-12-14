@@ -67,6 +67,9 @@ filetype plugin indent on    " required
 " Plugin settings
 " ------------------------------------------------------------------------------
 
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
 "
 let g:table_mode_corner = '+'
 let g:table_mode_separator = '|'

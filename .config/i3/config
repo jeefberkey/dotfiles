@@ -88,8 +88,8 @@ bindsym $mod+Return exec gnome-terminal
 # start a dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --use-xdg-de --term="gnome-terminal" --dmenu="dmenu -i -fn 'Source Code Pro for Powerline:10' "
 #bindsym $mod+space exec j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run: -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy'
-bindsym $mod+space exec rofi -modi drun -show drun -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy
-bindsym $mod+d exec "rofi -modi \\"run,drun\\" -show run -lines 5 -width 400 -bw 0 -bc \\"$hlight\\" -bg \\"$backgr\\" -fg \\"$white\\" -hlbg \\"$backgr\\" -hlfg \\"#9575cd\\" -font \\"Source Code Pro for Powerline 10\\" -separator-style solid -fuzzy"
+#bindsym $mod+space exec rofi -modi drun -show drun -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy
+bindsym $mod+d exec "rofi -modi \\"run,drun\\" -show run -lines 5 -width 400 -bw 0 -bc \\"$hlight\\" -bg \\"$backgr\\" -fg \\"$hlight\\" -hlbg \\"$backgr\\" -hlfg \\"$white\\" -font \\"Source Code Pro for Powerline 10\\" -separator-style solid -fuzzy"
 
 # lock and suspend button
 bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/lock && systemctl suspend
