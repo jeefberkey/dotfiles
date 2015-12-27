@@ -9,6 +9,8 @@ i3 = I3Ipc::Connection.new
 
 block = Proc.new do |reply|
   if reply.change == 'title' || reply.change == 'focus'
+    #require 'pry'
+    #binding.pry
     title = reply.container.name
     title.chomp!
 

@@ -4,7 +4,7 @@ node default {
     'binutils','gcc','make','patch','libgomp','glibc-headers','glibc-devel','kernel-headers','kernel-devel','dkms',
     'lightdm','lightdm-gtk-greeter-settings',
     'golang','gimp',
-    'gtk-doc','gobject-introspection-devel','dbus-python','python-simplejson','gitk','meld',
+    'gtk-doc','gobject-introspection-devel','dbus-python','python-simplejson','gitg','meld',
     'gnome-keyring-pam','libgnome-keyring-devel',
     'gnome-tweak-tool','feh','xdotool','lxinput','lxappearance','gtk-murrine-engine','w3m-img',
     'python-imaging','lm_sensors','mpstat','acpi','sysstat','xbacklight',

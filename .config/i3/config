@@ -6,11 +6,11 @@
 set $backgr  #496267
 set $hlight  #4fc27f
 
-set $black   #3d2b37
-set $grey    #946a78
-set $bright  #91ab7c
-set $cyan    #4fc27f
-set $white   #f9f8f5
+set $color1 #3d2b37
+set $color2 #946a78
+set $color3 #91ab7c
+set $color4 #4fc27f
+set $color5 #f9f8f5
 
 # ==================
 # ==== settings ====
@@ -22,8 +22,8 @@ exec nm-applet
 
 # notifiation deamon
 exec dunst -fn "Source Code Pro for Powerline, miller-symbols 10" \
-  -lb $black -nb $black -cb $bright \
-  -lf $white -nf $white -cf $black
+  -lb $color1 -nb $color1 -cb $color3 \
+  -lf $color5 -nf $color5 -cf $color1
 
 # wallpaper
 exec feh --bg-fill ~/config/forest.jpg
@@ -54,13 +54,13 @@ for_window [window_role="pop-up"] floating enabled
 font pango:Source Code Pro for Powerline, miller-symbols 10
 
 # colors
-client.background $black
-# class                 border  backgr. text   indicator
-client.focused          $cyan   $cyan   $white $grey
-client.focused_inactive $grey   $grey   $white $grey
-client.unfocused        $grey   $grey   $white $grey
-client.urgent           $bright $bright $black $grey
-client.placeholder      $cyan   $black  $white $grey
+client.background $color1
+# class                 border  backgr. text    indicator
+client.focused          $color4 $color3 $color5 $color2
+client.focused_inactive $color2 $color2 $color5 $color2
+client.unfocused        $color2 $color2 $color5 $color2
+client.urgent           $color3 $color3 $color1 $color2
+client.placeholder      $color4 $color1 $color5 $color2
 
 # ==========================
 # ==== borders and gaps ====
@@ -85,11 +85,18 @@ bindsym $mod+Shift+F2 gaps inner all set 50
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
 
-# start a dmenu (a program launcher)
-#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --use-xdg-de --term="gnome-terminal" --dmenu="dmenu -i -fn 'Source Code Pro for Powerline:10' "
-#bindsym $mod+space exec j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run: -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy'
-#bindsym $mod+space exec rofi -modi drun -show drun -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$white" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy
-bindsym $mod+d exec "rofi -modi \\"run,drun\\" -show run -lines 5 -width 400 -bw 0 -bc \\"$hlight\\" -bg \\"$backgr\\" -fg \\"$hlight\\" -hlbg \\"$backgr\\" -hlfg \\"$white\\" -font \\"Source Code Pro for Powerline 10\\" -separator-style solid -fuzzy"
+# start a rofi (a program launcher)
+# https://davedavenport.github.io/rofi/generator.html
+#bindsym $mod+space exec j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run: -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$color5" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy'
+#bindsym $mod+d exec "rofi -modi combi -combi-modi \\"drun,run\\" -show combi -lines 8 -width 600 -bw 0 -bc \\"$hlight\\" -bg \\"$backgr\\" -fg \\"$hlight\\" -hlbg \\"$backgr\\" -hlfg \\"$color5\\" -font \\"Source Code Pro for Powerline 10\\" -separator-style solid -fuzzy"
+bindsym $mod+d exec "rofi -modi combi -combi-modi \\"drun,run\\" -show combi \
+  -lines 8 -width 600 -bw 0 -font \\"Source Code Pro for Powerline 10\\" \
+  -color-enabled \
+  -color-window \\"argb:cc496267, argb:cc4fc27f, argb:cc4fc27f\\" \
+  -color-normal \\"argb:0496267, #f9f8f5, argb:0496267, #4fc27f, #496267\\" \
+  -color-active \\"#946a78, #f9f8f5, #496267, #268bd2, #fdf6e3\\" \
+  -color-urgent \\"#496267, #dc322f, #496267, #dc322f, #fdf6e3\\" \
+  -separator-style solid -fuzzy"
 
 # lock and suspend button
 bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/lock && systemctl suspend
@@ -239,13 +246,13 @@ bar {
   colors {
    background $backgr
    statusline $hlight
-   separator  $white
+   separator  $color5
 
    # key              border  backgr. text
-   focused_workspace  $hlight $hlight $white
-   active_workspace   $cyan   $cyan   $white
+   focused_workspace  $hlight $hlight $color5
+   active_workspace   $color4 $color4 $color5
    inactive_workspace $backgr $backgr $hlight
-   urgent_workspace   $bright $bright $backgr
+   urgent_workspace   $color3 $color3 $backgr
   }
 
   #status_command i3status -c ~/.config/i3/i3status.conf

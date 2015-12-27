@@ -1,4 +1,4 @@
-node default {
+node /jeefberkey*/ {
   #$packages = [
   #  'tmux','i3','git','network-manager-applet',
   #  'binutils','gcc','make','patch','libgomp','glibc-headers','glibc-devel','kernel-headers','kernel-devel','dkms',
@@ -30,5 +30,5 @@ node default {
   #    default_use => true;
   #}
 
-  include '::base'
+  include '::profiles'
 }
