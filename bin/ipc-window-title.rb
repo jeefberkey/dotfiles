@@ -2,7 +2,7 @@
 
 require 'i3ipc'
 
-cutoff = 80
+cutoff = 60
 suffix = " - "
 
 i3 = I3Ipc::Connection.new

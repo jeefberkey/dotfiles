@@ -2,7 +2,10 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# colors:
+# set modifier, this in the windows key
+set $mod Mod4
+
+# set colors:
 set $backgr  #496267
 set $hlight  #4fc27f
 
@@ -32,10 +35,9 @@ exec feh --bg-fill ~/config/forest.jpg
 exec xmodmap ~/.Xmodmap
 
 # compton, shadows and transparency
-exec compton -b --backend glx --config ~/.config/i3/compton.conf
-
-# set modifier, this in the windows key
-set $mod Mod4
+exec compton -b \
+  --config ~/.config/i3/compton.conf \
+  --backend glx --glx-no-stencil
 
 # window focus follows mouse
 focus_follows_mouse yes
