@@ -9,6 +9,8 @@
       "autosave"
       "welcome"
       "hidpi"
+      "pigments"
+      "vim-mode"
     ]
   editor:
     invisibles: {}
@@ -34,3 +36,4 @@
   "markdown-preview": {}
   "atom-beautify":
     _analyticsUserId: "dc0d7719-a7ea-4188-9036-8f8d2ecbfb12"
+  "vim-mode": {}
