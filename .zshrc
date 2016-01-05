@@ -98,6 +98,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tree="tree -FC"
+alias vim="nvim"
+function vssh () {
+  vagrant ssh $1 -c 'sudo -s'
+}
 
 # rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

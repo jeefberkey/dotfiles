@@ -98,7 +98,7 @@ bindsym $mod+d exec "rofi -modi combi -combi-modi \\"drun,run\\" -show combi \
   -color-normal \\"argb:0496267, #f9f8f5, argb:0496267, #4fc27f, #496267\\" \
   -color-active \\"#946a78, #f9f8f5, #496267, #268bd2, #fdf6e3\\" \
   -color-urgent \\"#496267, #dc322f, #496267, #dc322f, #fdf6e3\\" \
-  -separator-style solid -fuzzy"
+  -separator-style solid"
 
 # lock and suspend button
 bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/lock && systemctl suspend
@@ -140,11 +140,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# split in horizontal and vertical orientation
 bindsym $mod+b split h
-
-# split in vertical orientation
 bindsym $mod+v split v
+bindsym $mod+s split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
