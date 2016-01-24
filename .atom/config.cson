@@ -1,8 +1,6 @@
 "*":
-  "exception-reporting":
-    userId: "276f8864-fdd1-5b53-357e-8944a1ef1475"
-  welcome:
-    showOnStartup: false
+  "atom-beautify":
+    _analyticsUserId: "dc0d7719-a7ea-4188-9036-8f8d2ecbfb12"
   core:
     disabledPackages: [
       "background-tips"
@@ -13,27 +11,29 @@
       "vim-mode"
     ]
   editor:
-    invisibles: {}
     fontFamily: "Source Code Pro for Powerline"
+    invisibles: {}
     lineHeight: 1.3
     preferredLineLength: 140
     showIndentGuide: true
-  "linter-puppet-lint":
-    puppetLintArguments: "--disable_class_parameter_defaults"
-    skip80Chars: true
-    skipVariablesNotEnclosed: true
-    skipClassInherithsFromParamClass: true
-    skipSelectorInsideResource: true
-    oldVersion: false
+  "exception-reporting":
+    userId: "276f8864-fdd1-5b53-357e-8944a1ef1475"
+  hidpi:
+    scaleFactor: 1.2
   linter:
     ignoredLinterErrors: [
       "puppet-lint"
     ]
-  hidpi:
-    scaleFactor: 1.2
+  "linter-puppet-lint":
+    oldVersion: false
+    puppetLintArguments: "--disable_class_parameter_defaults"
+    skip80Chars: true
+    skipClassInherithsFromParamClass: true
+    skipSelectorInsideResource: true
+    skipVariablesNotEnclosed: true
+  "markdown-preview": {}
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false
   whitespace:
     ensureSingleTrailingNewline: false
-  "markdown-preview": {}
-  "atom-beautify":
-    _analyticsUserId: "dc0d7719-a7ea-4188-9036-8f8d2ecbfb12"
-  "vim-mode": {}

@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+" set nocompatible              " be iMproved, required
 filetype off                  " required
 runtime macros/matchit.vim
 
@@ -44,6 +44,10 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ntpeters/vim-better-whitespace'
 " Markdown support
 Plugin 'plasticboy/vim-markdown'
+" bracket closer
+Plugin 'jiangmiao/auto-pairs'
+" line ender
+Plugin 'tpope/vim-endwise'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -97,7 +101,7 @@ set autoindent
 set ruler
 set number
 set title
-
+set mouse=i
 
 " key bindings
 " --------------------------------------
