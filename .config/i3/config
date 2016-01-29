@@ -53,7 +53,7 @@ for_window [window_role="pop-up"] floating enabled
 # =================
 
 # font
-font pango:Source Code Pro for Powerline, miller-symbols 10
+font pango:Source Code Pro for Powerline, miller-symbols 11
 
 # colors
 client.background $color1
