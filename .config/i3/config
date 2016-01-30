@@ -24,7 +24,7 @@ exec seafile-applet
 exec nm-applet
 
 # notifiation deamon
-exec dunst -fn "Source Code Pro for Powerline, miller-symbols 10" \
+exec dunst -fn "Roboto Condensed, miller-symbols 11" \
   -lb $color1 -nb $color1 -cb $color3 \
   -lf $color5 -nf $color5 -cf $color1
 
@@ -53,7 +53,8 @@ for_window [window_role="pop-up"] floating enabled
 # =================
 
 # font
-font pango:Source Code Pro for Powerline, miller-symbols 11
+#font pango:Source Code Pro for Powerline, miller-symbols 11
+font pango:Roboto Condensed, miller-symbols 11
 
 # colors
 client.background $color1
@@ -92,7 +93,7 @@ bindsym $mod+Return exec gnome-terminal
 #bindsym $mod+space exec j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run: -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$color5" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy'
 #bindsym $mod+d exec "rofi -modi combi -combi-modi \\"drun,run\\" -show combi -lines 8 -width 600 -bw 0 -bc \\"$hlight\\" -bg \\"$backgr\\" -fg \\"$hlight\\" -hlbg \\"$backgr\\" -hlfg \\"$color5\\" -font \\"Source Code Pro for Powerline 10\\" -separator-style solid -fuzzy"
 bindsym $mod+d exec "rofi -modi combi -combi-modi \\"drun,run\\" -show combi \
-  -lines 8 -width 600 -bw 0 -font \\"Source Code Pro for Powerline 10\\" \
+  -lines 8 -width 600 -bw 0 -font \\"Roboto Condensed 11\\" \
   -color-enabled \
   -color-window \\"argb:cc496267, argb:cc4fc27f, argb:cc4fc27f\\" \
   -color-normal \\"argb:0496267, #f9f8f5, argb:0496267, #4fc27f, #496267\\" \

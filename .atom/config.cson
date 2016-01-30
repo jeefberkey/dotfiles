@@ -7,8 +7,6 @@
       "autosave"
       "welcome"
       "hidpi"
-      "pigments"
-      "vim-mode"
     ]
   editor:
     fontFamily: "Source Code Pro for Powerline"
