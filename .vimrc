@@ -28,7 +28,7 @@ Plugin 'tpope/vim-fugitive'
 " enables the :SCROLLCOLOR command
 Plugin 'ScrollColors'
 " pretty pretty status bar; integrates with other services
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 " auto-formatting for Puppet
 Plugin 'rodjek/vim-puppet'
 " Lovely whitespace alignment
@@ -39,15 +39,11 @@ Plugin 'msanders/snipmate.vim'
 Plugin 'surround.vim'
 Plugin 'matchit.zip'
 " Makes navigating code easier
-Plugin 'easymotion/vim-easymotion'
+"Plugin 'easymotion/vim-easymotion'
 " Highlight trailing whitespace
 Plugin 'ntpeters/vim-better-whitespace'
 " Markdown support
 Plugin 'plasticboy/vim-markdown'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
 
 " To ignore plugin indent changes, instead use:
 "filetype plugin on

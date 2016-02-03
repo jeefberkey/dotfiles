@@ -1,6 +1,10 @@
 " set nocompatible              " be iMproved, required
 filetype off                  " required
-runtime macros/matchit.vim
+
+" install Vundle if it isn't installed
+if !isdirectory(expand('~/.config/nvim/bundle/Vundle.vim'))
+  silent! exe '!git clone https://github.com/gmarik/Vundle.vim ~/.config/nvim/bundle/Vundle.vim'
+endif
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
