@@ -112,7 +112,7 @@ export GOPATH="$HOME/.go"
 
 # i3-sensible-terminal
 export TERMINAL=gnome-terminal
-export EDITOR=vim
+export EDITOR=nvim
 
 # unlock gnome-keyring upon login
 if [ -n "$DESKTOP_SESSION" ];then

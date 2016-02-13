@@ -52,6 +52,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'jiangmiao/auto-pairs'
 " line ender
 Plugin 'tpope/vim-endwise'
+" show git changed lines
+Plugin 'mhinz/vim-signify'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

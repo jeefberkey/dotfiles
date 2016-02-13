@@ -3,3 +3,4 @@ TerminalScreen {
     padding: 5px 5px 5px 5px;
     -VteTerminal-inner-border: 5px 5px 5px 5px;
 }
+.window-frame {box-shadow: none; margin: 0}

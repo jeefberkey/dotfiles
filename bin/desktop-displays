@@ -1,8 +1,14 @@
 #!/bin/bash
 
-xrandr --output eDP1 --auto --pos 0x0 --output DP1 --auto --pos 1920x-1600 --primary
+# one giant 4k monitor with laptop next to it
+#xrandr --output eDP1 --auto --pos 0x0 --output DP1 --auto --pos 1920x-1600 --primary
+#i3-msg gaps inner all set 50
+#i3-msg gaps outer all set 50
+#feh --bg-fill ~/config/porsche.jpg
 
-i3-msg gaps inner all set 50
-i3-msg gaps outer all set 50
+# two 27" 1440p monitors
+xrandr --output DP1-2 --auto --left-of DP1-1 --output DP1-1 --primary --auto --output eDP1 --off
+i3-msg gaps inner all set 20
+i3-msg gaps outer all set 20
+feh --bg-fill ~/config/porsche.jpg
 
-feh --bg-fill ~/config/forest.jpg
