@@ -101,10 +101,11 @@ bindsym $mod+Shift+F2 gaps inner all set 50
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
 
+# start files
+bindsym $mod+Shift+f exec nautilus
+
 # start a rofi (a program launcher)
 # https://davedavenport.github.io/rofi/generator.html
-#bindsym $mod+space exec j4-dmenu-desktop --dmenu='rofi -dmenu -i -p run: -lines 5 -width 400 -bw 0 -bc "$hlight" -bg "$backgr" -fg "$color5" -hlbg "$backgr" -hlfg "#9575cd" -font "Source Code Pro for Powerline 10" -separator-style solid -fuzzy'
-#bindsym $mod+d exec "rofi -modi combi -combi-modi \\"drun,run\\" -show combi -lines 8 -width 600 -bw 0 -bc \\"$hlight\\" -bg \\"$backgr\\" -fg \\"$hlight\\" -hlbg \\"$backgr\\" -hlfg \\"$color5\\" -font \\"Source Code Pro for Powerline 10\\" -separator-style solid -fuzzy"
 bindsym $mod+d exec "rofi -modi combi -combi-modi \\"drun,run\\" -show combi \
   -lines 8 -width 600 -bw 0 -font \\"Roboto Condensed 11\\" \
   -color-enabled \
