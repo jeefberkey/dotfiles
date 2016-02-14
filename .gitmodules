@@ -1,30 +1,30 @@
 [submodule "config/j4-menu-desktop"]
-	path = config/j4-menu-desktop
+	path = src/j4-menu-desktop
 	url = https://github.com/enkore/j4-dmenu-desktop.git
 [submodule "config/fonts"]
-	path = config/fonts
+	path = src/fonts
 	url = https://github.com/powerline/fonts.git
 [submodule "config/i3-gaps"]
-	path = config/i3-gaps
+	path = src/i3-gaps
 	url = https://github.com/Airblader/i3.git
 [submodule "config/i3blocks"]
-	path = config/i3blocks
+	path = src/i3blocks
 	url = https://github.com/vivien/i3blocks.git
 [submodule "config/rofi"]
-	path = config/rofi
+	path = src/rofi
 	url = https://github.com/DaveDavenport/rofi.git
 [submodule "config/pipes.sh"]
-	path = config/pipes.sh
+	path = src/pipes.sh
 	url = https://github.com/pipeseroni/pipes.sh.git
 [submodule "config/playerctl"]
-	path = config/playerctl
+	path = src/playerctl
 	url = https://github.com/acrisci/playerctl.git
 [submodule "/home/nick/config/i3blocks-contrib"]
 	path = config/i3blocks-contrib
 	url = https://github.com/vivien/i3blocks-contrib.git
 [submodule "config/dunst"]
-	path = config/dunst
+	path = src/dunst
 	url = https://github.com/knopwob/dunst.git
 [submodule "config/compton"]
-	path = config/compton
+	path = src/compton
 	url = https://github.com/chjj/compton.git
