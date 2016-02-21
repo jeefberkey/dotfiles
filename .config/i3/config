@@ -50,7 +50,7 @@ focus_follows_mouse yes
 workspace_auto_back_and_forth yes
 
 # fix popups, specifically for hangouts
-for_window [window_role="pop-up"] floating enabled
+for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
@@ -59,6 +59,7 @@ for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
 for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
+for_window [class="Nautilus" ] floating enable
 
 # =================
 # ==== display ====

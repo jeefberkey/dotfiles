@@ -9,3 +9,5 @@ This repo is managed with [yadm](https://github.com/TheLocehiliosan/yadm).
 * I have a few gnome-terminal tweaks in the gtk css, because I can't be bothered enough to try the 'cooler' terminals
 * [dunst](https://github.com/knopwob/dunst) manages my notifications
 * `porsche.jpg` is my wallpaper
+* I'm currently trying out nvim, and have vim aliased to nvim. 
+* [oh-my-zsh](http://ohmyz.sh/) is my shell

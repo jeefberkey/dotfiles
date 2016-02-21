@@ -10,5 +10,5 @@
 xrandr --output DP1-2 --auto --left-of DP1-1 --output DP1-1 --primary --auto --output eDP1 --off
 i3-msg gaps inner all set 20
 i3-msg gaps outer all set 20
-feh --bg-fill ~/config/porsche.jpg
+feh --bg-fill ~/src/porsche.jpg
 
