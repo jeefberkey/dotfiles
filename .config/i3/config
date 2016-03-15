@@ -107,14 +107,7 @@ bindsym $mod+Shift+f exec nautilus
 
 # start a rofi (a program launcher)
 # https://davedavenport.github.io/rofi/generator.html
-bindsym $mod+d exec "rofi -modi combi -combi-modi \\"drun,run\\" -show combi \
-  -lines 8 -width 600 -bw 0 -font \\"Roboto Condensed 11\\" \
-  -color-enabled \
-  -color-window \\"argb:cc496267, argb:cc4fc27f, argb:cc4fc27f\\" \
-  -color-normal \\"argb:0496267, #f9f8f5, argb:0496267, #4fc27f, #496267\\" \
-  -color-active \\"#946a78, #f9f8f5, #496267, #268bd2, #fdf6e3\\" \
-  -color-urgent \\"#496267, #dc322f, #496267, #dc322f, #fdf6e3\\" \
-  -separator-style solid"
+bindsym $mod+d exec "rofi -show combi"
 
 # lock and suspend button
 bindsym $mod+Shift+s exec --no-startup-id /home/nick/bin/lock && systemctl suspend
@@ -277,7 +270,7 @@ bar {
   }
 
   i3bar_command i3bar -t
-  status_command i3blocks -c ~/.config/i3blocks.conf
+  status_command i3blocks
 
   # mouse wheel scrolls on the bar
   bindsym button4 workspace prev

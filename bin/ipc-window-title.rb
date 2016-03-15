@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+# this is the gem name as well
 require 'i3ipc'
 require 'json'
 

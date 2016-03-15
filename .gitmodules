@@ -22,3 +22,18 @@
 [submodule "config/compton"]
 	path = src/compton
 	url = https://github.com/chjj/compton.git
+[submodule "src/sway"]
+	path = src/sway
+	url = https://github.com/SirCmpwn/sway.git
+[submodule "src/wlc"]
+	path = src/wlc
+	url = https://github.com/Cloudef/wlc.git
+[submodule "src/i3blocks-gaps"]
+	path = src/i3blocks-gaps
+	url = https://github.com/Airblader/i3blocks-gaps.git
+[submodule "src/lightdm-webkit2-greeter"]
+	path = src/lightdm-webkit2-greeter
+	url = git@github.com:Antergos/lightdm-webkit2-greeter.git
+[submodule "src/wpgtk"]
+	path = src/wpgtk
+	url = git@github.com:deviantfero/wpgtk.git

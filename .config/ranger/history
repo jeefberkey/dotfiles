@@ -1,4 +1,3 @@
-open_with 
 delete
 select_file 
 select_file IM*
@@ -14,4 +13,14 @@ bulkrename
 open_with
 d
 open_with q
+mkdir vagrantfile
+shell touch Vagrantfile
+open_with 
+open_with vim
+gitp ull
+git
+shell git pull
+shell git log
+
 delete 
+open_with nvim

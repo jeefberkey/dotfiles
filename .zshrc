@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 alias tree="tree -FC"
 alias vim="nvim"
 function vssh () {
-  vagrant ssh $1 -c 'sudo -s'
+  vagrant ssh $1 -c 'sudo -s; cd'
 }
 
 # rvm
