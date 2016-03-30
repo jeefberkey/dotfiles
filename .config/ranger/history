@@ -11,7 +11,6 @@ mark_files IM
 mark_files %s
 bulkrename 
 open_with
-d
 open_with q
 mkdir vagrantfile
 shell touch Vagrantfile
@@ -22,5 +21,6 @@ git
 shell git pull
 shell git log
 
-delete 
 open_with nvim
+d
+delete 

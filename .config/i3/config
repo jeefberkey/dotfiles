@@ -7,7 +7,7 @@ set $mod Mod4
 
 # set colors:
 #set $backgr  #496267
-set $backgr  #00000000
+set $backgr  #00000050
 set $hlight  #4fc27f
 
 set $color1 #3d2b37
@@ -24,13 +24,18 @@ set $color5 #f9f8f5
 exec seafile-applet
 exec nm-applet
 
+# disable screen blanking
+exec-always xset s noblank
+exec-always xset s off
+
 # notifiation deamon
 exec dunst -fn "Roboto Condensed, miller-symbols 11" \
   -lb $color1 -nb $color1 -cb $color3 \
   -lf $color5 -nf $color5 -cf $color1
 
 # wallpaper
-exec feh --bg-fill ~/src/porsche.jpg
+#exec feh --bg-fill ~/src/porsche.jpg
+exec ~/.wallpapers/wp_init.sh
 
 # apply my xmodmap, switching caps to mod4 and shift+caps to caps
 exec xmodmap ~/.Xmodmap

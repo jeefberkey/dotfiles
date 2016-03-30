@@ -55,7 +55,7 @@ interval=30
 command=~/src/i3blocks/scripts/cpu_usage -d 0
 label=
 interval=10
-separator=false
+#separator=false
 
 [temperature]
 command=temperature --chip coretemp-isa-0000
@@ -94,3 +94,4 @@ label=
 command=date '+%A, %B %e %Y %l:%M %p'
 color=#f9f8f5
 interval=5
+
