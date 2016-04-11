@@ -4,9 +4,6 @@
 [submodule "config/i3-gaps"]
 	path = src/i3-gaps
 	url = https://github.com/Airblader/i3.git
-[submodule "config/i3blocks"]
-	path = src/i3blocks
-	url = https://github.com/vivien/i3blocks.git
 [submodule "config/rofi"]
 	path = src/rofi
 	url = https://github.com/DaveDavenport/rofi.git
@@ -37,3 +34,6 @@
 [submodule "src/wpgtk"]
 	path = src/wpgtk
 	url = git@github.com:deviantfero/wpgtk.git
+[submodule "src/i3blocks-contrib"]
+	path = src/i3blocks-contrib
+	url = git@github.com:vivien/i3blocks-contrib.git
