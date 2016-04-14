@@ -6,10 +6,12 @@ rofi.width:                          600
 rofi.lines:                          8
 rofi.columns:                        1
 rofi.font:                           Roboto Condensed 11
-rofi.color-normal:                   argb:0496267, #f9f8f5, argb:0496267, #4fc27f, #496267
-rofi.color-urgent:                   #496267, #dc322f, #496267, #dc322f, #fdf6e3
-rofi.color-active:                   #946a78, #f9f8f5, #496267, #268bd2, #fdf6e3
-rofi.color-window:                   argb:cc496267, argb:cc4fc27f, argb:cc4fc27f
+!                                    background     foreground     alt.bgr        hlight.bgr hlight.fgr
+rofi.color-normal:                   argb:00496267, #d8dee9,       argb:04343d46, #6699cc,   #343d46
+rofi.color-urgent:                   #496267,       #dc322f,       #496267,       #dc322f,   #fdf6e3
+rofi.color-active:                   #343d46,       #6699cc,       #496267,       #268bd2,   #fdf6e3
+!                                    background     border         color
+rofi.color-window:                   argb:cc343d46, argb:cc6699cc, argb:cc6699cc
 
 ! Border width
 rofi.bw:                             0
@@ -17,7 +19,7 @@ rofi.padding:                        5
 ! Separator style (none, dash, solid)
 rofi.separator-style:                solid
 ! Hide scroll-bar
-rofi.hide-scrollbar:                 false
+rofi.hide-scrollbar:                 true
 ! Margin between rows
 rofi.line-margin:                    2
 ! Fake transparency
