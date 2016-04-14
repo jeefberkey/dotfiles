@@ -29,21 +29,18 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " the BEST git integration for vim
 Plugin 'tpope/vim-fugitive'
-" enables the :SCROLLCOLOR command
-Plugin 'ScrollColors'
 " pretty pretty status bar; integrates with other services
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " auto-formatting for Puppet
 Plugin 'rodjek/vim-puppet'
 " Lovely whitespace alignment
 Plugin 'godlygeek/tabular'
 " Makes ASCII tables easy (for ReST, etc)
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'msanders/snipmate.vim'
-Plugin 'surround.vim'
-Plugin 'matchit.zip'
-" Makes navigating code easier
-Plugin 'easymotion/vim-easymotion'
+"Plugin 'dhruvasagar/vim-table-mode'
+"Plugin 'msanders/snipmate.vim'
+"Plugin 'surround.vim'
+"Plugin 'matchit.zip'
 " Highlight trailing whitespace
 Plugin 'ntpeters/vim-better-whitespace'
 " Markdown support
@@ -54,6 +51,9 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-endwise'
 " show git changed lines
 Plugin 'mhinz/vim-signify'
+" das themes
+Plugin 'mhartington/oceanic-next'
+" Plugin 'freeo/vim-kalisi'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,16 +87,12 @@ let g:table_mode_separator = '|'
 " this is the best characters for the default Monospace font
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:irline_theme='bubblegum'
-"let g:airline_left_sep='▶'
-"let g:airline_right_sep='◀'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.branch='𝌎'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.branch = 'ᚵ'
-let g:airline_symbols.branch = 'ᚴ'
+" let g:airline_theme='molokai'
+let g:airline_theme='oceanicnext'
+" let g:airline_symbols.branch='𝌎'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.branch = 'ᚵ'
+" let g:airline_symbols.branch = 'ᚴ'
 
 " ------------------------------------------------------------------------------
 " General settings
@@ -121,14 +117,7 @@ map <F5> :%s/[[:space:]]\+$//<cr>
 map <F7> :set spell! spelllang=en_us spellfile=~/.vim/spellfile.add<cr>
 
 " custom colors
-" --------------------------------------
-" colors for vimdiff
-" from https://gforge.onyxpoint.net/redmine/projects/simp-dev/wiki/Tips_and_Tricks
-if &diff
-  set t_Co=256
-  colorscheme zellner
-endif
-
-
-set t_Co=256
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set background=dark
+colorscheme OceanicNext

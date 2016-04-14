@@ -9,6 +9,10 @@
       "welcome"
       "hidpi"
     ]
+    themes: [
+      "one-dark-ui"
+      "oceanic-next"
+    ]
   editor:
     fontFamily: "Source Code Pro"
     invisibles: {}

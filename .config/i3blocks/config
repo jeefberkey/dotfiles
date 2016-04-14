@@ -92,8 +92,8 @@ command=battery.py
 markup=pango
 interval=30
 
-[weather]
-interval=300
+#[weather]
+#interval=300
 
 [time]
 label=

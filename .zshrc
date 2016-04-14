@@ -109,6 +109,7 @@ source $HOME/.rvm/scripts/rvm
 
 # go
 export GOPATH="$HOME/.go"
+export PATH="$PATH:$HOME/.go/bin"
 
 # i3-sensible-terminal
 export TERMINAL=gnome-terminal

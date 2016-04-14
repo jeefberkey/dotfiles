@@ -24,29 +24,22 @@ set $color5 #d8dee9
 exec seafile-applet
 exec nm-applet
 
-# disable screen blanking
-exec-always xset s noblank
-exec-always xset s off
-
 # notifiation deamon
-exec dunst -fn "Roboto Condensed, miller-symbols 11" \
-  -lb $color1 -nb $color1 -cb $color3 \
-  -lf $color5 -nf $color5 -cf $color1
+exec dunst -lb $color1 -nb $color1 -cb $color3 -lf $color5 -nf $color5 -cf $color1
 
 # wallpaper
-#exec feh --bg-fill ~/src/porsche.jpg
-exec ~/.wallpapers/wp_init.sh
+output * background ~/src/porsche.jpg fill
 
 # apply my xmodmap, switching caps to mod4 and shift+caps to caps
-exec xmodmap ~/.Xmodmap
+#exec xmodmap ~/.Xmodmap
 
 # nummlock on
 exec numlockx on
 
-# compton, shadows and transparency
-exec compton -b \
-  --config ~/.config/compton.conf \
-  --backend glx --glx-no-stencil
+## compton, shadows and transparency
+#exec compton -b \
+#  --config ~/.config/compton.conf \
+#  --backend glx --glx-no-stencil
 
 # window focus follows mouse
 focus_follows_mouse yes
@@ -54,18 +47,17 @@ focus_follows_mouse yes
 # automatically go back to the previous workspace
 workspace_auto_back_and_forth yes
 
-# fix popups, specifically for hangouts
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
-
-for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
-for_window [class="Nautilus" ] floating enable
-for_window [class="Google Play Music" ] floating enable
+## fix popups, specifically for hangouts
+#for_window [window_role="pop-up"] floating enable
+#for_window [window_role="bubble"] floating enable
+#for_window [window_role="task_dialog"] floating enable
+#for_window [window_role="Preferences"] floating enable
+#
+#for_window [window_type="dialog"] floating enable
+#for_window [window_type="menu"] floating enable
+#
+#for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
+#for_window [class="Nautilus" ] floating enable
 
 # =================
 # ==== display ====
@@ -89,7 +81,7 @@ client.placeholder      $color4 $color1 $color5 $color3 $color4
 
 # turns off gaps and borderswhen there's only one window
 smart_gaps on
-smart_borders on
+#smart_borders on
 
 for_window [class="^.*"] border pixel 5
 gaps inner 5
@@ -110,9 +102,10 @@ bindsym $mod+Return exec gnome-terminal
 # start files
 bindsym $mod+Shift+f exec nautilus
 
-# start a rofi (a program launcher)
-# https://davedavenport.github.io/rofi/generator.html
-bindsym $mod+d exec "rofi -show combi"
+## start a rofi (a program launcher)
+## https://davedavenport.github.io/rofi/generator.html
+#bindsym $mod+d exec "rofi -show combi"
+bindsym $mod+d exec j4-dmenu-desktop
 
 # lock and suspend button
 bindsym $mod+Shift+s exec lock && systemctl suspend
@@ -209,8 +202,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 # ==== function keys ====
 # =======================
 
-# emergency key combo for turning main screen back on
-bindsym $mod+Shift+m exec xrandr --output eDP1 --mode 1920x1080
 
 # none of these work in Spotify anyway
 bindsym XF86AudioPrev         exec --no-startup-id playerctl prev
@@ -227,7 +218,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -274,10 +265,40 @@ bar {
     urgent_workspace   $color3 $color3 $color1
   }
 
-  i3bar_command i3bar -t
-  status_command i3blocks
+  #i3bar_command i3bar -t
+  status_command i3blocks -c ~/.config/i3blocks/config
 
-  # mouse wheel scrolls on the bar
-  bindsym button4 workspace prev
-  bindsym button5 workspace next
+  ## mouse wheel scrolls on the bar
+  #bindsym button4 workspace prev
+  #bindsym button5 workspace next
 }
+
+# ================
+# ==== inputs ====
+# ================
+# touchscreen
+input 1739:2808:SYNAPTICS_Synaptics_Large_Touch_S {
+  events enabled
+}
+
+# touchpad
+input 1739:10036:DLL060A:00_06C {
+  events enabled
+  tap enabled
+  dwt enabled
+  scroll_method two_finger
+  click_method clickfinger
+  natural_scroll enabled
+
+}
+
+
+# =================
+# ==== outputs ====
+# =================
+output eDP-1 res 1920x1280 #pos -1980,0
+output DP-2 res 2560x1440 #pos 0,0 
+output DP-3 res 2560x1440 #pos 0,2560
+
+#workspace 1 output eDP-1
+
