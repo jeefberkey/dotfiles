@@ -27,7 +27,13 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=~/src/i3blocks-gaps/scripts/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=5
+separator=false
+border_top=0
+border_left=0
+border_right=0
+border_bottom=3
+border=#6699cc
 
 [focused window]
 command=ipc-window-title.rb
@@ -35,6 +41,7 @@ interval=persist
 signal=12
 color=#A6D1FA
 format=json
+border_right=3
 
 #[mediaplayer]
 #command=mediaplayer
@@ -55,7 +62,6 @@ interval=30
 command=~/src/i3blocks/scripts/cpu_usage -d 0
 label=
 interval=10
-#separator=false
 
 [temperature]
 command=temperature --chip coretemp-isa-0000
@@ -82,7 +88,7 @@ interval=10
 
 [brightness]
 command=~/src/i3blocks-contrib/brightness/brightness
-label=
+label=
 interval=once
 signal=11
 

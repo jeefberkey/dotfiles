@@ -16,7 +16,7 @@ def shorten(title, cutoff, suffix)
       return sections[0][0..cutoff-suffix.length] + suffix + sections[-1]
     end
   else
-    return title
+    return title + " "
   end
 end
 
@@ -28,7 +28,7 @@ block = Proc.new do |reply|
     title.chomp!
 
     i3bar = {}
-    i3bar[:full_text] = title
+    i3bar[:full_text] = title + " "
     i3bar[:short_text] = shorten(title, cutoff, suffix)
     i3bar[:align] = 'left'
 
