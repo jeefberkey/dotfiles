@@ -40,3 +40,6 @@
 [submodule "src/razer"]
 	path = src/razer
 	url = https://git.bues.ch/git/razer.git
+[submodule "src/cava"]
+	path = src/cava
+	url = git@github.com:karlstav/cava.git

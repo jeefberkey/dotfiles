@@ -114,6 +114,9 @@ bindsym $mod+Shift+f exec nautilus
 # https://davedavenport.github.io/rofi/generator.html
 bindsym $mod+d exec "rofi -show combi"
 
+# program switcher
+bindsym $mod+Tab exec "rofi -show window"
+
 # lock and suspend button
 bindsym $mod+Shift+s exec lock && systemctl suspend
 
