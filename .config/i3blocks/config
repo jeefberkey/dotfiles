@@ -27,7 +27,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=~/src/i3blocks-gaps/scripts/$BLOCK_NAME
-separator_block_width=5
+separator_block_width=8
 separator=false
 border_top=0
 border_left=0
@@ -39,9 +39,8 @@ border=#6699cc
 command=ipc-window-title.rb
 interval=persist
 signal=12
-color=#A6D1FA
+#color=#A6D1FA
 format=json
-border_right=3
 
 #[mediaplayer]
 #command=mediaplayer

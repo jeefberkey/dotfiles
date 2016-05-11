@@ -21,7 +21,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%si %p</b>\n%b"
+    format = "<b>%i %s %p</b>\n%b"
 
     # Sort messages by urgency.
     sort = yes
@@ -42,7 +42,7 @@
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
-    show_age_threshold = 60
+    show_age_threshold = 120
 
     # Split notifications into multiple lines if they don't fit into
     # geometry.
@@ -64,11 +64,12 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x5-30+30"
+    #geometry = "0x5-30+30"
+    geometry = "400x40-30+30"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = yes
+    shrink = no
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
@@ -109,7 +110,7 @@
     # The height of a single line.  If the height is smaller than the
     # font height, it will get raised to the font height.
     # This adds empty space above and under the text.
-    line_height = 0
+    line_height = 1.2
 
     # Draw a line of "separatpr_height" pixel height between two
     # notifications.
@@ -149,7 +150,7 @@
 
 [frame]
     width = 3
-    color = "#aaaaaa"
+    color = "#6699cc"
 
 [shortcuts]
 
@@ -175,18 +176,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
+    background = "#1b2b34"
+    foreground = "#d8dee9"
     timeout = 10
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    background = "#1b2b34"
+    foreground = "#d8dee9"
     timeout = 10
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
+    background = "#d8dee9"
+    foreground = "#1b2b34"
     timeout = 0
 
 

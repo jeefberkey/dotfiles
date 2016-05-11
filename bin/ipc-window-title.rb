@@ -16,23 +16,29 @@ def shorten(title, cutoff, suffix)
       return sections[0][0..cutoff-suffix.length] + suffix + sections[-1]
     end
   else
-    return title + " "
+    return title
   end
 end
 
 i3 = I3Ipc::Connection.new
 
+header = {
+  "version"      => 1,
+  "click_events" => true
+}
+
 block = Proc.new do |reply|
-  if reply.change == 'title' || reply.change == 'focus'
+  if reply.change == 'focus' || reply.change == 'title'
     title = reply.container.name
     title.chomp!
 
-    i3bar = {}
-    i3bar[:full_text] = title + " "
-    i3bar[:short_text] = shorten(title, cutoff, suffix)
-    i3bar[:align] = 'left'
+    i3bar = {
+      :full_text  => title,
+      :short_text => shorten(title, cutoff, suffix),
+      :align      => 'left'
+    }
 
-    puts i3bar.to_json
+    puts header.to_json + "[[]," + i3bar.to_json + "]"
 
     #require 'pry'
     #binding.pry

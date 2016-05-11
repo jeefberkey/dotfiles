@@ -21,6 +21,7 @@
     showIndentGuide: true
   "exception-reporting":
     userId: "276f8864-fdd1-5b53-357e-8944a1ef1475"
+  "git-diff": {}
   hidpi:
     scaleFactor: 1.2
   linter:

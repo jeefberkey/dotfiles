@@ -28,9 +28,6 @@
 [submodule "src/i3blocks-gaps"]
 	path = src/i3blocks-gaps
 	url = https://github.com/Airblader/i3blocks-gaps.git
-[submodule "src/lightdm-webkit2-greeter"]
-	path = src/lightdm-webkit2-greeter
-	url = git@github.com:Antergos/lightdm-webkit2-greeter.git
 [submodule "src/wpgtk"]
 	path = src/wpgtk
 	url = git@github.com:deviantfero/wpgtk.git
@@ -43,3 +40,9 @@
 [submodule "src/cava"]
 	path = src/cava
 	url = git@github.com:karlstav/cava.git
+[submodule "src/oomox"]
+	path = src/oomox
+	url = git@github.com:actionless/oomox.git
+[submodule "src/lightdm-webkit-material"]
+	path = src/lightdm-webkit-material
+	url = git@github.com:artur9010/lightdm-webkit-material.git

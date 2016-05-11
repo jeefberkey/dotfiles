@@ -258,7 +258,7 @@ bindsym $mod+r mode "resize"
 # =============
 bar {
   position top
-  height 25
+  height 28
   tray_padding 0
 
   colors {

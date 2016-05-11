@@ -25,10 +25,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " the BEST git integration for vim
 Plugin 'tpope/vim-fugitive'
-" enables the :SCROLLCOLOR command
-Plugin 'ScrollColors'
 " pretty pretty status bar; integrates with other services
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " auto-formatting for Puppet
 Plugin 'rodjek/vim-puppet'
 " Lovely whitespace alignment
@@ -38,12 +37,23 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'msanders/snipmate.vim'
 Plugin 'surround.vim'
 Plugin 'matchit.zip'
-" Makes navigating code easier
-"Plugin 'easymotion/vim-easymotion'
 " Highlight trailing whitespace
 Plugin 'ntpeters/vim-better-whitespace'
 " Markdown support
 Plugin 'plasticboy/vim-markdown'
+" bracket closer
+Plugin 'jiangmiao/auto-pairs'
+" line ender
+Plugin 'tpope/vim-endwise'
+" show git changed lines
+Plugin 'mhinz/vim-signify'
+" das themes
+Plugin 'mhartington/oceanic-next'
+" Plugin 'freeo/vim-kalisi'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -73,16 +83,12 @@ let g:table_mode_separator = '|'
 " this is the best characters for the default Monospace font
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:irline_theme='bubblegum'
-"let g:airline_left_sep='▶'
-"let g:airline_right_sep='◀'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.branch='𝌎'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.branch = 'ᚵ'
-let g:airline_symbols.branch = 'ᚴ'
+" let g:airline_theme='molokai'
+let g:airline_theme='oceanicnext'
+" let g:airline_symbols.branch='𝌎'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.branch = 'ᚵ'
+" let g:airline_symbols.branch = 'ᚴ'
 
 " ------------------------------------------------------------------------------
 " General settings
@@ -118,3 +124,4 @@ endif
 
 set t_Co=256
 set background=dark
+colorscheme OceanicNext

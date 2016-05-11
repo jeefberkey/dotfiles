@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/nick/.gtkrc-2.0.mine"
-gtk-theme-name="Numix-Ocean"
+gtk-theme-name="oomox-oceanic-dark"
 gtk-icon-theme-name="Paper"
 gtk-font-name="Cantarell 10"
 gtk-cursor-theme-name="Paper"

@@ -52,16 +52,20 @@ HYPHEN_INSENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  colored-man
+  colored-man-pages
   cp
-  tmux
-  vundle
-  github
+  #tmux
+  #vundle
+  #github
   bundler
   rake
   ruby
   rvm
   vagrant
+  sudo
+  dnf
+  nmap
+  fedora
   #custom
   #oh-my-git
 )

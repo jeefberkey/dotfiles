@@ -28,7 +28,7 @@ exec nm-applet
 exec dunst -lb $color1 -nb $color1 -cb $color3 -lf $color5 -nf $color5 -cf $color1
 
 # wallpaper
-output * background ~/src/porsche.jpg fill
+output * background ~/.wallpapers/blur.png fill
 
 # apply my xmodmap, switching caps to mod4 and shift+caps to caps
 #exec xmodmap ~/.Xmodmap
@@ -297,7 +297,7 @@ input 1739:10036:DLL060A:00_06C {
 # ==== outputs ====
 # =================
 output eDP-1 res 1920x1280 #pos -1980,0
-output DP-2 res 2560x1440 #pos 0,0 
+output DP-2 res 2560x1440 #pos 0,0
 output DP-3 res 2560x1440 #pos 0,2560
 
 #workspace 1 output eDP-1
