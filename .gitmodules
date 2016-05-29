@@ -46,3 +46,9 @@
 [submodule "src/lightdm-webkit-material"]
 	path = src/lightdm-webkit-material
 	url = git@github.com:artur9010/lightdm-webkit-material.git
+[submodule "src/paper-gtk-theme"]
+	path = src/paper-gtk-theme
+	url = git@github.com:snwh/paper-gtk-theme.git
+[submodule "src/paper-icon-theme"]
+	path = src/paper-icon-theme
+	url = git@github.com:snwh/paper-icon-theme.git

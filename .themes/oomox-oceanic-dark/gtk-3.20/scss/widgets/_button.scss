@@ -27,8 +27,7 @@
 
         @if $variant == 'light' {
             background-position: right 3px, right 4px;
-        }
-        @else {
+        } @else {
             background-position: right 3px, right 2px;
         }
 
@@ -37,8 +36,7 @@
         &:dir(rtl) {
             @if $variant == 'light' {
                 background-position: left 3px, left 4px;
-            }
-            @else {
+            } @else {
                 background-position: left 3px, left 2px;
             }
         }
@@ -69,6 +67,18 @@
             border-radius: 0; // needed when including %linked_middle:dir(rtl)
             border-right-style: none;
             border-left-style: solid;
+        }
+    }
+
+    %linked_vertical_middle {
+        border-radius: 0;
+        border-top-style: none;
+        border-bottom-style: solid;
+
+        &:dir(rtl) {
+            border-radius: 0; // needed when including %linked_vertical_middle:dir(rtl)
+            border-top-style: none;
+            border-bottom-style: solid;
         }
     }
 
@@ -104,6 +114,51 @@
             &:dir(rtl) {
                 border-left-style: solid;
                 border-right-style: none;
+            }
+        }
+
+        &:only-child, &:first-child:only-child {
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        &:only-child {
+            border-radius: $roundness;
+        }
+    }
+
+    %linked_vertical_button {
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 0;
+        border-top-style: none;
+        border-bottom-style: none;
+
+        &:first-child {
+            border-width: 1px;
+            border-radius: $roundness;
+            border-top-style: solid;
+            border-bottom-style: none;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+            &:dir(rtl) {
+                border-top-style: none;
+                border-bottom-style: solid;
+            }
+        }
+
+        &:last-child {
+            border-width: 1px;
+            border-radius: $roundness;
+            border-top-style: none;
+            border-bottom-style: solid;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+
+            &:dir(rtl) {
+                border-top-style: solid;
+                border-bottom-style: none;
             }
         }
 
@@ -165,9 +220,56 @@
     }
 }
 
+@mixin linked_vertical_button($bg) {
+    $border_strength: if(lightness($bg) > 50, 0, .1);
+    $shadow_strength: if(lightness($bg) > 50, 0, .1);
+
+    @extend %linked_vertical_button;
+
+    box-shadow: inset 0 -1px border_normal(rgba(0, 0, 0, .12 + $border_strength)),
+    0 1px 2px -1px alpha($dark_shadow, .12 + $shadow_strength);
+
+    &:focus, &:hover {
+        box-shadow: inset 0 -1px border_focus(rgba(0, 0, 0, .12 + $border_strength)),
+        0 1px 2px -1px alpha($dark_shadow, .32 + $shadow_strength);
+    }
+
+    &:active, &:active:hover,
+    &:active:focus, &:active:hover:focus,
+    &:checked, &:checked:hover,
+    &:checked:focus, &:checked:hover:focus {
+        box-shadow: inset 0 -1px border_active(rgba(0, 0, 0, .12 + $border_strength)),
+        inset 1px 0 alpha($dark_shadow, .07),
+        inset -1px 0 alpha($dark_shadow, .05);
+    }
+
+    &:disabled { box-shadow: inset 0 -1px shade($bg, .8); }
+
+    &:last-child, &:only-child { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .12 + $shadow_strength); }
+
+    &:last-child:hover, &:only-child:hover { box-shadow: 0 1px 2px -1px alpha($dark_shadow, .32 + $shadow_strength); }
+
+    &:disabled:last-child, &:disabled:only-child,
+    &:active:disabled:last-child, &:active:disabled:only-child,
+    &:checked:disabled:last-child, &:checked:disabled:only-child { box-shadow: none; }
+
+    &:active:last-child, &:active:last-child:focus, &:active:last-child:hover, &:active:last-child:hover:focus,
+    &:checked:last-child, &:checked:last-child:focus, &:checked:last-child:hover, &:checked:last-child:hover:focus {
+        box-shadow: inset 0 1px alpha($dark_shadow, .07),
+        inset -1px 0 alpha($dark_shadow, .06);
+    }
+
+    &:active:only-child, &:active:only-child:focus, &:active:only-child:hover, &:active:only-child:hover:focus,
+    &:checked:only-child, &:checked:only-child:focus, &:checked:only-child:hover, &:checked:only-child:hover:focus {
+        box-shadow: inset 1px 0 alpha($dark_shadow, .06),
+        inset 0 1px alpha($dark_shadow, .07),
+        inset -1px 0 alpha($dark_shadow, .06);
+    }
+}
+
 @mixin button($bg, $fg) {
-	$border_strength: if(lightness($fg) > 50, .1, .2);
-	$shadow_strength: if(lightness($bg) > 50, 0, .1);
+    $border_strength: if(lightness($fg) > 50, .1, .2);
+    $shadow_strength: if(lightness($bg) > 50, 0, .1);
     /*$border_strength: .1;*/
     /*$shadow_strength: .1;*/
 
@@ -186,11 +288,25 @@
     }
 
     &, &.flat {
-        &:focus, &:hover {
-            @include linear-gradient(shade($bg, 1.2));
-			@include border(alpha($fg, .20 + $border_strength));
+
+		&:prelight {
+            @include linear-gradient(shade($bg, 1.05));
+            @include border(alpha($fg, .20 + $border_strength));
+
+            box-shadow: 0 1px 2px -1px alpha($dark_shadow, .22 + $shadow_strength);
+        }
+
+        &:focused {
+            @include linear-gradient(shade($bg, 1.05));
+            @include border(alpha($fg, .20 + $border_strength));
 
             box-shadow: 0 1px 2px -1px alpha($dark_shadow, .32 + $shadow_strength);
+			&:prelight {
+				@include linear-gradient(shade($bg, 1.1));
+				@include border(alpha($fg, .20 + $border_strength));
+
+				box-shadow: 0 1px 2px -1px alpha($dark_shadow, .38 + $shadow_strength);
+			}
         }
 
         &:checked, &:active {
@@ -202,11 +318,11 @@
             inset  0 1px alpha($fg, .07),
             inset -1px 0 alpha($fg, .06),
             inset 0 -1px alpha($fg, .05);
-			@include border(alpha($fg, .12 + $border_strength));
+            @include border(alpha($fg, .12 + $border_strength));
 
             &:focus, &:hover {
                 /*@include linear-gradient(shade($bg, .65), to top);*/
-				@include linear-gradient(shade($selected_bg_color, 1.1), to top);
+                @include linear-gradient(shade($selected_bg_color, 1.05), to top);
 
                 color: $selected_fg_color;
             }
@@ -215,18 +331,18 @@
         &:focus, &:hover { color: $fg; }
 
         &:disabled:disabled {
-			@include linear-gradient(alpha(mix($bg, $fg, .2), .3));
-			/*border: 1px solid alpha($bg, .2);*/
-			opacity: .6;
+            @include linear-gradient(alpha(mix($bg, $fg, .2), .4));
+            /*border: 1px solid alpha($bg, .2);*/
+            opacity: .4;
 
             color: mix($bg, $fg, .5);
             box-shadow: none;
         }
 
         &:active:disabled, &:checked:disabled {
-			@include linear-gradient(alpha($selected_bg_color, .6));
+            @include linear-gradient(alpha($selected_bg_color, .6));
 
-            color: $fg;
+            color: $selected_fg_color;
             box-shadow: none;
         }
     }
@@ -262,114 +378,110 @@
         }
     }
 
-	spinbutton.horizontal entry {
-		border-radius: $roundness;
-		border-bottom-right-radius: 0;
-		border-top-right-radius: 0;
-		border-right-width: 0;
-	}
 
     button {
         min-height: 22px;
         min-width: 24px;
         @include button($button_bg_color, $button_fg_color);
 
-        &.link, .link & { @include linked_button(shade($bg_color, 1.2)); }
 
-		spinbutton & {
-			/*&:active:hover, &:checked:hover,*/
-			/*&:focus,*/
-			&:hover:focus, &:active:focus, &:active:hover:focus {
-				@include linear-gradient(shade($button_bg_color, 1.4));
-			}
-		}
-		spinbutton.horizontal & {
-			@include linked_button($button_bg_color);
-		}
+        .inline-toolbar &,
+        .linked > & { @include linked_button($button_bg_color); }
 
-        &.linked, .linked & { @include linked_button($button_bg_color); }
+        .linked.vertical > & { @include linked_vertical_button($button_bg_color); }
+    }
 
-/*
-        spinbutton & {
-            color: mix($text_color, $base_color, .4);
-            padding: $spacing ($spacing * 2);
-            border: 0;
-            border-radius: 0;
-            border-style: none;
-            background-color: transparent;
-            background-image: none;
-            box-shadow: inset 1px 0 shade($base_color, .9);
+    spinbutton {
 
-            &:disabled {
-                color: mix($text_color, $base_color, .7);
-                box-shadow: inset 1px 0 shade($base_color, .85);
+        &:disabled {
+            opacity: .4;
+        }
+
+        button {
+            color: $button_fg_color;
+
+            &:active, &:checked, &:hover {
+                @include linear-gradient(shade($button_bg_color, 1.2));
             }
 
-            &:active, &:checked, &:hover { color: $text_color; }
+            &:disabled { color: mix($button_fg_color, $bg_color, .7); }
 
-            &:first-child {
+            &:backdrop { color: mix($backdrop_base_color, $backdrop_fg_color, .9); }
+
+            &:backdrop:disabled { color: alpha($backdrop_insensitive_color, .8); }
+        }
+
+        &:not(.vertical) {
+            /*@extend %entry;*/
+            @include linear-gradient($base_color, to top);
+            /*@include border($base_color);*/
+
+            padding: 0;
+			border-radius: $roundness;
+
+            color: $text_color;
+            caret-color: $text_color;
+
+            /*&:focus, &:active { border-color: border_focus($borders_color); }*/
+
+            &:disabled {
+                @include linear-gradient(shade($base_color, .9), to top);
+
+                color: mix($base_color, $text_color, .5);
+            }
+
+            entry {
                 border-radius: $roundness 0 0 $roundness;
+                border-right-width: 0;
                 box-shadow: none;
             }
 
-            &:last-child { border-radius: 0 $roundness $roundness 0; }
+            button {
+                @extend %linked_middle;
+                border-radius: 0;
+                /*border-color: alpha($borders_color, .8);*/
+                /*border-style: none none none solid;*/
+                background-image: none;
+                box-shadow: none;
 
-            &:dir(rtl) { box-shadow: inset -1px 0 shade($base_color, .9); }
+                &:dir(rtl) { border-style: none solid none none; }
+
+                &:active { box-shadow: inset 0 2px 3px -1px transparentize($black, .8); }
+
+                &:backdrop { border-color: alpha($backdrop_borders_color, .8); }
+
+                &:backdrop:disabled {
+                    border-style: none none none solid; // It is needed or it gets overridden
+
+                    &:dir(rtl) { border-style: none solid none none; }
+                }
+
+                &:dir(rtl):first-child { border-radius: $roundness 0 0 $roundness; }
+
+                &:dir(ltr):last-child { border-radius: 0 $roundness $roundness 0; }
+            }
         }
 
-        spinbutton.vertical & {
-            border: 1px solid shade($bg_color, .8);
-            border-radius: $roundness;
-            background-color: shade($bg_color, 1.08);
-            background-image: none;
-            color: $fg_color;
-            box-shadow: none;
-
-            &:hover {
-                border-color: shade($bg_color, .7);
-                background-color: shade($bg_color, 1.1);
-                background-image: none;
-            }
-
-            &:active, &:checked {
-                border-color: shade($bg_color, .8);
-                background-color: shade($bg_color, .95);
-                background-image: none;
-            }
-
-            &:active:hover, &:checked:hover {
-                border-color: shade($bg_color, .7);
-            }
-
-            &:focus, &:hover:focus, &:active:focus, &:active:hover:focus { border-color: shade($bg_color, .7); }
-
-            &:disabled {
-                border-color: shade($bg_color, .85);
-                background-color: shade($bg_color, .9);
-                background-image: none;
-            }
-
-            &:first-child {
-                border-width: 1px;
-                border-bottom-width: 0;
-                border-bottom-right-radius: 0;
-                border-bottom-left-radius: 0;
-            }
-
-            &:last-child {
-                border-width: 1px;
+        &.vertical {
+            entry {
+                // reset all the other props since the spinbutton node is styled here
+                border-radius: 0;
                 border-top-width: 0;
-                border-top-left-radius: 0;
-                border-top-right-radius: 0;
+                border-bottom-width: 0;
+            }
+
+            button {
+                &.up {
+                    /*border-style: solid solid none solid;*/
+                    border-radius: $roundness $roundness 0 0;
+                }
+
+                &.down {
+                    /*border-style: none solid solid solid;*/
+                    border-radius: 0 0 $roundness $roundness; 
+                }
             }
         }
-*/
-        spinbutton.vertical entry {
-            border-width: 1px;
-            border-style: solid;
-            border-radius: 0;
-        }
-
     }
 }
 

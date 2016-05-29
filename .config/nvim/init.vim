@@ -105,6 +105,8 @@ set number
 set title
 set mouse=i
 
+set list listchars=precedes:«,extends:»,tab:»!,nbsp:„,trail:!
+
 " key bindings
 " --------------------------------------
 "  toggle paste mode (prevents wonky formatting when pasting into a terminal)

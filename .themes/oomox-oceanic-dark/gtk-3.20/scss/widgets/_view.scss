@@ -143,23 +143,23 @@
 
         &.expander {
             -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
-            color: mix($fg_color, $base_color, .7);
+            color: mix($base_color, $fg_color, .7);
 
             &:dir(rtl) { -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl'); }
 
             &:hover { color: $fg_color; }
 
             &:selected {
-                color: mix($selected_fg_color, $selected_bg_color, .7);
+                color: mix($selected_bg_color, $selected_fg_color, .7);
 
                 &:hover { color: $selected_fg_color; }
 
-                &:backdrop { color: mix($backdrop_selected_fg_color, $selected_bg_color, .7); }
+                &:backdrop { color: mix($selected_bg_color, $backdrop_selected_fg_color, .7); }
             }
 
             &:checked { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
 
-            &:backdrop { color: mix($backdrop_fg_color, $backdrop_base_color, .7); }
+            &:backdrop { color: mix($backdrop_base_color, $backdrop_fg_color, .7); }
         }
 
         &.progressbar { // progress bar in treeviews
@@ -256,7 +256,7 @@
                 }
             }
 
-            button:last-child { &:backdrop, & { border-right-style: none; }}
+            button:last-child { &:backdrop, & { border-right-style: none; } }
         }
 
         button.dnd,
@@ -273,6 +273,8 @@
                 text-shadow: none;
             }
         }
+
+        acceleditor > label { background-color: $selected_bg_color; }
     }
 }
 
@@ -286,38 +288,6 @@
         background: transparentize($black, .9);
         min-width: 1px;
         min-height: 1px;
-    }
-}
-
-
-/*********************
- ! Column view headers
-**********************/
-
-@include exports("columnheader") {
-    column-header {
-        .button {
-            &, &:active {
-                border-width: 0 1px 1px 0;
-                border-radius: 0;
-            }
-
-            &, &:active, &:focus, &:active:focus {
-                border-color: shade($base_color, .9);
-                border-bottom-color: shade($base_color, .8);
-                background-color: shade($base_color, .97);
-                background-image: none;
-            }
-
-            &:hover, &:active:hover, &:hover:focus, &:active:hover:focus {
-                border-color: shade($base_color, .9);
-                border-bottom-color: shade($base_color, .8);
-                background-color: shade($base_color, .99);
-                background-image: none;
-            }
-
-            &:last-child .button { border-width: 0 0 1px; }
-        }
     }
 }
 

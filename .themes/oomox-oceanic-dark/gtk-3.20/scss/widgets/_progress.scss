@@ -8,40 +8,41 @@
         border-radius: $roundness;
         font-size: smaller;
         color: alpha($fg_color, .6);
-        min-width: 6px;
-        min-height: 6px;
 
-        &.osd {
-            min-height: 4px;
+        // sizing
+        &.horizontal {
+            trough,
+            progress { min-height: 6px; }
         }
+
+        &.vertical {
+            trough,
+            progress { min-width: 6px; }
+        }
+
+        &.osd { min-height: 4px; }
 
         trough {
             border: 1px solid alpha(border_normal($bg_color), .5);
             background-color: shade($bg_color, 1.08);
             background-image: none;
-        }
-    }
-
-    progressbar progress {
-        @include linear-gradient($selected_bg_color);
-
-        border-radius: 0;
-        box-shadow: none;
-
-        &.left {
-            border-top-left-radius: $roundness;
-            border-bottom-left-radius: $roundness;
+            border-radius: $roundness;
         }
 
-        &.right {
-            border-top-right-radius: $roundness;
-            border-bottom-right-radius: $roundness;
-        }
+        progress {
+            @include linear-gradient($selected_bg_color);
 
-        &.left.right { box-shadow: none; }
+            border-radius: 0;
 
-        &.vertical {
-            @include linear-gradient($selected_bg_color, to right);
+            &.left {
+                border-top-left-radius: $roundness;
+                border-bottom-left-radius: $roundness;
+            }
+
+            &.right {
+                border-top-right-radius: $roundness;
+                border-bottom-right-radius: $roundness;
+            }
 
             &.bottom {
                 border-bottom-left-radius: $roundness;
@@ -51,6 +52,26 @@
             &.top {
                 border-top-left-radius: $roundness;
                 border-top-right-radius: $roundness;
+            }
+        }
+
+        &.osd { // progressbar.osd used for epiphany page loading progress
+            margin: 2px;
+            min-height: 2px;
+            min-width: 2px;
+
+            trough {
+                border-style: none;
+                border-radius: 0;
+                background-image: none;
+                background-color: transparent;
+            }
+
+            progress {
+                border-style: none;
+                border-radius: 0;
+                background-color: $selected_bg_color;
+                background-image: none;
             }
         }
     }
@@ -75,22 +96,21 @@
             border-radius: $roundness;
         }
 
-        &.horizontal.discrete { margin-right: 1px; }
+        &.horizontal.discrete block {
+            margin: 0 2px;
 
-        &.vertical.discrete { margin-bottom: 1px; }
+            &:first-child { margin: 0; }
+        }
 
-        block:not(.empty) {
-            @include linear-gradient($selected_bg_color);
+        &.vertical.discrete block {
+            margin: 2px 0;
 
-            border-color: transparent;
-            border-radius: 0;
+            &:first-child { margin: 0; }
         }
 
         block {
             @include linear-gradient($selected_bg_color);
 
-            // FIXME: it would be nice to set make fill blocks bigger, but we'd need
-            // :nth-child working on discrete indicators
             border-color: transparent;
             border-radius: 0;
 
@@ -99,7 +119,8 @@
                 border-color: transparent;
             }
 
-            &.high {
+            &.high,
+            &:not(.empty) {
                 background-color: $selected_bg_color;
                 border-color: transparent;
             }

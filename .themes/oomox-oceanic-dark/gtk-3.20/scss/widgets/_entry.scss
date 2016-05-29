@@ -14,6 +14,11 @@
         border-right-width: 0;
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
+
+        &:dir(rtl) {
+            border-left-width: 0;
+            border-right-width: 1px;
+        }
     }
 
     &:last-child {
@@ -22,16 +27,66 @@
         border-left-width: 0;
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
+
+        &:dir(rtl) {
+            border-left-width: 1px;
+            border-right-width: 0;
+        }
+    }
+
+    &:only-child, &:first-child:only-child {
+        border-width: 1px;
     }
 
     &:only-child {
+        border-radius: $roundness;
+    }
+}
+
+%linked_vertical_entry {
+    border-width: 1px;
+    border-radius: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+
+    &:first-child {
         border-width: 1px;
+        border-radius: $roundness;
+        border-top-width: 1px;
+        border-bottom-width: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &:dir(rtl) {
+            border-top-width: 0;
+            border-bottom-width: 1px;
+        }
+    }
+
+    &:last-child {
+        border-width: 1px;
+        border-radius: $roundness;
+        border-top-width: 0;
+        border-bottom-width: 1px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+        &:dir(rtl) {
+            border-top-width: 1px;
+            border-bottom-width: 0;
+        }
+    }
+
+    &:only-child, &:first-child:only-child {
+        border-width: 1px;
+    }
+
+    &:only-child {
         border-radius: $roundness;
     }
 }
 
 %entry {
-    padding: $spacing;
     border-width: 1px;
     border-style: solid;
     border-radius: $roundness;
@@ -48,7 +103,7 @@
 
     &:disabled { box-shadow: none; }
 
-    & progressbar {
+    progress {
         @include linear-gradient($selected_bg_color);
 
         border-width: 0;
@@ -56,19 +111,19 @@
         color: $selected_fg_color;
     }
 
-    & image.left { padding-right: $spacing; }
-    & image.right { padding-left: $spacing; }
+    image.left { padding-right: $spacing; }
 
-    selection {
-        background-color: $selected_bg_color;
-        color: $selected_fg_color;
-    }
+    image.right { padding-left: $spacing; }
+
+    selection { &:focus, & { @extend %selected_items; } }
 }
 
 @mixin entry($bg, $fg) {
     @extend %entry;
     @include linear-gradient($bg, to top);
     @include border(mix($bg, $fg, .20));
+
+    padding: $spacing;
 
     color: $fg;
     caret-color: $fg;
@@ -90,6 +145,8 @@
     entry {
         @include entry($base_color, $text_color);
 
-        &.linked, .linked & { @extend %linked_entry; }
+        .linked:not(.vertical) > & { @extend %linked_entry; }
+
+        .linked.vertical > & { @extend %linked_vertical_entry; }
     }
 }
