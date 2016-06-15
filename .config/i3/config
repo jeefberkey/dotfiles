@@ -21,7 +21,7 @@ set $color5 #d8dee9
 # ==================
 
 # startup
-exec seafile-applet
+#exec seafile-applet
 exec nm-applet
 
 # disable screen blanking

@@ -6,7 +6,8 @@ export ZSH=/home/nick/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="junkfood"
-ZSH_THEME="nanotech"
+#ZSH_THEME="nanotech"
+ZSH_THEME="gnzh"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

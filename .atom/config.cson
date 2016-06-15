@@ -25,6 +25,7 @@
   hidpi:
     scaleFactor: 1.2
   linter:
+    errorPanelHeight: 184
     ignoredLinterErrors: [
       "puppet-lint"
     ]
