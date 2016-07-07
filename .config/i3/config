@@ -89,7 +89,7 @@ client.placeholder      $color4 $color1 $color5 $color3 $color4
 
 # turns off gaps and borderswhen there's only one window
 #smart_gaps on
-#smart_borders on
+smart_borders on
 
 for_window [class="^.*"] border pixel 5
 gaps inner 5
@@ -258,7 +258,7 @@ bindsym $mod+r mode "resize"
 # =============
 bar {
   position top
-  height 28
+  #height 28
   tray_padding 0
 
   colors {

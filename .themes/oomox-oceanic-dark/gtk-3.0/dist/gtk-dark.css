@@ -2,10 +2,10 @@
 @define-color dark_bg_color #343d46;
 @define-color dark_fg_color #d8d8d8;
 /* colormap actually used by the theme, to be overridden in other css files */
-@define-color theme_bg_color #343d46;
-@define-color theme_fg_color #d8dee9;
-@define-color theme_base_color #d8dee9;
-@define-color theme_text_color #343d46;
+@define-color theme_bg_color #d8dee9;
+@define-color theme_fg_color #343d46;
+@define-color theme_base_color #343d46;
+@define-color theme_text_color #d8dee9;
 @define-color theme_selected_bg_color #99c794;
 @define-color theme_selected_fg_color #343d46;
 @define-color theme_tooltip_bg_color #343d46;
@@ -87,7 +87,7 @@
   -GtkWidget-link-color: #3f51b5;
   -GtkWidget-visited-link-color: #3f51b5; }
   *:insensitive, *:insensitive:insensitive {
-    color: mix(#d8dee9,#343d46,0.5); }
+    color: mix(#343d46,#d8dee9,0.5); }
   *:insensitive {
     -gtk-image-effect: dim; }
   *:hover {
@@ -96,40 +96,40 @@
     color: #3f51b5; }
 
 .background {
-  background-color: #343d46;
-  color: #d8dee9; }
+  background-color: #d8dee9;
+  color: #343d46; }
   .background:backdrop {
     text-shadow: none;
     icon-shadow: none; }
   .background.csd {
-    background-color: #343d46; }
+    background-color: #d8dee9; }
 
 .gtkstyle-fallback {
-  background-color: rgba(52, 61, 70, 0.5);
-  color: #d8dee9; }
-  .gtkstyle-fallback:prelight {
-    background-color: #39434d;
-    color: #d8dee9; }
+  background-color: rgba(216, 222, 233, 0.5);
+  color: #343d46; }
+  .gtkstyle-fallback:hover {
+    background-color: #f5f6f9;
+    color: #343d46; }
   .gtkstyle-fallback:active {
-    background-color: #2f373f;
-    color: #d8dee9; }
+    background-color: #bbc6d9;
+    color: #343d46; }
   .gtkstyle-fallback:insensitive {
-    background-color: #343d46;
-    color: mix(#d8dee9,#343d46,0.5); }
+    background-color: #d7dde9;
+    color: mix(#343d46,#d8dee9,0.5); }
 
 GtkImage, GtkImage:insensitive, GtkLabel, GtkLabel:insensitive, GtkBox, GtkBox:insensitive, GtkGrid, GtkGrid:insensitive {
   background-color: transparent; }
 
 GtkLabel.separator {
-  color: #d8dee9; }
+  color: #343d46; }
 GtkLabel:insensitive {
-  color: mix(#d8dee9,#343d46,0.5); }
+  color: mix(#343d46,#d8dee9,0.5); }
 
 /*********
  ! Buttons
 **********/
-.button, .button.default, .toolbar .button, .header-bar .button, .suggested-action.button, .selection-mode.header-bar .button.suggested-action, .selection-mode.toolbar .button.suggested-action, .destructive-action.button, .selection-mode.header-bar .button, .selection-mode.toolbar .button, GtkInfoBar.info .button, GtkInfoBar.warning .button, GtkInfoBar.question .button, GtkInfoBar.error .button, GtkPopover .button, GtkModelButton.button, GtkModelButton.button:backdrop, .app-notification .button, .app-notification.frame .button, .osd.button, .osd .button, NemoPathbarButton {
-  padding: 5px 7px;
+.button, .button.default, .toolbar .button, .header-bar .button, .suggested-action.button, .selection-mode.header-bar .button.suggested-action, .selection-mode.toolbar .button.suggested-action, .destructive-action.button, .selection-mode.header-bar .button, .selection-mode.toolbar .button, .info .button, .warning .button, .question .button, .error .button, GtkPopover .button, GtkModelButton.button, GtkModelButton.button:backdrop, .app-notification .button, .app-notification.frame .button, .osd.button, .osd .button, NemoPathbarButton {
+  padding: 6px 8px;
   border-width: 1px;
   border-style: solid;
   border-radius: 0px;
@@ -137,7 +137,7 @@ GtkLabel:insensitive {
   outline-color: transparent;
   -GtkWidget-focus-padding: 1;
   -GtkWidget-focus-line-width: 0; }
-  .button:focus, .selection-mode.header-bar .button:focus, .selection-mode.toolbar .button:focus, GtkInfoBar.info .button:focus, GtkInfoBar.warning .button:focus, GtkInfoBar.question .button:focus, GtkInfoBar.error .button:focus, GtkModelButton.button:focus:backdrop, .app-notification.frame .button:focus, NemoPathbarButton:focus, .button:hover, .selection-mode.header-bar .button:hover, .selection-mode.toolbar .button:hover, GtkInfoBar.info .button:hover, GtkInfoBar.warning .button:hover, GtkInfoBar.question .button:hover, GtkInfoBar.error .button:hover, GtkModelButton.button:hover:backdrop, .app-notification.frame .button:hover, NemoPathbarButton:hover, .button:active, .selection-mode.header-bar .button:active, .selection-mode.toolbar .button:active, GtkInfoBar.info .button:active, GtkInfoBar.warning .button:active, GtkInfoBar.question .button:active, GtkInfoBar.error .button:active, GtkModelButton.button:active:backdrop, .app-notification.frame .button:active, NemoPathbarButton:active {
+  .button:focus, .selection-mode.header-bar .button:focus, .selection-mode.toolbar .button:focus, GtkModelButton.button:focus:backdrop, .app-notification.frame .button:focus, NemoPathbarButton:focus, .button:hover, .selection-mode.header-bar .button:hover, .selection-mode.toolbar .button:hover, GtkModelButton.button:hover:backdrop, .app-notification.frame .button:hover, NemoPathbarButton:hover, .button:active, .selection-mode.header-bar .button:active, .selection-mode.toolbar .button:active, GtkModelButton.button:active:backdrop, .app-notification.frame .button:active, NemoPathbarButton:active {
     transition: none; }
 
 .linked > GtkComboBox > .button:dir(ltr) {
@@ -191,17 +191,17 @@ GtkLabel:insensitive {
   -GtkButtonBox-child-internal-pad-y: 1;
   -GtkToolButton-icon-spacing: 6; }
 
-GtkInfoBar.info .button.close, GtkInfoBar.warning .button.close, GtkInfoBar.question .button.close, GtkInfoBar.error .button.close, .notebook tab .button {
+.info .button.close, .warning .button.close, .question .button.close, .error .button.close, .notebook tab .button {
   border: 1px solid transparent;
   background-color: transparent;
   background-image: none;
   box-shadow: none; }
-  GtkInfoBar.info .button.close:focus, GtkInfoBar.warning .button.close:focus, GtkInfoBar.question .button.close:focus, GtkInfoBar.error .button.close:focus, .notebook tab .button:focus, GtkInfoBar.info .button.close:hover, GtkInfoBar.warning .button.close:hover, GtkInfoBar.question .button.close:hover, GtkInfoBar.error .button.close:hover, .notebook tab .button:hover {
+  .info .button.close:focus, .warning .button.close:focus, .question .button.close:focus, .error .button.close:focus, .notebook tab .button:focus, .info .button.close:hover, .warning .button.close:hover, .question .button.close:hover, .error .button.close:hover, .notebook tab .button:hover {
     border: 1px solid rgba(0, 0, 0, 0.3);
     background-color: rgba(255, 255, 255, 0.2);
     background-image: none;
     box-shadow: none; }
-  GtkInfoBar.info .button.close:active, GtkInfoBar.warning .button.close:active, GtkInfoBar.question .button.close:active, GtkInfoBar.error .button.close:active, .notebook tab .button:active, GtkInfoBar.info .button.close:checked, GtkInfoBar.warning .button.close:checked, GtkInfoBar.question .button.close:checked, GtkInfoBar.error .button.close:checked, .notebook tab .button:checked, GtkInfoBar.info .button.close:active:hover, GtkInfoBar.warning .button.close:active:hover, GtkInfoBar.question .button.close:active:hover, GtkInfoBar.error .button.close:active:hover, .notebook tab .button:active:hover, GtkInfoBar.info .button.close:checked:hover, GtkInfoBar.warning .button.close:checked:hover, GtkInfoBar.question .button.close:checked:hover, GtkInfoBar.error .button.close:checked:hover, .notebook tab .button:checked:hover {
+  .info .button.close:active, .warning .button.close:active, .question .button.close:active, .error .button.close:active, .notebook tab .button:active, .info .button.close:checked, .warning .button.close:checked, .question .button.close:checked, .error .button.close:checked, .notebook tab .button:checked, .info .button.close:active:hover, .warning .button.close:active:hover, .question .button.close:active:hover, .error .button.close:active:hover, .notebook tab .button:active:hover, .info .button.close:checked:hover, .warning .button.close:checked:hover, .question .button.close:checked:hover, .error .button.close:checked:hover, .notebook tab .button:checked:hover {
     border: 1px solid rgba(0, 0, 0, 0.3);
     background-color: rgba(0, 0, 0, 0.1);
     background-image: none;
@@ -209,10 +209,10 @@ GtkInfoBar.info .button.close, GtkInfoBar.warning .button.close, GtkInfoBar.ques
 
 .button {
   /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
-  background-color: #6699cc;
-  background-image: linear-gradient(to bottom, #6b9cce, #6196ca);
+  background-color: #d8dee9;
+  background-image: linear-gradient(to bottom, #dee3ec, #d2d9e6);
   border-color: rgba(0, 0, 0, 0.12);
-  color: #d8dee9;
+  color: #6699cc;
   box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.12); }
   .button:focus, .button:hover {
     border-color: rgba(0, 0, 0, 0.12); }
@@ -223,13 +223,13 @@ GtkInfoBar.info .button.close, GtkInfoBar.warning .button.close, GtkInfoBar.ques
   .button:active:insensitive, .button:checked:insensitive {
     border-color: rgba(0, 0, 0, 0.12); }
   .button.flat {
-    border-color: rgba(102, 153, 204, 0);
-    background-color: rgba(102, 153, 204, 0);
+    border-color: rgba(216, 222, 233, 0);
+    background-color: rgba(216, 222, 233, 0);
     background-image: none;
     box-shadow: none; }
   .button:focus, .button:hover, .button.flat:focus, .button.flat:hover {
-    background-color: #94b8db;
-    background-image: linear-gradient(to bottom, #99bbdd, #8eb4d9);
+    background-color: white;
+    background-image: linear-gradient(to bottom, white, #f8f9fb);
     border-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.32); }
     .button:focus:focus, .button:focus:hover, .button:hover:focus, .button:hover:hover, .button.flat:focus:focus, .button.flat:focus:hover, .button.flat:hover:focus, .button.flat:hover:hover {
@@ -241,31 +241,31 @@ GtkInfoBar.info .button.close, GtkInfoBar.warning .button.close, GtkInfoBar.ques
     .button:focus:active:insensitive, .button:focus:checked:insensitive, .button:hover:active:insensitive, .button:hover:checked:insensitive, .button.flat:focus:active:insensitive, .button.flat:focus:checked:insensitive, .button.flat:hover:active:insensitive, .button.flat:hover:checked:insensitive {
       border-color: rgba(0, 0, 0, 0.2); }
   .button:active, .button:checked, .button.flat:active, .button.flat:checked {
-    background-color: #366ba1;
-    background-image: linear-gradient(to top, #376da4, #34699d);
+    background-color: #8295b8;
+    background-image: linear-gradient(to top, #8699bb, #7e92b6);
     color: #343d46;
     box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06), inset 0 -1px rgba(0, 0, 0, 0.05); }
     .button:active:focus, .button:active:hover, .button:checked:focus, .button:checked:hover, .button.flat:active:focus, .button.flat:active:hover, .button.flat:checked:focus, .button.flat:checked:hover {
-      background-color: #326395;
-      background-image: linear-gradient(to top, #336598, #316192);
+      background-color: #7489b0;
+      background-image: linear-gradient(to top, #778cb2, #7086ae);
       color: #343d46; }
   .button:focus, .button:hover, .button.flat:focus, .button.flat:hover {
-    color: #d8dee9; }
+    color: #6699cc; }
   .button:active:insensitive, .button:checked:insensitive, .button.flat:active:insensitive, .button.flat:checked:insensitive {
-    background-color: #4f8ac4;
-    background-image: linear-gradient(to bottom, #538cc6, #4b87c3);
-    color: #d8dee9;
+    background-color: #bbc6d9;
+    background-image: linear-gradient(to bottom, #c0cadc, #b6c1d6);
+    color: #6699cc;
     box-shadow: none; }
   .button:insensitive:insensitive, .button.flat:insensitive:insensitive {
-    background-color: #5b91c8;
-    background-image: linear-gradient(to bottom, #5f94ca, #568ec7);
-    color: mix(#6699cc,#d8dee9,0.5);
+    background-color: #cad2e1;
+    background-image: linear-gradient(to bottom, #cfd6e4, #c4cdde);
+    color: mix(#d8dee9,#6699cc,0.5);
     box-shadow: none; }
   .button.separator, .button .separator {
     border: 1px solid currentColor;
-    color: #4f8ac4; }
+    color: #bbc6d9; }
     .button.separator:insensitive, .button .separator:insensitive {
-      color: #4482c1; }
+      color: #adbad1; }
   .button.default {
     /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
     background-color: #99c794;
@@ -332,7 +332,7 @@ GtkInfoBar.info .button.close, GtkInfoBar.warning .button.close, GtkInfoBar.ques
     .button.linked:active, .button.linked:active:hover, .button.linked:active:focus, .button.linked:active:hover:focus, .button.linked:checked, .button.linked:checked:hover, .button.linked:checked:focus, .button.linked:checked:hover:focus, .linked .button:active, .linked .button:active:hover, .linked .button:active:focus, .linked .button:active:hover:focus, .linked .button:checked, .linked .button:checked:hover, .linked .button:checked:focus, .linked .button:checked:hover:focus {
       box-shadow: inset -1px 0 rgba(0, 0, 0, 0.12), inset 0 1px rgba(0, 0, 0, 0.07), inset 0 -1px rgba(0, 0, 0, 0.05); }
     .button.linked:insensitive, .linked .button:insensitive {
-      box-shadow: inset -1px 0 #3d7ab8; }
+      box-shadow: inset -1px 0 #9fadc9; }
     .button.linked:last-child, .button.linked:only-child, .linked .button:last-child, .linked .button:only-child {
       box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.12); }
     .button.linked:last-child:hover, .button.linked:only-child:hover, .linked .button:last-child:hover, .linked .button:only-child:hover {
@@ -344,48 +344,48 @@ GtkInfoBar.info .button.close, GtkInfoBar.warning .button.close, GtkInfoBar.ques
     .button.linked:active:only-child, .button.linked:active:only-child:focus, .button.linked:active:only-child:hover, .button.linked:active:only-child:hover:focus, .button.linked:checked:only-child, .button.linked:checked:only-child:focus, .button.linked:checked:only-child:hover, .button.linked:checked:only-child:hover:focus, .linked .button:active:only-child, .linked .button:active:only-child:focus, .linked .button:active:only-child:hover, .linked .button:active:only-child:hover:focus, .linked .button:checked:only-child, .linked .button:checked:only-child:focus, .linked .button:checked:only-child:hover, .linked .button:checked:only-child:hover:focus {
       box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06); }
   .spinbutton .button {
-    color: mix(#343d46,#d8dee9,0.4);
-    padding: 5px 10px;
+    color: mix(#d8dee9,#343d46,0.4);
+    padding: 6px 12px;
     border: 0;
     border-radius: 0;
     border-style: none;
     background-color: transparent;
     background-image: none;
-    box-shadow: inset 1px 0 #bbc6d9; }
+    box-shadow: inset 1px 0 #2f373f; }
     .spinbutton .button:insensitive {
-      color: mix(#343d46,#d8dee9,0.7);
-      box-shadow: inset 1px 0 #adbad1; }
+      color: mix(#d8dee9,#343d46,0.7);
+      box-shadow: inset 1px 0 #2c343c; }
     .spinbutton .button:active, .spinbutton .button:checked, .spinbutton .button:hover {
-      color: #343d46; }
+      color: #d8dee9; }
     .spinbutton .button:first-child {
       border-radius: 0px 0 0 0px;
       box-shadow: none; }
     .spinbutton .button:last-child {
       border-radius: 0 0px 0px 0; }
     .spinbutton .button:dir(rtl) {
-      box-shadow: inset -1px 0 #bbc6d9; }
+      box-shadow: inset -1px 0 #2f373f; }
   .spinbutton.vertical .button {
-    border: 1px solid #2a3138;
+    border: 1px solid #9fadc9;
     border-radius: 0px;
-    background-color: #38424c;
+    background-color: #eff1f6;
     background-image: none;
-    color: #d8dee9;
+    color: #343d46;
     box-shadow: none; }
     .spinbutton.vertical .button:hover {
-      border-color: #242b31;
-      background-color: #39434d;
+      border-color: #8295b8;
+      background-color: #f5f6f9;
       background-image: none; }
     .spinbutton.vertical .button:active, .spinbutton.vertical .button:checked {
-      border-color: #2a3138;
-      background-color: #313a43;
+      border-color: #9fadc9;
+      background-color: #cad2e1;
       background-image: none; }
     .spinbutton.vertical .button:active:hover, .spinbutton.vertical .button:checked:hover {
-      border-color: #242b31; }
+      border-color: #8295b8; }
     .spinbutton.vertical .button:focus, .spinbutton.vertical .button:hover:focus, .spinbutton.vertical .button:active:focus, .spinbutton.vertical .button:active:hover:focus {
-      border-color: #242b31; }
+      border-color: #8295b8; }
     .spinbutton.vertical .button:insensitive {
-      border-color: #2c343c;
-      background-color: #2f373f;
+      border-color: #adbad1;
+      background-color: #bbc6d9;
       background-image: none; }
     .spinbutton.vertical .button:first-child {
       border-width: 1px;
@@ -406,7 +406,7 @@ GtkInfoBar.info .button.close, GtkInfoBar.warning .button.close, GtkInfoBar.ques
 ! ComboBoxes *
 *******************/
 GtkComboBox > .button {
-  padding: 3px 6px;
+  padding: 4px 7px;
   -GtkComboBox-arrow-scaling: .5;
   -GtkComboBox-shadow-type: none; }
 GtkComboBox .separator {
@@ -441,7 +441,7 @@ GtkComboBox .separator {
     border-radius: 0px; }
 
 .entry, .menuitem .entry, GtkPopover .entry {
-  padding: 4px 5px;
+  padding: 5px 6px;
   border-width: 1px;
   border-style: solid;
   border-radius: 0px;
@@ -461,27 +461,27 @@ GtkComboBox .separator {
     border-radius: 0px;
     color: #343d46; }
   .image.left.entry {
-    padding-right: 5px; }
+    padding-right: 6px; }
 
 .entry {
-  background-color: #d8dee9;
-  background-image: linear-gradient(to top, #dee3ec, #d2d9e6);
-  border-color: #9fadc9;
-  color: #343d46; }
+  background-color: #343d46;
+  background-image: linear-gradient(to top, #353e47, #333c45);
+  border-color: #2a3138;
+  color: #d8dee9; }
   .entry:focus, .entry:hover {
-    border-color: #90a1c1; }
+    border-color: #272e35; }
   .entry:active, .entry:active:hover, .entry:active:focus, .entry:active:hover:focus, .entry:checked, .entry:checked:hover, .entry:checked:focus, .entry:checked:hover:focus {
-    border-color: #8295b8; }
+    border-color: #242b31; }
   .entry:insensitive {
-    border-color: #adbad1; }
+    border-color: #2c343c; }
   .entry:active:insensitive, .entry:checked:insensitive {
-    border-color: #9fadc9; }
+    border-color: #2a3138; }
   .entry:focus, .entry:active {
     border-color: #99c794; }
   .entry:insensitive {
-    background-color: #bbc6d9;
-    background-image: linear-gradient(to top, #c0cadc, #b6c1d6);
-    color: mix(#d8dee9,#343d46,0.5); }
+    background-color: #2f373f;
+    background-image: linear-gradient(to top, #303840, #2e363e);
+    color: mix(#343d46,#d8dee9,0.5); }
 
 /*********
  ! Buttons
@@ -499,31 +499,31 @@ GtkComboBox .separator {
  ! Toolbar
 **********/
 .toolbar {
-  background-color: #343d46;
-  background-image: linear-gradient(to bottom, #353e47, #333c45);
-  border-color: #2a3138;
-  padding: 10px;
-  color: #d8dee9;
+  background-color: #d8dee9;
+  background-image: linear-gradient(to bottom, #dee3ec, #d2d9e6);
+  border-color: #9fadc9;
+  padding: 12px;
+  color: #343d46;
   padding: 2px;
   border-style: none; }
   .toolbar:focus, .toolbar:hover {
-    border-color: #272e35; }
+    border-color: #90a1c1; }
   .toolbar:active, .toolbar:active:hover, .toolbar:active:focus, .toolbar:active:hover:focus, .toolbar:checked, .toolbar:checked:hover, .toolbar:checked:focus, .toolbar:checked:hover:focus {
-    border-color: #242b31; }
+    border-color: #8295b8; }
   .toolbar:insensitive {
-    border-color: #2c343c; }
+    border-color: #adbad1; }
   .toolbar:active:insensitive, .toolbar:checked:insensitive {
-    border-color: #2a3138; }
+    border-color: #9fadc9; }
   .toolbar:insensitive {
-    background-color: #2f373f;
-    background-image: linear-gradient(to bottom, #303840, #2e363e);
-    color: mix(#d8dee9,#343d46,0.5); }
+    background-color: #bbc6d9;
+    background-image: linear-gradient(to bottom, #c0cadc, #b6c1d6);
+    color: mix(#343d46,#d8dee9,0.5); }
   .toolbar .title {
     font: bold;
-    padding: 0 10px; }
+    padding: 0 12px; }
   .toolbar .subtitle {
     font: smaller;
-    padding: 0 10px; }
+    padding: 0 12px; }
   .toolbar .button {
     /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
     background-color: #343d46;
@@ -602,13 +602,13 @@ GtkComboBox .separator {
     .toolbar .button.linked:active:only-child, .toolbar .button.linked:active:only-child:focus, .toolbar .button.linked:active:only-child:hover, .toolbar .button.linked:active:only-child:hover:focus, .toolbar .button.linked:checked:only-child, .toolbar .button.linked:checked:only-child:focus, .toolbar .button.linked:checked:only-child:hover, .toolbar .button.linked:checked:only-child:hover:focus, .toolbar .linked .button:active:only-child, .toolbar .linked .button:active:only-child:focus, .toolbar .linked .button:active:only-child:hover, .toolbar .linked .button:active:only-child:hover:focus, .toolbar .linked .button:checked:only-child, .toolbar .linked .button:checked:only-child:focus, .toolbar .linked .button:checked:only-child:hover, .toolbar .linked .button:checked:only-child:hover:focus {
       box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06); }
   .toolbar GtkComboBox, .toolbar .button {
-    padding: 4px; }
+    padding: 5px; }
     .toolbar GtkComboBox.text-button, .toolbar .button.text-button {
-      padding: 5px; }
+      padding: 6px; }
     .toolbar GtkComboBox.image-button, .toolbar .button.image-button {
-      padding: 6px 4px 6px 5px; }
+      padding: 7px 5px 7px 6px; }
   .toolbar GtkSeparatorToolItem, .toolbar .separator, .toolbar .separator:insensitive {
-    color: #2f373f;
+    color: #bbc6d9;
     border-color: currentColor;
     -GtkWidget-window-dragging: true; }
   .toolbar .menubar {
@@ -619,13 +619,13 @@ GtkComboBox .separator {
   .toolbar GtkToolButton:insensitive GtkButton:insensitive,
   .toolbar GtkToolButton:insensitive GtkButton:insensitive.button,
   .toolbar GtkToolButton:insensitive GtkButton:insensitive.flat.button {
-    background-color: #343d46; }
+    background-color: #d8dee9; }
 
 .header-bar {
   background-color: #343d46;
   background-image: linear-gradient(to bottom, #353e47, #333c45);
   border-color: #2a3138;
-  padding: 10px;
+  padding: 12px;
   color: #d8d8d8;
   border-width: 0 0 1px;
   border-style: solid; }
@@ -643,10 +643,10 @@ GtkComboBox .separator {
     color: mix(#d8d8d8,#343d46,0.5); }
   .header-bar .title {
     font: bold;
-    padding: 0 10px; }
+    padding: 0 12px; }
   .header-bar .subtitle {
     font: smaller;
-    padding: 0 10px; }
+    padding: 0 12px; }
   .header-bar .button {
     /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
     background-color: #343d46;
@@ -725,11 +725,11 @@ GtkComboBox .separator {
     .header-bar .button.linked:active:only-child, .header-bar .button.linked:active:only-child:focus, .header-bar .button.linked:active:only-child:hover, .header-bar .button.linked:active:only-child:hover:focus, .header-bar .button.linked:checked:only-child, .header-bar .button.linked:checked:only-child:focus, .header-bar .button.linked:checked:only-child:hover, .header-bar .button.linked:checked:only-child:hover:focus, .header-bar .linked .button:active:only-child, .header-bar .linked .button:active:only-child:focus, .header-bar .linked .button:active:only-child:hover, .header-bar .linked .button:active:only-child:hover:focus, .header-bar .linked .button:checked:only-child, .header-bar .linked .button:checked:only-child:focus, .header-bar .linked .button:checked:only-child:hover, .header-bar .linked .button:checked:only-child:hover:focus {
       box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06); }
   .header-bar GtkComboBox, .header-bar .button {
-    padding: 4px; }
+    padding: 5px; }
     .header-bar GtkComboBox.text-button, .header-bar .button.text-button {
-      padding: 5px; }
+      padding: 6px; }
     .header-bar GtkComboBox.image-button, .header-bar .button.image-button {
-      padding: 6px 4px 6px 5px; }
+      padding: 7px 5px 7px 6px; }
   .header-bar GtkSeparatorToolItem, .header-bar .separator, .header-bar .separator:insensitive {
     color: #2f373f;
     border-color: currentColor;
@@ -737,7 +737,7 @@ GtkComboBox .separator {
   .header-bar .menubar {
     -GtkToolbar-button-relief: normal; }
   .header-bar .button {
-    color: #d8dee9; }
+    color: #6699cc; }
 
 .titlebar {
   background-color: #343d46;
@@ -757,7 +757,7 @@ GtkComboBox .separator {
   .titlebar .title {
     font: bold; }
   .titlebar .titlebutton {
-    padding: 5px;
+    padding: 6px;
     border: 0;
     background-image: none;
     background-color: transparent;
@@ -782,36 +782,36 @@ GtkComboBox .separator {
  ! Action-bar *
 ***************/
 .action-bar {
-  background-color: #343d46;
-  background-image: linear-gradient(to bottom, #353e47, #333c45);
-  padding: 5px;
+  background-color: #d8dee9;
+  background-image: linear-gradient(to bottom, #dee3ec, #d2d9e6);
+  padding: 6px;
   border-width: 1px 0 0;
   border-style: solid;
-  border-color: #2a3138;
-  color: #d8dee9; }
+  border-color: #9fadc9;
+  color: #343d46; }
   .action-bar .button.text-button {
-    padding: 4px; }
+    padding: 5px; }
   .action-bar .button.image-button {
-    padding: 6px; }
+    padding: 7px; }
   .action-bar .title {
     font: bold;
-    padding: 0 10px; }
+    padding: 0 12px; }
   .action-bar .subtitle {
     font: smaller;
-    padding: 0 10px; }
+    padding: 0 12px; }
 
 /***************
  ! Search bars *
 ****************/
 .search-bar {
-  background-color: #333c45;
-  background-image: linear-gradient(to bottom, #343d46, #323b43);
+  background-color: #d2d9e6;
+  background-image: linear-gradient(to bottom, #d8dee9, #cdd4e3);
   border-width: 0 0 1px;
   border-style: solid;
-  border-color: #2a3138;
-  color: #d8dee9; }
+  border-color: #9fadc9;
+  color: #343d46; }
   .search-bar .button.close-button {
-    padding: 5px; }
+    padding: 6px; }
 
 /******************
  ! Action buttons *
@@ -943,7 +943,7 @@ GtkComboBox .separator {
   background-color: #99c794;
   background-image: linear-gradient(to bottom, #9dc999, #95c58f);
   border-color: #6eaf66;
-  padding: 10px;
+  padding: 12px;
   color: #343d46; }
   .selection-mode.header-bar:focus, .selection-mode.header-bar:hover, .selection-mode.toolbar:focus, .selection-mode.toolbar:hover {
     border-color: #63a95b; }
@@ -959,10 +959,10 @@ GtkComboBox .separator {
     color: mix(#343d46,#99c794,0.5); }
   .selection-mode.header-bar .title, .selection-mode.toolbar .title {
     font: bold;
-    padding: 0 10px; }
+    padding: 0 12px; }
   .selection-mode.header-bar .subtitle, .selection-mode.toolbar .subtitle {
     font: smaller;
-    padding: 0 10px; }
+    padding: 0 12px; }
   .selection-mode.header-bar .button, .selection-mode.toolbar .button {
     /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
     background-color: #343d46;
@@ -1041,11 +1041,11 @@ GtkComboBox .separator {
     .selection-mode.header-bar .button.linked:active:only-child, .selection-mode.header-bar .button.linked:active:only-child:focus, .selection-mode.header-bar .button.linked:active:only-child:hover, .selection-mode.header-bar .button.linked:active:only-child:hover:focus, .selection-mode.header-bar .button.linked:checked:only-child, .selection-mode.header-bar .button.linked:checked:only-child:focus, .selection-mode.header-bar .button.linked:checked:only-child:hover, .selection-mode.header-bar .button.linked:checked:only-child:hover:focus, .selection-mode.header-bar .linked .button:active:only-child, .selection-mode.header-bar .linked .button:active:only-child:focus, .selection-mode.header-bar .linked .button:active:only-child:hover, .selection-mode.header-bar .linked .button:active:only-child:hover:focus, .selection-mode.header-bar .linked .button:checked:only-child, .selection-mode.header-bar .linked .button:checked:only-child:focus, .selection-mode.header-bar .linked .button:checked:only-child:hover, .selection-mode.header-bar .linked .button:checked:only-child:hover:focus, .selection-mode.toolbar .button.linked:active:only-child, .selection-mode.toolbar .button.linked:active:only-child:focus, .selection-mode.toolbar .button.linked:active:only-child:hover, .selection-mode.toolbar .button.linked:active:only-child:hover:focus, .selection-mode.toolbar .button.linked:checked:only-child, .selection-mode.toolbar .button.linked:checked:only-child:focus, .selection-mode.toolbar .button.linked:checked:only-child:hover, .selection-mode.toolbar .button.linked:checked:only-child:hover:focus, .selection-mode.toolbar .linked .button:active:only-child, .selection-mode.toolbar .linked .button:active:only-child:focus, .selection-mode.toolbar .linked .button:active:only-child:hover, .selection-mode.toolbar .linked .button:active:only-child:hover:focus, .selection-mode.toolbar .linked .button:checked:only-child, .selection-mode.toolbar .linked .button:checked:only-child:focus, .selection-mode.toolbar .linked .button:checked:only-child:hover, .selection-mode.toolbar .linked .button:checked:only-child:hover:focus {
       box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06); }
   .selection-mode.header-bar GtkComboBox, .selection-mode.header-bar .button, .selection-mode.toolbar GtkComboBox, .selection-mode.toolbar .button {
-    padding: 4px; }
+    padding: 5px; }
     .selection-mode.header-bar GtkComboBox.text-button, .selection-mode.header-bar .button.text-button, .selection-mode.toolbar GtkComboBox.text-button, .selection-mode.toolbar .button.text-button {
-      padding: 5px; }
+      padding: 6px; }
     .selection-mode.header-bar GtkComboBox.image-button, .selection-mode.header-bar .button.image-button, .selection-mode.toolbar GtkComboBox.image-button, .selection-mode.toolbar .button.image-button {
-      padding: 6px 4px 6px 5px; }
+      padding: 7px 5px 7px 6px; }
   .selection-mode.header-bar GtkSeparatorToolItem, .selection-mode.header-bar .separator, .selection-mode.header-bar .separator:insensitive, .selection-mode.toolbar GtkSeparatorToolItem, .selection-mode.toolbar .separator, .selection-mode.toolbar .separator:insensitive {
     color: #83bb7d;
     border-color: currentColor;
@@ -1123,7 +1123,7 @@ GtkComboBox .separator {
   .selection-mode.header-bar .dim-label, .selection-mode.header-bar GtkLabel.separator, .selection-menu.button .selection-mode.header-bar .dim-label, .selection-menu.button .selection-mode.header-bar GtkLabel.separator, .selection-mode.toolbar .dim-label, .selection-mode.toolbar GtkLabel.separator, .selection-menu.button .selection-mode.toolbar .dim-label, .selection-menu.button .selection-mode.toolbar GtkLabel.separator {
     color: #5b9f53; }
 .selection-mode.toolbar {
-  padding: 5px; }
+  padding: 6px; }
 
 /**********
  ! Calendar
@@ -1132,7 +1132,7 @@ GtkCalendar {
   padding: 1px 3px;
   outline-offset: -1px; }
   GtkCalendar:inconsistent {
-    color: mix(#d8dee9,#343d46,0.5); }
+    color: mix(#343d46,#d8dee9,0.5); }
   GtkCalendar.view, GtkCalendar.view:focus, GtkCalendar.view:hover, GtkCalendar.view:insensitive, GtkCalendar.highlight, GtkCalendar.highlight:focus, GtkCalendar.highlight:hover, GtkCalendar.highlight:insensitive, GtkCalendar.header, GtkCalendar.header:focus, GtkCalendar.header:hover, GtkCalendar.header:insensitive, GtkCalendar.button, GtkCalendar.button:focus, GtkCalendar.button:hover, GtkCalendar.button:insensitive {
     background-color: transparent;
     background-image: none;
@@ -1147,8 +1147,8 @@ GtkCalendar {
 
 /* gnome-calendar */
 .calendar-view {
-  background-color: #d8dee9;
-  color: #343d46; }
+  background-color: #343d46;
+  color: #d8dee9; }
 
 /***************
  ! Color chooser
@@ -1185,12 +1185,12 @@ GtkColorEditor GtkColorSwatch {
 GtkColorChooserWidget #add-color-button {
   background-clip: padding-box;
   border-color: rgba(0, 0, 0, 0.1);
-  background-color: #313a43;
-  color: #d8dee9; }
+  background-color: #cad2e1;
+  color: #343d46; }
   GtkColorChooserWidget #add-color-button:hover {
     border-color: rgba(0, 0, 0, 0.3);
-    background-color: #2f373f;
-    color: #d8dee9; }
+    background-color: #bbc6d9;
+    color: #343d46; }
 
 .color-active-badge, .color-active-badge:selected {
   border-width: 2px;
@@ -1204,7 +1204,7 @@ GtkColorChooserWidget #add-color-button {
   color: rgba(255, 255, 255, 0.3); }
 
 GtkColorButton.button {
-  padding: 5px; }
+  padding: 6px; }
 
 /***********************
 ! Font and file choosers
@@ -1225,36 +1225,36 @@ GtkFileChooser {
     border-width: 0 1px 0 0;
     border-style: solid;
     border-color: currentColor;
-    background-color: #343d46;
-    color: #2f373f; }
+    background-color: #d8dee9;
+    color: #bbc6d9; }
   GtkFileChooser .dialog-action-box {
     border-width: 1px 0 0;
     border-style: solid;
-    border-color: #242b31; }
+    border-color: #8295b8; }
 
 /******************
  ! Grid and flowbox
 *******************/
 .list {
-  background-color: #323b44;
-  color: #d8dee9; }
+  background-color: #cfd7e4;
+  color: #343d46; }
   .list-row, .list-row.button {
     border: 0;
     border-radius: 0;
-    padding: 5px;
+    padding: 6px;
     background-image: none;
-    background-color: rgba(52, 61, 70, 0);
+    background-color: rgba(216, 222, 233, 0);
     box-shadow: none; }
     .list-row:hover, .list-row.button:hover {
       background-image: none;
-      background-color: #353e47; }
+      background-color: #dee3ec; }
     .list-row:selected, .list-row:selected:hover, .list-row:selected:focus, .list-row.button:selected, .list-row.button:selected:hover, .list-row.button:selected:focus {
       background-image: none;
       background-color: #99c794;
       color: #343d46; }
 
 .grid-child, GtkFlowBox .grid-child {
-  padding: 5px;
+  padding: 6px;
   border-radius: 0px; }
   .grid-child:selected, GtkFlowBox .grid-child:selected {
     outline-offset: -2px; }
@@ -1270,262 +1270,266 @@ GtkFileChooser {
 **********/
 GtkInfoBar {
   border: 0; }
-  GtkInfoBar.info {
+
+.info {
+  background-color: #03a9f4;
+  background-image: linear-gradient(to bottom, #03acf9, #03a6ef);
+  border: 1px solid #0287c3;
+  color: #fff; }
+  .info .button {
+    /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
     background-color: #03a9f4;
     background-image: linear-gradient(to bottom, #03acf9, #03a6ef);
-    border: 1px solid #0287c3;
-    color: #fff; }
-    GtkInfoBar.info .button {
-      /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
-      background-color: #03a9f4;
-      background-image: linear-gradient(to bottom, #03acf9, #03a6ef);
-      border-color: rgba(0, 0, 0, 0.22);
+    border-color: rgba(0, 0, 0, 0.22);
+    color: #fff;
+    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.22); }
+    .info .button:focus, .info .button:hover {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .info .button:active, .info .button:active:hover, .info .button:active:focus, .info .button:active:hover:focus, .info .button:checked, .info .button:checked:hover, .info .button:checked:focus, .info .button:checked:hover:focus {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .info .button:insensitive {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .info .button:active:insensitive, .info .button:checked:insensitive {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .info .button.flat {
+      border-color: rgba(3, 169, 244, 0);
+      background-color: rgba(3, 169, 244, 0);
+      background-image: none;
+      box-shadow: none; }
+    .info .button:focus, .info .button:hover, .info .button.flat:focus, .info .button.flat:hover {
+      background-color: #2cbcfc;
+      background-image: linear-gradient(to bottom, #32bdfc, #26bafc);
+      border-color: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.42); }
+      .info .button:focus:focus, .info .button:focus:hover, .info .button:hover:focus, .info .button:hover:hover, .info .button.flat:focus:focus, .info .button.flat:focus:hover, .info .button.flat:hover:focus, .info .button.flat:hover:hover {
+        border-color: rgba(0, 0, 0, 0.3); }
+      .info .button:focus:active, .info .button:focus:active:hover, .info .button:focus:active:focus, .info .button:focus:active:hover:focus, .info .button:focus:checked, .info .button:focus:checked:hover, .info .button:focus:checked:focus, .info .button:focus:checked:hover:focus, .info .button:hover:active, .info .button:hover:active:hover, .info .button:hover:active:focus, .info .button:hover:active:hover:focus, .info .button:hover:checked, .info .button:hover:checked:hover, .info .button:hover:checked:focus, .info .button:hover:checked:hover:focus, .info .button.flat:focus:active, .info .button.flat:focus:active:hover, .info .button.flat:focus:active:focus, .info .button.flat:focus:active:hover:focus, .info .button.flat:focus:checked, .info .button.flat:focus:checked:hover, .info .button.flat:focus:checked:focus, .info .button.flat:focus:checked:hover:focus, .info .button.flat:hover:active, .info .button.flat:hover:active:hover, .info .button.flat:hover:active:focus, .info .button.flat:hover:active:hover:focus, .info .button.flat:hover:checked, .info .button.flat:hover:checked:hover, .info .button.flat:hover:checked:focus, .info .button.flat:hover:checked:hover:focus {
+        border-color: rgba(0, 0, 0, 0.3); }
+      .info .button:focus:insensitive, .info .button:hover:insensitive, .info .button.flat:focus:insensitive, .info .button.flat:hover:insensitive {
+        border-color: rgba(0, 0, 0, 0.3); }
+      .info .button:focus:active:insensitive, .info .button:focus:checked:insensitive, .info .button:hover:active:insensitive, .info .button:hover:checked:insensitive, .info .button.flat:focus:active:insensitive, .info .button.flat:focus:checked:insensitive, .info .button.flat:hover:active:insensitive, .info .button.flat:hover:checked:insensitive {
+        border-color: rgba(0, 0, 0, 0.3); }
+    .info .button:active, .info .button:checked, .info .button.flat:active, .info .button.flat:checked {
+      background-color: #0276ab;
+      background-image: linear-gradient(to top, #0279ae, #0274a7);
+      color: #343d46;
+      box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06), inset 0 -1px rgba(0, 0, 0, 0.05); }
+      .info .button:active:focus, .info .button:active:hover, .info .button:checked:focus, .info .button:checked:hover, .info .button.flat:active:focus, .info .button.flat:active:hover, .info .button.flat:checked:focus, .info .button.flat:checked:hover {
+        background-color: #026e9f;
+        background-image: linear-gradient(to top, #0270a2, #026c9b);
+        color: #343d46; }
+    .info .button:focus, .info .button:hover, .info .button.flat:focus, .info .button.flat:hover {
+      color: #fff; }
+    .info .button:active:insensitive, .info .button:checked:insensitive, .info .button.flat:active:insensitive, .info .button.flat:checked:insensitive {
+      background-color: #0398dc;
+      background-image: linear-gradient(to bottom, #039be0, #0395d7);
       color: #fff;
-      box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.info .button:focus, GtkInfoBar.info .button:hover {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.info .button:active, GtkInfoBar.info .button:active:hover, GtkInfoBar.info .button:active:focus, GtkInfoBar.info .button:active:hover:focus, GtkInfoBar.info .button:checked, GtkInfoBar.info .button:checked:hover, GtkInfoBar.info .button:checked:focus, GtkInfoBar.info .button:checked:hover:focus {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.info .button:insensitive {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.info .button:active:insensitive, GtkInfoBar.info .button:checked:insensitive {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.info .button.flat {
-        border-color: rgba(3, 169, 244, 0);
-        background-color: rgba(3, 169, 244, 0);
-        background-image: none;
-        box-shadow: none; }
-      GtkInfoBar.info .button:focus, GtkInfoBar.info .button:hover, GtkInfoBar.info .button.flat:focus, GtkInfoBar.info .button.flat:hover {
-        background-color: #2cbcfc;
-        background-image: linear-gradient(to bottom, #32bdfc, #26bafc);
-        border-color: rgba(0, 0, 0, 0.3);
-        box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.42); }
-        GtkInfoBar.info .button:focus:focus, GtkInfoBar.info .button:focus:hover, GtkInfoBar.info .button:hover:focus, GtkInfoBar.info .button:hover:hover, GtkInfoBar.info .button.flat:focus:focus, GtkInfoBar.info .button.flat:focus:hover, GtkInfoBar.info .button.flat:hover:focus, GtkInfoBar.info .button.flat:hover:hover {
-          border-color: rgba(0, 0, 0, 0.3); }
-        GtkInfoBar.info .button:focus:active, GtkInfoBar.info .button:focus:active:hover, GtkInfoBar.info .button:focus:active:focus, GtkInfoBar.info .button:focus:active:hover:focus, GtkInfoBar.info .button:focus:checked, GtkInfoBar.info .button:focus:checked:hover, GtkInfoBar.info .button:focus:checked:focus, GtkInfoBar.info .button:focus:checked:hover:focus, GtkInfoBar.info .button:hover:active, GtkInfoBar.info .button:hover:active:hover, GtkInfoBar.info .button:hover:active:focus, GtkInfoBar.info .button:hover:active:hover:focus, GtkInfoBar.info .button:hover:checked, GtkInfoBar.info .button:hover:checked:hover, GtkInfoBar.info .button:hover:checked:focus, GtkInfoBar.info .button:hover:checked:hover:focus, GtkInfoBar.info .button.flat:focus:active, GtkInfoBar.info .button.flat:focus:active:hover, GtkInfoBar.info .button.flat:focus:active:focus, GtkInfoBar.info .button.flat:focus:active:hover:focus, GtkInfoBar.info .button.flat:focus:checked, GtkInfoBar.info .button.flat:focus:checked:hover, GtkInfoBar.info .button.flat:focus:checked:focus, GtkInfoBar.info .button.flat:focus:checked:hover:focus, GtkInfoBar.info .button.flat:hover:active, GtkInfoBar.info .button.flat:hover:active:hover, GtkInfoBar.info .button.flat:hover:active:focus, GtkInfoBar.info .button.flat:hover:active:hover:focus, GtkInfoBar.info .button.flat:hover:checked, GtkInfoBar.info .button.flat:hover:checked:hover, GtkInfoBar.info .button.flat:hover:checked:focus, GtkInfoBar.info .button.flat:hover:checked:hover:focus {
-          border-color: rgba(0, 0, 0, 0.3); }
-        GtkInfoBar.info .button:focus:insensitive, GtkInfoBar.info .button:hover:insensitive, GtkInfoBar.info .button.flat:focus:insensitive, GtkInfoBar.info .button.flat:hover:insensitive {
-          border-color: rgba(0, 0, 0, 0.3); }
-        GtkInfoBar.info .button:focus:active:insensitive, GtkInfoBar.info .button:focus:checked:insensitive, GtkInfoBar.info .button:hover:active:insensitive, GtkInfoBar.info .button:hover:checked:insensitive, GtkInfoBar.info .button.flat:focus:active:insensitive, GtkInfoBar.info .button.flat:focus:checked:insensitive, GtkInfoBar.info .button.flat:hover:active:insensitive, GtkInfoBar.info .button.flat:hover:checked:insensitive {
-          border-color: rgba(0, 0, 0, 0.3); }
-      GtkInfoBar.info .button:active, GtkInfoBar.info .button:checked, GtkInfoBar.info .button.flat:active, GtkInfoBar.info .button.flat:checked {
-        background-color: #0276ab;
-        background-image: linear-gradient(to top, #0279ae, #0274a7);
-        color: #343d46;
-        box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06), inset 0 -1px rgba(0, 0, 0, 0.05); }
-        GtkInfoBar.info .button:active:focus, GtkInfoBar.info .button:active:hover, GtkInfoBar.info .button:checked:focus, GtkInfoBar.info .button:checked:hover, GtkInfoBar.info .button.flat:active:focus, GtkInfoBar.info .button.flat:active:hover, GtkInfoBar.info .button.flat:checked:focus, GtkInfoBar.info .button.flat:checked:hover {
-          background-color: #026e9f;
-          background-image: linear-gradient(to top, #0270a2, #026c9b);
-          color: #343d46; }
-      GtkInfoBar.info .button:focus, GtkInfoBar.info .button:hover, GtkInfoBar.info .button.flat:focus, GtkInfoBar.info .button.flat:hover {
-        color: #fff; }
-      GtkInfoBar.info .button:active:insensitive, GtkInfoBar.info .button:checked:insensitive, GtkInfoBar.info .button.flat:active:insensitive, GtkInfoBar.info .button.flat:checked:insensitive {
-        background-color: #0398dc;
-        background-image: linear-gradient(to bottom, #039be0, #0395d7);
-        color: #fff;
-        box-shadow: none; }
-      GtkInfoBar.info .button:insensitive:insensitive, GtkInfoBar.info .button.flat:insensitive:insensitive {
-        background-color: rgba(3, 169, 244, 0.3);
-        background-image: linear-gradient(to bottom, rgba(3, 172, 249, 0.3), rgba(3, 166, 239, 0.3));
-        color: mix(#03a9f4,#fff,0.5);
-        box-shadow: none; }
-      GtkInfoBar.info .button.separator, GtkInfoBar.info .button .separator {
-        border: 1px solid currentColor;
-        color: #0398dc; }
-        GtkInfoBar.info .button.separator:insensitive, GtkInfoBar.info .button .separator:insensitive {
-          color: #0390cf; }
-  GtkInfoBar.warning {
+      box-shadow: none; }
+    .info .button:insensitive:insensitive, .info .button.flat:insensitive:insensitive {
+      background-color: rgba(3, 169, 244, 0.3);
+      background-image: linear-gradient(to bottom, rgba(3, 172, 249, 0.3), rgba(3, 166, 239, 0.3));
+      color: mix(#03a9f4,#fff,0.5);
+      box-shadow: none; }
+    .info .button.separator, .info .button .separator {
+      border: 1px solid currentColor;
+      color: #0398dc; }
+      .info .button.separator:insensitive, .info .button .separator:insensitive {
+        color: #0390cf; }
+
+.warning {
+  background-color: #ef6c00;
+  background-image: linear-gradient(to bottom, #f46e00, #ea6a00);
+  border: 1px solid #bf5600;
+  color: #fff; }
+  .warning .button {
+    /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
     background-color: #ef6c00;
     background-image: linear-gradient(to bottom, #f46e00, #ea6a00);
-    border: 1px solid #bf5600;
-    color: #fff; }
-    GtkInfoBar.warning .button {
-      /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
-      background-color: #ef6c00;
-      background-image: linear-gradient(to bottom, #f46e00, #ea6a00);
-      border-color: rgba(0, 0, 0, 0.22);
+    border-color: rgba(0, 0, 0, 0.22);
+    color: #fff;
+    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.22); }
+    .warning .button:focus, .warning .button:hover {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .warning .button:active, .warning .button:active:hover, .warning .button:active:focus, .warning .button:active:hover:focus, .warning .button:checked, .warning .button:checked:hover, .warning .button:checked:focus, .warning .button:checked:hover:focus {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .warning .button:insensitive {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .warning .button:active:insensitive, .warning .button:checked:insensitive {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .warning .button.flat {
+      border-color: rgba(239, 108, 0, 0);
+      background-color: rgba(239, 108, 0, 0);
+      background-image: none;
+      box-shadow: none; }
+    .warning .button:focus, .warning .button:hover, .warning .button.flat:focus, .warning .button.flat:hover {
+      background-color: #ff8520;
+      background-image: linear-gradient(to bottom, #ff8826, #ff821a);
+      border-color: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.42); }
+      .warning .button:focus:focus, .warning .button:focus:hover, .warning .button:hover:focus, .warning .button:hover:hover, .warning .button.flat:focus:focus, .warning .button.flat:focus:hover, .warning .button.flat:hover:focus, .warning .button.flat:hover:hover {
+        border-color: rgba(0, 0, 0, 0.3); }
+      .warning .button:focus:active, .warning .button:focus:active:hover, .warning .button:focus:active:focus, .warning .button:focus:active:hover:focus, .warning .button:focus:checked, .warning .button:focus:checked:hover, .warning .button:focus:checked:focus, .warning .button:focus:checked:hover:focus, .warning .button:hover:active, .warning .button:hover:active:hover, .warning .button:hover:active:focus, .warning .button:hover:active:hover:focus, .warning .button:hover:checked, .warning .button:hover:checked:hover, .warning .button:hover:checked:focus, .warning .button:hover:checked:hover:focus, .warning .button.flat:focus:active, .warning .button.flat:focus:active:hover, .warning .button.flat:focus:active:focus, .warning .button.flat:focus:active:hover:focus, .warning .button.flat:focus:checked, .warning .button.flat:focus:checked:hover, .warning .button.flat:focus:checked:focus, .warning .button.flat:focus:checked:hover:focus, .warning .button.flat:hover:active, .warning .button.flat:hover:active:hover, .warning .button.flat:hover:active:focus, .warning .button.flat:hover:active:hover:focus, .warning .button.flat:hover:checked, .warning .button.flat:hover:checked:hover, .warning .button.flat:hover:checked:focus, .warning .button.flat:hover:checked:hover:focus {
+        border-color: rgba(0, 0, 0, 0.3); }
+      .warning .button:focus:insensitive, .warning .button:hover:insensitive, .warning .button.flat:focus:insensitive, .warning .button.flat:hover:insensitive {
+        border-color: rgba(0, 0, 0, 0.3); }
+      .warning .button:focus:active:insensitive, .warning .button:focus:checked:insensitive, .warning .button:hover:active:insensitive, .warning .button:hover:checked:insensitive, .warning .button.flat:focus:active:insensitive, .warning .button.flat:focus:checked:insensitive, .warning .button.flat:hover:active:insensitive, .warning .button.flat:hover:checked:insensitive {
+        border-color: rgba(0, 0, 0, 0.3); }
+    .warning .button:active, .warning .button:checked, .warning .button.flat:active, .warning .button.flat:checked {
+      background-color: #a74c00;
+      background-image: linear-gradient(to top, #ab4d00, #a44a00);
+      color: #343d46;
+      box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06), inset 0 -1px rgba(0, 0, 0, 0.05); }
+      .warning .button:active:focus, .warning .button:active:hover, .warning .button:checked:focus, .warning .button:checked:hover, .warning .button.flat:active:focus, .warning .button.flat:active:hover, .warning .button.flat:checked:focus, .warning .button.flat:checked:hover {
+        background-color: #9b4600;
+        background-image: linear-gradient(to top, #9e4800, #984500);
+        color: #343d46; }
+    .warning .button:focus, .warning .button:hover, .warning .button.flat:focus, .warning .button.flat:hover {
+      color: #fff; }
+    .warning .button:active:insensitive, .warning .button:checked:insensitive, .warning .button.flat:active:insensitive, .warning .button.flat:checked:insensitive {
+      background-color: #d76100;
+      background-image: linear-gradient(to bottom, #db6300, #d35f00);
       color: #fff;
-      box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.warning .button:focus, GtkInfoBar.warning .button:hover {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.warning .button:active, GtkInfoBar.warning .button:active:hover, GtkInfoBar.warning .button:active:focus, GtkInfoBar.warning .button:active:hover:focus, GtkInfoBar.warning .button:checked, GtkInfoBar.warning .button:checked:hover, GtkInfoBar.warning .button:checked:focus, GtkInfoBar.warning .button:checked:hover:focus {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.warning .button:insensitive {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.warning .button:active:insensitive, GtkInfoBar.warning .button:checked:insensitive {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.warning .button.flat {
-        border-color: rgba(239, 108, 0, 0);
-        background-color: rgba(239, 108, 0, 0);
-        background-image: none;
-        box-shadow: none; }
-      GtkInfoBar.warning .button:focus, GtkInfoBar.warning .button:hover, GtkInfoBar.warning .button.flat:focus, GtkInfoBar.warning .button.flat:hover {
-        background-color: #ff8520;
-        background-image: linear-gradient(to bottom, #ff8826, #ff821a);
-        border-color: rgba(0, 0, 0, 0.3);
-        box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.42); }
-        GtkInfoBar.warning .button:focus:focus, GtkInfoBar.warning .button:focus:hover, GtkInfoBar.warning .button:hover:focus, GtkInfoBar.warning .button:hover:hover, GtkInfoBar.warning .button.flat:focus:focus, GtkInfoBar.warning .button.flat:focus:hover, GtkInfoBar.warning .button.flat:hover:focus, GtkInfoBar.warning .button.flat:hover:hover {
-          border-color: rgba(0, 0, 0, 0.3); }
-        GtkInfoBar.warning .button:focus:active, GtkInfoBar.warning .button:focus:active:hover, GtkInfoBar.warning .button:focus:active:focus, GtkInfoBar.warning .button:focus:active:hover:focus, GtkInfoBar.warning .button:focus:checked, GtkInfoBar.warning .button:focus:checked:hover, GtkInfoBar.warning .button:focus:checked:focus, GtkInfoBar.warning .button:focus:checked:hover:focus, GtkInfoBar.warning .button:hover:active, GtkInfoBar.warning .button:hover:active:hover, GtkInfoBar.warning .button:hover:active:focus, GtkInfoBar.warning .button:hover:active:hover:focus, GtkInfoBar.warning .button:hover:checked, GtkInfoBar.warning .button:hover:checked:hover, GtkInfoBar.warning .button:hover:checked:focus, GtkInfoBar.warning .button:hover:checked:hover:focus, GtkInfoBar.warning .button.flat:focus:active, GtkInfoBar.warning .button.flat:focus:active:hover, GtkInfoBar.warning .button.flat:focus:active:focus, GtkInfoBar.warning .button.flat:focus:active:hover:focus, GtkInfoBar.warning .button.flat:focus:checked, GtkInfoBar.warning .button.flat:focus:checked:hover, GtkInfoBar.warning .button.flat:focus:checked:focus, GtkInfoBar.warning .button.flat:focus:checked:hover:focus, GtkInfoBar.warning .button.flat:hover:active, GtkInfoBar.warning .button.flat:hover:active:hover, GtkInfoBar.warning .button.flat:hover:active:focus, GtkInfoBar.warning .button.flat:hover:active:hover:focus, GtkInfoBar.warning .button.flat:hover:checked, GtkInfoBar.warning .button.flat:hover:checked:hover, GtkInfoBar.warning .button.flat:hover:checked:focus, GtkInfoBar.warning .button.flat:hover:checked:hover:focus {
-          border-color: rgba(0, 0, 0, 0.3); }
-        GtkInfoBar.warning .button:focus:insensitive, GtkInfoBar.warning .button:hover:insensitive, GtkInfoBar.warning .button.flat:focus:insensitive, GtkInfoBar.warning .button.flat:hover:insensitive {
-          border-color: rgba(0, 0, 0, 0.3); }
-        GtkInfoBar.warning .button:focus:active:insensitive, GtkInfoBar.warning .button:focus:checked:insensitive, GtkInfoBar.warning .button:hover:active:insensitive, GtkInfoBar.warning .button:hover:checked:insensitive, GtkInfoBar.warning .button.flat:focus:active:insensitive, GtkInfoBar.warning .button.flat:focus:checked:insensitive, GtkInfoBar.warning .button.flat:hover:active:insensitive, GtkInfoBar.warning .button.flat:hover:checked:insensitive {
-          border-color: rgba(0, 0, 0, 0.3); }
-      GtkInfoBar.warning .button:active, GtkInfoBar.warning .button:checked, GtkInfoBar.warning .button.flat:active, GtkInfoBar.warning .button.flat:checked {
-        background-color: #a74c00;
-        background-image: linear-gradient(to top, #ab4d00, #a44a00);
-        color: #343d46;
-        box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06), inset 0 -1px rgba(0, 0, 0, 0.05); }
-        GtkInfoBar.warning .button:active:focus, GtkInfoBar.warning .button:active:hover, GtkInfoBar.warning .button:checked:focus, GtkInfoBar.warning .button:checked:hover, GtkInfoBar.warning .button.flat:active:focus, GtkInfoBar.warning .button.flat:active:hover, GtkInfoBar.warning .button.flat:checked:focus, GtkInfoBar.warning .button.flat:checked:hover {
-          background-color: #9b4600;
-          background-image: linear-gradient(to top, #9e4800, #984500);
-          color: #343d46; }
-      GtkInfoBar.warning .button:focus, GtkInfoBar.warning .button:hover, GtkInfoBar.warning .button.flat:focus, GtkInfoBar.warning .button.flat:hover {
-        color: #fff; }
-      GtkInfoBar.warning .button:active:insensitive, GtkInfoBar.warning .button:checked:insensitive, GtkInfoBar.warning .button.flat:active:insensitive, GtkInfoBar.warning .button.flat:checked:insensitive {
-        background-color: #d76100;
-        background-image: linear-gradient(to bottom, #db6300, #d35f00);
-        color: #fff;
-        box-shadow: none; }
-      GtkInfoBar.warning .button:insensitive:insensitive, GtkInfoBar.warning .button.flat:insensitive:insensitive {
-        background-color: rgba(239, 108, 0, 0.3);
-        background-image: linear-gradient(to bottom, rgba(244, 110, 0, 0.3), rgba(234, 106, 0, 0.3));
-        color: mix(#ef6c00,#fff,0.5);
-        box-shadow: none; }
-      GtkInfoBar.warning .button.separator, GtkInfoBar.warning .button .separator {
-        border: 1px solid currentColor;
-        color: #d76100; }
-        GtkInfoBar.warning .button.separator:insensitive, GtkInfoBar.warning .button .separator:insensitive {
-          color: #cb5c00; }
-  GtkInfoBar.question {
+      box-shadow: none; }
+    .warning .button:insensitive:insensitive, .warning .button.flat:insensitive:insensitive {
+      background-color: rgba(239, 108, 0, 0.3);
+      background-image: linear-gradient(to bottom, rgba(244, 110, 0, 0.3), rgba(234, 106, 0, 0.3));
+      color: mix(#ef6c00,#fff,0.5);
+      box-shadow: none; }
+    .warning .button.separator, .warning .button .separator {
+      border: 1px solid currentColor;
+      color: #d76100; }
+      .warning .button.separator:insensitive, .warning .button .separator:insensitive {
+        color: #cb5c00; }
+
+.question {
+  background-color: #673ab7;
+  background-image: linear-gradient(to bottom, #693bbb, #6539b3);
+  border: 1px solid #522e92;
+  color: #fff; }
+  .question .button {
+    /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
     background-color: #673ab7;
     background-image: linear-gradient(to bottom, #693bbb, #6539b3);
-    border: 1px solid #522e92;
-    color: #fff; }
-    GtkInfoBar.question .button {
-      /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
-      background-color: #673ab7;
-      background-image: linear-gradient(to bottom, #693bbb, #6539b3);
-      border-color: rgba(0, 0, 0, 0.22);
+    border-color: rgba(0, 0, 0, 0.22);
+    color: #fff;
+    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.22); }
+    .question .button:focus, .question .button:hover {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .question .button:active, .question .button:active:hover, .question .button:active:focus, .question .button:active:hover:focus, .question .button:checked, .question .button:checked:hover, .question .button:checked:focus, .question .button:checked:hover:focus {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .question .button:insensitive {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .question .button:active:insensitive, .question .button:checked:insensitive {
+      border-color: rgba(0, 0, 0, 0.22); }
+    .question .button.flat {
+      border-color: rgba(103, 58, 183, 0);
+      background-color: rgba(103, 58, 183, 0);
+      background-image: none;
+      box-shadow: none; }
+    .question .button:focus, .question .button:hover, .question .button.flat:focus, .question .button.flat:hover {
+      background-color: #8157ca;
+      background-image: linear-gradient(to bottom, #845ccb, #7d53c8);
+      border-color: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.42); }
+      .question .button:focus:focus, .question .button:focus:hover, .question .button:hover:focus, .question .button:hover:hover, .question .button.flat:focus:focus, .question .button.flat:focus:hover, .question .button.flat:hover:focus, .question .button.flat:hover:hover {
+        border-color: rgba(0, 0, 0, 0.3); }
+      .question .button:focus:active, .question .button:focus:active:hover, .question .button:focus:active:focus, .question .button:focus:active:hover:focus, .question .button:focus:checked, .question .button:focus:checked:hover, .question .button:focus:checked:focus, .question .button:focus:checked:hover:focus, .question .button:hover:active, .question .button:hover:active:hover, .question .button:hover:active:focus, .question .button:hover:active:hover:focus, .question .button:hover:checked, .question .button:hover:checked:hover, .question .button:hover:checked:focus, .question .button:hover:checked:hover:focus, .question .button.flat:focus:active, .question .button.flat:focus:active:hover, .question .button.flat:focus:active:focus, .question .button.flat:focus:active:hover:focus, .question .button.flat:focus:checked, .question .button.flat:focus:checked:hover, .question .button.flat:focus:checked:focus, .question .button.flat:focus:checked:hover:focus, .question .button.flat:hover:active, .question .button.flat:hover:active:hover, .question .button.flat:hover:active:focus, .question .button.flat:hover:active:hover:focus, .question .button.flat:hover:checked, .question .button.flat:hover:checked:hover, .question .button.flat:hover:checked:focus, .question .button.flat:hover:checked:hover:focus {
+        border-color: rgba(0, 0, 0, 0.3); }
+      .question .button:focus:insensitive, .question .button:hover:insensitive, .question .button.flat:focus:insensitive, .question .button.flat:hover:insensitive {
+        border-color: rgba(0, 0, 0, 0.3); }
+      .question .button:focus:active:insensitive, .question .button:focus:checked:insensitive, .question .button:hover:active:insensitive, .question .button:hover:checked:insensitive, .question .button.flat:focus:active:insensitive, .question .button.flat:focus:checked:insensitive, .question .button.flat:hover:active:insensitive, .question .button.flat:hover:checked:insensitive {
+        border-color: rgba(0, 0, 0, 0.3); }
+    .question .button:active, .question .button:checked, .question .button.flat:active, .question .button.flat:checked {
+      background-color: #482980;
+      background-image: linear-gradient(to top, #4a2983, #47287e);
+      color: #343d46;
+      box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06), inset 0 -1px rgba(0, 0, 0, 0.05); }
+      .question .button:active:focus, .question .button:active:hover, .question .button:checked:focus, .question .button:checked:hover, .question .button.flat:active:focus, .question .button.flat:active:hover, .question .button.flat:checked:focus, .question .button.flat:checked:hover {
+        background-color: #432677;
+        background-image: linear-gradient(to top, #442679, #422575);
+        color: #343d46; }
+    .question .button:focus, .question .button:hover, .question .button.flat:focus, .question .button.flat:hover {
+      color: #fff; }
+    .question .button:active:insensitive, .question .button:checked:insensitive, .question .button.flat:active:insensitive, .question .button.flat:checked:insensitive {
+      background-color: #5d34a5;
+      background-image: linear-gradient(to bottom, #5f35a8, #5b33a1);
       color: #fff;
-      box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.question .button:focus, GtkInfoBar.question .button:hover {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.question .button:active, GtkInfoBar.question .button:active:hover, GtkInfoBar.question .button:active:focus, GtkInfoBar.question .button:active:hover:focus, GtkInfoBar.question .button:checked, GtkInfoBar.question .button:checked:hover, GtkInfoBar.question .button:checked:focus, GtkInfoBar.question .button:checked:hover:focus {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.question .button:insensitive {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.question .button:active:insensitive, GtkInfoBar.question .button:checked:insensitive {
-        border-color: rgba(0, 0, 0, 0.22); }
-      GtkInfoBar.question .button.flat {
-        border-color: rgba(103, 58, 183, 0);
-        background-color: rgba(103, 58, 183, 0);
-        background-image: none;
-        box-shadow: none; }
-      GtkInfoBar.question .button:focus, GtkInfoBar.question .button:hover, GtkInfoBar.question .button.flat:focus, GtkInfoBar.question .button.flat:hover {
-        background-color: #8157ca;
-        background-image: linear-gradient(to bottom, #845ccb, #7d53c8);
-        border-color: rgba(0, 0, 0, 0.3);
-        box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.42); }
-        GtkInfoBar.question .button:focus:focus, GtkInfoBar.question .button:focus:hover, GtkInfoBar.question .button:hover:focus, GtkInfoBar.question .button:hover:hover, GtkInfoBar.question .button.flat:focus:focus, GtkInfoBar.question .button.flat:focus:hover, GtkInfoBar.question .button.flat:hover:focus, GtkInfoBar.question .button.flat:hover:hover {
-          border-color: rgba(0, 0, 0, 0.3); }
-        GtkInfoBar.question .button:focus:active, GtkInfoBar.question .button:focus:active:hover, GtkInfoBar.question .button:focus:active:focus, GtkInfoBar.question .button:focus:active:hover:focus, GtkInfoBar.question .button:focus:checked, GtkInfoBar.question .button:focus:checked:hover, GtkInfoBar.question .button:focus:checked:focus, GtkInfoBar.question .button:focus:checked:hover:focus, GtkInfoBar.question .button:hover:active, GtkInfoBar.question .button:hover:active:hover, GtkInfoBar.question .button:hover:active:focus, GtkInfoBar.question .button:hover:active:hover:focus, GtkInfoBar.question .button:hover:checked, GtkInfoBar.question .button:hover:checked:hover, GtkInfoBar.question .button:hover:checked:focus, GtkInfoBar.question .button:hover:checked:hover:focus, GtkInfoBar.question .button.flat:focus:active, GtkInfoBar.question .button.flat:focus:active:hover, GtkInfoBar.question .button.flat:focus:active:focus, GtkInfoBar.question .button.flat:focus:active:hover:focus, GtkInfoBar.question .button.flat:focus:checked, GtkInfoBar.question .button.flat:focus:checked:hover, GtkInfoBar.question .button.flat:focus:checked:focus, GtkInfoBar.question .button.flat:focus:checked:hover:focus, GtkInfoBar.question .button.flat:hover:active, GtkInfoBar.question .button.flat:hover:active:hover, GtkInfoBar.question .button.flat:hover:active:focus, GtkInfoBar.question .button.flat:hover:active:hover:focus, GtkInfoBar.question .button.flat:hover:checked, GtkInfoBar.question .button.flat:hover:checked:hover, GtkInfoBar.question .button.flat:hover:checked:focus, GtkInfoBar.question .button.flat:hover:checked:hover:focus {
-          border-color: rgba(0, 0, 0, 0.3); }
-        GtkInfoBar.question .button:focus:insensitive, GtkInfoBar.question .button:hover:insensitive, GtkInfoBar.question .button.flat:focus:insensitive, GtkInfoBar.question .button.flat:hover:insensitive {
-          border-color: rgba(0, 0, 0, 0.3); }
-        GtkInfoBar.question .button:focus:active:insensitive, GtkInfoBar.question .button:focus:checked:insensitive, GtkInfoBar.question .button:hover:active:insensitive, GtkInfoBar.question .button:hover:checked:insensitive, GtkInfoBar.question .button.flat:focus:active:insensitive, GtkInfoBar.question .button.flat:focus:checked:insensitive, GtkInfoBar.question .button.flat:hover:active:insensitive, GtkInfoBar.question .button.flat:hover:checked:insensitive {
-          border-color: rgba(0, 0, 0, 0.3); }
-      GtkInfoBar.question .button:active, GtkInfoBar.question .button:checked, GtkInfoBar.question .button.flat:active, GtkInfoBar.question .button.flat:checked {
-        background-color: #482980;
-        background-image: linear-gradient(to top, #4a2983, #47287e);
-        color: #343d46;
-        box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06), inset 0 -1px rgba(0, 0, 0, 0.05); }
-        GtkInfoBar.question .button:active:focus, GtkInfoBar.question .button:active:hover, GtkInfoBar.question .button:checked:focus, GtkInfoBar.question .button:checked:hover, GtkInfoBar.question .button.flat:active:focus, GtkInfoBar.question .button.flat:active:hover, GtkInfoBar.question .button.flat:checked:focus, GtkInfoBar.question .button.flat:checked:hover {
-          background-color: #432677;
-          background-image: linear-gradient(to top, #442679, #422575);
-          color: #343d46; }
-      GtkInfoBar.question .button:focus, GtkInfoBar.question .button:hover, GtkInfoBar.question .button.flat:focus, GtkInfoBar.question .button.flat:hover {
-        color: #fff; }
-      GtkInfoBar.question .button:active:insensitive, GtkInfoBar.question .button:checked:insensitive, GtkInfoBar.question .button.flat:active:insensitive, GtkInfoBar.question .button.flat:checked:insensitive {
-        background-color: #5d34a5;
-        background-image: linear-gradient(to bottom, #5f35a8, #5b33a1);
-        color: #fff;
-        box-shadow: none; }
-      GtkInfoBar.question .button:insensitive:insensitive, GtkInfoBar.question .button.flat:insensitive:insensitive {
-        background-color: rgba(103, 58, 183, 0.3);
-        background-image: linear-gradient(to bottom, rgba(105, 59, 187, 0.3), rgba(101, 57, 179, 0.3));
-        color: mix(#673ab7,#fff,0.5);
-        box-shadow: none; }
-      GtkInfoBar.question .button.separator, GtkInfoBar.question .button .separator {
-        border: 1px solid currentColor;
-        color: #5d34a5; }
-        GtkInfoBar.question .button.separator:insensitive, GtkInfoBar.question .button .separator:insensitive {
-          color: #58319c; }
-  GtkInfoBar.error {
+      box-shadow: none; }
+    .question .button:insensitive:insensitive, .question .button.flat:insensitive:insensitive {
+      background-color: rgba(103, 58, 183, 0.3);
+      background-image: linear-gradient(to bottom, rgba(105, 59, 187, 0.3), rgba(101, 57, 179, 0.3));
+      color: mix(#673ab7,#fff,0.5);
+      box-shadow: none; }
+    .question .button.separator, .question .button .separator {
+      border: 1px solid currentColor;
+      color: #5d34a5; }
+      .question .button.separator:insensitive, .question .button .separator:insensitive {
+        color: #58319c; }
+
+.error {
+  background-color: #f44336;
+  background-image: linear-gradient(to bottom, #f4483c, #f43e30);
+  border: 1px solid #e21b0c;
+  color: #fff; }
+  .error .button {
+    /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
     background-color: #f44336;
     background-image: linear-gradient(to bottom, #f4483c, #f43e30);
-    border: 1px solid #e21b0c;
-    color: #fff; }
-    GtkInfoBar.error .button {
-      /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
-      background-color: #f44336;
-      background-image: linear-gradient(to bottom, #f4483c, #f43e30);
-      border-color: rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: #fff;
+    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.12); }
+    .error .button:focus, .error .button:hover {
+      border-color: rgba(0, 0, 0, 0.12); }
+    .error .button:active, .error .button:active:hover, .error .button:active:focus, .error .button:active:hover:focus, .error .button:checked, .error .button:checked:hover, .error .button:checked:focus, .error .button:checked:hover:focus {
+      border-color: rgba(0, 0, 0, 0.12); }
+    .error .button:insensitive {
+      border-color: rgba(0, 0, 0, 0.12); }
+    .error .button:active:insensitive, .error .button:checked:insensitive {
+      border-color: rgba(0, 0, 0, 0.12); }
+    .error .button.flat {
+      border-color: rgba(244, 67, 54, 0);
+      background-color: rgba(244, 67, 54, 0);
+      background-image: none;
+      box-shadow: none; }
+    .error .button:focus, .error .button:hover, .error .button.flat:focus, .error .button.flat:hover {
+      background-color: #f7786f;
+      background-image: linear-gradient(to bottom, #f77e75, #f77268);
+      border-color: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.32); }
+      .error .button:focus:focus, .error .button:focus:hover, .error .button:hover:focus, .error .button:hover:hover, .error .button.flat:focus:focus, .error .button.flat:focus:hover, .error .button.flat:hover:focus, .error .button.flat:hover:hover {
+        border-color: rgba(0, 0, 0, 0.2); }
+      .error .button:focus:active, .error .button:focus:active:hover, .error .button:focus:active:focus, .error .button:focus:active:hover:focus, .error .button:focus:checked, .error .button:focus:checked:hover, .error .button:focus:checked:focus, .error .button:focus:checked:hover:focus, .error .button:hover:active, .error .button:hover:active:hover, .error .button:hover:active:focus, .error .button:hover:active:hover:focus, .error .button:hover:checked, .error .button:hover:checked:hover, .error .button:hover:checked:focus, .error .button:hover:checked:hover:focus, .error .button.flat:focus:active, .error .button.flat:focus:active:hover, .error .button.flat:focus:active:focus, .error .button.flat:focus:active:hover:focus, .error .button.flat:focus:checked, .error .button.flat:focus:checked:hover, .error .button.flat:focus:checked:focus, .error .button.flat:focus:checked:hover:focus, .error .button.flat:hover:active, .error .button.flat:hover:active:hover, .error .button.flat:hover:active:focus, .error .button.flat:hover:active:hover:focus, .error .button.flat:hover:checked, .error .button.flat:hover:checked:hover, .error .button.flat:hover:checked:focus, .error .button.flat:hover:checked:hover:focus {
+        border-color: rgba(0, 0, 0, 0.2); }
+      .error .button:focus:insensitive, .error .button:hover:insensitive, .error .button.flat:focus:insensitive, .error .button.flat:hover:insensitive {
+        border-color: rgba(0, 0, 0, 0.2); }
+      .error .button:focus:active:insensitive, .error .button:focus:checked:insensitive, .error .button:hover:active:insensitive, .error .button:hover:checked:insensitive, .error .button.flat:focus:active:insensitive, .error .button.flat:focus:checked:insensitive, .error .button.flat:hover:active:insensitive, .error .button.flat:hover:checked:insensitive {
+        border-color: rgba(0, 0, 0, 0.2); }
+    .error .button:active, .error .button:checked, .error .button.flat:active, .error .button.flat:checked {
+      background-color: #c6180b;
+      background-image: linear-gradient(to top, #ca180b, #c2170b);
+      color: #343d46;
+      box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06), inset 0 -1px rgba(0, 0, 0, 0.05); }
+      .error .button:active:focus, .error .button:active:hover, .error .button:checked:focus, .error .button:checked:hover, .error .button.flat:active:focus, .error .button.flat:active:hover, .error .button.flat:checked:focus, .error .button.flat:checked:hover {
+        background-color: #b8160a;
+        background-image: linear-gradient(to top, #bb160a, #b4150a);
+        color: #343d46; }
+    .error .button:focus, .error .button:hover, .error .button.flat:focus, .error .button.flat:hover {
+      color: #fff; }
+    .error .button:active:insensitive, .error .button:checked:insensitive, .error .button.flat:active:insensitive, .error .button.flat:checked:insensitive {
+      background-color: #f2291a;
+      background-image: linear-gradient(to bottom, #f32d1f, #f22415);
       color: #fff;
-      box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.12); }
-      GtkInfoBar.error .button:focus, GtkInfoBar.error .button:hover {
-        border-color: rgba(0, 0, 0, 0.12); }
-      GtkInfoBar.error .button:active, GtkInfoBar.error .button:active:hover, GtkInfoBar.error .button:active:focus, GtkInfoBar.error .button:active:hover:focus, GtkInfoBar.error .button:checked, GtkInfoBar.error .button:checked:hover, GtkInfoBar.error .button:checked:focus, GtkInfoBar.error .button:checked:hover:focus {
-        border-color: rgba(0, 0, 0, 0.12); }
-      GtkInfoBar.error .button:insensitive {
-        border-color: rgba(0, 0, 0, 0.12); }
-      GtkInfoBar.error .button:active:insensitive, GtkInfoBar.error .button:checked:insensitive {
-        border-color: rgba(0, 0, 0, 0.12); }
-      GtkInfoBar.error .button.flat {
-        border-color: rgba(244, 67, 54, 0);
-        background-color: rgba(244, 67, 54, 0);
-        background-image: none;
-        box-shadow: none; }
-      GtkInfoBar.error .button:focus, GtkInfoBar.error .button:hover, GtkInfoBar.error .button.flat:focus, GtkInfoBar.error .button.flat:hover {
-        background-color: #f7786f;
-        background-image: linear-gradient(to bottom, #f77e75, #f77268);
-        border-color: rgba(0, 0, 0, 0.2);
-        box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.32); }
-        GtkInfoBar.error .button:focus:focus, GtkInfoBar.error .button:focus:hover, GtkInfoBar.error .button:hover:focus, GtkInfoBar.error .button:hover:hover, GtkInfoBar.error .button.flat:focus:focus, GtkInfoBar.error .button.flat:focus:hover, GtkInfoBar.error .button.flat:hover:focus, GtkInfoBar.error .button.flat:hover:hover {
-          border-color: rgba(0, 0, 0, 0.2); }
-        GtkInfoBar.error .button:focus:active, GtkInfoBar.error .button:focus:active:hover, GtkInfoBar.error .button:focus:active:focus, GtkInfoBar.error .button:focus:active:hover:focus, GtkInfoBar.error .button:focus:checked, GtkInfoBar.error .button:focus:checked:hover, GtkInfoBar.error .button:focus:checked:focus, GtkInfoBar.error .button:focus:checked:hover:focus, GtkInfoBar.error .button:hover:active, GtkInfoBar.error .button:hover:active:hover, GtkInfoBar.error .button:hover:active:focus, GtkInfoBar.error .button:hover:active:hover:focus, GtkInfoBar.error .button:hover:checked, GtkInfoBar.error .button:hover:checked:hover, GtkInfoBar.error .button:hover:checked:focus, GtkInfoBar.error .button:hover:checked:hover:focus, GtkInfoBar.error .button.flat:focus:active, GtkInfoBar.error .button.flat:focus:active:hover, GtkInfoBar.error .button.flat:focus:active:focus, GtkInfoBar.error .button.flat:focus:active:hover:focus, GtkInfoBar.error .button.flat:focus:checked, GtkInfoBar.error .button.flat:focus:checked:hover, GtkInfoBar.error .button.flat:focus:checked:focus, GtkInfoBar.error .button.flat:focus:checked:hover:focus, GtkInfoBar.error .button.flat:hover:active, GtkInfoBar.error .button.flat:hover:active:hover, GtkInfoBar.error .button.flat:hover:active:focus, GtkInfoBar.error .button.flat:hover:active:hover:focus, GtkInfoBar.error .button.flat:hover:checked, GtkInfoBar.error .button.flat:hover:checked:hover, GtkInfoBar.error .button.flat:hover:checked:focus, GtkInfoBar.error .button.flat:hover:checked:hover:focus {
-          border-color: rgba(0, 0, 0, 0.2); }
-        GtkInfoBar.error .button:focus:insensitive, GtkInfoBar.error .button:hover:insensitive, GtkInfoBar.error .button.flat:focus:insensitive, GtkInfoBar.error .button.flat:hover:insensitive {
-          border-color: rgba(0, 0, 0, 0.2); }
-        GtkInfoBar.error .button:focus:active:insensitive, GtkInfoBar.error .button:focus:checked:insensitive, GtkInfoBar.error .button:hover:active:insensitive, GtkInfoBar.error .button:hover:checked:insensitive, GtkInfoBar.error .button.flat:focus:active:insensitive, GtkInfoBar.error .button.flat:focus:checked:insensitive, GtkInfoBar.error .button.flat:hover:active:insensitive, GtkInfoBar.error .button.flat:hover:checked:insensitive {
-          border-color: rgba(0, 0, 0, 0.2); }
-      GtkInfoBar.error .button:active, GtkInfoBar.error .button:checked, GtkInfoBar.error .button.flat:active, GtkInfoBar.error .button.flat:checked {
-        background-color: #c6180b;
-        background-image: linear-gradient(to top, #ca180b, #c2170b);
-        color: #343d46;
-        box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06), inset 0 -1px rgba(0, 0, 0, 0.05); }
-        GtkInfoBar.error .button:active:focus, GtkInfoBar.error .button:active:hover, GtkInfoBar.error .button:checked:focus, GtkInfoBar.error .button:checked:hover, GtkInfoBar.error .button.flat:active:focus, GtkInfoBar.error .button.flat:active:hover, GtkInfoBar.error .button.flat:checked:focus, GtkInfoBar.error .button.flat:checked:hover {
-          background-color: #b8160a;
-          background-image: linear-gradient(to top, #bb160a, #b4150a);
-          color: #343d46; }
-      GtkInfoBar.error .button:focus, GtkInfoBar.error .button:hover, GtkInfoBar.error .button.flat:focus, GtkInfoBar.error .button.flat:hover {
-        color: #fff; }
-      GtkInfoBar.error .button:active:insensitive, GtkInfoBar.error .button:checked:insensitive, GtkInfoBar.error .button.flat:active:insensitive, GtkInfoBar.error .button.flat:checked:insensitive {
-        background-color: #f2291a;
-        background-image: linear-gradient(to bottom, #f32d1f, #f22415);
-        color: #fff;
-        box-shadow: none; }
-      GtkInfoBar.error .button:insensitive:insensitive, GtkInfoBar.error .button.flat:insensitive:insensitive {
-        background-color: #f33628;
-        background-image: linear-gradient(to bottom, #f43b2d, #f33123);
-        color: mix(#f44336,#fff,0.5);
-        box-shadow: none; }
-      GtkInfoBar.error .button.separator, GtkInfoBar.error .button .separator {
-        border: 1px solid currentColor;
-        color: #f2291a; }
-        GtkInfoBar.error .button.separator:insensitive, GtkInfoBar.error .button .separator:insensitive {
-          color: #f01d0d; }
+      box-shadow: none; }
+    .error .button:insensitive:insensitive, .error .button.flat:insensitive:insensitive {
+      background-color: #f33628;
+      background-image: linear-gradient(to bottom, #f43b2d, #f33123);
+      color: mix(#f44336,#fff,0.5);
+      box-shadow: none; }
+    .error .button.separator, .error .button .separator {
+      border: 1px solid currentColor;
+      color: #f2291a; }
+      .error .button.separator:insensitive, .error .button .separator:insensitive {
+        color: #f01d0d; }
 
 /*********
  ! Entry *
@@ -1552,7 +1556,7 @@ GtkInfoBar {
     border-radius: 0px; }
 
 .entry, .menuitem .entry, GtkPopover .entry {
-  padding: 4px 5px;
+  padding: 5px 6px;
   border-width: 1px;
   border-style: solid;
   border-radius: 0px;
@@ -1572,7 +1576,7 @@ GtkInfoBar {
     border-radius: 0px;
     color: #343d46; }
   .image.left.entry {
-    padding-right: 5px; }
+    padding-right: 6px; }
 
 /*********
  ! Menubar
@@ -1584,7 +1588,7 @@ GtkInfoBar {
   background-image: none;
   color: #d8d8d8; }
   .menubar.menuitem, .menubar .menuitem {
-    padding: 5px 10px;
+    padding: 6px 12px;
     border: 1px solid transparent;
     background-color: transparent;
     background-image: none;
@@ -1606,7 +1610,7 @@ GtkInfoBar {
 
 GtkTreeMenu.menu, GtkTreeMenu .menu, GtkMenuToolButton.menu, GtkMenuToolButton .menu, GtkComboBox.menu, GtkComboBox .menu {
   background-color: #343d46;
-  margin: 5px; }
+  margin: 6px; }
 
 #toolbar-popup, .menu {
   padding: 0;
@@ -1628,8 +1632,8 @@ GtkTreeMenu .menuitem {
   padding: 0;
   border-width: 0; }
 .menuitem, .menu .menuitem {
-  margin: 5px;
-  padding: 5px;
+  margin: 6px;
+  padding: 6px;
   border: 0;
   border-radius: 0;
   background-color: transparent;
@@ -1697,7 +1701,7 @@ GtkTreeMenu .menuitem {
     color: mix(#343d46,#d8d8d8,0.5); }
 
 GtkModelMenuItem GtkBox GtkImage {
-  padding-right: 5px; }
+  padding-right: 6px; }
 
 /*********
  ! Popover
@@ -1705,7 +1709,7 @@ GtkModelMenuItem GtkBox GtkImage {
 GtkPopover {
   border-color: #2a3138;
   margin: 10px;
-  padding: 5px;
+  padding: 6px;
   border-radius: 0px;
   border-width: 1px;
   border-style: solid;
@@ -1755,24 +1759,24 @@ GtkPopover {
     border-color: #2a3138;
     border-radius: 0px; }
   GtkPopover .entry {
-    background-color: #d8dee9;
-    background-image: linear-gradient(to top, #dee3ec, #d2d9e6);
-    border-color: #9fadc9;
-    color: #343d46; }
+    background-color: #343d46;
+    background-image: linear-gradient(to top, #353e47, #333c45);
+    border-color: #2a3138;
+    color: #d8dee9; }
     GtkPopover .entry:focus, GtkPopover .entry:hover {
-      border-color: #90a1c1; }
+      border-color: #272e35; }
     GtkPopover .entry:active, GtkPopover .entry:active:hover, GtkPopover .entry:active:focus, GtkPopover .entry:active:hover:focus, GtkPopover .entry:checked, GtkPopover .entry:checked:hover, GtkPopover .entry:checked:focus, GtkPopover .entry:checked:hover:focus {
-      border-color: #8295b8; }
+      border-color: #242b31; }
     GtkPopover .entry:insensitive {
-      border-color: #adbad1; }
+      border-color: #2c343c; }
     GtkPopover .entry:active:insensitive, GtkPopover .entry:checked:insensitive {
-      border-color: #9fadc9; }
+      border-color: #2a3138; }
     GtkPopover .entry:focus, GtkPopover .entry:active {
       border-color: #99c794; }
     GtkPopover .entry:insensitive {
-      background-color: #bbc6d9;
-      background-image: linear-gradient(to top, #c0cadc, #b6c1d6);
-      color: mix(#d8dee9,#343d46,0.5); }
+      background-color: #2f373f;
+      background-image: linear-gradient(to top, #303840, #2e363e);
+      color: mix(#343d46,#d8dee9,0.5); }
   GtkPopover .button {
     /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
     background-color: #343d46;
@@ -1935,7 +1939,7 @@ GtkModelButton.button, GtkModelButton.button:backdrop {
 ************/
 GtkMessageDialog, .message-dialog, .prompt {
   -GtkDialog-content-area-border: 0;
-  -GtkDialog-action-area-border: 5px;
+  -GtkDialog-action-area-border: 6px;
   -GtkDialog-button-spacing: 0;
   margin: 0;
   padding: 0; }
@@ -1948,7 +1952,7 @@ GtkMessageDialog, .message-dialog, .prompt {
   border-color: rgba(42, 49, 56, 0.8);
   border-width: 0 1px 1px;
   border-radius: 0 0 0px 0px;
-  padding: 10px;
+  padding: 12px;
   background-color: rgba(52, 61, 70, 0.8);
   background-image: none;
   color: #d8d8d8; }
@@ -2016,7 +2020,7 @@ GtkMessageDialog, .message-dialog, .prompt {
  ! Expanders *
 **************/
 GtkExpander {
-  padding: 5px;
+  padding: 6px;
   outline-offset: 1px; }
 
 .expander {
@@ -2043,11 +2047,11 @@ GtkExpander {
  ! Floating bar *
 *****************/
 .floating-bar {
-  background-color: #343d46;
-  background-image: linear-gradient(to bottom, #353e47, #333c45);
-  border: 1px solid #2a3138;
+  background-color: #d8dee9;
+  background-image: linear-gradient(to bottom, #dee3ec, #d2d9e6);
+  border: 1px solid #9fadc9;
   border-radius: 0px;
-  color: #d8dee9; }
+  color: #343d46; }
   .floating-bar.top {
     border-top-width: 0;
     border-top-right-radius: 0;
@@ -2086,21 +2090,21 @@ GtkBubbleWindow {
  ! Font-viewer *
 ****************/
 SushiFontWidget {
-  padding: 5px 10px; }
+  padding: 6px 12px; }
 
 /*************
  ! Gucharmap *
 **************/
 GucharmapChartable {
-  background-color: #d8dee9;
-  color: #343d46; }
+  background-color: #343d46;
+  color: #d8dee9; }
 
 /*************
  ! Evolution *
 **************/
 EPreviewPane .entry {
-  background-color: #d8dee9;
-  color: #343d46; }
+  background-color: #343d46;
+  color: #d8dee9; }
 
 /*******************
  ! Gnome Bluetooth *
@@ -2125,12 +2129,12 @@ GtkLabel.pin-label {
 .notebook {
   padding: 0;
   border-style: solid;
-  border-color: #2a3138;
+  border-color: #9fadc9;
   border-radius: 0;
-  background-color: #343d46;
-  background-image: linear-gradient(to bottom, #353e47, #333c45);
+  background-color: #d8dee9;
+  background-image: linear-gradient(to bottom, #dee3ec, #d2d9e6);
   background-clip: border-box;
-  color: #343d46;
+  color: #d8dee9;
   -GtkNotebook-initial-gap: 0;
   -GtkNotebook-arrow-spacing: 5;
   -GtkNotebook-tab-curvature: 0;
@@ -2149,17 +2153,17 @@ GtkLabel.pin-label {
     background-color: transparent; }
   .notebook GtkViewport {
     border-width: 0;
-    background-color: #d8dee9;
-    color: #343d46; }
+    background-color: #343d46;
+    color: #d8dee9; }
   .notebook tab {
-    padding: 6px 10px;
+    padding: 7px 12px;
     border-style: solid;
-    border-color: #21272d;
-    background-color: #2a3138;
+    border-color: #7187af;
+    background-color: #9fadc9;
     background-image: none;
     /* close button styling */ }
     .notebook tab:active {
-      background-color: #343d46;
+      background-color: #d8dee9;
       background-image: none; }
     .notebook tab.top {
       border-width: 2px 1px 1px;
@@ -2194,22 +2198,22 @@ GtkLabel.pin-label {
         border-left-color: #99c794;
         border-right-width: 0; }
     .notebook tab GtkLabel {
-      color: mix(#343d46,#d8dee9,0.3); }
+      color: mix(#d8dee9,#343d46,0.3); }
     .notebook tab.reorderable-page:hover {
-      background-color: #adbad1;
+      background-color: #2c343c;
       border-left: 0;
       border-right: 0;
       /* using box shadows instead of borders due to slanted edges */
-      box-shadow: inset 0 3px rgba(0, 0, 0, 0.03), inset 0 2px rgba(0, 0, 0, 0.03), inset 0 1px rgba(0, 0, 0, 0.03), inset 1px 0 #8295b8, inset -1px 0 #8295b8; }
+      box-shadow: inset 0 3px rgba(0, 0, 0, 0.03), inset 0 2px rgba(0, 0, 0, 0.03), inset 0 1px rgba(0, 0, 0, 0.03), inset 1px 0 #242b31, inset -1px 0 #242b31; }
     .notebook tab.reorderable-page:active {
-      background-color: #bbc6d9;
+      background-color: #2f373f;
       border-left: 0;
       border-right: 0;
-      box-shadow: inset 0 3px rgba(0, 0, 0, 0.03), inset 0 2px rgba(0, 0, 0, 0.03), inset 0 1px rgba(0, 0, 0, 0.03), inset 1px 0 #90a1c1, inset -1px 0 #90a1c1; }
+      box-shadow: inset 0 3px rgba(0, 0, 0, 0.03), inset 0 2px rgba(0, 0, 0, 0.03), inset 0 1px rgba(0, 0, 0, 0.03), inset 1px 0 #272e35, inset -1px 0 #272e35; }
   .notebook .prelight-page, .notebook .prelight-page GtkLabel {
-    color: mix(#343d46,#d8dee9,0.15); }
+    color: mix(#d8dee9,#343d46,0.15); }
   .notebook .active-page, .notebook .active-page GtkLabel {
-    color: #343d46; }
+    color: #d8dee9; }
 
 /*********
  ! Buttons
@@ -2293,7 +2297,7 @@ GtkOverlay.osd {
         color: rgba(44, 52, 60, 0.8); }
   .osd.toolbar {
     -GtkToolbar-button-relief: normal;
-    padding: 5px;
+    padding: 6px;
     border: 1px solid rgba(42, 49, 56, 0.8);
     border-radius: 0px;
     background-color: rgba(52, 61, 70, 0.8);
@@ -2486,7 +2490,7 @@ GtkProgressBar {
   padding: 0;
   border-radius: 0px;
   font-size: smaller;
-  color: rgba(216, 222, 233, 0.6);
+  color: rgba(52, 61, 70, 0.6);
   -GtkProgressBar-min-horizontal-bar-height: 6;
   -GtkProgressBar-min-vertical-bar-width: 6; }
   GtkProgressBar.osd {
@@ -2494,8 +2498,8 @@ GtkProgressBar {
     -GtkProgressBar-yspacing: 0;
     -GtkProgressBar-min-horizontal-bar-height: 3; }
   GtkProgressBar.trough {
-    border: 1px solid rgba(42, 49, 56, 0.5);
-    background-color: #38424c;
+    border: 1px solid rgba(159, 173, 201, 0.5);
+    background-color: #eff1f6;
     background-image: none; }
 
 .progressbar {
@@ -2529,9 +2533,9 @@ GtkLevelBar {
     -GtkLevelBar-min-block-height: 34; }
 
 .level-bar.trough {
-  background-color: #38424c;
-  background-image: linear-gradient(to top, #39434d, #37414a);
-  border: 1px solid rgba(42, 49, 56, 0.5);
+  background-color: #eff1f6;
+  background-image: linear-gradient(to top, #f5f7f9, #e9ecf2);
+  border: 1px solid rgba(159, 173, 201, 0.5);
   border-radius: 0px; }
 .level-bar.fill-block {
   background-color: #99c794;
@@ -2562,39 +2566,39 @@ GtkLevelBar {
   border-radius: 0px;
   outline-offset: -1px; }
   .scale.slider {
-    background-color: #38424c;
-    background-image: linear-gradient(to bottom, #39434d, #37414a);
-    border-color: #2a3138;
+    background-color: #eff1f6;
+    background-image: linear-gradient(to bottom, #f5f7f9, #e9ecf2);
+    border-color: #9fadc9;
     border-radius: 8px;
     border-width: 1px;
     border-style: solid;
     box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.3); }
     .scale.slider:focus, .scale.slider:hover {
-      border-color: #272e35; }
+      border-color: #90a1c1; }
     .scale.slider:active, .scale.slider:active:hover, .scale.slider:active:focus, .scale.slider:active:hover:focus, .scale.slider:checked, .scale.slider:checked:hover, .scale.slider:checked:focus, .scale.slider:checked:hover:focus {
-      border-color: #242b31; }
+      border-color: #8295b8; }
     .scale.slider:insensitive {
-      border-color: #2c343c; }
+      border-color: #adbad1; }
     .scale.slider:active:insensitive, .scale.slider:checked:insensitive {
-      border-color: #2a3138; }
+      border-color: #9fadc9; }
     .scale.slider:insensitive {
-      background-color: #2f373f;
-      background-image: linear-gradient(to bottom, #303840, #2e363e); }
+      background-color: #bbc6d9;
+      background-image: linear-gradient(to bottom, #c0cadc, #b6c1d6); }
   .scale.fine-tune:active, .scale.fine-tune:active:hover, .scale.fine-tune.horizontal:active, .scale.fine-tune.horizontal:active:hover {
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center; }
   .scale.mark {
-    border-color: rgba(42, 49, 56, 0.5); }
+    border-color: rgba(159, 173, 201, 0.5); }
   .scale.trough {
-    background-color: #38424c;
-    background-image: linear-gradient(to bottom, #39434d, #37414a);
+    background-color: #eff1f6;
+    background-image: linear-gradient(to bottom, #f5f7f9, #e9ecf2);
     margin: 7px 0;
-    border: 1px solid rgba(42, 49, 56, 0.5);
+    border: 1px solid rgba(159, 173, 201, 0.5);
     border-radius: 0px; }
     .scale.trough:insensitive {
-      background-color: #2f373f;
-      background-image: linear-gradient(to bottom, #303840, #2e363e); }
+      background-color: #bbc6d9;
+      background-image: linear-gradient(to bottom, #c0cadc, #b6c1d6); }
     .scale.trough.vertical {
       margin: 0 7px; }
   .scale.highlight.left, .memuitem .scale.highlight.left {
@@ -2605,9 +2609,9 @@ GtkLevelBar {
       border-color: #6eaf66;
       background-color: #6eaf66; }
     .scale.highlight.left:insensitive, .memuitem .scale.highlight.left:insensitive {
-      background-color: #2f373f;
-      background-image: linear-gradient(to bottom, #303840, #2e363e);
-      border-color: #2c343c; }
+      background-color: #bbc6d9;
+      background-image: linear-gradient(to bottom, #c0cadc, #b6c1d6);
+      border-color: #adbad1; }
   .scale.highlight.bottom {
     background-color: #99c794;
     background-image: linear-gradient(to bottom, #9dc999, #95c58f);
@@ -2635,23 +2639,23 @@ GtkLevelBar {
     border-radius: 0;
     background-color: transparent;
     background-image: none;
-    color: rgba(216, 222, 233, 0.5); }
+    color: rgba(52, 61, 70, 0.5); }
   .scrollbar.slider, .scrollbar.slider.vertical {
     border: 0;
     border-radius: 0px;
-    background-color: mix(#343d46,#d8dee9,0.21); }
+    background-color: mix(#d8dee9,#343d46,0.21); }
     .scrollbar.slider:hover, .scrollbar.slider.vertical:hover {
-      background-color: mix(#343d46,#d8dee9,0.31); }
+      background-color: mix(#d8dee9,#343d46,0.31); }
     .scrollbar.slider:active, .scrollbar.slider.vertical:active {
       background-color: #99c794; }
-    .scrollbar.slider.fine-tune:prelight:active, .scrollbar.slider.vertical.fine-tune:prelight:active {
+    .scrollbar.slider.fine-tune:hover:active, .scrollbar.slider.vertical.fine-tune:hover:active {
       border: 2px solid transparent; }
   .scrollbar.overlay-indicator:not(.dragging):not(.hovering) {
     opacity: .5;
     -GtkRange-slider-width: 4px; }
     .scrollbar.overlay-indicator:not(.dragging):not(.hovering) .slider {
       margin: 0;
-      background-color: #d8dee9;
+      background-color: #343d46;
       background-clip: padding-box; }
     .scrollbar.overlay-indicator:not(.dragging):not(.hovering) .trough {
       border-style: none;
@@ -2664,66 +2668,66 @@ GtkLevelBar {
 .scrollbar.trough {
   border: 0;
   border-radius: 0;
-  background-color: #343d46;
+  background-color: #d8dee9;
   background-image: none; }
 
 OsThumb, OsScrollbar {
-  color: #242b31; }
+  color: #8295b8; }
   OsThumb:selected, OsScrollbar:selected {
     background-color: #99c794; }
   OsThumb:active, OsScrollbar:active {
     background-color: #99c794; }
   OsThumb:insensitive, OsScrollbar:insensitive {
-    background-color: #2f373f; }
+    background-color: #bbc6d9; }
 
 /*********
  ! Sidebar
 **********/
 .sidebar, .sidebar.view, GtkHTML.sidebar, .sidebar .view, .sidebar GtkHTML, .sidebar GtkScrolledWindow {
-  background-color: #343d46;
-  color: mix(#d8dee9,#343d46,0.1); }
+  background-color: #d8dee9;
+  color: mix(#343d46,#d8dee9,0.1); }
   .sidebar.separator, .sidebar.separator:hover, .sidebar.separator:focus, .sidebar.view.separator, GtkHTML.sidebar.separator, .sidebar.view.separator:hover, GtkHTML.sidebar.separator:hover, .sidebar.view.separator:focus, GtkHTML.sidebar.separator:focus, .sidebar .view.separator, .sidebar GtkHTML.separator, .sidebar .view.separator:hover, .sidebar GtkHTML.separator:hover, .sidebar .view.separator:focus, .sidebar GtkHTML.separator:focus, .sidebar GtkScrolledWindow.separator, .sidebar GtkScrolledWindow.separator:hover, .sidebar GtkScrolledWindow.separator:focus {
     border-width: 1px;
     border-style: solid;
-    border-color: #2f373f;
-    color: #2f373f; }
+    border-color: #bbc6d9;
+    color: #bbc6d9; }
 .sidebar row:selected, .sidebar row:selected:hover, .sidebar row:selected:focus, .sidebar .view row:selected, .sidebar GtkHTML row:selected, .sidebar .view row:selected:hover, .sidebar GtkHTML row:selected:hover, .sidebar .view row:selected:focus, .sidebar GtkHTML row:selected:focus {
   border: 0;
   background-image: none;
   background-color: #99c794;
   color: #343d46; }
-.sidebar row:selected:prelight, .sidebar .view row:selected:prelight, .sidebar GtkHTML row:selected:prelight {
+.sidebar row:selected:hover, .sidebar .view row:selected:hover, .sidebar GtkHTML row:selected:hover {
   border: 0;
   background-image: none;
   background-color: #a4cd9f;
   color: #343d46; }
-.sidebar row:prelight, .sidebar .view row:prelight, .sidebar GtkHTML row:prelight {
+.sidebar row:hover, .sidebar .view row:hover, .sidebar GtkHTML row:hover {
   border: 0;
   background-image: none;
-  background-color: #37404a; }
+  background-color: #e6eaf1; }
 .sidebar .frame {
   border-width: 0; }
 .sidebar .sidebar-row {
   padding: 1px; }
 .sidebar .sidebar-icon {
-  padding-left: 10px;
-  padding-right: 10px; }
+  padding-left: 12px;
+  padding-right: 12px; }
 GtkAssistant .sidebar {
-  padding: 5px;
+  padding: 6px;
   border-width: 0 1px 0 0;
   border-style: solid;
-  border-right-color: #2a3138;
+  border-right-color: #9fadc9;
   border-radius: 0;
-  background-color: #343d46;
-  color: mix(#d8dee9,#343d46,0.1); }
+  background-color: #d8dee9;
+  color: mix(#343d46,#d8dee9,0.1); }
   GtkAssistant .sidebar:dir(ltr) {
     border-width: 0 1px 0 0; }
   GtkAssistant .sidebar:dir(rtl) {
     border-width: 0 0 0 1px; }
   GtkAssistant .sidebar .label {
-    padding: 5px 10px; }
+    padding: 6px 12px; }
     GtkAssistant .sidebar .label.highlight {
-      background-color: mix(#343d46,#d8dee9,0.8); }
+      background-color: mix(#d8dee9,#343d46,0.8); }
   GtkAssistant .sidebar.csd .sidebar {
     border-top-style: none; }
   GtkAssistant .sidebar .highlight {
@@ -2735,19 +2739,19 @@ GtkAssistant .sidebar {
 GtkPaned {
   -GtkPaned-handle-size: 1;
   -gtk-icon-source: none;
-  margin: 0 5px; }
+  margin: 0 6px; }
   GtkPaned:dir(rtl) {
     margin-right: 0;
-    margin-left: 5px; }
+    margin-left: 6px; }
   GtkPaned .pane-separator {
-    background-color: #2f373f; }
+    background-color: #bbc6d9; }
   GtkPaned.wide {
     -GtkPaned-handle-size: 4;
     margin: 0; }
     GtkPaned.wide .pane-separator {
       background-color: transparent;
       border-style: none solid;
-      border-color: #2f373f;
+      border-color: #bbc6d9;
       border-width: 1px; }
     GtkPaned.wide.vertical .pane-separator {
       border-style: solid none; }
@@ -2778,17 +2782,17 @@ GtkPaned {
 
 .radio {
   background-image: none;
-  -gtk-icon-source: url("../assets/radio-unchecked.svg"); }
+  -gtk-icon-source: url("../assets/radio-unchecked-dark.svg"); }
   .radio:insensitive {
-    -gtk-icon-source: url("../assets/radio-unchecked-insensitive.svg"); }
+    -gtk-icon-source: url("../assets/radio-unchecked-insensitive-dark.svg"); }
   .radio:checked, .radio:active {
-    -gtk-icon-source: url("../assets/radio-checked.svg"); }
+    -gtk-icon-source: url("../assets/radio-checked-dark.svg"); }
     .radio:checked:insensitive, .radio:active:insensitive {
-      -gtk-icon-source: url("../assets/radio-checked-insensitive.svg"); }
+      -gtk-icon-source: url("../assets/radio-checked-insensitive-dark.svg"); }
   .radio:inconsistent {
-    -gtk-icon-source: url("../assets/radio-mixed.svg"); }
+    -gtk-icon-source: url("../assets/radio-mixed-dark.svg"); }
     .radio:inconsistent:insensitive {
-      -gtk-icon-source: url("../assets/radio-mixed-insensitive.svg"); }
+      -gtk-icon-source: url("../assets/radio-mixed-insensitive-dark.svg"); }
   .radio.menuitem {
     -gtk-icon-source: url("../assets/menuitem-radio-unchecked.svg"); }
     .radio.menuitem:insensitive {
@@ -2808,17 +2812,17 @@ GtkPaned {
 
 .check {
   background-image: none;
-  -gtk-icon-source: url("../assets/checkbox-unchecked.svg"); }
+  -gtk-icon-source: url("../assets/checkbox-unchecked-dark.svg"); }
   .check:insensitive {
-    -gtk-icon-source: url("../assets/checkbox-unchecked-insensitive.svg"); }
+    -gtk-icon-source: url("../assets/checkbox-unchecked-insensitive-dark.svg"); }
   .check:checked, .check:active {
-    -gtk-icon-source: url("../assets/checkbox-checked.svg"); }
+    -gtk-icon-source: url("../assets/checkbox-checked-dark.svg"); }
     .check:checked:insensitive, .check:active:insensitive {
-      -gtk-icon-source: url("../assets/checkbox-checked-insensitive.svg"); }
+      -gtk-icon-source: url("../assets/checkbox-checked-insensitive-dark.svg"); }
   .check:inconsistent {
-    -gtk-icon-source: url("../assets/checkbox-mixed.svg"); }
+    -gtk-icon-source: url("../assets/checkbox-mixed-dark.svg"); }
     .check:inconsistent:insensitive {
-      -gtk-icon-source: url("../assets/checkbox-mixed-insensitive.svg"); }
+      -gtk-icon-source: url("../assets/checkbox-mixed-insensitive-dark.svg"); }
   .check.menuitem {
     -gtk-icon-source: url("../assets/menuitem-checkbox-unchecked.svg"); }
     .check.menuitem:insensitive {
@@ -2837,9 +2841,9 @@ GtkPaned {
         -gtk-icon-source: url("../assets/menuitem-checkbox-mixed-insensitive.svg"); }
 
 GtkIconView.content-view.cell.check {
-  -gtk-icon-source: url("assets/grid-selection-unchecked.svg"); }
+  -gtk-icon-source: url("assets/grid-selection-unchecked-dark.svg"); }
   GtkIconView.content-view.cell.check:active {
-    -gtk-icon-source: url("assets/grid-selection-checked.svg"); }
+    -gtk-icon-source: url("assets/grid-selection-checked-dark.svg"); }
 
 /********
  ! Switch
@@ -2850,19 +2854,19 @@ GtkSwitch {
   font: bold condensed;
   outline-offset: -4px; }
   GtkSwitch.slider {
-    background-color: #3e4954;
-    background-image: linear-gradient(to bottom, #404b56, #3d4852);
+    background-color: white;
+    background-image: linear-gradient(to bottom, white, #f8f9fb);
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.12); }
     GtkSwitch.slider:insensitive {
       border-color: rgba(0, 0, 0, 0.1);
-      background-color: #2f373f;
+      background-color: #bbc6d9;
       box-shadow: none; }
   GtkSwitch.trough {
-    background-color: #313a43;
-    background-image: linear-gradient(to top, #323b44, #303941);
-    border: 1px solid #2a3138;
-    color: #d8dee9;
+    background-color: #cad2e1;
+    background-image: linear-gradient(to top, #cfd6e4, #c4cdde);
+    border: 1px solid #9fadc9;
+    color: #343d46;
     box-shadow: inset 1px 0 rgba(0, 0, 0, 0.07), inset 0 1px rgba(0, 0, 0, 0.08), inset -1px 0 rgba(0, 0, 0, 0.07), inset 0 -1px rgba(0, 0, 0, 0.05); }
     GtkSwitch.trough:active {
       background-color: #99c794;
@@ -2870,10 +2874,10 @@ GtkSwitch {
       border-color: #83bb7d;
       color: #343d46; }
     GtkSwitch.trough:insensitive {
-      background-color: #2f373f;
-      background-image: linear-gradient(to top, #303840, #2e363e);
-      border-color: #2c343c;
-      color: mix(#d8dee9,#343d46,0.5); }
+      background-color: #bbc6d9;
+      background-image: linear-gradient(to top, #c0cadc, #b6c1d6);
+      border-color: #adbad1;
+      color: mix(#343d46,#d8dee9,0.5); }
 
 /*********
  ! Buttons
@@ -2891,11 +2895,11 @@ GtkSwitch {
   -GtkTextView-error-underline-color: #f44336; }
 
 .view, GtkHTML {
-  color: #343d46;
-  background-color: #d8dee9; }
+  color: #d8dee9;
+  background-color: #343d46; }
   .view:insensitive, GtkHTML:insensitive, .view:insensitive:insensitive, GtkHTML:insensitive:insensitive {
-    background-color: #bbc6d9;
-    color: mix(#343d46,#d8dee9,0.5); }
+    background-color: #2f373f;
+    color: mix(#d8dee9,#343d46,0.5); }
 
 .cell {
   border-width: 0;
@@ -2913,14 +2917,14 @@ row:selected, row:selected:hover, row:selected:focus {
   color: #343d46; }
 
 .content-view.view, GtkHTML.content-view {
-  background-color: #d8dee9; }
-  .content-view.view:prelight, GtkHTML.content-view:prelight {
+  background-color: #343d46; }
+  .content-view.view:hover, GtkHTML.content-view:hover {
     background-color: rgba(153, 199, 148, 0.6); }
   .content-view.view:selected, GtkHTML.content-view:selected, .content-view.view:active, GtkHTML.content-view:active {
     background-color: #99c794; }
   .content-view.view:insensitive, GtkHTML.content-view:insensitive {
-    background-color: #bbc6d9; }
-  .content-view.view.check, GtkHTML.content-view.check, .content-view.view.check:active, GtkHTML.content-view.check:active, .content-view.view.check:prelight, GtkHTML.content-view.check:prelight, .content-view.view.check:insensitive, GtkHTML.content-view.check:insensitive, .content-view.view.check:selected, GtkHTML.content-view.check:selected {
+    background-color: #2f373f; }
+  .content-view.view.check, GtkHTML.content-view.check, .content-view.view.check:active, GtkHTML.content-view.check:active, .content-view.view.check:hover, GtkHTML.content-view.check:hover, .content-view.view.check:insensitive, GtkHTML.content-view.check:insensitive, .content-view.view.check:selected, GtkHTML.content-view.check:selected {
     background-color: transparent; }
 .content-view .subtitle {
   font: smaller;
@@ -2955,10 +2959,10 @@ GdMainIconView.content-view {
 
 /* this will get overridden by .view, needed by gedit line numbers */
 GtkTextView {
-  background-color: mix(#343d46,#d8dee9,0.5); }
+  background-color: mix(#d8dee9,#343d46,0.5); }
 
 GtkHTML:insensitive {
-  background-color: #bbc6d9; }
+  background-color: #2f373f; }
 
 GtkDrawingArea {
   background-color: transparent; }
@@ -2977,7 +2981,7 @@ GtkTreeView {
     border: 1px solid #99c794; }
   GtkTreeView .entry {
     border-radius: 0;
-    background-color: #d8dee9;
+    background-color: #343d46;
     background-image: none; }
   GtkTreeView .progressbar {
     background-color: #99c794;
@@ -2989,24 +2993,24 @@ GtkTreeView {
       border: 1px solid #63a95b;
       color: #343d46; }
     GtkTreeView .progressbar:insensitive:insensitive {
-      background-color: #343d46;
-      background-image: linear-gradient(to bottom, #353e47, #333c45);
-      border-color: #2c343c; }
-  GtkTreeView .trough {
-    background-color: mix(#343d46,#d8dee9,0.5);
-    border: 1px solid #9fadc9; }
-    GtkTreeView .trough:selected:focus, GtkTreeView .trough:selected {
       background-color: #d8dee9;
-      border: 1px solid #272e35;
-      color: #343d46; }
+      background-image: linear-gradient(to bottom, #dee3ec, #d2d9e6);
+      border-color: #adbad1; }
+  GtkTreeView .trough {
+    background-color: mix(#d8dee9,#343d46,0.5);
+    border: 1px solid #2a3138; }
+    GtkTreeView .trough:selected:focus, GtkTreeView .trough:selected {
+      background-color: #343d46;
+      border: 1px solid #90a1c1;
+      color: #d8dee9; }
     GtkTreeView .trough:insensitive:insensitive {
-      background-color: #d8dee9; }
+      background-color: #343d46; }
 
 /***********
  ! Separator
 ************/
 .view.separator, GtkHTML.separator, .separator {
-  color: #2f373f;
+  color: #bbc6d9;
   border: 1px solid currentColor; }
 
 /*********************
@@ -3016,14 +3020,14 @@ column-header .button, column-header .button:active {
   border-width: 0 1px 1px 0;
   border-radius: 0; }
 column-header .button, column-header .button:active, column-header .button:focus, column-header .button:active:focus {
-  border-color: #bbc6d9;
-  border-bottom-color: #9fadc9;
-  background-color: #cfd7e4;
+  border-color: #2f373f;
+  border-bottom-color: #2a3138;
+  background-color: #323b44;
   background-image: none; }
 column-header .button:hover, column-header .button:active:hover, column-header .button:hover:focus, column-header .button:active:hover:focus {
-  border-color: #bbc6d9;
-  border-bottom-color: #9fadc9;
-  background-color: #d5dce7;
+  border-color: #2f373f;
+  border-bottom-color: #2a3138;
+  background-color: #333c45;
   background-image: none; }
 column-header .button:last-child .button {
   border-width: 0 0 1px; }
@@ -3032,7 +3036,7 @@ column-header .button:last-child .button {
  ! Frames *
 ***********/
 .frame {
-  border: 1px solid #2a3138; }
+  border: 1px solid #9fadc9; }
   .frame.flat {
     border: 0; }
 
@@ -3053,7 +3057,7 @@ GtkScrolledWindow GtkViewport.frame {
   border-radius: 0px 0px 0 0;
   background-color: mix(#242b31,#d8d8d8,0.21);
   /* this is used for the resize cursor area */
-  margin: 15px; }
+  margin: 18px; }
   .window-frame.tiled {
     border-radius: 0; }
   .window-frame.solid-csd {
@@ -3121,8 +3125,8 @@ GtkScrolledWindow GtkViewport.frame {
   text-shadow: none; }
 
 .lightdm.button:active,
-.lightdm.button:active:focused,
-.lightdm.button:focused,
+.lightdm.button:active:focus,
+.lightdm.button:focus,
 .lightdm.entry {
   background-image: none;
   background-color: rgba(0, 0, 0, 0.3);
@@ -3134,11 +3138,11 @@ GtkScrolledWindow GtkViewport.frame {
 
 .lightdm.entry:hover,
 .lightdm.entry:active,
-.lightdm.entry:active:focused {
+.lightdm.entry:active:focus {
   background-image: none;
   border-image: none; }
 
-.lightdm.entry:focused {
+.lightdm.entry:focus {
   border-color: rgba(255, 255, 255, 0.6);
   border-width: 1px;
   border-style: solid;
@@ -3182,14 +3186,14 @@ GeditWindow .pane-separator {
   border-width: 0 1px 0 0;
   border-style: solid; }
   GeditWindow .pane-separator, GeditWindow .pane-separator:hover {
-    border-color: #2f373f;
-    background-color: #343d46; }
+    border-color: #bbc6d9;
+    background-color: #d8dee9; }
 
 .gedit-document-panel {
-  background-color: #343d46;
-  color: mix(#d8dee9,#343d46,0.1); }
+  background-color: #d8dee9;
+  color: mix(#343d46,#d8dee9,0.1); }
   .gedit-document-panel .list-row {
-    padding: 5px; }
+    padding: 6px; }
     .gedit-document-panel .list-row .button {
       padding: 1px;
       border-radius: 0px;
@@ -3212,11 +3216,11 @@ GeditWindow .pane-separator {
     color: #fff; }
 
 .gedit-document-panel-group-row, .gedit-document-panel-group-row:hover {
-  border-top: 1px solid #2f373f;
-  background-color: #343d46; }
+  border-top: 1px solid #bbc6d9;
+  background-color: #d8dee9; }
 
 .gedit-document-panel-document-row:hover {
-  background-color: #37404a; }
+  background-color: #e6eaf1; }
 
 .gedit-document-panel-dragged-row {
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -3229,7 +3233,7 @@ GeditWindow .pane-separator {
   transition: all 200ms ease-in; }
 
 GeditStatusbar {
-  border-top: 1px solid #2a3138; }
+  border-top: 1px solid #9fadc9; }
 
 GeditStatusbar GeditSmallButton, GeditStatusMenuButton {
   text-shadow: none; }
@@ -3240,33 +3244,33 @@ GeditStatusbar GeditSmallButton, GeditStatusMenuButton {
     border-radius: 0;
     padding: 1px 6px 2px 4px; }
     GeditStatusbar GeditSmallButton .button:hover, GeditStatusbar GeditSmallButton .button:active, GeditStatusbar GeditSmallButton .button:active:hover, GeditStatusMenuButton .button:hover, GeditStatusMenuButton .button:active, GeditStatusMenuButton .button:active:hover {
-      border-color: #2a3138; }
+      border-color: #9fadc9; }
     GeditStatusbar GeditSmallButton .button:active, GeditStatusMenuButton .button:active {
-      background-color: #313a43;
-      color: #d8dee9; }
+      background-color: #cad2e1;
+      color: #343d46; }
 
 GeditViewFrame .gedit-search-slider {
-  padding: 5px;
+  padding: 6px;
   border-radius: 0 0 0px 0px;
   border-width: 0 1px 1px;
   border-style: solid;
-  border-color: #9fadc9;
-  background-color: #d8dee9; }
+  border-color: #2a3138;
+  background-color: #343d46; }
   GeditViewFrame .gedit-search-slider .not-found {
     background-color: #f44336;
     background-image: none;
     color: #fff; }
 
 GeditFileBrowserWidget .toolbar {
-  padding: 2.5px;
+  padding: 3px;
   border-top: 0;
-  background-color: #343d46;
+  background-color: #d8dee9;
   background-image: none; }
 
 .gedit-search-entry-occurrences-tag {
-  margin: 2.5px;
-  padding: 2.5px;
-  color: mix(#343d46,#d8dee9,0.5); }
+  margin: 3px;
+  padding: 3px;
+  color: mix(#d8dee9,#343d46,0.5); }
 
 /************
  ! Nautilus *
@@ -3275,24 +3279,24 @@ GeditFileBrowserWidget .toolbar {
   color: #fff;
   text-shadow: 1px 1px #000; }
   .nautilus-desktop.nautilus-canvas-item:active {
-    color: #d8dee9; }
+    color: #343d46; }
   .nautilus-desktop.nautilus-canvas-item:selected {
     color: #343d46; }
-  .nautilus-desktop.nautilus-canvas-item:active, .nautilus-desktop.nautilus-canvas-item:prelight, .nautilus-desktop.nautilus-canvas-item:selected {
+  .nautilus-desktop.nautilus-canvas-item:active, .nautilus-desktop.nautilus-canvas-item:hover, .nautilus-desktop.nautilus-canvas-item:selected {
     text-shadow: none; }
 
 NautilusWindow .toolbar {
   border-width: 0 0 1px;
   border-style: solid;
-  border-color: #2a3138; }
+  border-color: #9fadc9; }
 NautilusWindow .sidebar .frame {
   border: 0; }
 NautilusWindow GtkPaned {
   border-width: 0 1px 0 0;
   border-style: solid; }
   NautilusWindow GtkPaned, NautilusWindow GtkPaned:hover {
-    border-color: #2f373f;
-    background-color: #343d46; }
+    border-color: #bbc6d9;
+    background-color: #d8dee9; }
 
 NautilusNotebook.notebook {
   border-right-width: 0;
@@ -3302,20 +3306,20 @@ NautilusNotebook .frame {
   border: 0; }
 
 NautilusQueryEditor .toolbar {
-  padding-top: 4px;
-  padding-bottom: 3px;
+  padding-top: 5px;
+  padding-bottom: 4px;
   border-width: 1px 0 0;
   border-style: solid;
-  border-color: #343d46;
-  background-color: #2f373f; }
+  border-color: #d8dee9;
+  background-color: #bbc6d9; }
   NautilusQueryEditor .toolbar:nth-child(2) {
-    border-color: #2a3138; }
+    border-color: #9fadc9; }
   NautilusQueryEditor .toolbar.search-bar {
     border-top-width: 0;
     border-bottom-width: 0; }
   NautilusQueryEditor .toolbar:last-child, NautilusQueryEditor .toolbar:only-child, NautilusQueryEditor .toolbar.search-bar:last-child, NautilusQueryEditor .toolbar.search-bar:only-child {
     border-bottom-width: 1px;
-    border-bottom-color: #2a3138; }
+    border-bottom-color: #9fadc9; }
 
 /********
  ! Nemo *
@@ -3324,75 +3328,75 @@ NautilusQueryEditor .toolbar {
   color: #fff;
   text-shadow: 1px 1px #000; }
   .nemo-desktop.nemo-canvas-item:active {
-    color: #d8dee9; }
+    color: #343d46; }
   .nemo-desktop.nemo-canvas-item:selected {
     color: #343d46; }
-  .nemo-desktop.nemo-canvas-item:active, .nemo-desktop.nemo-canvas-item:prelight, .nemo-desktop.nemo-canvas-item:selected {
+  .nemo-desktop.nemo-canvas-item:active, .nemo-desktop.nemo-canvas-item:hover, .nemo-desktop.nemo-canvas-item:selected {
     text-shadow: none; }
 
 NemoPathbarButton {
   /*$button_bg: if(hue($bg) == 0deg, shade($bg, 1.2), $bg);*/
-  background-color: #343d46;
-  background-image: linear-gradient(to bottom, #353e47, #333c45);
-  border-color: rgba(0, 0, 0, 0.22);
-  color: #d8dee9;
-  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.22);
+  background-color: #d8dee9;
+  background-image: linear-gradient(to bottom, #dee3ec, #d2d9e6);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #343d46;
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.12);
   -NemoPathbarButton-border-radius: 0px; }
   NemoPathbarButton:focus, NemoPathbarButton:hover {
-    border-color: rgba(0, 0, 0, 0.22); }
+    border-color: rgba(0, 0, 0, 0.12); }
   NemoPathbarButton:active, NemoPathbarButton:active:hover, NemoPathbarButton:active:focus, NemoPathbarButton:active:hover:focus, NemoPathbarButton:checked, NemoPathbarButton:checked:hover, NemoPathbarButton:checked:focus, NemoPathbarButton:checked:hover:focus {
-    border-color: rgba(0, 0, 0, 0.22); }
+    border-color: rgba(0, 0, 0, 0.12); }
   NemoPathbarButton:insensitive {
-    border-color: rgba(0, 0, 0, 0.22); }
+    border-color: rgba(0, 0, 0, 0.12); }
   NemoPathbarButton:active:insensitive, NemoPathbarButton:checked:insensitive {
-    border-color: rgba(0, 0, 0, 0.22); }
+    border-color: rgba(0, 0, 0, 0.12); }
   NemoPathbarButton.flat {
-    border-color: rgba(52, 61, 70, 0);
-    background-color: rgba(52, 61, 70, 0);
+    border-color: rgba(216, 222, 233, 0);
+    background-color: rgba(216, 222, 233, 0);
     background-image: none;
     box-shadow: none; }
   NemoPathbarButton:focus, NemoPathbarButton:hover, NemoPathbarButton.flat:focus, NemoPathbarButton.flat:hover {
-    background-color: #3e4954;
-    background-image: linear-gradient(to bottom, #404b56, #3d4852);
-    border-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.42); }
+    background-color: white;
+    background-image: linear-gradient(to bottom, white, #f8f9fb);
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.32); }
     NemoPathbarButton:focus:focus, NemoPathbarButton:focus:hover, NemoPathbarButton:hover:focus, NemoPathbarButton:hover:hover, NemoPathbarButton.flat:focus:focus, NemoPathbarButton.flat:focus:hover, NemoPathbarButton.flat:hover:focus, NemoPathbarButton.flat:hover:hover {
-      border-color: rgba(0, 0, 0, 0.3); }
+      border-color: rgba(0, 0, 0, 0.2); }
     NemoPathbarButton:focus:active, NemoPathbarButton:focus:active:hover, NemoPathbarButton:focus:active:focus, NemoPathbarButton:focus:active:hover:focus, NemoPathbarButton:focus:checked, NemoPathbarButton:focus:checked:hover, NemoPathbarButton:focus:checked:focus, NemoPathbarButton:focus:checked:hover:focus, NemoPathbarButton:hover:active, NemoPathbarButton:hover:active:hover, NemoPathbarButton:hover:active:focus, NemoPathbarButton:hover:active:hover:focus, NemoPathbarButton:hover:checked, NemoPathbarButton:hover:checked:hover, NemoPathbarButton:hover:checked:focus, NemoPathbarButton:hover:checked:hover:focus, NemoPathbarButton.flat:focus:active, NemoPathbarButton.flat:focus:active:hover, NemoPathbarButton.flat:focus:active:focus, NemoPathbarButton.flat:focus:active:hover:focus, NemoPathbarButton.flat:focus:checked, NemoPathbarButton.flat:focus:checked:hover, NemoPathbarButton.flat:focus:checked:focus, NemoPathbarButton.flat:focus:checked:hover:focus, NemoPathbarButton.flat:hover:active, NemoPathbarButton.flat:hover:active:hover, NemoPathbarButton.flat:hover:active:focus, NemoPathbarButton.flat:hover:active:hover:focus, NemoPathbarButton.flat:hover:checked, NemoPathbarButton.flat:hover:checked:hover, NemoPathbarButton.flat:hover:checked:focus, NemoPathbarButton.flat:hover:checked:hover:focus {
-      border-color: rgba(0, 0, 0, 0.3); }
+      border-color: rgba(0, 0, 0, 0.2); }
     NemoPathbarButton:focus:insensitive, NemoPathbarButton:hover:insensitive, NemoPathbarButton.flat:focus:insensitive, NemoPathbarButton.flat:hover:insensitive {
-      border-color: rgba(0, 0, 0, 0.3); }
+      border-color: rgba(0, 0, 0, 0.2); }
     NemoPathbarButton:focus:active:insensitive, NemoPathbarButton:focus:checked:insensitive, NemoPathbarButton:hover:active:insensitive, NemoPathbarButton:hover:checked:insensitive, NemoPathbarButton.flat:focus:active:insensitive, NemoPathbarButton.flat:focus:checked:insensitive, NemoPathbarButton.flat:hover:active:insensitive, NemoPathbarButton.flat:hover:checked:insensitive {
-      border-color: rgba(0, 0, 0, 0.3); }
+      border-color: rgba(0, 0, 0, 0.2); }
   NemoPathbarButton:active, NemoPathbarButton:checked, NemoPathbarButton.flat:active, NemoPathbarButton.flat:checked {
-    background-color: #242b31;
-    background-image: linear-gradient(to top, #252c32, #242a30);
+    background-color: #8295b8;
+    background-image: linear-gradient(to top, #8699bb, #7e92b6);
     color: #343d46;
     box-shadow: inset 1px 0 rgba(0, 0, 0, 0.06), inset 0 1px rgba(0, 0, 0, 0.07), inset -1px 0 rgba(0, 0, 0, 0.06), inset 0 -1px rgba(0, 0, 0, 0.05); }
     NemoPathbarButton:active:focus, NemoPathbarButton:active:hover, NemoPathbarButton:checked:focus, NemoPathbarButton:checked:hover, NemoPathbarButton.flat:active:focus, NemoPathbarButton.flat:active:hover, NemoPathbarButton.flat:checked:focus, NemoPathbarButton.flat:checked:hover {
-      background-color: #22282e;
-      background-image: linear-gradient(to top, #22282e, #21272d);
+      background-color: #7489b0;
+      background-image: linear-gradient(to top, #778cb2, #7086ae);
       color: #343d46; }
   NemoPathbarButton:focus, NemoPathbarButton:hover, NemoPathbarButton.flat:focus, NemoPathbarButton.flat:hover {
-    color: #d8dee9; }
+    color: #343d46; }
   NemoPathbarButton:active:insensitive, NemoPathbarButton:checked:insensitive, NemoPathbarButton.flat:active:insensitive, NemoPathbarButton.flat:checked:insensitive {
-    background-color: #2f373f;
-    background-image: linear-gradient(to bottom, #303840, #2e363e);
-    color: #d8dee9;
+    background-color: #bbc6d9;
+    background-image: linear-gradient(to bottom, #c0cadc, #b6c1d6);
+    color: #343d46;
     box-shadow: none; }
   NemoPathbarButton:insensitive:insensitive, NemoPathbarButton.flat:insensitive:insensitive {
-    background-color: rgba(52, 61, 70, 0.3);
-    background-image: linear-gradient(to bottom, rgba(53, 62, 71, 0.3), rgba(51, 60, 69, 0.3));
-    color: mix(#343d46,#d8dee9,0.5);
+    background-color: #cad2e1;
+    background-image: linear-gradient(to bottom, #cfd6e4, #c4cdde);
+    color: mix(#d8dee9,#343d46,0.5);
     box-shadow: none; }
   NemoPathbarButton.separator, NemoPathbarButton .separator {
     border: 1px solid currentColor;
-    color: #2f373f; }
+    color: #bbc6d9; }
     NemoPathbarButton.separator:insensitive, NemoPathbarButton .separator:insensitive {
-      color: #2c343c; }
+      color: #adbad1; }
 
 NemoPlacesTreeView {
-  -NemoPlacesTreeView-disk-full-bg-color: #2a3138;
+  -NemoPlacesTreeView-disk-full-bg-color: #9fadc9;
   -NemoPlacesTreeView-disk-full-fg-color: #99c794;
   -NemoPlacesTreeView-disk-full-bar-width: 1px;
   -NemoPlacesTreeView-disk-full-bar-radius: 1px;
@@ -3417,7 +3421,7 @@ PanelApplet .button, .xfce4-panel .button {
   background-color: transparent;
   background-image: none;
   color: #d8d8d8; }
-  PanelApplet .button:hover, .xfce4-panel .button:hover, PanelApplet .button:prelight, .xfce4-panel .button:prelight {
+  PanelApplet .button:hover, .xfce4-panel .button:hover, PanelApplet .button:hover, .xfce4-panel .button:hover {
     background-color: mix(#343d46,#d8d8d8,0.11);
     background-image: linear-gradient(to bottom, shade(mix(#343d46,#d8d8d8,0.11),1.02), shade(mix(#343d46,#d8d8d8,0.11),0.98));
     border-color: mix(#343d46,#d8d8d8,0.11);
@@ -3427,7 +3431,7 @@ PanelApplet .button, .xfce4-panel .button {
     background-image: linear-gradient(to top, shade(mix(#343d46,#d8d8d8,0.21),1.02), shade(mix(#343d46,#d8d8d8,0.21),0.98));
     border-color: mix(#343d46,#d8d8d8,0.21);
     color: #e9e9e9; }
-    PanelApplet .button:active:prelight, .xfce4-panel .button:active:prelight, PanelApplet .button:checked:prelight, .xfce4-panel .button:checked:prelight {
+    PanelApplet .button:active:hover, .xfce4-panel .button:active:hover, PanelApplet .button:checked:hover, .xfce4-panel .button:checked:hover {
       background-color: mix(#343d46,#d8d8d8,0.31);
       background-image: linear-gradient(to top, shade(mix(#343d46,#d8d8d8,0.31),1.02), shade(mix(#343d46,#d8d8d8,0.31),0.98));
       border-color: mix(#343d46,#d8d8d8,0.31); }
@@ -3454,11 +3458,11 @@ PanelAppletFrame {
  ! Synaptic *
 *************/
 GtkWindow > GtkVBox > .dock, GtkWindow > GtkVBox > .dock > GtkHBox > GtkToolbar {
-  background-color: #343d46;
-  background-image: linear-gradient(to bottom, #353e47, #333c45);
-  padding: 5px;
+  background-color: #d8dee9;
+  background-image: linear-gradient(to bottom, #dee3ec, #d2d9e6);
+  padding: 6px;
   border: 0;
-  color: #d8dee9; }
+  color: #343d46; }
 
 /***********************
  ! Fallback mode panel *
@@ -3471,8 +3475,8 @@ XfceHeading {
   padding: 0;
   border: 0;
   background-image: none;
-  background-color: #d8dee9;
-  color: #343d46; }
+  background-color: #343d46;
+  color: #d8dee9; }
 
 .xfce4-panel {
   font: normal; }
@@ -3530,7 +3534,7 @@ UnityPanelWidget, .unity-panel {
     color: #e9e9e9; }
 
 SheetStyleDialog.unity-force-quit {
-  background-color: #343d46; }
+  background-color: #d8dee9; }
 
 /***********************
  ! LightDM GTK Greeter *
