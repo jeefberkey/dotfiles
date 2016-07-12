@@ -289,16 +289,21 @@ input 1739:10036:DLL060A:00_06C {
   scroll_method two_finger
   click_method clickfinger
   natural_scroll enabled
-
 }
 
+input 5426:52:Razer_Razer_Tai {
+  events enabled
+  middle_emulation enabled
+}
 
 # =================
 # ==== outputs ====
 # =================
+mouse_warping output
+seamless_mouse on
 output eDP-1 res 1920x1280 #pos -1980,0
-output DP-2 res 2560x1440 #pos 0,0
-output DP-3 res 2560x1440 #pos 0,2560
+output HDMI-A-1 res 1920x1080
+#output DP-2 res 2560x1440 #pos 0,0
+#output DP-3 res 2560x1440 #pos 0,2560
 
-#workspace 1 output eDP-1
 

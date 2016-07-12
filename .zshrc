@@ -74,6 +74,7 @@ plugins=(
 # User configuration
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/nick/.local/bin:/home/nick/bin"
+export PATH="$PATH:/home/nick/Downloads/android-sdk-linux/platform-tools"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
