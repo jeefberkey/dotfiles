@@ -1,0 +1,27 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+# Global settings to make the libvirt provider work
+
+# Libvirt needs some policy changes in polkit
+#   In /etc/polkit-1/rules.d
+# polkit.addRule(function(action, subject) {
+#     if (action.id == "org.libvirt.unix.manage" &&
+#         subject.isInGroup("wheel")) {
+#             return polkit.Result.YES;
+#     }
+# });
+#
+
+Vagrant.configure("2") do |config|
+  config.vm.provider :libvirt do |libvirt|
+    # libvirt.host = "localhost"
+    # libvirt.driver = "qemu"
+    # libvirt.connect_via_ssh = false
+    # libvirt.username = "root"
+    # libvirt.storage_pool_name = "default"
+  end
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+  end
+end

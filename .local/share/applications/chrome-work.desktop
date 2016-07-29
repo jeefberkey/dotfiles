@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Work profile - Google Chrome
-Comment=Launch the Work profile configured in Chrome
-Exec=google-chrome --profile-directory=Default
-Icon=~/.config/google-chrome/Default/Google\ Profile\ Picture.png
-Type=Application
-Categories=Internet
-Terminal=false
