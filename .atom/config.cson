@@ -16,7 +16,6 @@
     ]
   editor:
     fontFamily: "Source Code Pro"
-    fontSize: 13
     invisibles: {}
     lineHeight: 1.3
     preferredLineLength: 140
@@ -30,17 +29,10 @@
     scaleFactor: 1.2
   linter:
     errorPanelHeight: 184
-    ignoredLinterErrors: [
-      "puppet-lint"
-    ]
     statusIconScope: "File"
   "linter-puppet-lint":
+    automaticFix: true
     oldVersion: false
-    puppetLintArguments: "--disable_class_parameter_defaults"
-    skip80Chars: true
-    skipClassInherithsFromParamClass: true
-    skipSelectorInsideResource: true
-    skipVariablesNotEnclosed: true
   "markdown-preview": {}
   "vim-mode": {}
   welcome:

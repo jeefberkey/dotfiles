@@ -87,7 +87,7 @@ client.placeholder      $color4 $color1 $color5 $color3 $color4
 # ==== borders and gaps ====
 # ==========================
 
-# turns off gaps and borderswhen there's only one window
+# turns off gaps and borders when there's only one window
 #smart_gaps on
 smart_borders on
 
@@ -113,7 +113,6 @@ bindsym $mod+Shift+f exec nautilus
 # start a rofi (a program launcher)
 # https://davedavenport.github.io/rofi/generator.html
 bindsym $mod+d exec "rofi -show combi"
-
 # program switcher
 bindsym $mod+Tab exec "rofi -show window"
 
