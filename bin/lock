@@ -5,8 +5,10 @@
 #convert /tmp/lock-screenshot.png -blur 0x7 /tmp/blur-screenshot.png
 #i3lock -i /tmp/blur-screenshot.png
 
-scrot /tmp/screen.png
-convert /tmp/screen.png -filter Box -resize 8% -resize 1250% /tmp/screen.png
-convert -gravity center -composite /tmp/screen.png ~/src/lock.png /tmp/screen.png
-i3lock -u -i /tmp/screen.png -c 000000
-rm /tmp/screen.png
+#scrot /tmp/screen.png
+#convert /tmp/screen.png -filter Box -resize 8% -resize 1250% /tmp/screen.png
+#convert -gravity center -composite /tmp/screen.png ~/src/lock.png /tmp/screen.png
+#i3lock -u -i /tmp/screen.png -c 000000
+#rm /tmp/screen.png
+
+i3lock -f -t -i ~/.wallpapers/.current -c 000000
