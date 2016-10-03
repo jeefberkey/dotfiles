@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=ryver
+Comment=Persistent group chat using XMPP.
+Exec=~/src/Ryver/Ryver
+Terminal=false
+Categories=Network;InstantMessaging;

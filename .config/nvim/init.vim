@@ -1,76 +1,47 @@
-" set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" install Vundle if it isn't installed
-if !isdirectory(expand('~/.config/nvim/bundle/Vundle.vim'))
-  silent! exe '!git clone https://github.com/gmarik/Vundle.vim ~/.config/nvim/bundle/Vundle.vim'
+" install vim-plug if not installed
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.config/nvim/plugged')
 
-" ------------------------------------------------------------------------------
-" Plugins
-" ------------------------------------------------------------------------------
-"  to get started:
-"
-"    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-"
-"  then:
-"
-"    :VundleInstall
-" ------------------------------------------------------------------------------
-
-
-" let Vundle manage Vundle (required)
-Plugin 'gmarik/Vundle.vim'
+" some sensible defaults
+Plug 'tpope/vim-sensible'
 " the BEST git integration for vim
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " pretty pretty status bar; integrates with other services
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 " auto-formatting for Puppet
-Plugin 'rodjek/vim-puppet'
+Plug 'rodjek/vim-puppet'
 " Lovely whitespace alignment
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 " Makes ASCII tables easy (for ReST, etc)
-"Plugin 'dhruvasagar/vim-table-mode'
-"Plugin 'msanders/snipmate.vim'
-"Plugin 'surround.vim'
-"Plugin 'matchit.zip'
+"Plug 'dhruvasagar/vim-table-mode'
+"Plug 'msanders/snipmate.vim'
+"Plug 'surround.vim'
+"Plug 'matchit.zip'
 " Highlight trailing whitespace
-Plugin 'ntpeters/vim-better-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 " Markdown support
-Plugin 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 " bracket closer
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 " line ender
-Plugin 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 " show git changed lines
-Plugin 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 " das themes
-Plugin 'mhartington/oceanic-next'
-" Plugin 'freeo/vim-kalisi'
+Plug 'mhartington/oceanic-next'
+" I only care about comment toggling (gc)
+Plug 'tpope/vim-commentary'
+" indent guides
+" Plug 'nathanaelkane/vim-indent-guides'
+Plug 'yggdroot/indentline'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
+call plug#end()
 
 
 " ------------------------------------------------------------------------------
@@ -89,10 +60,8 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 " let g:airline_theme='molokai'
 let g:airline_theme='oceanicnext'
-" let g:airline_symbols.branch='𝌎'
-" let g:airline_symbols.branch = '⎇'
-" let g:airline_symbols.branch = 'ᚵ'
-" let g:airline_symbols.branch = 'ᚴ'
+
+let g:indentLine_char = '▏'
 
 " ------------------------------------------------------------------------------
 " General settings
@@ -104,6 +73,7 @@ set ruler
 set number
 set title
 set mouse=i
+set termguicolors
 
 set list listchars=precedes:«,extends:»,tab:»!,nbsp:„,trail:!
 
@@ -111,10 +81,8 @@ set list listchars=precedes:«,extends:»,tab:»!,nbsp:„,trail:!
 " --------------------------------------
 "  toggle paste mode (prevents wonky formatting when pasting into a terminal)
 map <F2> :set paste!<cr>
-
 " remove whitespace
 map <F5> :%s/[[:space:]]\+$//<cr>
-
 " toggle spellcheck
 map <F7> :set spell! spelllang=en_us spellfile=~/.vim/spellfile.add<cr>
 

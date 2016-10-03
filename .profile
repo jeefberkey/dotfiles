@@ -1,5 +1,4 @@
 
-
 export TERMINAL=gnome-terminal
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
@@ -12,6 +11,8 @@ else
   export GDK_BACKEND=wayland
   export CLUTTER_BACKEND=wayland
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
