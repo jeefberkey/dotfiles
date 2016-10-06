@@ -14,7 +14,7 @@
       "oceanic-next"
     ]
   editor:
-    fontFamily: "Source Code Pro"
+    fontFamily: "Source Code Pro for Powerline"
     invisibles: {}
     lineHeight: 1.3
     preferredLineLength: 80

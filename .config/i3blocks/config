@@ -51,7 +51,7 @@ label=
 interval=30
 
 [cpu_usage]
-command=~/src/i3blocks/scripts/cpu_usage -d 0
+command=~/src/i3blocks-gaps/scripts/cpu_usage -d 0
 label=
 interval=10
 

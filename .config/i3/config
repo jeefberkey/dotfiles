@@ -117,10 +117,10 @@ bindsym $mod+d exec "rofi -show combi"
 bindsym $mod+Tab exec "rofi -show window"
 
 # lock and suspend button
-bindsym $mod+Shift+s exec lock && systemctl suspend
+bindsym $mod+Shift+s exec ~/bin/lock && systemctl suspend
 
 # lock
-bindsym Control+Mod1+l exec lock
+bindsym Control+Mod1+l exec ~/bin/lock
 
 # ==================
 # ==== keybinds ====

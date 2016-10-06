@@ -35,5 +35,5 @@ function vssh () {
 alias tree="tree -FC"
 alias vim="nvim"
 
-
+export PATH="$PATH:$HOME/bin" # add my bin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

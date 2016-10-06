@@ -22,9 +22,6 @@
 [submodule "src/i3blocks-gaps"]
 	path = src/i3blocks-gaps
 	url = https://github.com/Airblader/i3blocks-gaps.git
-[submodule "src/wpgtk"]
-	path = src/wpgtk
-	url = git@github.com:deviantfero/wpgtk.git
 [submodule "src/i3blocks-contrib"]
 	path = src/i3blocks-contrib
 	url = git@github.com:vivien/i3blocks-contrib.git
@@ -40,6 +37,6 @@
 [submodule "src/lightdm-webkit-material"]
 	path = src/lightdm-webkit-material
 	url = git@github.com:artur9010/lightdm-webkit-material.git
-[submodule "src/xcb-util-xrm"]
-	path = src/xcb-util-xrm
-	url = git@github.com:Airblader/xcb-util-xrm.git
+[submodule "src/wpgtk"]
+	path = src/wpgtk
+	url = git@github.com:deviantfero/wpgtk.git
