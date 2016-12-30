@@ -10,3 +10,8 @@
 	editor = vim
 [merge]
 	tool = meld
+[hub]
+	protocol = https
+[diff]
+[diff]
+	algorithm = patience

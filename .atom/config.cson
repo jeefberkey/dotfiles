@@ -1,38 +1,59 @@
 "*":
+  aligner:
+    alignComments: true
   "atom-beautify":
     general:
       _analyticsUserId: "aad78b8c-25a5-4445-9b1b-b8f18a07589c"
+  "autocomplete-plus":
+    enableExtendedUnicodeSupport: true
   core:
     disabledPackages: [
       "background-tips"
       "autosave"
       "welcome"
       "hidpi"
+      "language-ruby-on-rails"
     ]
+    excludeVcsIgnoredPaths: false
+    projectHome: "/home/nick/simpdev"
     themes: [
-      "one-dark-ui"
-      "oceanic-next"
+      "atom-dark-ui"
+      "atom-dark-syntax"
     ]
   editor:
     fontFamily: "Source Code Pro for Powerline"
+    fontSize: 12
     invisibles: {}
-    lineHeight: 1.3
-    preferredLineLength: 80
     showIndentGuide: true
+  "env-from-shell": {}
   "exception-reporting":
     userId: "276f8864-fdd1-5b53-357e-8944a1ef1475"
   "file-icons":
+    coloured: false
     onChanges: true
   "git-diff": {}
   hidpi:
     scaleFactor: 1.2
   linter:
     errorPanelHeight: 184
+    showErrorPanel: false
     statusIconScope: "File"
   "linter-puppet-lint":
-    automaticFix: true
     oldVersion: false
+    skip140Chars: true
+    skipAutoloaderLayout: true
+    skipClassInherithsFromParamClass: true
   "markdown-preview": {}
+  "nord-atom-ui":
+    darkerFormFocusEffect: true
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "tree-view":
+    squashDirectoryNames: true
   welcome:
     showOnStartup: false
   whitespace:

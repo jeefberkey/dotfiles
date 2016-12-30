@@ -33,14 +33,13 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'prompt' \
-  'ruby' \
   'dnf' \
   'git' \
   'rsync' \
   'ssh' \
-  'syntax-highlighting' \
   'history-substring-search'
 
+#  'syntax-highlighting' \
 #
 # Autosuggestions
 #
@@ -131,13 +130,13 @@ zstyle ':prezto:module:screen:auto-start' remote 'yes'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-zstyle ':prezto:module:syntax-highlighting' highlighters \
-  'main' \
-  'brackets' \
-  'pattern' \
-  'line' \
-  'cursor' \
-  'root'
+#zstyle ':prezto:module:syntax-highlighting' highlighters \
+#  'main' \
+#  'brackets' \
+#  'pattern' \
+#  'line' \
+#  'cursor' \
+#  'root'
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \

@@ -38,8 +38,9 @@ Plug 'mhartington/oceanic-next'
 " I only care about comment toggling (gc)
 Plug 'tpope/vim-commentary'
 " indent guides
-" Plug 'nathanaelkane/vim-indent-guides'
 Plug 'yggdroot/indentline'
+" code beautifier
+Plug 'sbdchd/neoformat'
 
 call plug#end()
 
@@ -59,7 +60,7 @@ let g:table_mode_separator = '|'
 set laststatus=2
 let g:airline_powerline_fonts = 1
 " let g:airline_theme='molokai'
-let g:airline_theme='oceanicnext'
+"let g:airline_theme='oceanicnext'
 
 let g:indentLine_char = '▏'
 
@@ -90,4 +91,4 @@ map <F7> :set spell! spelllang=en_us spellfile=~/.vim/spellfile.add<cr>
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set background=dark
-colorscheme OceanicNext
+"colorscheme OceanicNext

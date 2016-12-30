@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=htop
+Exec=htop
+Categories=system
+Terminal=true

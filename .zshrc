@@ -34,6 +34,18 @@ function vssh () {
 
 alias tree="tree -FC"
 alias vim="nvim"
+alias rake="bundle exec rake"
 
 export PATH="$PATH:$HOME/bin" # add my bin
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# wrap for hub
+eval "$(hub alias -s)"
+
+# prezto prompt
+autoload -Uz promptinit
+promptinit
+prompt paradox
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+

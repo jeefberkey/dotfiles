@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=glances
+Exec=glances
+Categories=system
+Terminal=true

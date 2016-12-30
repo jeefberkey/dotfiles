@@ -67,12 +67,12 @@ instance=Master
 interval=once
 signal=10
 
-[wireless]
-label=
-command=[[ $(iwgetid -r) == "" ]] && echo "Wifi Down" || iwgetid -r
-color=#00FF00
-interval=60
-separator=false
+#[wireless]
+#label=
+#command=[[ $(iwgetid -r) == "" ]] && echo "Wifi Down" || iwgetid -r
+#color=#00FF00
+#interval=60
+#separator=false
 
 [wifi]
 instance=wlp2s0
