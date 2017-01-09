@@ -42,9 +42,21 @@ def color(percent):
         return "#FFFF66"
     return "#FFFFFF"
 
-form =  ' <span color="{}">{}%</span>'
-fulltext += form.format(color(percentleft), percentleft)
+def icon(percent):
+    if percent < 20:
+        return "\uf244"
+    if percent < 40:
+        return "\uf243"
+    if percent < 60:
+        return "\uf242"
+    if percent < 80:
+        return "\uf241"
+    return "\uf240"
+
+form =  ' <span color="{}">{}</span>'
+fulltext += form.format( color(percentleft), icon(percentleft) )
 fulltext += timeleft
 
 print(fulltext)
 print(fulltext)
+

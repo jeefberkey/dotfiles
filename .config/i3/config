@@ -29,7 +29,7 @@ exec-always xset s noblank
 exec-always xset s off -dpms
 
 # notifiation deamon
-exec dunst -fn "Roboto Condensed, miller-symbols 11" \
+exec dunst -fn "Roboto Condensed, FontAwesome 11" \
   -lb $color1 -nb $color1 -cb $color3 \
   -lf $color5 -nf $color5 -cf $color1
 
@@ -47,6 +47,9 @@ exec numlockx on
 exec compton -b \
   --config ~/.config/compton.conf \
   --backend glx --glx-no-stencil
+
+# bar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # window focus follows mouse
 focus_follows_mouse yes
@@ -72,7 +75,7 @@ for_window [class="Google Play Music" ] floating enable
 # =================
 
 # font
-font pango:Roboto Condensed, miller-symbols 11
+font pango:Roboto Condensed, FontAwesome 12
 
 # colors
 client.background $color1
@@ -255,27 +258,27 @@ bindsym $mod+r mode "resize"
 # =============
 # ==== bar ====
 # =============
-bar {
-  position top
-  #height 28
-  tray_padding 0
-
-  colors {
-    background $backgr
-    statusline $color5
-    separator  $color5
-
-    # key              border  backgr. text
-    focused_workspace  $border $border $color5
-    active_workspace   $border $border $color5
-    inactive_workspace $backgr $backgr $color5
-    urgent_workspace   $color3 $color3 $color1
-  }
-
-  i3bar_command i3bar -t
-  status_command i3blocks
-
-  # mouse wheel scrolls on the bar
-  bindsym button4 workspace prev
-  bindsym button5 workspace next
-}
+#bar {
+#  position top
+#  #height 28
+#  tray_padding 0
+#
+#  colors {
+#    background $backgr
+#    statusline $color5
+#    separator  $color5
+#
+#    # key              border  backgr. text
+#    focused_workspace  $border $border $color5
+#    active_workspace   $border $border $color5
+#    inactive_workspace $backgr $backgr $color5
+#    urgent_workspace   $color3 $color3 $color1
+#  }
+#
+#  i3bar_command i3bar -t
+#  status_command i3blocks
+#
+#  # mouse wheel scrolls on the bar
+#  bindsym button4 workspace prev
+#  bindsym button5 workspace next
+#}

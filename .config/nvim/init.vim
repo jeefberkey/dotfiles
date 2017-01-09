@@ -7,8 +7,6 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-" some sensible defaults
-Plug 'tpope/vim-sensible'
 " the BEST git integration for vim
 Plug 'tpope/vim-fugitive'
 " pretty pretty status bar; integrates with other services
@@ -39,8 +37,10 @@ Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-commentary'
 " indent guides
 Plug 'yggdroot/indentline'
-" code beautifier
-Plug 'sbdchd/neoformat'
+" completion?
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" smooth scrolling lol
+Plug 'yuttie/comfortable-motion.vim'
 
 call plug#end()
 
@@ -60,9 +60,14 @@ let g:table_mode_separator = '|'
 set laststatus=2
 let g:airline_powerline_fonts = 1
 " let g:airline_theme='molokai'
-"let g:airline_theme='oceanicnext'
+let g:airline_theme='oceanicnext'
 
 let g:indentLine_char = '▏'
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#max_list = 10
+
 
 " ------------------------------------------------------------------------------
 " General settings
@@ -91,4 +96,4 @@ map <F7> :set spell! spelllang=en_us spellfile=~/.vim/spellfile.add<cr>
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set background=dark
-"colorscheme OceanicNext
+colorscheme OceanicNext
