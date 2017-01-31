@@ -21,7 +21,6 @@ set $color5 #d8dee9
 # ==================
 
 # startup
-#exec seafile-applet
 exec nm-applet
 
 # disable screen blanking
@@ -29,7 +28,7 @@ exec-always xset s noblank
 exec-always xset s off -dpms
 
 # notifiation deamon
-exec dunst -fn "Roboto Condensed, FontAwesome 11" \
+exec dunst -fn "Roboto Condensed, FontAwesome 10" \
   -lb $color1 -nb $color1 -cb $color3 \
   -lf $color5 -nf $color5 -cf $color1
 
@@ -75,7 +74,7 @@ for_window [class="Google Play Music" ] floating enable
 # =================
 
 # font
-font pango:Roboto Condensed, FontAwesome 12
+font pango:Roboto Condensed, FontAwesome 11
 
 # colors
 client.background $color1
@@ -94,8 +93,8 @@ client.placeholder      $color4 $color1 $color5 $color3 $color4
 #smart_gaps on
 smart_borders on
 
-for_window [class="^.*"] border pixel 5
-gaps inner 5
+for_window [class="^.*"] border pixel 2
+gaps inner 4
 
 bindsym $mod+Ctrl+F1 gaps outer all set 0
 bindsym $mod+Ctrl+F2 gaps outer all set 50
@@ -258,27 +257,28 @@ bindsym $mod+r mode "resize"
 # =============
 # ==== bar ====
 # =============
-#bar {
-#  position top
-#  #height 28
-#  tray_padding 0
-#
-#  colors {
-#    background $backgr
-#    statusline $color5
-#    separator  $color5
-#
-#    # key              border  backgr. text
-#    focused_workspace  $border $border $color5
-#    active_workspace   $border $border $color5
-#    inactive_workspace $backgr $backgr $color5
-#    urgent_workspace   $color3 $color3 $color1
-#  }
-#
-#  i3bar_command i3bar -t
-#  status_command i3blocks
-#
-#  # mouse wheel scrolls on the bar
-#  bindsym button4 workspace prev
-#  bindsym button5 workspace next
-#}
+bar {
+  position top
+  #height 28
+  tray_padding 0
+
+  colors {
+    background $backgr
+    statusline $color5
+    separator  $color5
+
+    # key              border  backgr. text
+    focused_workspace  $border $border $color5
+    active_workspace   $border $border $color5
+    inactive_workspace $backgr $backgr $color5
+    urgent_workspace   $color3 $color3 $color1
+  }
+
+  i3bar_command i3bar -t
+  status_command i3blocks
+
+  # mouse wheel scrolls on the bar
+  bindsym button4 workspace prev
+  bindsym button5 workspace next
+}
+

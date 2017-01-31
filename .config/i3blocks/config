@@ -1,5 +1,5 @@
 # i3blocks config file
-#
+# vim: ft=ini
 # Please see man i3blocks for a complete reference!
 # The man page is also hosted at http://vivien.github.io/i3blocks
 #
@@ -69,12 +69,12 @@ instance=Master
 interval=once
 signal=10
 
-#[wireless]
-#label=
-#command=[[ $(iwgetid -r) == "" ]] && echo "Wifi Down" || iwgetid -r
-#color=#00FF00
-#interval=60
-#separator=false
+[wireless]
+label=
+command=[[ $(iwgetid -r) == "" ]] && echo "Wifi Down" || iwgetid -r
+color=#00FF00
+interval=60
+separator=false
 
 [wifi]
 instance=wlp2s0
