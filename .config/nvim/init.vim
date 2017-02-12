@@ -38,7 +38,7 @@ Plug 'tpope/vim-commentary'
 " indent guides
 Plug 'yggdroot/indentline'
 " completion?
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " smooth scrolling lol
 Plug 'yuttie/comfortable-motion.vim'
 

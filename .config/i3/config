@@ -33,8 +33,10 @@ exec dunst -fn "Roboto Condensed, FontAwesome 10" \
   -lf $color5 -nf $color5 -cf $color1
 
 # wallpaper
-#exec feh --bg-fill ~/src/porsche.jpg
 exec ~/.wallpapers/wp_init.sh
+
+# fix dpi
+exec xrandr --dpi 96
 
 # apply my xmodmap, switching caps to mod4 and shift+caps to caps
 exec xmodmap ~/.Xmodmap
@@ -257,28 +259,28 @@ bindsym $mod+r mode "resize"
 # =============
 # ==== bar ====
 # =============
-bar {
-  position top
-  #height 28
-  tray_padding 0
-
-  colors {
-    background $backgr
-    statusline $color5
-    separator  $color5
-
-    # key              border  backgr. text
-    focused_workspace  $border $border $color5
-    active_workspace   $border $border $color5
-    inactive_workspace $backgr $backgr $color5
-    urgent_workspace   $color3 $color3 $color1
-  }
-
-  i3bar_command i3bar -t
-  status_command i3blocks
-
-  # mouse wheel scrolls on the bar
-  bindsym button4 workspace prev
-  bindsym button5 workspace next
-}
+#bar {
+#  position top
+#  #height 28
+#  tray_padding 0
+#
+#  colors {
+#    background $backgr
+#    statusline $color5
+#    separator  $color5
+#
+#    # key              border  backgr. text
+#    focused_workspace  $border $border $color5
+#    active_workspace   $border $border $color5
+#    inactive_workspace $backgr $backgr $color5
+#    urgent_workspace   $color3 $color3 $color1
+#  }
+#
+#  i3bar_command i3bar -t
+#  status_command i3blocks
+#
+#  # mouse wheel scrolls on the bar
+#  bindsym button4 workspace prev
+#  bindsym button5 workspace next
+#}
 
