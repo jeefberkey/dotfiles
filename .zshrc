@@ -49,3 +49,6 @@ prompt paradox
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# squid i guess? not sure yet
+export http_proxy="http://localhost:3128"
+

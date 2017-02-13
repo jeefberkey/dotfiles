@@ -7,12 +7,15 @@
   "autocomplete-plus":
     enableExtendedUnicodeSupport: true
   core:
+    autoHideMenuBar: true
     disabledPackages: [
       "background-tips"
       "autosave"
       "welcome"
       "hidpi"
       "language-ruby-on-rails"
+      "language-gfm"
+      "spell-check"
     ]
     excludeVcsIgnoredPaths: false
     projectHome: "/home/nick/simpdev"
@@ -29,7 +32,6 @@
   "exception-reporting":
     userId: "276f8864-fdd1-5b53-357e-8944a1ef1475"
   "file-icons":
-    coloured: false
     onChanges: true
   "git-diff": {}
   hidpi:

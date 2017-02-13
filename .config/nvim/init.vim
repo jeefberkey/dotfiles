@@ -32,7 +32,7 @@ Plug 'jiangmiao/auto-pairs'
 " line ender
 Plug 'tpope/vim-endwise'
 " show git changed lines
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter' "no longer working
 " das themes
 Plug 'mhartington/oceanic-next'
 " I only care about comment toggling (gc)
