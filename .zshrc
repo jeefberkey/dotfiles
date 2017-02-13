@@ -18,7 +18,7 @@ setopt AUTO_CD
 setopt PUSHD_TO_HOME
 setopt ZLE
 setopt NO_CLOBBER
-setopt EXTENDED_GLOB
+#setopt EXTENDED_GLOB
 
 # go
 export GOPATH="$HOME/.go"

@@ -24,7 +24,7 @@
       "atom-dark-syntax"
     ]
   editor:
-    fontFamily: "Source Code Pro for Powerline"
+    fontFamily: "Source Code Pro"
     fontSize: 12
     invisibles: {}
     showIndentGuide: true
@@ -38,7 +38,6 @@
     scaleFactor: 1.2
   linter:
     errorPanelHeight: 184
-    showErrorPanel: false
     statusIconScope: "File"
   "linter-puppet-lint":
     oldVersion: false

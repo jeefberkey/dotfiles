@@ -40,9 +40,6 @@ block = Proc.new do |reply|
 
     puts header.to_json + "[[]," + i3bar.to_json + "]"
 
-    #require 'pry'
-    #binding.pry
-
     `pkill -RTMIN+12 i3blocks`
   end
 end

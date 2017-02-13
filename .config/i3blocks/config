@@ -1,5 +1,5 @@
 # i3blocks config file
-#
+# vim: ft=ini
 # Please see man i3blocks for a complete reference!
 # The man page is also hosted at http://vivien.github.io/i3blocks
 #
@@ -26,7 +26,8 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=~/src/i3blocks-gaps/scripts/$BLOCK_NAME
+#command=~/src/i3blocks-gaps/scripts/$BLOCK_NAME
+command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=8
 separator=false
 border_top=0
@@ -35,8 +36,8 @@ border_right=0
 border_bottom=3
 border=#6699cc
 
-[focused window]
-command=ipc-window-title.rb
+[focused_window]
+command=~/bin/ipc-window-title.rb
 interval=persist
 signal=12
 #color=#A6D1FA
@@ -51,7 +52,8 @@ label=
 interval=30
 
 [cpu_usage]
-command=~/src/i3blocks-gaps/scripts/cpu_usage -d 0
+#command=~/src/i3blocks-gaps/scripts/cpu_usage -d 0
+command=/usr/lib/i3blocks/$BLOCK_NAME/cpu_usage -d 0
 label=
 interval=10
 
@@ -67,12 +69,12 @@ instance=Master
 interval=once
 signal=10
 
-#[wireless]
-#label=
-#command=[[ $(iwgetid -r) == "" ]] && echo "Wifi Down" || iwgetid -r
-#color=#00FF00
-#interval=60
-#separator=false
+[wireless]
+label=
+command=[[ $(iwgetid -r) == "" ]] && echo "Wifi Down" || iwgetid -r
+color=#00FF00
+interval=60
+separator=false
 
 [wifi]
 instance=wlp2s0
@@ -85,7 +87,7 @@ interval=once
 signal=11
 
 [battery]
-command=battery.py
+command=~/bin/battery.py
 #command=batterybar
 markup=pango
 interval=30
