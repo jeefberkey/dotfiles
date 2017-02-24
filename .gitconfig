@@ -15,4 +15,4 @@
 [diff]
 [diff]
 	algorithm = patience
-	external = meld-diff
+#	external = meld-diff

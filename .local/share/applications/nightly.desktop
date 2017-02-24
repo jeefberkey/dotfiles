@@ -2,6 +2,7 @@
 Version=1.0
 Type=Application
 Name=Nightly
-Exec="~/src/firefox/firefox" %u
+#Exec="~/src/firefox/firefox" %u
+Exec=~/src/firefox/firefox
 Icon=/usr/share/icons/Paper/48x48@2x/apps/firefox-nightly-icon.png
 Terminal=false

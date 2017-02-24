@@ -1,9 +1,6 @@
 [submodule "config/fonts"]
 	path = src/fonts
 	url = https://github.com/powerline/fonts.git
-[submodule "config/i3-gaps"]
-	path = src/i3-gaps
-	url = https://github.com/Airblader/i3.git
 [submodule "config/rofi"]
 	path = src/rofi
 	url = https://github.com/DaveDavenport/rofi.git
@@ -22,9 +19,6 @@
 [submodule "src/i3blocks-gaps"]
 	path = src/i3blocks-gaps
 	url = https://github.com/Airblader/i3blocks-gaps.git
-[submodule "src/i3blocks-contrib"]
-	path = src/i3blocks-contrib
-	url = git@github.com:vivien/i3blocks-contrib.git
 [submodule "src/razer"]
 	path = src/razer
 	url = https://git.bues.ch/git/razer.git

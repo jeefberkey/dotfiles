@@ -95,7 +95,7 @@ client.placeholder      $color4 $color1 $color5 $color3 $color4
 #smart_gaps on
 smart_borders on
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 gaps inner 4
 
 bindsym $mod+Ctrl+F1 gaps outer all set 0
@@ -246,8 +246,8 @@ mode "resize" {
   bindsym l resize grow width 10 px or 5 ppt
 
   bindsym Left resize shrink width 10 px or 5 ppt
-  bindsym Down resize grow height 10 px or 5 ppt
-  bindsym Up resize shrink height 10 px or 5 ppt
+  bindsym Up resize grow height 10 px or 5 ppt
+  bindsym Down resize shrink height 10 px or 5 ppt
   bindsym Right resize grow width 10 px or 5 ppt
 
   # back to normal: Enter or Escape
