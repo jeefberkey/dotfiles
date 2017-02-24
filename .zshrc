@@ -1,54 +1,52 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+source ~/src/antigen/antigen.zsh
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# automatically find new commands from $PATH
+zstyle ':completion:*' rehash true
 
-# Customize to your needs...
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
 
-unsetopt CORRECT
-setopt AUTO_PUSHD
-setopt AUTO_CD
-setopt PUSHD_TO_HOME
-setopt ZLE
-setopt NO_CLOBBER
-#setopt EXTENDED_GLOB
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundles <<EOBUNDLES
+  git
+  pip
+  dnf
+  gem
+  colored-man-pages
+  web-search
+  desyncr/vagrant-zsh-completion
+  zsh-users/zsh-history-substring-search
+  zsh-users/zsh-syntax-highlighting
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-completions
+  chrissicool/zsh-256color
+  supercrabtree/k
+  hlissner/zsh-autopair
+EOBUNDLES
 
-# go
-export GOPATH="$HOME/.go"
-export PATH="$PATH:$HOME/.go/bin"
+# Load the theme.
+#antigen theme bira
+antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+SPACESHIP_PROMPT_TRUNC=2  # Limit the folders to two
+SPACESHIP_RUBY_SHOW=false # Disable the rbenv thing
 
-# i3-sensible-terminal
+# Tell antigen that you're done.
+antigen apply
+
 export TERMINAL=gnome-terminal
+export GOPATH="$HOME/.go"
 export EDITOR=nvim
+# for path settings, see ~/.zprofile
 
-function vssh () {
-  vagrant ssh $1 -c 'sudo -s; cd'
-}
+# squid i guess? not sure yet
+export http_proxy="http://localhost:3128"
+
+function vssh () { vagrant ssh $1 -c 'sudo -i; cd' }
 
 alias tree="tree -FC"
 alias vim="nvim"
 alias rake="bundle exec rake"
 
-export PATH="$PATH:$HOME/bin" # add my bin
-
-# wrap for hub
-eval "$(hub alias -s)"
-
-# prezto prompt
-autoload -Uz promptinit
-promptinit
-prompt paradox
-
-export PATH="$HOME/.rbenv/bin:$PATH"
+# rbenv jank
 eval "$(rbenv init -)"
-
-# squid i guess? not sure yet
-export http_proxy="http://localhost:3128"
 

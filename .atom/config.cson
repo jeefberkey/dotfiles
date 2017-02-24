@@ -1,4 +1,12 @@
 "*":
+  "activate-power-mode":
+    excludedFileTypes:
+      excluded: [
+        ".pp"
+      ]
+    particles:
+      colours:
+        type: "random"
   aligner:
     alignComments: true
   "atom-beautify":
@@ -20,8 +28,8 @@
     excludeVcsIgnoredPaths: false
     projectHome: "/home/nick/simpdev"
     themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
+      "one-dark-ui"
+      "oceanic-next"
     ]
   editor:
     fontFamily: "Source Code Pro Medium"
@@ -48,6 +56,9 @@
   "markdown-preview": {}
   "nord-atom-ui":
     darkerFormFocusEffect: true
+  "one-dark-ui":
+    fontSize: 11
+    layoutMode: "Compact"
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
