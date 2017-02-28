@@ -34,3 +34,6 @@
 [submodule "src/wpgtk"]
 	path = src/wpgtk
 	url = git@github.com:deviantfero/wpgtk.git
+[submodule "src/antigen"]
+	path = src/antigen
+	url = https://github.com/zsh-users/antigen.git
