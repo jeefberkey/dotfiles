@@ -39,7 +39,7 @@ export EDITOR=nvim
 # for path settings, see ~/.zprofile
 
 # squid i guess? not sure yet
-export http_proxy="http://localhost:3128"
+#export http_proxy="http://localhost:3128"
 
 function vssh () { vagrant ssh $1 -c 'sudo -i; cd' }
 

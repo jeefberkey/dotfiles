@@ -201,7 +201,7 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-format-volume           = <label-volume> <bar-volume>
+format-volume           = <label-volume>
 label-volume            =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
@@ -245,7 +245,7 @@ warn-temperature = 60
 
 format                =  <label>
 format-underline      = #f50a4d
-format-warn           = <ramp> <label-warn>
+format-warn           = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label                 = %temperature%

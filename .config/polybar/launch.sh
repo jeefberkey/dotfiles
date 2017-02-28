@@ -7,8 +7,8 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-MONITOR=HDMI-3 polybar jeefbar &
-MONITOR=DP-2 polybar jeefbar &
+#MONITOR=HDMI-3 polybar jeefbar &
+MONITOR=DP-0 polybar jeefbar -q &
 
 echo "Bars launched..."
 
