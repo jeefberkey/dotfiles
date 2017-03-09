@@ -1,12 +1,18 @@
+# Source the package manager
 source ~/src/antigen/antigen.zsh
 
-# automatically find new commands from $PATH
+#####################
+# Zsh Configuration #
+#####################
+# Automatically find new commands from $PATH
 zstyle ':completion:*' rehash true
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
+###########
+# Bundles #
+###########
 antigen bundles <<EOBUNDLES
   git
   pip
@@ -24,7 +30,9 @@ antigen bundles <<EOBUNDLES
   hlissner/zsh-autopair
 EOBUNDLES
 
-# Load the theme.
+###########
+# Theming #
+###########
 #antigen theme bira
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 SPACESHIP_PROMPT_TRUNC=2  # Limit the folders to two
@@ -33,19 +41,24 @@ SPACESHIP_RUBY_SHOW=false # Disable the rbenv thing
 # Tell antigen that you're done.
 antigen apply
 
+###############
+# Environment #
+###############
+# For path settings, see ~/.zprofile
 export TERMINAL=gnome-terminal
 export GOPATH="$HOME/.go"
 export EDITOR=nvim
-# for path settings, see ~/.zprofile
 
-# squid i guess? not sure yet
+# Squid can be used as a local proxy to speed up testing/builds
 #export http_proxy="http://localhost:3128"
 
-function vssh () { vagrant ssh $1 -c 'sudo -i; cd' }
-
+#######################
+# Alias and Functions #
+#######################
 alias tree="tree -FC"
 alias vim="nvim"
 alias rake="bundle exec rake"
+function vssh () { vagrant ssh $1 -c 'sudo -i; cd' }
 
 # rbenv jank
 eval "$(rbenv init -)"
