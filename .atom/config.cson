@@ -1,8 +1,10 @@
 "*":
   "activate-power-mode":
+    comboMode: {}
     excludedFileTypes:
       excluded: [
-        ".pp"
+        "pp"
+        "rb"
       ]
     particles:
       colours:
@@ -16,6 +18,7 @@
     enableExtendedUnicodeSupport: true
   core:
     autoHideMenuBar: true
+    closeDeletedFileTabs: true
     disabledPackages: [
       "background-tips"
       "autosave"
@@ -44,15 +47,13 @@
   "git-diff": {}
   hidpi:
     scaleFactor: 1.2
-  linter:
-    errorPanelHeight: 184
-    showErrorPanel: false
-    statusIconScope: "File"
+  linter: {}
   "linter-puppet-lint":
     oldVersion: false
     skip140Chars: true
     skipAutoloaderLayout: true
     skipClassInherithsFromParamClass: true
+  "linter-ui-default": {}
   "markdown-preview": {}
   "nord-atom-ui":
     darkerFormFocusEffect: true
