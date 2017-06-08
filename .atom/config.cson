@@ -5,6 +5,7 @@
       excluded: [
         "pp"
         "rb"
+        "epp"
       ]
     particles:
       colours:
@@ -14,6 +15,8 @@
   "atom-beautify":
     general:
       _analyticsUserId: "aad78b8c-25a5-4445-9b1b-b8f18a07589c"
+  "atom-package-deps":
+    ignored: []
   "autocomplete-plus":
     enableExtendedUnicodeSupport: true
   core:
@@ -29,22 +32,20 @@
       "spell-check"
     ]
     excludeVcsIgnoredPaths: false
-    projectHome: "/home/nick/simpdev"
-    themes: [
-      "one-dark-ui"
-      "oceanic-next"
-    ]
+    projectHome: "~/simpdev"
+    reopenProjectMenuCount: 40
+    warnOnLargeFileLimit: 10
   editor:
     fontFamily: "Source Code Pro Medium"
-    fontSize: 12
-    invisibles: {}
+    fontSize: 11
+    preferredLineLength: 140
     showIndentGuide: true
+    softWrapHangingIndent: 2
   "env-from-shell": {}
   "exception-reporting":
     userId: "276f8864-fdd1-5b53-357e-8944a1ef1475"
   "file-icons":
     onChanges: true
-  "git-diff": {}
   hidpi:
     scaleFactor: 1.2
   linter: {}
@@ -53,13 +54,14 @@
     skip140Chars: true
     skipAutoloaderLayout: true
     skipClassInherithsFromParamClass: true
-  "linter-ui-default": {}
-  "markdown-preview": {}
+  "linter-ui-default":
+    panelHeight: 71.5
   "nord-atom-ui":
     darkerFormFocusEffect: true
   "one-dark-ui":
     fontSize: 11
-    layoutMode: "Compact"
+  "open-terminal-here":
+    command: "gnome-terminal"
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
@@ -73,6 +75,16 @@
     showOnStartup: false
   whitespace:
     ensureSingleTrailingNewline: false
+".git-commit.text":
+  editor:
+    preferredLineLength: 80
+    showIndentGuide: true
+".git-config.source":
+  editor:
+    preferredLineLength: 80
+".git-rebase.text":
+  editor:
+    preferredLineLength: 80
 ".ldif.text":
   editor:
     preferredLineLength: 140
