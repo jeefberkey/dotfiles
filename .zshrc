@@ -7,6 +7,9 @@ source ~/src/antigen/antigen.zsh
 # Automatically find new commands from $PATH
 zstyle ':completion:*' rehash true
 
+# Keybinding made easy
+zmodload zsh/terminfo
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -55,6 +58,8 @@ export EDITOR=nvim
 #######################
 # Alias and Functions #
 #######################
+alias gti="git"
+alias s="git status -s"
 alias tree="tree -FC"
 alias vim="nvim"
 alias rake="bundle exec rake"

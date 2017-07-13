@@ -55,7 +55,7 @@ font-1 = FontAwesome:size=11
 ; ##############
 modules-left   = i3 xwindow
 modules-center = date
-modules-right  = filesystem backlight volume temperature memory cpu wlan battery
+modules-right  = filesystem backlight volume temperature memory cpu battery wlan
 
 tray-position = right
 tray-padding  = 2
@@ -201,9 +201,8 @@ battery = BAT0
 adapter = ADP1
 full-at = 95
 
-format-charging           = <animation-charging> <label-charging>
-
-format-discharging           = <ramp-capacity> <label-discharging>
+format-charging    = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
 
 format-full-prefix            = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
