@@ -14,4 +14,6 @@ TerminalScreen {
 }
 window decoration {
   margin: 0;
+  border: 0;
 }
+
