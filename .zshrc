@@ -48,9 +48,12 @@ antigen apply
 # Environment #
 ###############
 # For path settings, see ~/.zprofile
+source ~/.zprofile
 export TERMINAL=gnome-terminal
 export GOPATH="$HOME/.go"
 export EDITOR=nvim
+#export GDK_SCALE=2
+#export GDK_DPI_SCALE=05
 
 # Squid can be used as a local proxy to speed up testing/builds
 #export http_proxy="http://localhost:3128"
@@ -67,4 +70,7 @@ function vssh () { vagrant ssh $1 -c 'sudo -i; cd' }
 
 # rbenv jank
 eval "$(rbenv init -)"
+
+# wal jank
+(wal -r &)
 

@@ -8,23 +8,33 @@
 ;=====================================================
 
 [colors]
-background     = #1b2b34
-background-alt = #4f5b66
-background-argb = #001b2b34
-foreground     = #c0c5ce
-foreground-alt = #d8dee9
-primary        = #6699cc
-secondary      = #5fb3b3
-alert          = #fac863
+#background     = #1b2b34
+#background-alt = #4f5b66
+#background-argb = #AA1b2b34
+#foreground     = #c0c5ce
+#foreground-alt = #d8dee9
+#primary        = #6699cc
+#secondary      = #5fb3b3
+#alert          = #fac863
+
+background     = ${xrdb:color0}
+background-alt = ${xrdb:color0}
+background-argb = #AA000000
+foreground     = ${xrdb:color15}
+foreground-alt = ${xrdb:color15}
+primary        = ${xrdb:color15}
+secondary      = ${xrdb:color13}
+alert          = ${xrdb:color14}
 
 [global/wm]
 margin-top    = 3
 margin-bottom = 3
 
 [bar/jeefbar]
-monitor = ${env:MONITOR}
+dpi      = 180
+monitor  = ${env:MONITOR}
 width    = 100%
-height   = 28
+height   = 38
 offset-x = 0
 offset-y = 0
 
@@ -92,7 +102,7 @@ interval = 30
 spacing  = 4
 
 mount-0 = /
-mount-1 = /home
+#mount-1 = /home
 
 label-mounted =   %mountpoint%: %percentage_used%%
 
@@ -153,7 +163,7 @@ label                    =  %percentage_used%%
 
 [module/wlan]
 type      = internal/network
-interface = wlp2s0
+interface = wlp1s0
 interval  = 3.0
 
 ;format-connected             = <ramp-signal> <label-connected>
@@ -206,7 +216,7 @@ format-discharging = <ramp-capacity> <label-discharging>
 
 format-full-prefix            = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline         = ${self.format-charging-underline}
+format-full-underline         = ${self.format-charging}
 
 ramp-capacity-0          = 
 ramp-capacity-1          = 
@@ -228,7 +238,7 @@ warn-temperature = 60
 
 format                =  <label>
 format-warn           = <label-warn>
-format-warn-underline = ${self.format-underline}
+format-warn-underline = ${self.format}
 
 label                 = %temperature%
 label-warn            = %temperature%

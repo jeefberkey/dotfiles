@@ -1,11 +1,13 @@
 # i3 config file (v4)
-#
+# vim: ft=sh
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # set modifier, this in the windows key
 set $mod Mod4
 
-# set colors:
+# ================
+# ==== colors ====
+# ================
 set $backgr #00000000
 set $hlight #fac863
 set $border #6699cc
@@ -20,98 +22,70 @@ set $color5 #d8dee9
 # ==== settings ====
 # ==================
 
-# startup
-exec seafile-applet
-exec nm-applet
-
-# notifiation deamon
-exec dunst -lb $color1 -nb $color1 -cb $color3 -lf $color5 -nf $color5 -cf $color1
-
-# wallpaper
-output * background ~/.wallpapers/blur.png fill
-
-# apply my xmodmap, switching caps to mod4 and shift+caps to caps
-#exec xmodmap ~/.Xmodmap
-
-# nummlock on
-exec numlockx on
-
-## compton, shadows and transparency
-#exec compton -b \
-#  --config ~/.config/compton.conf \
-#  --backend glx --glx-no-stencil
-
 # window focus follows mouse
 focus_follows_mouse yes
 
 # automatically go back to the previous workspace
 workspace_auto_back_and_forth yes
 
-## fix popups, specifically for hangouts
-#for_window [window_role="pop-up"] floating enable
-#for_window [window_role="bubble"] floating enable
-#for_window [window_role="task_dialog"] floating enable
-#for_window [window_role="Preferences"] floating enable
-#
-#for_window [window_type="dialog"] floating enable
-#for_window [window_type="menu"] floating enable
-#
-#for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
-#for_window [class="Nautilus" ] floating enable
+# fix popups, specifically for hangouts
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
+for_window [class="(?i)VirtualBox" title="(?i)Oracle VM VirtualBox"] floating enable
+for_window [class="Nautilus" ] floating enable
+for_window [class="Google Play Music" ] floating enable
 
 # =================
 # ==== display ====
 # =================
 
 # font
-font pango:Roboto Condensed, miller-symbols 11
+font pango:Roboto Condensed, FontAwesome 11
 
-# colors
-client.background $color1
-# class                 border  backgr. text    indic.  chld_bdr
-client.focused          $border $color1 $color5 $color3 $border
-client.focused_inactive $border $color1 $color5 $color3 $border
-client.unfocused        $color2 $color1 $color5 $color3 $color1
-client.urgent           $color3 $color1 $color1 $color3 $color3
-client.placeholder      $color4 $color1 $color5 $color3 $color4
+### colors
+##client.background $color1
+### class                 border  backgr. text    indic.  chld_bdr
+##client.focused          $border $color1 $color5 $color3 $border
+##client.focused_inactive $color1 $color1 $color5 $color3 $color1
+##client.unfocused        $color2 $color1 $color5 $color3 $color1
+##client.urgent           $color3 $color1 $color1 $color3 $color3
+##client.placeholder      $color4 $color1 $color5 $color3 $color4
+
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
 
 # ==========================
 # ==== borders and gaps ====
 # ==========================
 
-# turns off gaps and borderswhen there's only one window
-smart_gaps on
-#smart_borders on
+# turns off gaps and borders when there's only one window
+#smart_gaps on
+smart_borders on
 
-for_window [class="^.*"] border pixel 5
-gaps inner 5
-
-bindsym $mod+Ctrl+F1 gaps outer all set 0
-bindsym $mod+Ctrl+F2 gaps outer all set 50
-
-bindsym $mod+Shift+F1 gaps inner all set 15
-bindsym $mod+Shift+F2 gaps inner all set 50
-
-# =================
-# ==== hotkeys ====
-# =================
-
-# start a terminal
-bindsym $mod+Return exec gnome-terminal
-
-# start files
-bindsym $mod+Shift+f exec nautilus
-
-## start a rofi (a program launcher)
-## https://davedavenport.github.io/rofi/generator.html
-#bindsym $mod+d exec "rofi -show combi"
-bindsym $mod+d exec j4-dmenu-desktop
-
-# lock and suspend button
-bindsym $mod+Shift+s exec lock && systemctl suspend
-
-# lock
-bindsym Control+Mod1+l exec lock
+for_window [class="^.*"] border pixel 2
+#gaps inner 4
 
 # ==================
 # ==== keybinds ====
@@ -170,6 +144,13 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 # move workspaces between monitors
 bindsym $mod+Mod1+Left move workspace to output left
 bindsym $mod+Mod1+Right move workspace to output right
@@ -198,45 +179,53 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# =======================
-# ==== function keys ====
-# =======================
+# ===================
+# ==== shortcuts ====
+# ===================
 
+# terminal emulator
+bindsym $mod+Return exec gnome-terminal
+
+# file manager
+bindsym $mod+Shift+f exec nautilus
+
+# a rofi (a program launcher)
+# https://davedavenport.github.io/rofi/generator.html
+bindsym $mod+d exec "rofi -show combi"
+# program switcher
+bindsym $mod+Tab exec "rofi -show window"
+
+# lock and suspend button
+bindsym $mod+Shift+s exec ~/bin/lock && systemctl suspend
+# lock
+bindsym Control+Mod1+l exec $HOME/bin/lock
+
+# emergency key combo for turning main screen back on
+bindsym $mod+Shift+m exec xrandr --output eDP1 --mode 1920x1080
 
 # none of these work in Spotify anyway
+set $update && pkill -SIGRTMIN+10 i3status
 bindsym XF86AudioPrev         exec --no-startup-id playerctl prev
 bindsym XF86AudioPlay         exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext         exec --no-startup-id playerctl next
-bindsym XF86AudioLowerVolume  exec --no-startup-id amixer -q sset Master 3%-
-bindsym XF86AudioRaiseVolume  exec --no-startup-id amixer -q sset Master 3%+
-bindsym XF86AudioMute         exec --no-startup-id amixer -q sset Master toggle
+bindsym XF86AudioLowerVolume  exec --no-startup-id amixer -q sset Master 3%- $update
+bindsym XF86AudioRaiseVolume  exec --no-startup-id amixer -q sset Master 3%+ $update
+bindsym XF86AudioMute         exec --no-startup-id amixer -q sset Master toggle $update
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -time 300 -steps 14 -dec 10
 bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -time 300 -steps 14 -inc 5
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exit
-
-# resize window (you can also use the mouse for that)
+# ================
+# ==== resize ====
+# ================
 mode "resize" {
-  # These bindings trigger as soon as you enter the resize mode
-
-  # Pressing left will shrink the window’s width.
-  # Pressing right will grow the window’s width.
-  # Pressing up will shrink the window’s height.
-  # Pressing down will grow the window’s height.
   bindsym h resize shrink width 10 px or 5 ppt
   bindsym j resize grow height 10 px or 5 ppt
   bindsym k resize shrink height 10 px or 5 ppt
   bindsym l resize grow width 10 px or 5 ppt
 
-  # same bindings, but for the arrow keys
   bindsym Left resize shrink width 10 px or 5 ppt
-  bindsym Down resize grow height 10 px or 5 ppt
-  bindsym Up resize shrink height 10 px or 5 ppt
+  bindsym Up resize grow height 10 px or 5 ppt
+  bindsym Down resize shrink height 10 px or 5 ppt
   bindsym Right resize grow width 10 px or 5 ppt
 
   # back to normal: Enter or Escape
@@ -248,41 +237,74 @@ bindsym $mod+r mode "resize"
 # =============
 # ==== bar ====
 # =============
-bar {
-  position top
-  height 25
-  tray_padding 0
+#bar {
+#  position top
+#  #height 28
+#  tray_padding 0
+#
+#  colors {
+#    background $backgr
+#    statusline $color5
+#    separator  $color5
+#
+#    # key              border  backgr. text
+#    focused_workspace  $border $border $color5
+#    active_workspace   $border $border $color5
+#    inactive_workspace $backgr $backgr $color5
+#    urgent_workspace   $color3 $color3 $color1
+#  }
+#
+#  i3bar_command i3bar -t
+#  status_command i3blocks
+#
+#  # mouse wheel scrolls on the bar
+#  bindsym button4 workspace prev
+#  bindsym button5 workspace next
+#}
 
-  colors {
-    background $backgr
-    statusline $color5
-    separator  $color5
+# =================
+# ==== startup ====
+# =================
 
-    # key              border  backgr. text
-    focused_workspace  $border $border $color1
-    active_workspace   $border $border $color2
-    inactive_workspace $backgr $backgr $hlight
-    urgent_workspace   $color3 $color3 $color1
-  }
+# network manager
+exec nm-applet
 
-  #i3bar_command i3bar -t
-  status_command i3blocks -c ~/.config/i3blocks/config
+# notifiation deamon
+exec dunst -fn "Roboto Condensed, FontAwesome 10" \
+  -lb $color1 -nb $color1 -cb $color3 \
+  -lf $color5 -nf $color5 -cf $color1
 
-  ## mouse wheel scrolls on the bar
-  #bindsym button4 workspace prev
-  #bindsym button5 workspace next
-}
+# fix dpi
+#exec xrandr --dpi 180
+
+# apply my xmodmap, switching caps to mod4 and shift+caps to caps
+#exec xmodmap ~/.Xmodmap
+
+# nummlock on
+exec numlockx on
+
+## compton, shadows and transparency
+#exec compton -b \
+#  --config ~/.config/compton.conf \
+#  --backend glx --glx-no-stencil
+
+# polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# wallpaper
+#exec feh --bg-center .wallpapers/Wallpaper_8K_0_3200x1800.jpg
+exec wal -Rt
 
 # ================
 # ==== inputs ====
 # ================
 # touchscreen
-input 1739:2808:SYNAPTICS_Synaptics_Large_Touch_S {
+input 1267:9081:ELAN_Touchs {
   events enabled
 }
 
 # touchpad
-input 1739:10036:DLL060A:00_06C {
+input 1739:33571:1A586753:00_06CB:8323_To {
   events enabled
   tap enabled
   dwt enabled
@@ -291,19 +313,11 @@ input 1739:10036:DLL060A:00_06C {
   natural_scroll enabled
 }
 
-input 5426:52:Razer_Razer_Tai {
-  events enabled
-  middle_emulation enabled
-}
-
 # =================
 # ==== outputs ====
 # =================
 mouse_warping output
 seamless_mouse on
-output eDP-1 res 1920x1280 #pos -1980,0
-output HDMI-A-1 res 1920x1080
-#output DP-2 res 2560x1440 #pos 0,0
-#output DP-3 res 2560x1440 #pos 0,2560
-
+output eDP-1 scale 2
+output eDP-1 res 3200x1800
 

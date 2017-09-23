@@ -39,8 +39,8 @@ Plug 'tpope/vim-commentary'
 Plug 'yggdroot/indentline'
 " completion?
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" smooth scrolling lol
-Plug 'yuttie/comfortable-motion.vim'
+" colors
+Plug 'dylanaraps/wal.vim'
 
 call plug#end()
 
@@ -96,4 +96,5 @@ map <F7> :set spell! spelllang=en_us spellfile=~/.vim/spellfile.add<cr>
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set background=dark
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme wal
