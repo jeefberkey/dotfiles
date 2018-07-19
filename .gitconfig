@@ -1,6 +1,7 @@
 [user]
 	email = nick.miller@onyxpoint.com
 	name = Nick Miller
+	signingkey = AFFEA6BBC7EC83A3
 [credential]
 	username = jeefberkey
 	helper = cache
@@ -8,11 +9,18 @@
 	default = simple
 [core]
 	editor = vim
+	editor = atom-beta --wait
 [merge]
 	tool = meld
 [hub]
 	protocol = ssh
 [diff]
-[diff]
 	algorithm = patience
+	tool = meld
 #	external = meld-diff
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/bin/gpg2
+[help]
+	autocorrect = 8

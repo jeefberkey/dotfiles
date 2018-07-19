@@ -26,7 +26,6 @@
       "background-tips"
       "autosave"
       "welcome"
-      "hidpi"
       "language-ruby-on-rails"
       "language-gfm"
       "spell-check"
@@ -46,14 +45,18 @@
     userId: "276f8864-fdd1-5b53-357e-8944a1ef1475"
   "file-icons":
     onChanges: true
+  "git-diff": {}
   hidpi:
-    scaleFactor: 1.2
+    manualResolutionScaleFactors: "\"3200x1800\":1.8,\"2560x1440\":1"
+    osScaleFactor: 2
+    scaleFactor: 1.4
   linter: {}
   "linter-puppet-lint":
     oldVersion: false
     skip140Chars: true
     skipAutoloaderLayout: true
     skipClassInherithsFromParamClass: true
+  "linter-ruby": {}
   "linter-ui-default":
     panelHeight: 71.5
   "nord-atom-ui":
@@ -73,8 +76,7 @@
     squashDirectoryNames: true
   welcome:
     showOnStartup: false
-  whitespace:
-    ensureSingleTrailingNewline: false
+  whitespace: {}
 ".git-commit.text":
   editor:
     preferredLineLength: 80
@@ -91,3 +93,6 @@
 ".puppet.source":
   editor:
     preferredLineLength: 140
+".source.yaml":
+  editor:
+    autoIndent: false

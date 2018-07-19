@@ -4,36 +4,18 @@
 [submodule "config/rofi"]
 	path = src/rofi
 	url = https://github.com/DaveDavenport/rofi.git
-[submodule "config/pipes.sh"]
-	path = src/pipes.sh
-	url = https://github.com/pipeseroni/pipes.sh.git
 [submodule "/home/nick/config/i3blocks-contrib"]
 	path = config/i3blocks-contrib
 	url = https://github.com/vivien/i3blocks-contrib.git
-[submodule "config/dunst"]
-	path = src/dunst
-	url = https://github.com/knopwob/dunst.git
-[submodule "config/compton"]
-	path = src/compton
-	url = https://github.com/chjj/compton.git
 [submodule "src/i3blocks-gaps"]
 	path = src/i3blocks-gaps
 	url = https://github.com/Airblader/i3blocks-gaps.git
-[submodule "src/razer"]
-	path = src/razer
-	url = https://git.bues.ch/git/razer.git
-[submodule "src/cava"]
-	path = src/cava
-	url = git@github.com:karlstav/cava.git
 [submodule "src/oomox"]
 	path = src/oomox
 	url = git@github.com:actionless/oomox.git
 [submodule "src/lightdm-webkit-material"]
 	path = src/lightdm-webkit-material
 	url = git@github.com:artur9010/lightdm-webkit-material.git
-[submodule "src/wpgtk"]
-	path = src/wpgtk
-	url = git@github.com:deviantfero/wpgtk.git
 [submodule "src/antigen"]
 	path = src/antigen
 	url = https://github.com/zsh-users/antigen.git

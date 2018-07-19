@@ -5,22 +5,12 @@
 # set modifier, this in the windows key
 set $mod Mod4
 
-# ================
-# ==== colors ====
-# ================
-set $backgr #00000000
-set $hlight #fac863
-set $border #6699cc
-
-set $color1 #343d46
-set $color2 #1b2b34
-set $color3 #ec5f67
-set $color4 #f99157
-set $color5 #d8dee9
-
 # ==================
 # ==== settings ====
 # ==================
+
+# font
+font pango:Roboto Condensed, FontAwesome 11
 
 # window focus follows mouse
 focus_follows_mouse yes
@@ -28,71 +18,30 @@ focus_follows_mouse yes
 # automatically go back to the previous workspace
 workspace_auto_back_and_forth yes
 
-# fix popups, specifically for hangouts
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
+# # fix popups, specifically for hangouts
+# for_window [window_role="pop-up"] floating enable
+# for_window [window_role="bubble"] floating enable
+# for_window [window_role="task_dialog"] floating enable
+# for_window [window_role="Preferences"] floating enable
 
 for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
 for_window [class="(?i)VirtualBox" title="(?i)Oracle VM VirtualBox"] floating enable
 for_window [class="Nautilus" ] floating enable
-for_window [class="Google Play Music" ] floating enable
-
-# =================
-# ==== display ====
-# =================
-
-# font
-font pango:Roboto Condensed, FontAwesome 11
-
-### colors
-##client.background $color1
-### class                 border  backgr. text    indic.  chld_bdr
-##client.focused          $border $color1 $color5 $color3 $border
-##client.focused_inactive $color1 $color1 $color5 $color3 $color1
-##client.unfocused        $color2 $color1 $color5 $color3 $color1
-##client.urgent           $color3 $color1 $color1 $color3 $color3
-##client.placeholder      $color4 $color1 $color5 $color3 $color4
-
-# Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use
-# from the generated scheme.
-# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
-# it fails to get colors from Xresources.
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-
-client.background       $bg
-
-
-# ==========================
-# ==== borders and gaps ====
-# ==========================
+for_window [class="Rofi" ] floating enable
 
 # turns off gaps and borders when there's only one window
-#smart_gaps on
-smart_borders on
+#smart_borders on
+smart_gaps on
+hide_edge_borders smart
 
-for_window [class="^.*"] border pixel 2
-#gaps inner 4
+#for_window [class="^.*"] border pixel 2
+default_border pixel
+gaps 6
+gaps edge_gaps on
 
 # ==================
 # ==== keybinds ====
 # ==================
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -144,10 +93,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+# restart sway inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r reload
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -179,9 +126,9 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# ===================
-# ==== shortcuts ====
-# ===================
+# ==================
+# ==== keybinds ====
+# ==================
 
 # terminal emulator
 bindsym $mod+Return exec gnome-terminal
@@ -191,17 +138,15 @@ bindsym $mod+Shift+f exec nautilus
 
 # a rofi (a program launcher)
 # https://davedavenport.github.io/rofi/generator.html
-bindsym $mod+d exec "rofi -show combi"
+bindsym $mod+d exec --no-startup-id /usr/bin/rofi -show combi
+#bindsym $mod+d exec --no-startup-id "dmenu_run"
 # program switcher
-bindsym $mod+Tab exec "rofi -show window"
+bindsym $mod+Tab exec --no-startup-id "rofi -show window"
 
 # lock and suspend button
 bindsym $mod+Shift+s exec ~/bin/lock && systemctl suspend
 # lock
-bindsym Control+Mod1+l exec $HOME/bin/lock
-
-# emergency key combo for turning main screen back on
-bindsym $mod+Shift+m exec xrandr --output eDP1 --mode 1920x1080
+bindsym Control+Mod1+l exec ~/bin/lock
 
 # none of these work in Spotify anyway
 set $update && pkill -SIGRTMIN+10 i3status
@@ -211,22 +156,22 @@ bindsym XF86AudioNext         exec --no-startup-id playerctl next
 bindsym XF86AudioLowerVolume  exec --no-startup-id amixer -q sset Master 3%- $update
 bindsym XF86AudioRaiseVolume  exec --no-startup-id amixer -q sset Master 3%+ $update
 bindsym XF86AudioMute         exec --no-startup-id amixer -q sset Master toggle $update
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -time 300 -steps 14 -dec 10
-bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -time 300 -steps 14 -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 5
 
 # ================
 # ==== resize ====
 # ================
 mode "resize" {
-  bindsym h resize shrink width 10 px or 5 ppt
-  bindsym j resize grow height 10 px or 5 ppt
+  bindsym h resize shrink width  10 px or 5 ppt
+  bindsym j resize grow   height 10 px or 5 ppt
   bindsym k resize shrink height 10 px or 5 ppt
-  bindsym l resize grow width 10 px or 5 ppt
+  bindsym l resize grow   width  10 px or 5 ppt
 
-  bindsym Left resize shrink width 10 px or 5 ppt
-  bindsym Up resize grow height 10 px or 5 ppt
-  bindsym Down resize shrink height 10 px or 5 ppt
-  bindsym Right resize grow width 10 px or 5 ppt
+  bindsym Left  resize shrink width  10 px or 5 ppt
+  bindsym Up    resize grow   height 10 px or 5 ppt
+  bindsym Down  resize shrink height 10 px or 5 ppt
+  bindsym Right resize grow   width  10 px or 5 ppt
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
@@ -237,30 +182,34 @@ bindsym $mod+r mode "resize"
 # =============
 # ==== bar ====
 # =============
-#bar {
-#  position top
-#  #height 28
-#  tray_padding 0
-#
-#  colors {
-#    background $backgr
-#    statusline $color5
-#    separator  $color5
-#
-#    # key              border  backgr. text
-#    focused_workspace  $border $border $color5
-#    active_workspace   $border $border $color5
-#    inactive_workspace $backgr $backgr $color5
-#    urgent_workspace   $color3 $color3 $color1
-#  }
-#
-#  i3bar_command i3bar -t
-#  status_command i3blocks
-#
-#  # mouse wheel scrolls on the bar
-#  bindsym button4 workspace prev
-#  bindsym button5 workspace next
-#}
+bar {
+  # commands
+  position top
+  separator_symbol |
+  #height 28
+  pango_markup enabled
+
+  #colors {
+  #  background $backgr
+  #  statusline $color5
+  #  separator  $color5
+
+  #  # key              border  backgr. text
+  #  focused_workspace  $border $border $color5
+  #  active_workspace   $border $border $color5
+  #  inactive_workspace $backgr $backgr $color5
+  #  urgent_workspace   $color3 $color3 $color1
+  #}
+
+  swaybar_command swaybar
+  status_command i3blocks
+
+  # TODO not available yet
+  # # mouse wheel scrolls on the bar
+  # bindsym button4 workspace prev
+  # bindsym button5 workspace next
+  wrap_scroll yes
+}
 
 # =================
 # ==== startup ====
@@ -270,9 +219,10 @@ bindsym $mod+r mode "resize"
 exec nm-applet
 
 # notifiation deamon
-exec dunst -fn "Roboto Condensed, FontAwesome 10" \
-  -lb $color1 -nb $color1 -cb $color3 \
-  -lf $color5 -nf $color5 -cf $color1
+exec dunst -fn "Roboto Condensed, FontAwesome 10"
+
+# unlock keyring please
+exec gnome-keyring-daemon --start
 
 # fix dpi
 #exec xrandr --dpi 180
@@ -281,7 +231,7 @@ exec dunst -fn "Roboto Condensed, FontAwesome 10" \
 #exec xmodmap ~/.Xmodmap
 
 # nummlock on
-exec numlockx on
+#exec numlockx on
 
 ## compton, shadows and transparency
 #exec compton -b \
@@ -289,22 +239,22 @@ exec numlockx on
 #  --backend glx --glx-no-stencil
 
 # polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # wallpaper
 #exec feh --bg-center .wallpapers/Wallpaper_8K_0_3200x1800.jpg
-exec wal -Rt
+exec ~/.pyenv/versions/3.7.0/bin/wal -R
 
 # ================
 # ==== inputs ====
 # ================
 # touchscreen
-input 1267:9081:ELAN_Touchs {
+input 1267:8400:ELAN_Touchs {
   events enabled
 }
 
 # touchpad
-input 1739:33571:1A586753:00_06CB:8323_To {
+input 1739:30383:DLL075B:01_06CB:76AF_To {
   events enabled
   tap enabled
   dwt enabled
@@ -317,7 +267,13 @@ input 1739:33571:1A586753:00_06CB:8323_To {
 # ==== outputs ====
 # =================
 mouse_warping output
-seamless_mouse on
+#seamless_mouse on
+
+output eDP-1 pos -1600 0 res 3200x1800
 output eDP-1 scale 2
-output eDP-1 res 3200x1800
+output DP-1 pos 0 0 res 2560x1440
+output DP-1 scale 1
+
+# Include default sway config, like security settings
+include /etc/sway/config.d/*
 
