@@ -9,6 +9,7 @@
 	default = simple
 [core]
 	editor = vim
+	editor = atom-beta --wait
 [merge]
 	tool = meld
 [hub]
@@ -17,5 +18,9 @@
 	algorithm = patience
 	tool = meld
 #	external = meld-diff
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/bin/gpg2
 [help]
 	autocorrect = 8
