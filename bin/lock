@@ -11,4 +11,5 @@
 #i3lock -u -i /tmp/screen.png -c 000000
 #rm /tmp/screen.png
 
-i3lock -f -t -i ~/.wallpapers/.current -c 000000
+swaylock -f -t -c 000000
+

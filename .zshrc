@@ -49,9 +49,6 @@ antigen apply
 ###############
 # For path settings, see ~/.zprofile
 source ~/.zprofile
-export TERMINAL=gnome-terminal
-export GOPATH="$HOME/.go"
-export EDITOR=nvim
 #export GDK_SCALE=2
 #export GDK_DPI_SCALE=05
 
@@ -65,6 +62,8 @@ alias gti="git"
 alias s="git status -s"
 alias tree="tree -FC"
 alias vim="nvim"
+alias atom="atom-beta"
+alias apm="apm-beta"
 alias rake="bundle exec rake"
 function vssh () { vagrant ssh $1 -c 'sudo -i; cd' }
 
@@ -73,9 +72,18 @@ source /opt/google-cloud-sdk/completion.zsh.inc
 
 # rbenv jank
 eval "$(rbenv init -)"
+rbenv shell 2.4.4
+
+# pyenv jank
+eval "$(pyenv init -)"
 
 # wal jank
-#(cat ~/.cache/wal/sequences &)
+#cat ~/.cache/wal/sequences
+#source ~/.cache/wal/colors-tty.sh
+
+# gpg jank
+gpg-connect-agent /bye
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 # kube jank
 source <(kubectl completion zsh)

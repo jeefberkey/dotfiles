@@ -13,8 +13,8 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 polybar_args='-l error -r'
 
 # Launch bar1 and bar2
-#MONITOR=HDMI-3 polybar jeefbar $polybar_args &
-MONITOR=eDP-1 polybar jeefbar $polybar_args &
+#MONITOR=DP-1 polybar jeefbar $polybar_args &
+MONITOR=XWAYLAND0 polybar jeefbar $polybar_args &
 
 echo "Bars launched..."
 
