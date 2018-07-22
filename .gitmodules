@@ -1,9 +1,6 @@
 [submodule "config/fonts"]
 	path = src/fonts
 	url = https://github.com/powerline/fonts.git
-[submodule "config/rofi"]
-	path = src/rofi
-	url = https://github.com/DaveDavenport/rofi.git
 [submodule "/home/nick/config/i3blocks-contrib"]
 	path = config/i3blocks-contrib
 	url = https://github.com/vivien/i3blocks-contrib.git
@@ -16,6 +13,3 @@
 [submodule "src/lightdm-webkit-material"]
 	path = src/lightdm-webkit-material
 	url = git@github.com:artur9010/lightdm-webkit-material.git
-[submodule "src/antigen"]
-	path = src/antigen
-	url = https://github.com/zsh-users/antigen.git
