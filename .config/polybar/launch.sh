@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# wait for i3 to start
+sleep 2
+
 # Terminate already running bar instances
 killall -q polybar
 

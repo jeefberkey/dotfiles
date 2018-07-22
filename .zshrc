@@ -38,8 +38,8 @@ EOBUNDLES
 ###########
 #antigen theme bira
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
-SPACESHIP_PROMPT_TRUNC=2  # Limit the folders to two
-SPACESHIP_RUBY_SHOW=false # Disable the rbenv thing
+SPACESHIP_DIR_TRUNC=2  # Limit the folders to two
+SPACESHIP_TIME_12HR=true
 
 # Tell antigen that you're done.
 antigen apply
@@ -68,9 +68,14 @@ alias vim="nvim"
 alias rake="bundle exec rake"
 function vssh () { vagrant ssh $1 -c 'sudo -i; cd' }
 
+# GCE completion
+source /opt/google-cloud-sdk/completion.zsh.inc
+
 # rbenv jank
 eval "$(rbenv init -)"
 
 # wal jank
-(wal -r &)
+#(cat ~/.cache/wal/sequences &)
 
+# kube jank
+source <(kubectl completion zsh)

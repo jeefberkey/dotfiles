@@ -47,7 +47,7 @@ for_window [class="Google Play Music" ] floating enable
 # =================
 
 # font
-font pango:Roboto Condensed, FontAwesome 11
+font pango:Roboto Condensed, Font Awesome 11
 
 ### colors
 ##client.background $color1
@@ -282,6 +282,9 @@ exec xmodmap ~/.Xmodmap
 
 # nummlock on
 exec numlockx on
+
+# polkit daemon
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # compton, shadows and transparency
 exec compton -b \
