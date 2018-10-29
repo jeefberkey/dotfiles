@@ -1,0 +1,10 @@
+# man 5 swaylock
+
+# options
+ignore-empty-password
+daemonize
+
+# theming
+scaling=tile
+color=202020
+

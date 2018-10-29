@@ -1,0 +1,64 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+  "modules-left": ["sway/workspaces","sway/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["custom/gpm","pulseaudio","network","cpu","memory","battery","tray"],
+  "sway/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": false,
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "focused": ""
+      // "default": ""
+    }
+  },
+  "sway/window": {
+    "max-length": 80
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%A, %B %e %Y %l:%M %p}"
+  },
+  "cpu": {
+    "format": "{}% "
+  },
+  "memory": {
+    "format": "{}% "
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "network": {
+    "interface": "wlp58s0",
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ifname} ",
+    "format-disconnected": "Disconnected ⚠"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    }
+  },
+  "custom/gpm": {
+    "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",
+    "format": " {}",
+    "max-length": 40,
+    "interval": 15,
+    "exec-if": "pgrep -f 'Google Play Music Desktop Player'"
+  }
+}

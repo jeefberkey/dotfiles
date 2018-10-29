@@ -1,9 +1,16 @@
-# i3 config file (v4)
+# sway config file (v4)
 # vim: ft=sh
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # set modifier, this in the windows key
 set $mod Mod4
+
+# ================
+# ==== colors ====
+# ================
+
+# import from wal
+include "$HOME/.cache/wal/colors-sway"
 
 # ==================
 # ==== settings ====
@@ -18,6 +25,8 @@ focus_follows_mouse yes
 # automatically go back to the previous workspace
 workspace_auto_back_and_forth yes
 
+floating_modifier $mod
+
 # # fix popups, specifically for hangouts
 # for_window [window_role="pop-up"] floating enable
 # for_window [window_role="bubble"] floating enable
@@ -30,14 +39,14 @@ for_window [class="Nautilus" ] floating enable
 for_window [class="Rofi" ] floating enable
 
 # turns off gaps and borders when there's only one window
-#smart_borders on
+smart_borders on
 smart_gaps on
 hide_edge_borders smart
 
 #for_window [class="^.*"] border pixel 2
 default_border pixel
-gaps 6
-gaps edge_gaps on
+gaps inner 3
+#gaps edge_gaps on
 
 # ==================
 # ==== keybinds ====
@@ -81,22 +90,23 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
 #bindsym $mod+w layout tabbed
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+## change focus between tiling / floating windows
 bindsym $mod+t focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
 
-# restart sway inplace (preserves your layout/session, can be used to upgrade i3)
+# restart sway inplace (preserves your layout/session)
 bindsym $mod+Shift+r reload
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# exit sway (logs you out of your session)
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -b 'Yes, exit sway' 'swaymsg exit'"
 
 # move workspaces between monitors
 bindsym $mod+Mod1+Left move workspace to output left
@@ -144,9 +154,19 @@ bindsym $mod+d exec --no-startup-id /usr/bin/rofi -show combi
 bindsym $mod+Tab exec --no-startup-id "rofi -show window"
 
 # lock and suspend button
-bindsym $mod+Shift+s exec ~/bin/lock && systemctl suspend
+bindsym $mod+Shift+s exec swaylock && systemctl suspend
 # lock
-bindsym Control+Mod1+l exec ~/bin/lock
+bindsym Control+Mod1+l exec swaylock
+
+# dpms
+# lock after 10 mins
+# turn screen off after 15 mins
+# lock screen before going to sleep
+exec swayidle \
+    timeout 600 'swaylock' \
+    timeout 900 'swaymsg "output * dpms off"' \
+       resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock'
 
 # none of these work in Spotify anyway
 set $update && pkill -SIGRTMIN+10 i3status
@@ -188,21 +208,11 @@ bar {
   separator_symbol |
   #height 28
   pango_markup enabled
+  font Roboto Condensed, FontAwesome 10
 
-  #colors {
-  #  background $backgr
-  #  statusline $color5
-  #  separator  $color5
-
-  #  # key              border  backgr. text
-  #  focused_workspace  $border $border $color5
-  #  active_workspace   $border $border $color5
-  #  inactive_workspace $backgr $backgr $color5
-  #  urgent_workspace   $color3 $color3 $color1
-  #}
-
-  swaybar_command swaybar
-  status_command i3blocks
+  #swaybar_command swaybar
+  swaybar_command waybar
+  #status_command i3blocks
 
   # TODO not available yet
   # # mouse wheel scrolls on the bar
@@ -219,59 +229,46 @@ bar {
 exec nm-applet
 
 # notifiation deamon
-exec dunst -fn "Roboto Condensed, FontAwesome 10"
+exec mako
 
 # unlock keyring please
 exec gnome-keyring-daemon --start
 
-# fix dpi
-#exec xrandr --dpi 180
-
-# apply my xmodmap, switching caps to mod4 and shift+caps to caps
-#exec xmodmap ~/.Xmodmap
-
-# nummlock on
-#exec numlockx on
-
-## compton, shadows and transparency
-#exec compton -b \
-#  --config ~/.config/compton.conf \
-#  --backend glx --glx-no-stencil
-
-# polybar
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 # wallpaper
-#exec feh --bg-center .wallpapers/Wallpaper_8K_0_3200x1800.jpg
-exec ~/.pyenv/versions/3.7.0/bin/wal -R
+# https://github.com/dylanaraps/pywal/wiki/Customization#sway
+output * background $wallpaper stretch
+client.focused $color0 $background $foreground $color7 $color0
+
 
 # ================
 # ==== inputs ====
 # ================
 # touchscreen
-input 1267:8400:ELAN_Touchs {
+input 1267:8400:ELAN_Touchscreen {
   events enabled
+  map_to_output eDP-1
 }
 
 # touchpad
-input 1739:30383:DLL075B:01_06CB:76AF_To {
+input 1739:30383:DLL075B:01_06CB:76AF_Touchpad {
   events enabled
   tap enabled
   dwt enabled
+  middle_emulation enabled
   scroll_method two_finger
   click_method clickfinger
-  natural_scroll enabled
+  # natural_scroll enabled
 }
 
 # =================
 # ==== outputs ====
 # =================
 mouse_warping output
-#seamless_mouse on
 
-output eDP-1 pos -1600 0 res 3200x1800
+#output eDP-1 pos -1600 0 res 3200x1800
+output eDP-1 res 3200x1800 pos 0 0
 output eDP-1 scale 2
-output DP-1 pos 0 0 res 2560x1440
+output DP-1 res 2560x1440 pos 1600 0
 output DP-1 scale 1
 
 # Include default sway config, like security settings

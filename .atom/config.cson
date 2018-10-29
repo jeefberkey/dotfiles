@@ -36,7 +36,7 @@
     warnOnLargeFileLimit: 10
   editor:
     fontFamily: "Source Code Pro, Medium"
-    fontSize: 11
+    fontSize: 12
     preferredLineLength: 140
     showIndentGuide: true
     softWrapHangingIndent: 2
@@ -59,6 +59,7 @@
   "linter-ruby": {}
   "linter-ui-default":
     panelHeight: 71.5
+    showPanel: true
   "nord-atom-ui":
     darkerFormFocusEffect: true
   "one-dark-ui":
@@ -95,4 +96,4 @@
     preferredLineLength: 140
 ".source.yaml":
   editor:
-    autoIndent: false
+    autoIndent: true

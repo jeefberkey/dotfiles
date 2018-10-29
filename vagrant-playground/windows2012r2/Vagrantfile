@@ -2,21 +2,26 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "opentable/win-2012r2-standard-amd64-nocm"
-
-  # Disable automatic box update checking. If you disable this, then
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
-
-  # config.vm.synced_folder "../data", "/vagrant_data"
-
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = 2048
-    vb.cpus = 2
-    vb.gui = true
-  end
   
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
+  config.vm.define 'windows' do |win|
+    win.vm.box = 'opentable/win-2012r2-standard-amd64-nocm'
+
+    win.vm.provider 'virtualbox' do |vb|
+      vb.memory = 2048
+      vb.cpus = 2
+      vb.gui = true
+    end
+  end
+
+  config.vm.define 'client' do |l|
+    l.vm.box = 'centos/7'
+    l.vm.provider 'virtualbox' do |vb|
+      vb.memory = 512
+      vb.cpus = 2
+    end
+
+    config.vm.provision 'shell', inline: <<-SHELL
+      yum install -y vim openscap scap-security-guide realmd
+    SHELL
+  end
 end
