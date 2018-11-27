@@ -1,0 +1,23 @@
+# sway config file
+# vim: ft=sh
+#
+# programs to start in a sway session
+
+# network manager
+exec nm-applet
+
+# notifiation deamon
+exec mako
+
+# unlock keyring please
+exec gnome-keyring-daemon --start
+
+# dpms
+# lock after 10 mins
+# turn screen off after 15 mins
+# lock screen before going to sleep
+exec swayidle \
+    timeout 600 'swaylock' \
+    timeout 900 'swaymsg "output * dpms off"' \
+       resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock'

@@ -76,7 +76,8 @@ eval "$(rbenv init -)"
 rbenv shell 2.4.4
 
 # pyenv jank
-#eval "$(pyenv init -)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # wal jank
 cat ~/.cache/wal/sequences
@@ -89,3 +90,6 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # kube jank
 #source <(kubectl completion zsh) || true
 
+# terraform jank
+#autoload -U +X bashcompinit && bashcompinit
+#complete -o nospace -C /home/nick/bin/terraform terraform

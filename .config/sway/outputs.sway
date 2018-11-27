@@ -1,0 +1,19 @@
+# sway config file
+# vim: ft=sh
+#
+# output configuration
+
+# internal monitor
+output 'Sharp Corporation 0x144A 0x00000000' res 3200x1800
+output 'Sharp Corporation 0x144A 0x00000000' pos 0 0
+output 'Sharp Corporation 0x144A 0x00000000' scale 2
+
+# home monitor
+output 'Ancor Communications Inc ASUS MG279 0x000003ED' res 2560x1440
+output 'Ancor Communications Inc ASUS MG279 0x000003ED' scale 1
+output 'Ancor Communications Inc ASUS MG279 0x000003ED' pos 0 900
+
+# work monitor
+output 'Ancor Communications Inc ASUS PB278 EALMTF242999' res 2560x1440
+output 'Ancor Communications Inc ASUS PB278 EALMTF242999' scale 1
+output 'Ancor Communications Inc ASUS PB278 EALMTF242999' pos 1600 0

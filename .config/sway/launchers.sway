@@ -1,0 +1,40 @@
+# sway config file
+# vim: ft=sh
+#
+# bindsyms that launch stuff, specifically
+
+# restart sway inplace (preserves your layout/session)
+bindsym $mod+Shift+r reload
+# exit sway (logs you out of your session)
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -b 'Yes, exit sway' 'swaymsg exit'"
+
+# terminal emulator
+bindsym $mod+Return exec gnome-terminal
+
+# file manager
+bindsym $mod+Shift+f exec nautilus
+
+# a rofi (a program launcher)
+# https://davedavenport.github.io/rofi/generator.html
+bindsym $mod+d exec --no-startup-id /usr/bin/rofi -show combi
+#bindsym $mod+d exec --no-startup-id "dmenu_run"
+# program switcher
+bindsym $mod+Tab exec --no-startup-id "rofi -show window"
+
+# lock and suspend button
+bindsym $mod+Shift+s exec swaylock && systemctl suspend
+# lock
+bindsym Control+Mod1+l exec swaylock
+# suspend but from the lockscreen
+#bindsym $mod+Shift+s --locked exec systemctl suspend
+
+# Media controls
+set $update && pkill -SIGRTMIN+10 i3status
+bindsym XF86AudioPrev         exec --no-startup-id playerctl prev
+bindsym XF86AudioPlay         exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext         exec --no-startup-id playerctl next
+bindsym XF86AudioLowerVolume  exec --no-startup-id amixer -q sset Master 3%- $update
+bindsym XF86AudioRaiseVolume  exec --no-startup-id amixer -q sset Master 3%+ $update
+bindsym XF86AudioMute         exec --no-startup-id amixer -q sset Master toggle $update
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 5

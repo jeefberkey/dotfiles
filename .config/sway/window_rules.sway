@@ -1,0 +1,27 @@
+# sway config file
+# vim: ft=sh
+#
+# window rules, gaps and borders
+
+# turns off gaps and borders when there's only one window
+smart_borders on
+smart_gaps on
+hide_edge_borders smart
+
+# borders
+default_border pixel 3
+default_floating_border pixel 3
+gaps inner 6
+#gaps edge_gaps on
+
+
+# # fix popups, specifically for hangouts
+# for_window [window_role="pop-up"] floating enable
+# for_window [window_role="bubble"] floating enable
+# for_window [window_role="task_dialog"] floating enable
+# for_window [window_role="Preferences"] floating enable
+
+for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
+for_window [class="(?i)VirtualBox" title="(?i)Oracle VM VirtualBox"] floating enable
+for_window [class="Nautilus" ] floating enable
+for_window [class="Rofi" ] floating enable

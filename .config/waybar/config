@@ -1,10 +1,10 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 28,
-  "modules-left": ["sway/workspaces","sway/window"],
-  "modules-center": ["clock"],
-  "modules-right": ["custom/gpm","pulseaudio","network","cpu","memory","battery","tray"],
+  "height": 30,
+  "modules-left": ["sway/workspaces","sway/mode","custom/gpm"],
+  "modules-center": ["sway/window"],
+  "modules-right": ["pulseaudio","network","cpu","memory","battery","clock","tray"],
   "sway/workspaces": {
     "disable-scroll": false,
     "all-outputs": false,
@@ -15,22 +15,30 @@
       // "default": ""
     }
   },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
   "sway/window": {
-    "max-length": 80
+    "max-length": 60
   },
   "tray": {
     "spacing": 10
   },
   "clock": {
-    "format": "{:%A, %B %e %Y %l:%M %p}"
+    "format": "{:%a, %b %e %Y %l:%M %p}"
   },
   "cpu": {
-    "format": "{}% "
+    "format": "{usage}% "
   },
   "memory": {
     "format": "{}% "
   },
   "battery": {
+    "states": {
+      "good": 95,
+      "warning": 40,
+      "critical": 25
+    },
     "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""]
   },
@@ -41,6 +49,7 @@
     "format-disconnected": "Disconnected ⚠"
   },
   "pulseaudio": {
+    "scroll-step": 5,
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "",
@@ -52,7 +61,8 @@
       "portable": "",
       "car": "",
       "default": ["", ""]
-    }
+    },
+    "on-click": "pavucontrol"
   },
   "custom/gpm": {
     "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",

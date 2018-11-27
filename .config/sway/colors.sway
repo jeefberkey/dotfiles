@@ -1,0 +1,21 @@
+# sway config file
+# vim: ft=sh
+#
+# output configuration
+
+# theme, imported from wal
+include "$HOME/.cache/wal/colors-sway"
+
+# wallpaper
+# https://github.com/dylanaraps/pywal/wiki/Customization#sway
+output * background $wallpaper stretch
+client.focused $color0 $background $foreground $color7 $color0
+
+# colors
+client.background $background
+# class                 border  backgr. text    indic.  chld_bdr
+client.focused          $color7 $color1 $color5 $color3 $color7
+client.focused_inactive $color1 $color1 $color5 $color3 $color1
+client.unfocused        $color2 $color1 $color5 $color3 $color1
+client.urgent           $color3 $color1 $color1 $color3 $color3
+client.placeholder      $color4 $color1 $color5 $color3 $color4

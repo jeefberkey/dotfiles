@@ -7,7 +7,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 export TERMINAL=gnome-terminal
 export GOPATH="$HOME/.go"
 export EDITOR=nvim
-PUPPET_VERSION='~> 4.10.10'
 
 # https://github.com/swaywm/sway/wiki/Running-programs-natively-under-Wayland
 GDK_BACKEND=wayland
@@ -16,6 +15,7 @@ QT_QPA_PLATFORM=wayland-egl
 _JAVA_AWT_WM_NONREPARENTING=1
 
 path=(~/.rbenv/bin ${PYENV_ROOT}/bin ~/bin ~/.go/bin $path[@])
+PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 
 if [ -n "$DESKTOP_SESSION" ];then
   eval $(gnome-keyring-daemon --start)

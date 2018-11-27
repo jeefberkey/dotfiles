@@ -1,0 +1,23 @@
+# sway config file
+# vim: ft=sh
+#
+# bar configuration
+
+bar {
+  # commands
+  position top
+  separator_symbol |
+  #height 28
+  pango_markup enabled
+  font Roboto Condensed, FontAwesome 10
+
+  #swaybar_command swaybar
+  swaybar_command waybar
+  #status_command i3blocks
+
+  # TODO not available yet
+  # # mouse wheel scrolls on the bar
+  # bindsym button4 workspace prev
+  # bindsym button5 workspace next
+  wrap_scroll yes
+}

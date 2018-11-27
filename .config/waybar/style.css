@@ -1,15 +1,13 @@
-/* @import url/("/home/nick/.cache/wal/colors.css"); */
-
 * {
-  /* @import url("/home/nick/.cache/wal/colors.css"); */
   border: none;
   border-radius: 0;
-  font-family: "Roboto Condensed", FontAwesome, sans-serif;
+  font-family: Roboto Condensed, FontAwesome, sans-serif;
   font-size: 13px;
+  min-height: 0;
 }
 
-window {
-  background: rgba(43, 48, 59, 0.3);
+window#waybar {
+  background: rgba(43, 48, 59, 0.5);
   border-bottom: 3px solid rgba(100, 114, 125, 0.5);
   color: white;
 }
@@ -26,15 +24,19 @@ window {
   border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #window, #custom-spotify {
-  padding: 0 10px;
-  margin: 0 5px;
+#mode {
   background: #64727D;
+  border-bottom: 3px solid white;
 }
 
-/* #clock {
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-gpm, #tray, #mode {
+  padding: 0 10px;
+  margin: 0 5px;
+}
+
+#clock {
   background-color: #64727D;
-} */
+}
 
 #battery {
   background-color: #ffffff;
@@ -48,12 +50,12 @@ window {
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: black;
+      background-color: #ffffff;
+      color: black;
   }
 }
 
-#battery.warning {
+#battery.warning:not(.charging) {
   background: #f53c3c;
   color: white;
   animation-name: blink;
@@ -63,18 +65,18 @@ window {
   animation-direction: alternate;
 }
 
-/* #cpu {
+#cpu {
   background: #2ecc71;
   color: #000000;
-} */
+}
 
-/* #memory {
+#memory {
   background: #9b59b6;
-} */
+}
 
-/* #network {
+#network {
   background: #2980b9;
-} */
+}
 
 #network.disconnected {
   background: #f53c3c;
@@ -88,4 +90,13 @@ window {
 #pulseaudio.muted {
   background: #90b1b1;
   color: #2a5c45;
+}
+
+#custom-gpm {
+  background: #66cc99;
+  color: #2a5c45;
+}
+
+#tray {
+  background-color: #2980b9;
 }

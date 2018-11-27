@@ -1,0 +1,25 @@
+# sway config file
+# vim: ft=sh
+#
+# input configuration
+
+# touchscreen
+input 1267:8400:ELAN_Touchscreen {
+  events enabled
+  map_to_output eDP-1
+}
+
+# touchpad
+input 1739:30383:DLL075B:01_06CB:76AF_Touchpad {
+  events enabled
+  tap enabled
+  dwt enabled
+  middle_emulation enabled
+  scroll_method two_finger
+  click_method clickfinger
+  natural_scroll enabled
+}
+
+input 4152:5922:SteelSeries_SteelSeries_Sensei_310_eSports_Mouse {
+  left_handed enabled
+}
