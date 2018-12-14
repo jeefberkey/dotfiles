@@ -16,7 +16,7 @@
     }
   },
   "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>"
+    "format": "<span style=\"bold\">{}</span>"
   },
   "sway/window": {
     "max-length": 60
@@ -28,7 +28,7 @@
     "format": "{:%a, %b %e %Y %l:%M %p}"
   },
   "cpu": {
-    "format": "{usage}% "
+    "format": "{load} "
   },
   "memory": {
     "format": "{}% "

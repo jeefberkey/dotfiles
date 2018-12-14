@@ -10,11 +10,12 @@ Vagrant.configure(2) do |config|
     vb.memory = "2048"
     #vb.memory = "4096"
     vb.cpus = "2"
+    vb.gui = true
   end
 
-  #config.vm.provision "shell", inline: <<-SHELL
-  #  sudo rpm -ivh http://yum.puppetlabs.com/puppet/puppet5-release-el-7.noarch.rpm
-  #  sudo yum install -y puppet-agent epel-release
-  #  sudo yum install -y vim git deltarpm htop ncdu tree
-  #SHELL
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo yum install -y epel-release
+    sudo yum install -y vim git deltarpm htop ncdu tree
+    sudo yum update -y
+  SHELL
 end
