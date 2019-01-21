@@ -25,3 +25,5 @@ for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
 for_window [class="(?i)VirtualBox" title="(?i)Oracle VM VirtualBox"] floating enable
 for_window [class="Nautilus" ] floating enable
 for_window [class="Rofi" ] floating enable
+for_window [app_id="gnome-calculator" ] floating enable
+

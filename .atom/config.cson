@@ -50,6 +50,7 @@
     manualResolutionScaleFactors: "\"3200x1800\":1.8,\"2560x1440\":1"
     osScaleFactor: 2
     scaleFactor: 1.4
+  "language-log": {}
   linter: {}
   "linter-puppet-lint":
     oldVersion: false

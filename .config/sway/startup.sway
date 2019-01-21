@@ -3,6 +3,9 @@
 #
 # programs to start in a sway session
 
+# bar
+exec waybar
+
 # network manager
 exec nm-applet
 
@@ -12,7 +15,6 @@ exec mako
 # unlock keyring please
 exec gnome-keyring-daemon --start
 
-# dpms
 # lock after 10 mins
 # turn screen off after 15 mins
 # lock screen before going to sleep

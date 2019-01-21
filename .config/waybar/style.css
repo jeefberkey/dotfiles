@@ -1,32 +1,34 @@
+@import "/home/nick/.cache/wal/colors-waybar.css";
+
 * {
   border: none;
   border-radius: 0;
-  font-family: Roboto Condensed, FontAwesome, sans-serif;
+  font-family: Roboto Condensed, Font Awesome, sans-serif;
   font-size: 13px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(43, 48, 59, 0.5);
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-  color: white;
+  background: rgba(43, 48, 59, 0.8);
+  border-bottom: 3px solid transparent;
+  color: @foreground;
 }
 
 #workspaces button {
   padding: 0 5px;
-  background: transparent;
-  color: white;
+  background: rgba(43, 48, 59, 0.8);
+  color: @foreground;
   border-bottom: 3px solid transparent;
 }
 
 #workspaces button.focused {
-  background: #64727D;
-  border-bottom: 3px solid white;
+  background: rgba(100, 114, 125, 0.2);
+  border-bottom: 3px solid @color15;
 }
 
 #mode {
-  background: #64727D;
-  border-bottom: 3px solid white;
+  background: transparent;
+  border-bottom: 3px solid @color15;
 }
 
 #clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-gpm, #tray, #mode {
@@ -35,7 +37,9 @@ window#waybar {
 }
 
 #clock {
-  background-color: #64727D;
+  background-color: transparent;
+  border-bottom: 3px solid @color1;
+  color: @foreground;
 }
 
 #battery {
@@ -50,8 +54,8 @@ window#waybar {
 
 @keyframes blink {
   to {
-      background-color: #ffffff;
-      color: black;
+    background-color: #ffffff;
+    color: black;
   }
 }
 
@@ -66,25 +70,32 @@ window#waybar {
 }
 
 #cpu {
-  background: #2ecc71;
-  color: #000000;
+  background: transparent;
+  border-bottom: 3px solid @color5;
+  color: @foreground;
 }
 
 #memory {
-  background: #9b59b6;
+  background: transparent;
+  border-bottom: 3px solid @color7;
+  color: @foreground;
 }
 
 #network {
-  background: #2980b9;
+  background: transparent;
+  border-bottom: 3px solid @color16;
+  color: @foreground
 }
 
 #network.disconnected {
-  background: #f53c3c;
+  background: transparent;
+  color: crimson;
 }
 
 #pulseaudio {
-  background: #f1c40f;
-  color: black;
+  background: transparent;
+  border-bottom: 3px solid @color15;
+  color: @foreground;
 }
 
 #pulseaudio.muted {
@@ -98,5 +109,6 @@ window#waybar {
 }
 
 #tray {
-  background-color: #2980b9;
+  background-color: transparent;
+  border-bottom: 3px solid @color15;
 }
