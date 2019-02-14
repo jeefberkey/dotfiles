@@ -17,3 +17,4 @@ output 'Ancor Communications Inc ASUS MG279 0x000003ED' pos 0 900
 output 'Ancor Communications Inc ASUS PB278 EALMTF242999' res 2560x1440
 output 'Ancor Communications Inc ASUS PB278 EALMTF242999' scale 1
 output 'Ancor Communications Inc ASUS PB278 EALMTF242999' pos 1600 0
+

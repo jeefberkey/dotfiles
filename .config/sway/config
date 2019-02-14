@@ -10,7 +10,8 @@ set $mod Mod4
 # ==================
 
 # font
-font pango:Roboto Condensed, FontAwesome 11
+#font pango:Roboto Condensed, FontAwesome 11
+font Roboto Condensed, FontAwesome 11
 
 # window focus follows mouse
 focus_follows_mouse yes
@@ -27,7 +28,7 @@ mouse_warping output
 # includes #
 ############
 # Include default sway config, like security settings
-include /etc/sway/config.d/*
+#include /etc/sway/security.d/*
 
 # the rest of the modular config
 include "$HOME/.config/sway/*.sway"

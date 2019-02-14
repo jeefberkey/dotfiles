@@ -36,7 +36,7 @@
     warnOnLargeFileLimit: 10
   editor:
     fontFamily: "Source Code Pro, Medium"
-    fontSize: 12
+    fontSize: 11
     preferredLineLength: 140
     showIndentGuide: true
     softWrapHangingIndent: 2

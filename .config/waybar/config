@@ -1,10 +1,10 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 30,
+  "height": 28,
   "modules-left": ["sway/workspaces","sway/mode","custom/gpm"],
   "modules-center": ["sway/window"],
-  "modules-right": ["pulseaudio","network","cpu","memory","battery","clock","tray"],
+  "modules-right": ["pulseaudio","network","custom/load","memory","battery","clock","tray"],
   "sway/workspaces": {
     "disable-scroll": false,
     "all-outputs": false,
@@ -12,7 +12,6 @@
     "format-icons": {
       "urgent": "",
       "focused": ""
-      // "default": ""
     }
   },
   "sway/mode": {
@@ -22,13 +21,17 @@
     "max-length": 60
   },
   "tray": {
-    "spacing": 10
+      "icon-size": 21,
+      "spacing": 10
   },
   "clock": {
     "format": "{:%a, %b %e %Y %l:%M %p}"
   },
-  "cpu": {
-    "format": "{load} "
+  "custom/load": {
+    "exec": "cat /proc/loadavg | cut -d' ' -f1 2> /dev/null",
+    "format": "{} ",
+    "max-length": 40,
+    "interval": 15
   },
   "memory": {
     "format": "{}% "
@@ -36,8 +39,8 @@
   "battery": {
     "states": {
       "good": 95,
-      "warning": 40,
-      "critical": 25
+      "warning": 30,
+      "critical": 15
     },
     "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""]

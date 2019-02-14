@@ -18,9 +18,12 @@
 	algorithm = patience
 	tool = meld
 #	external = meld-diff
- [commit]
- 	gpgsign = true
- [gpg]
- 	program = /usr/bin/gpg2
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/bin/gpg2
 [help]
-	autocorrect = 8
+  autocorrect = 8
+[alias]
+  amend = commit -a --amend --no-edit
+

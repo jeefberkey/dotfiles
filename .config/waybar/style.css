@@ -31,7 +31,7 @@ window#waybar {
   border-bottom: 3px solid @color15;
 }
 
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-gpm, #tray, #mode {
+#clock, #battery, #custom-load, #memory, #network, #pulseaudio, #custom-gpm, #tray, #mode {
   padding: 0 10px;
   margin: 0 5px;
 }
@@ -69,7 +69,7 @@ window#waybar {
   animation-direction: alternate;
 }
 
-#cpu {
+#custom-load {
   background: transparent;
   border-bottom: 3px solid @color5;
   color: @foreground;
