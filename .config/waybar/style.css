@@ -32,8 +32,8 @@ window#waybar {
 }
 
 #clock, #battery, #custom-load, #memory, #network, #pulseaudio, #custom-gpm, #tray, #mode {
-  padding: 0 10px;
-  margin: 0 5px;
+  padding: 0 3px;
+  margin: 0 3px;
 }
 
 #clock {

@@ -30,7 +30,7 @@
   "custom/load": {
     "exec": "cat /proc/loadavg | cut -d' ' -f1 2> /dev/null",
     "format": "{} ",
-    "max-length": 40,
+    "min-length": 4,
     "interval": 15
   },
   "memory": {
