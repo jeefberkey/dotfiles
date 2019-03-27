@@ -4,17 +4,17 @@
 # output configuration
 
 # internal monitor
-output 'Sharp Corporation 0x144A 0x00000000' res 3200x1800
-output 'Sharp Corporation 0x144A 0x00000000' pos 0 0
-output 'Sharp Corporation 0x144A 0x00000000' scale 2
+output 'Unknown 0x0806 0x00000000' res 1920x1080
+#output 'Unknown 0x0806 0x00000000' pos 0 0
+output 'Unknown 0x0806 0x00000000' pos 0 1440
 
 # home monitor
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' res 2560x1440
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' scale 1
-output 'Ancor Communications Inc ASUS MG279 0x000003ED' pos 0 900
+output 'Ancor Communications Inc ASUS MG279 0x000003ED' pos 0 0
 
 # work monitor
-output 'Ancor Communications Inc ASUS PB278 EALMTF242999' res 2560x1440
-output 'Ancor Communications Inc ASUS PB278 EALMTF242999' scale 1
-output 'Ancor Communications Inc ASUS PB278 EALMTF242999' pos 1600 0
+output 'Goldstar Company Ltd LG ULTRAWIDE 0x00005868' res 3440x1440
+output 'Goldstar Company Ltd LG ULTRAWIDE 0x00005868' scale 1
+output 'Goldstar Company Ltd LG ULTRAWIDE 0x00005868' pos 0 0
 

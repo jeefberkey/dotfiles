@@ -1,100 +1,23 @@
 "*":
-  "activate-power-mode":
-    comboMode: {}
-    excludedFileTypes:
-      excluded: [
-        "pp"
-        "rb"
-        "epp"
-      ]
-    particles:
-      colours:
-        type: "random"
-  aligner:
-    alignComments: true
   "atom-beautify":
     general:
-      _analyticsUserId: "aad78b8c-25a5-4445-9b1b-b8f18a07589c"
-  "atom-package-deps":
-    ignored: []
-  "autocomplete-plus":
-    enableExtendedUnicodeSupport: true
+      _analyticsUserId: "51011521-57ea-4f9a-8fb6-c0dd1649d927"
   core:
-    autoHideMenuBar: true
-    closeDeletedFileTabs: true
-    disabledPackages: [
-      "background-tips"
-      "autosave"
-      "welcome"
-      "language-ruby-on-rails"
-      "language-gfm"
-      "spell-check"
-    ]
-    excludeVcsIgnoredPaths: false
-    projectHome: "~/simpdev"
-    reopenProjectMenuCount: 40
-    warnOnLargeFileLimit: 10
+    telemetryConsent: "limited"
+    uriHandlerRegistration: "always"
   editor:
-    fontFamily: "Source Code Pro, Medium"
-    fontSize: 11
-    preferredLineLength: 140
+    fontFamily: "Hack, Menlo, Consolas, DejaVu Sans Mono, monospace"
+    fontSize: 12
     showIndentGuide: true
-    softWrapHangingIndent: 2
-  "env-from-shell": {}
   "exception-reporting":
-    userId: "276f8864-fdd1-5b53-357e-8944a1ef1475"
-  "file-icons":
-    onChanges: true
-  "git-diff": {}
-  hidpi:
-    manualResolutionScaleFactors: "\"3200x1800\":1.8,\"2560x1440\":1"
-    osScaleFactor: 2
-    scaleFactor: 1.4
-  "language-log": {}
-  linter: {}
-  "linter-puppet-lint":
-    oldVersion: false
-    skip140Chars: true
-    skipAutoloaderLayout: true
-    skipClassInherithsFromParamClass: true
-  "linter-ruby": {}
+    userId: "f5638808-9e1a-457c-87ad-6b7b23a7839e"
+  "file-types":
+    ".*.yml$": "source.ansible"
+    ".*/group_vars/.*": "source.ansible"
+    ".*/host_vars/.*": "source.ansible"
   "linter-ui-default":
-    panelHeight: 71.5
     showPanel: true
-  "nord-atom-ui":
-    darkerFormFocusEffect: true
-  "one-dark-ui":
-    fontSize: 11
-  "open-terminal-here":
-    command: "gnome-terminal"
-  "split-diff":
-    diffWords: true
-    ignoreWhitespace: true
-    leftEditorColor: "red"
-    rightEditorColor: "green"
-    scrollSyncType: "Vertical + Horizontal"
-    syncHorizontalScroll: true
   "tree-view":
     squashDirectoryNames: true
   welcome:
     showOnStartup: false
-  whitespace: {}
-".git-commit.text":
-  editor:
-    preferredLineLength: 80
-    showIndentGuide: true
-".git-config.source":
-  editor:
-    preferredLineLength: 80
-".git-rebase.text":
-  editor:
-    preferredLineLength: 80
-".ldif.text":
-  editor:
-    preferredLineLength: 140
-".puppet.source":
-  editor:
-    preferredLineLength: 140
-".source.yaml":
-  editor:
-    autoIndent: true

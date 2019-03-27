@@ -7,7 +7,8 @@
 exec waybar
 
 # network manager
-exec nm-applet
+# from AUR network-manager-applet-indicator
+exec nm-applet --indicator
 
 # notifiation deamon
 exec mako
@@ -15,11 +16,15 @@ exec mako
 # unlock keyring please
 exec gnome-keyring-daemon --start
 
+# blue light reduction
+exec redshift-gtk -m wayland
+
 # lock after 10 mins
 # turn screen off after 15 mins
 # lock screen before going to sleep
 exec swayidle \
-    timeout 600 'swaylock' \
-    timeout 900 'swaymsg "output * dpms off"' \
-       resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock'
+  timeout 600 'swaylock' \
+  timeout 900 'swaymsg "output * dpms off"' \
+     resume 'swaymsg "output * dpms on"' \
+  before-sleep 'swaylock'
+

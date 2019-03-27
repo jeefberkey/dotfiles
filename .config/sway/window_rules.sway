@@ -21,9 +21,9 @@ gaps inner 6
 # for_window [window_role="task_dialog"] floating enable
 # for_window [window_role="Preferences"] floating enable
 
-for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
-for_window [class="(?i)VirtualBox" title="(?i)Oracle VM VirtualBox"] floating enable
-for_window [class="Nautilus" ] floating enable
-for_window [class="Rofi" ] floating enable
-for_window [app_id="gnome-calculator" ] floating enable
+for_window [ class="(?i)VirtualBox" title="(?i)Manager"] floating enable
+for_window [ class="(?i)VirtualBox" title="(?i)Oracle VM VirtualBox"] floating enable
+for_window [ class="Rofi" ] floating enable
+for_window [ class="Files" ] floating enable
+for_window [ app_id="gnome-calculator" ] floating enable
 

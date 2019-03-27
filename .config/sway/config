@@ -24,6 +24,8 @@ floating_modifier $mod
 # move mouse with focus
 mouse_warping output
 
+xwayland enable
+
 ############
 # includes #
 ############

@@ -3,7 +3,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Roboto Condensed, Font Awesome, sans-serif;
+  font-family: Roboto, Font Awesome, sans-serif;
   font-size: 13px;
   min-height: 0;
 }
@@ -15,15 +15,16 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 5px;
   background: rgba(43, 48, 59, 0.8);
   color: @foreground;
   border-bottom: 3px solid transparent;
+  padding: 0 0;
 }
 
 #workspaces button.focused {
   background: rgba(100, 114, 125, 0.2);
   border-bottom: 3px solid @color15;
+  padding: 0 0;
 }
 
 #mode {
@@ -31,15 +32,17 @@ window#waybar {
   border-bottom: 3px solid @color15;
 }
 
-#clock, #battery, #custom-load, #memory, #network, #pulseaudio, #custom-gpm, #tray, #mode {
-  padding: 0 3px;
-  margin: 0 3px;
+#clock, #battery, #custom-load, #memory, #backlight, #network, #pulseaudio, #custom-gpm, #tray, #mode {
+  padding: 0 5px;
+  margin: 0 5px;
 }
 
 #clock {
   background-color: transparent;
   border-bottom: 3px solid @color1;
   color: @foreground;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 #battery {
@@ -59,7 +62,7 @@ window#waybar {
   }
 }
 
-#battery.warning:not(.charging) {
+#battery.critical:not(.charging) {
   background: #f53c3c;
   color: white;
   animation-name: blink;
@@ -81,10 +84,16 @@ window#waybar {
   color: @foreground;
 }
 
+#backlight {
+  background: transparent;
+  border-bottom: 3px solid @color5;
+  color: @foreground;
+}
+
 #network {
   background: transparent;
   border-bottom: 3px solid @color16;
-  color: @foreground
+  color: @foreground;
 }
 
 #network.disconnected {
@@ -101,6 +110,7 @@ window#waybar {
 #pulseaudio.muted {
   background: #90b1b1;
   color: #2a5c45;
+  padding: 0 10px;
 }
 
 #custom-gpm {
