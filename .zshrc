@@ -19,8 +19,6 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
   git
   pip
-  dnf
-  gem
   colored-man-pages
   zsh-users/zsh-history-substring-search
   zsh-users/zsh-syntax-highlighting
@@ -55,12 +53,12 @@ alias s="git status -s"
 alias tree="tree -FC"
 alias vim="nvim"
 #alias atom="atom-beta"
-alias apm="apm-beta"
+#alias apm="apm-beta"
 alias rake="bundle exec rake"
 alias ruby="bundle exec ruby"
 alias rspec="bundle exec rspec"
 function vssh () { vagrant ssh $1 -c 'sudo -i; cd' }
-function atom () { atom-beta $@ --enable-gpu-rasterization }
+#function atom () { atom-beta $@ --enable-gpu-rasterization }
 
 ################
 # Integrations #
@@ -79,9 +77,9 @@ rbenv shell 2.4.4
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# wal jank
-cat ~/.cache/wal/sequences
-source ~/.cache/wal/colors-tty.sh
+# # wal jank
+# cat ~/.cache/wal/sequences
+# source ~/.cache/wal/colors-tty.sh
 
 # gpg jank
 gpg-connect-agent /bye
@@ -93,3 +91,6 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # terraform jank
 #autoload -U +X bashcompinit && bashcompinit
 #complete -o nospace -C /home/nick/bin/terraform terraform
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /home/nick/bin/vault vault

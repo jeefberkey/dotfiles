@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "debian/9"
+  config.vm.box = "debian/stretch64"
 
   # config.vm.network "forwarded_port", guest: 8081, host: 8081
 
@@ -11,7 +11,8 @@ Vagrant.configure(2) do |config|
     vb.cpus = "2"
   end
 
-  config.vm.provision "shell", inline: <<-SHELL
-    sudo apt install -y vim git deltarpm htop ncdu tree
-  SHELL
+  config.vm.provision :ansible do |a|
+    a.playbook = 'provision.yml'
+    a.config_file = 'vagrant.cfg'
+  end
 end

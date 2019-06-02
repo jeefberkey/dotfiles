@@ -24,3 +24,10 @@
 [alias]
   amend = commit -a --amend --no-edit
 
+[diff "ansible-vault"]
+  textconv = ansible-vault view --vault-password-file ~/attila/devops/gs-deploy/open_vault.sh
+  cachetextconv = false
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true

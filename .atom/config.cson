@@ -1,13 +1,21 @@
 "*":
+  "ansible-vault":
+    path: "ansible-vault"
+    vault_automatic_de_and_encrypt: true
+    vault_password_file_flag: true
   "atom-beautify":
     general:
       _analyticsUserId: "51011521-57ea-4f9a-8fb6-c0dd1649d927"
   core:
+    disabledPackages: [
+      "github"
+      "open-on-github"
+    ]
     telemetryConsent: "limited"
     uriHandlerRegistration: "always"
   editor:
     fontFamily: "Hack, Menlo, Consolas, DejaVu Sans Mono, monospace"
-    fontSize: 12
+    fontSize: 13
     showIndentGuide: true
   "exception-reporting":
     userId: "f5638808-9e1a-457c-87ad-6b7b23a7839e"
@@ -17,6 +25,8 @@
     ".*/host_vars/.*": "source.ansible"
   "linter-ui-default":
     showPanel: true
+  "split-diff":
+    ignoreWhitespace: true
   "tree-view":
     squashDirectoryNames: true
   welcome:

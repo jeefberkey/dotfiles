@@ -14,16 +14,16 @@ default_floating_border pixel 3
 gaps inner 6
 #gaps edge_gaps on
 
-
-# # fix popups, specifically for hangouts
-# for_window [window_role="pop-up"] floating enable
-# for_window [window_role="bubble"] floating enable
-# for_window [window_role="task_dialog"] floating enable
-# for_window [window_role="Preferences"] floating enable
-
+# Floating windows
 for_window [ class="(?i)VirtualBox" title="(?i)Manager"] floating enable
 for_window [ class="(?i)VirtualBox" title="(?i)Oracle VM VirtualBox"] floating enable
 for_window [ class="Rofi" ] floating enable
-for_window [ class="Files" ] floating enable
+#for_window [ app_id="Files" ] floating enable
 for_window [ app_id="gnome-calculator" ] floating enable
+
+# Window workspace assignments
+for_window [ title="Slack*" ] move window to workspace 1
+for_window [ title="Geary" ] move window to workspace 1
+#for_window [ title="*Firefox Nightly" ] move window to workspace 2
+#for_window [ class="f" ] move window to workspace 9
 

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=gotop
+Exec=gotop
+Categories=system
+Terminal=true

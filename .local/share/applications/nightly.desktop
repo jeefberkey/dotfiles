@@ -2,8 +2,9 @@
 Version=1.0
 Type=Application
 Name=Nightly
-Exec=env MOZ_USE_XINPUT2=1 GDK_BACKEND=wayland /home/nick/src/firefox/firefox %u
+Exec=env GDK_BACKEND=wayland /home/nick/src/firefox/firefox %u
+#Exec=env MOZ_USE_XINPUT2=1 GDK_BACKEND=wayland /home/nick/src/firefox/firefox %u
 #Exec=nightly-wayland --name firefox-wayland %u
-Icon=/usr/share/icons/Paper/48x48@2x/apps/firefox-nightly-icon.png
+Icon=/usr/share/icons/Papirus/64x64/apps/firefox-trunk.svg
 Terminal=false
 MimeType=x-scheme-handler/unknown;x-scheme-handler/about;x-scheme-handler/https;x-scheme-handler/http;text/html;

@@ -1,5 +1,19 @@
+# theme
 rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
 
+# modes
 rofi.combi-modi: drun,run
 rofi.modi: combi
+
+# options
+rofi.matching-method: fuzzy
+rofi.drub-show-actions: true
+
+# visuals
+rofi.show-icons: true
+rofi.icon-theme: Papirus
+rofi.padding: 1
+rofi.monitor: -4
+rofi.location: 0
+rofi.width: -55
 

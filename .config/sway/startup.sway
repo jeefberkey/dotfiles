@@ -13,18 +13,27 @@ exec nm-applet --indicator
 # notifiation deamon
 exec mako
 
-# unlock keyring please
-exec gnome-keyring-daemon --start
+# # unlock keyring please
+# exec gnome-keyring-daemon --start
 
 # blue light reduction
 exec redshift-gtk -m wayland
+
+# guestures?
+exec libinput-gestures-setup start
+
+# set min brightness
+exec light -N 1
 
 # lock after 10 mins
 # turn screen off after 15 mins
 # lock screen before going to sleep
 exec swayidle \
-  timeout 600 'swaylock' \
-  timeout 900 'swaymsg "output * dpms off"' \
-     resume 'swaymsg "output * dpms on"' \
-  before-sleep 'swaylock'
+  lock 'swaylock' \
+  timeout 600 'light -U 20' \
+  timeout 610 'swaymsg "output * dpms off"' \
+  timeout 620 'swaylock' \
+    resume 'swaymsg "output * dpms on"' \
+  before-sleep 'swaylock' \
+  after-resume 'swaymsg "output * dpms on"'
 

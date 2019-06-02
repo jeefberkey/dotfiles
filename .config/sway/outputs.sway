@@ -4,9 +4,9 @@
 # output configuration
 
 # internal monitor
-output 'Unknown 0x0806 0x00000000' res 1920x1080
-#output 'Unknown 0x0806 0x00000000' pos 0 0
-output 'Unknown 0x0806 0x00000000' pos 0 1440
+output eDP-1 res 1920x1080
+output eDP-1 pos 0 0
+#output eDP-1 pos 0 1440
 
 # home monitor
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' res 2560x1440
