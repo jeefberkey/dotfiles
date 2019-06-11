@@ -24,7 +24,7 @@ window#waybar {
   /* padding: 0; */
 }
 
-#clock, #battery, #custom-load, #memory, #temperature, #backlight, #network, #pulseaudio, #cpu, #custom-gpm, #tray, #mode, #idle_inhibitor {
+#clock, #battery, #custom-load, #memory, #temperature, #backlight, #network, #pulseaudio, #cpu, #tray, #mode, #idle_inhibitor {
   padding: 0 5px;
   margin: 0 5px;
   background-color: transparent;

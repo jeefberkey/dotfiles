@@ -4,7 +4,9 @@
 # programs to start in a sway session
 
 # bar
-exec waybar
+# exec waybar
+exec systemctl --user import-environment SWAYSOCK
+exec systemctl --user start waybar.service
 
 # network manager
 # from AUR network-manager-applet-indicator

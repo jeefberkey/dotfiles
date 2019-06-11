@@ -6,16 +6,21 @@
   "atom-beautify":
     general:
       _analyticsUserId: "51011521-57ea-4f9a-8fb6-c0dd1649d927"
+  "atom-ide-ui":
+    hyperclick:
+      linuxTriggerKeys: "ctrlKey,metaKey"
   core:
     disabledPackages: [
       "github"
       "open-on-github"
+      "linter"
     ]
     telemetryConsent: "limited"
     uriHandlerRegistration: "always"
   editor:
     fontFamily: "Hack, Menlo, Consolas, DejaVu Sans Mono, monospace"
     fontSize: 13
+    preferredLineLength: 140
     showIndentGuide: true
   "exception-reporting":
     userId: "f5638808-9e1a-457c-87ad-6b7b23a7839e"
@@ -25,6 +30,7 @@
     ".*/host_vars/.*": "source.ansible"
   "linter-ui-default":
     showPanel: true
+  minimap: {}
   "split-diff":
     ignoreWhitespace: true
   "tree-view":
