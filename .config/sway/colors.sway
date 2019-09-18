@@ -19,3 +19,14 @@ client.focused_inactive $color1 $color1 $color5 $color3 $color1
 client.unfocused        $color2 $color1 $color5 $color3 $color1
 client.urgent           $color3 $color1 $color1 $color3 $color3
 client.placeholder      $color4 $color1 $color5 $color3 $color4
+
+
+# GTK settings
+# https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+  gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+  gsettings set $gnome-schema icon-theme 'Arc-Maia'
+  gsettings set $gnome-schema cursor-theme 'xcursor-breeze'
+}

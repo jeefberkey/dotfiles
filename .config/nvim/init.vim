@@ -28,6 +28,10 @@ Plug 'yggdroot/indentline'
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " colors
 Plug 'dylanaraps/wal.vim'
+" better python syntax
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" better json
+Plug 'elzr/vim-json'
 
 call plug#end()
 
@@ -51,6 +55,8 @@ let g:indentLine_char = '▏'
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#max_list = 10
 
+" don't hide quotes in json files
+"let g:vim_json_syntax_conceal = 0
 
 " ------------------------------------------------------------------------------
 " General settings

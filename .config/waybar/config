@@ -2,9 +2,9 @@
   "layer": "top",
   "position": "top",
   "height": 28,
-  "modules-left": ["sway/workspaces","sway/mode","custom/gpm"],
+  "modules-left": ["sway/workspaces","sway/mode","pulseaudio","custom/gpm"],
   "modules-center": ["sway/window"],
-  "modules-right": ["pulseaudio","network","cpu","temperature","backlight","battery","clock","tray"],
+  "modules-right": ["network","cpu","temperature","backlight","battery","clock","tray"],
   "sway/workspaces": {
     "disable-scroll": false,
     "all-outputs": false,
@@ -15,7 +15,7 @@
     }
   },
   "sway/mode": {
-    "format": "<span style=\"bold\">{}</span>"
+    "format": "<span style=\"oblique\">{}</span>"
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -26,7 +26,9 @@
   },
   "sway/window": {
     "format": "{}",
-    "max-length": 60
+    "max-length": 60,
+    "all-outputs": true,
+    "on-click": "makoctl dismiss -a"
   },
   "tray": {
     // "icon-size": 21,
@@ -79,14 +81,14 @@
   "network": {
     // "interface": "wlo1",
     "format-wifi": "{essid} ",
-    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+    "format-ethernet": "{ipaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
-    "tooltip-format": "{ipaddr}/{cidr}",
-    "on-click": "nmtui-connect"
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    "on-click": "termite -e nmtui-connect"
   },
   "pulseaudio": {
-    "scroll-step": 5,
+    "scroll-step": 2,
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "",
@@ -102,11 +104,17 @@
     "on-click": "pavucontrol"
   },
   "custom/gpm": {
-    "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",
-    "format": " {}",
+    //"exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",
+    "exec": "python $HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null",
+    "return-type": "json",
+    "escape": true,
+    "format": "{icon} {}",
     "max-length": 60,
-    "interval": 15,
-    "exec-if": "pgrep -f 'Google Play Music Desktop Player'",
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜"
+    },
+    // "exec-if": "pgrep -f 'Google Play Music Desktop Player'",
     "on-click": "playerctl play-pause"
   }
 }

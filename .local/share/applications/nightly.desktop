@@ -2,6 +2,7 @@
 Version=1.0
 Type=Application
 Name=Nightly
+#Exec=/home/nick/src/firefox/firefox %u
 Exec=env GDK_BACKEND=wayland /home/nick/src/firefox/firefox %u
 #Exec=env MOZ_USE_XINPUT2=1 GDK_BACKEND=wayland /home/nick/src/firefox/firefox %u
 #Exec=nightly-wayland --name firefox-wayland %u

@@ -13,9 +13,9 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 
 # move focused window
@@ -25,9 +25,9 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal and vertical orientation
@@ -55,10 +55,10 @@ bindsym $mod+t focus mode_toggle
 #bindsym $mod+d focus child
 
 # move workspaces between monitors
-bindsym $mod+Mod1+Left move workspace to output left
+bindsym $mod+Mod1+Left  move workspace to output left
 bindsym $mod+Mod1+Right move workspace to output right
-bindsym $mod+Mod1+Up move workspace to output up
-bindsym $mod+Mod1+Down move workspace to output down
+bindsym $mod+Mod1+Up    move workspace to output up
+bindsym $mod+Mod1+Down  move workspace to output down
 
 # switch to workspace
 bindsym $mod+1 workspace 1

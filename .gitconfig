@@ -1,33 +1,42 @@
 [user]
-	email = nmiller@attilasec.com
-	name = Nick Miller
+  email = nmiller@attilasec.com
+  name = Nick Miller
 [credential]
-	username = jeefberkey
-	helper = cache
+  username = jeefberkey
+  helper = cache
 [push]
-	default = simple
+  default = simple
 [core]
-	editor = vim
-#	editor = atom --wait
+  editor = vim
+# editor = atom --wait
 [merge]
-	tool = meld
+  tool = meld
+[mergetool "meld"]
+  #cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+  cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [diff]
-	algorithm = patience
-	tool = meld
-#	external = meld-diff
-#[commit]
-#	gpgsign = true
+  algorithm = patience
+  tool = meld
+  wsErrorHighlight = context
+[difftool]
+  prompt = false
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
+
+# [commit]
+# gpgsign = true
 [gpg]
-	program = /usr/bin/gpg2
+  program = /usr/bin/gpg2
 [help]
   autocorrect = 8
 [alias]
   amend = commit -a --amend --no-edit
-
+[pull]
+  rebase = true
+[rebase]
+  autoStash = true
+[rerere]
+  enabled = true
 [diff "ansible-vault"]
   textconv = ansible-vault view --vault-password-file ~/attila/devops/gs-deploy/open_vault.sh
   cachetextconv = false
-[pull]
-	rebase = true
-[rebase]
-	autoStash = true

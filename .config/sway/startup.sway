@@ -27,6 +27,9 @@ exec libinput-gestures-setup start
 # set min brightness
 exec light -N 1
 
+# fix dbus stuff
+exec fish -c 'dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY'
+
 # lock after 10 mins
 # turn screen off after 15 mins
 # lock screen before going to sleep

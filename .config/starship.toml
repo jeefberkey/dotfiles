@@ -1,0 +1,56 @@
+# starship.rs
+# vim: set ft=toml
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+default_prompt_order = [
+  "username",
+  "hostname",
+  "directory",
+  "git_branch",
+  "git_state",
+  "git_status",
+  "package",
+  "nodejs",
+  "ruby",
+  "rust",
+  "python",
+  "golang",
+  "nix_shell",
+  "cmd_duration",
+  "line_break",
+  "jobs",
+  "battery",
+  "character",
+]
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[character]
+symbol = "➜"
+error_symbol = "✗"
+use_symbol_for_status = false
+
+[cmd_duration]
+min_time = 1
+
+[directory]
+#truncation_length = 2
+truncate_to_repo = true
+fish_style_pwd_dir_length = 8
+
+[git_branch]
+symbol = "🌱 "
+truncation_length = "4"
+
+[hostname]
+ssh_only = true
+prefix = "⟪"
+suffix = "⟫"
+disabled = false
+

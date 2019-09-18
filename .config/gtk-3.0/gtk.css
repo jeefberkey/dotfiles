@@ -16,4 +16,6 @@ window decoration {
   margin: 0;
   border: 0;
 }
-
+.termite {
+  padding: 5px;
+}

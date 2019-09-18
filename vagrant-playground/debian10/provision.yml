@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: install packages
+      apt:
+        name: [vim, git, deltarpm, htop, ncdu, tree]
+        state: present

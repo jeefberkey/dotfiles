@@ -7,16 +7,26 @@
     general:
       _analyticsUserId: "51011521-57ea-4f9a-8fb6-c0dd1649d927"
   "atom-ide-ui":
+    "atom-ide-diagnostics-ui": {}
     hyperclick:
       linuxTriggerKeys: "ctrlKey,metaKey"
+  "autocomplete-python":
+    useKite: false
   core:
+    autoHideMenuBar: true
     disabledPackages: [
       "github"
       "open-on-github"
       "linter"
     ]
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "behave-theme"
+    ]
     uriHandlerRegistration: "always"
+  "dark-flat-ui":
+    accentColor: "green"
   editor:
     fontFamily: "Hack, Menlo, Consolas, DejaVu Sans Mono, monospace"
     fontSize: 13
@@ -28,9 +38,18 @@
     ".*.yml$": "source.ansible"
     ".*/group_vars/.*": "source.ansible"
     ".*/host_vars/.*": "source.ansible"
+  "find-and-replace":
+    useRipgrep: true
+  "ide-python":
+    pylsPlugins:
+      pycodestyle: {}
   "linter-ui-default":
+    panelHeight: 155
     showPanel: true
-  minimap: {}
+  minimap:
+    absoluteMode: true
+    adjustAbsoluteModeHeight: true
+    scrollAnimation: true
   "split-diff":
     ignoreWhitespace: true
   "tree-view":

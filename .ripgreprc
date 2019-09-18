@@ -1,0 +1,14 @@
+# https://www.mankier.com/1/rg#Options
+
+# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=150
+--max-columns-preview
+
+--color always
+--colors=line:style:bold
+
+--smart-case
+
+--heading
+--line-number
+

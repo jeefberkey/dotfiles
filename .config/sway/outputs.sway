@@ -6,7 +6,7 @@
 # internal monitor
 output eDP-1 res 1920x1080
 #output eDP-1 pos 0 0
-output eDP-1 pos 0 1440
+output eDP-1 pos 760 1440
 
 # home monitor
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' res 2560x1440

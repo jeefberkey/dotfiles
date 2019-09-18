@@ -1,0 +1,18 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "debian/buster64"
+
+  # config.vm.network "forwarded_port", guest: 8081, host: 8081
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+    vb.cpus = "2"
+  end
+
+  config.vm.provision :ansible do |a|
+    a.playbook = 'provision.yml'
+    a.config_file = 'vagrant.cfg'
+  end
+end
