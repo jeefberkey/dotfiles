@@ -22,8 +22,8 @@ for_window [ class="Rofi" ] floating enable
 for_window [ app_id="gnome-calculator" ] floating enable
 
 # Window workspace assignments
-for_window [ title="Slack*" ] move window to workspace 1
-for_window [ title="Geary" ] move window to workspace 1
+#for_window [ title="Slack*" ] move window to workspace 1
+#for_window [ title="Geary" ] move window to workspace 1
 #for_window [ title="*Firefox Nightly" ] move window to workspace 2
 #for_window [ class="f" ] move window to workspace 9
 

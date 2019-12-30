@@ -40,13 +40,13 @@ use_symbol_for_status = false
 min_time = 1
 
 [directory]
-#truncation_length = 2
+truncation_length = 3
 truncate_to_repo = true
-fish_style_pwd_dir_length = 8
+#fish_style_pwd_dir_length = 3
 
 [git_branch]
 symbol = "🌱 "
-truncation_length = "4"
+truncation_length = "40"
 
 [hostname]
 ssh_only = true

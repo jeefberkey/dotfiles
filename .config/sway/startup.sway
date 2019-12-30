@@ -19,9 +19,9 @@ exec mako
 # exec gnome-keyring-daemon --start
 
 # blue light reduction
-exec redshift-gtk -m wayland
+#exec redshift-gtk -m wayland
 
-# guestures?
+# gestures?
 exec libinput-gestures-setup start
 
 # set min brightness

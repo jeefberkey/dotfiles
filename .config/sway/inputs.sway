@@ -24,3 +24,8 @@ input 4152:5922:SteelSeries_SteelSeries_Sensei_310_eSports_Mouse {
   left_handed enabled
 }
 
+
+input 1:1:AT_Translated_Set_2_keyboard {
+  xkb_options caps:escape
+}
+

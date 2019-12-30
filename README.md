@@ -19,3 +19,8 @@ This repo is managed with [yadm](https://github.com/TheLocehiliosan/yadm).
 Other useful software I don't feel like managing submodules for:
 * firefox nightly bin
 * [Color-Scripts](https://github.com/stark/Color-Scripts)
+
+password stuff for rofi:
+* store password: `secret-tool store --label=1password user nmiller@attilasec.com program 1password`
+* get password: `secret-tool lookup program 1password`
+* see config.fish for the rest of it

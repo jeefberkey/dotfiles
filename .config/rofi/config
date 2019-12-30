@@ -7,11 +7,10 @@ rofi.modi: combi
 
 # options
 rofi.matching-method: fuzzy
-rofi.drub-show-actions: true
 
 # visuals
 rofi.show-icons: true
-rofi.icon-theme: Papirus
+rofi.icon-theme: Arc-Maia
 rofi.padding: 1
 rofi.monitor: -4
 rofi.location: 0

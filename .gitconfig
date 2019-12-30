@@ -8,6 +8,7 @@
   default = simple
 [core]
   editor = vim
+	pager = diff-so-fancy | less --tabs=2 -RFX
 # editor = atom --wait
 [merge]
   tool = meld
@@ -30,7 +31,7 @@
 [help]
   autocorrect = 8
 [alias]
-  amend = commit -a --amend --no-edit
+  amend = commit --amend --no-edit
 [pull]
   rebase = true
 [rebase]
@@ -40,3 +41,5 @@
 [diff "ansible-vault"]
   textconv = ansible-vault view --vault-password-file ~/attila/devops/gs-deploy/open_vault.sh
   cachetextconv = false
+[color]
+	ui = true

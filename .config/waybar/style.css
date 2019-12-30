@@ -2,12 +2,12 @@
 
 * {
   border: none;
-  border-radius: 0;
-  font-family: Noto Sans, Font Awesome, sans-serif;
+  border-radius: 0px;
+  font-family: Noto Sans, "Font Awesome 5 Free", sans-serif;
   font-size: 14px;
-  min-height: 0;
+  min-height: 0px;
   color: @foreground;
-  padding: 0 0;
+  padding: 0px;
 }
 
 window#waybar {
@@ -16,7 +16,7 @@ window#waybar {
 }
 
 #workspaces button {
-  /* padding: 0; */
+  padding: 3px;
 }
 
 #workspaces button.focused {

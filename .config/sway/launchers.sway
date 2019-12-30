@@ -16,9 +16,12 @@ bindsym $mod+Shift+f exec nautilus
 
 # a rofi (a program launcher)
 # https://davedavenport.github.io/rofi/generator.html
-bindsym $mod+d exec --no-startup-id rofi -show combi
+#bindsym $mod+d exec --no-startup-id rofi -show combi
 # program switcher
-bindsym $mod+Tab exec --no-startup-id "rofi -show window"
+#bindsym $mod+Tab exec --no-startup-id "rofi -show window"
+
+# wofi (wayland program launcher)
+bindsym $mod+d exec wofi --show drun --style ~/.cache/wal/colors-rofi-dark.rasi --prompt "Run:" --allow-images --allow-markup --insensitive --cache-file ~/.cache/wofi.cache
 
 bindsym $mod+Shift+d exec termite --name=launcher -e "bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse | xargs -r swaymsg -t command exec'"
 for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8￼
