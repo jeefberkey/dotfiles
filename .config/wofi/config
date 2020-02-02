@@ -1,0 +1,11 @@
+# wofi config
+# https://cloudninja.pw/docs/wofi.html
+# vim: set ft=sh
+
+mode=drun,run
+prompt=Run
+#filter_rate=100
+allow-images=true
+allow-markup=true
+insensitive
+cache-file=~/.cache/wofi.cache

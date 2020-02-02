@@ -94,3 +94,5 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /home/nick/bin/vault vault
+
+source /home/nick/.config/broot/launcher/bash/br

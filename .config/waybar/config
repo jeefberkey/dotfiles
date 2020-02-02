@@ -74,6 +74,7 @@
     "format": "{capacity}% {icon}",
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
      // "format-good": "", // An empty format will hide the module
      // "format-full": "",
     "format-icons": ["", "", "", "", ""]
@@ -89,9 +90,12 @@
   },
   "pulseaudio": {
     "scroll-step": 2,
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-muted": "",
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
     "format-icons": {
       "headphones": "",
       "handsfree": "",
@@ -104,17 +108,15 @@
     "on-click": "pavucontrol"
   },
   "custom/gpm": {
-    //"exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null",
+    "format": "{icon} {}",
     "exec": "python $HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null",
     "return-type": "json",
-    "escape": true,
-    "format": "{icon} {}",
     "max-length": 60,
+    "escape": true,
     "format-icons": {
       "spotify": "",
       "default": "🎜"
     },
-    // "exec-if": "pgrep -f 'Google Play Music Desktop Player'",
     "on-click": "playerctl play-pause"
   }
 }

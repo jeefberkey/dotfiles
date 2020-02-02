@@ -8,6 +8,7 @@ Environment=XDG_CURRENT_DESKTOP=Unity
 Type=dbus
 BusName=fr.arouillard.waybar
 ExecStart=waybar
+TimeoutSec=15
 Restart=always
 
 [Install]

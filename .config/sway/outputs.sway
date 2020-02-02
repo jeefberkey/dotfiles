@@ -6,7 +6,7 @@
 # internal monitor
 output eDP-1 res 1920x1080
 #output eDP-1 pos 0 0
-output eDP-1 pos 760 1440
+output eDP-1 pos 1440 1590
 # enable/disable laptop screen based on lid switch
 bindswitch lid:on output eDP-1 disable
 bindswitch lid:off output eDP-1 enable
@@ -15,10 +15,16 @@ bindswitch lid:off output eDP-1 enable
 # home monitor
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' res 2560x1440
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' scale 1
-output 'Ancor Communications Inc ASUS MG279 0x000003ED' pos 0 0
+output 'Ancor Communications Inc ASUS MG279 0x000003ED' pos 1440 150
 
-# work monitor
-output 'Goldstar Company Ltd LG ULTRAWIDE 0x00005868' res 3440x1440
-output 'Goldstar Company Ltd LG ULTRAWIDE 0x00005868' scale 1
-output 'Goldstar Company Ltd LG ULTRAWIDE 0x00005868' pos 0 0
+# horizontal work monitor
+output 'Dell Inc. DELL U2717D 67YGV98QBWUU' res 2560x1440
+output 'Dell Inc. DELL U2717D 67YGV98QBWUU' scale 1
+output 'Dell Inc. DELL U2717D 67YGV98QBWUU' pos 1440 150
+
+# vertical work monitor
+output 'Dell Inc. DELL U2717D 67YGV985CGDU' res 2560x1440
+output 'Dell Inc. DELL U2717D 67YGV985CGDU' scale 1
+output 'Dell Inc. DELL U2717D 67YGV985CGDU' pos 0 0
+output 'Dell Inc. DELL U2717D 67YGV985CGDU' transform 90
 
