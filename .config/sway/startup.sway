@@ -10,7 +10,7 @@ exec systemctl --user start waybar.service
 
 # network manager
 # from AUR network-manager-applet-indicator
-exec nm-applet --indicator
+exec nm-applet
 
 # notifiation deamon
 exec mako
@@ -22,7 +22,7 @@ exec mako
 #exec redshift-gtk -m wayland
 
 # gestures?
-exec libinput-gestures-setup start
+#exec libinput-gestures-setup start
 
 # set min brightness
 exec light -N 1

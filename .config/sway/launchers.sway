@@ -6,13 +6,16 @@
 # restart sway inplace (preserves your layout/session)
 bindsym $mod+Shift+r reload
 # exit sway (logs you out of your session)
-bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -b 'Yes, exit sway' 'swaymsg exit'"
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit'"
 
 # terminal emulator
 bindsym $mod+Return exec gnome-terminal
+#bindsym $mod+Return exec alacritty
 
 # file manager
 bindsym $mod+Shift+f exec nautilus
+
+bindsym $mod+Escape exec makoctl dismiss --all
 
 # a rofi (a program launcher)
 # https://davedavenport.github.io/rofi/generator.html
@@ -24,7 +27,7 @@ bindsym $mod+Shift+f exec nautilus
 bindsym $mod+d exec wofi --conf ~/.config/wofi/config
 
 bindsym $mod+Shift+d exec termite --name=launcher -e "bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse | xargs -r swaymsg -t command exec'"
-for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8￼
+for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
 
 # lock and suspend button
 bindsym $mod+Shift+s exec swaylock && systemctl suspend

@@ -20,6 +20,7 @@ for_window [ class="(?i)VirtualBox" title="(?i)Oracle VM VirtualBox"] floating e
 for_window [ class="Rofi" ] floating enable
 #for_window [ app_id="Files" ] floating enable
 for_window [ app_id="gnome-calculator" ] floating enable
+for_window [class="^zoom$"] floating enable
 
 # Window workspace assignments
 #for_window [ title="Slack*" ] move window to workspace 1
