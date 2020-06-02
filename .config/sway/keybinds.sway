@@ -7,10 +7,10 @@
 bindsym $mod+Shift+q kill
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+# bindsym $mod+h focus left
+# bindsym $mod+j focus down
+# bindsym $mod+k focus up
+# bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left  focus left
@@ -19,10 +19,10 @@ bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+# bindsym $mod+Shift+h move left
+# bindsym $mod+Shift+j move down
+# bindsym $mod+Shift+k move up
+# bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left  move left
@@ -30,10 +30,16 @@ bindsym $mod+Shift+Down  move down
 bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
+# prev/next workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Mod1+Left workspace prev
+bindsym $mod+Mod1+Right workspace next
+
 # split in horizontal and vertical orientation
-bindsym $mod+b split h
+bindsym $mod+h split h
 bindsym $mod+v split v
-bindsym $mod+s split toggle
+bindsym $mod+Backspace split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -43,63 +49,92 @@ bindsym $mod+f fullscreen toggle
 #bindsym $mod+w layout tabbed
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
-## change focus between tiling / floating windows
-bindsym $mod+t focus mode_toggle
+# change focus between tiling / floating windows
+bindsym $mod+Shift+t focus mode_toggle
+
+# Modify // Window Layout Mode // <> t ##
+bindsym $mod+t layout toggle tabbed splith splitv
 
 # focus the parent container
-#bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+m move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+Ctrl+a scratchpad show
 
 # move workspaces between monitors
-bindsym $mod+Mod1+Left  move workspace to output left
-bindsym $mod+Mod1+Right move workspace to output right
-bindsym $mod+Mod1+Up    move workspace to output up
-bindsym $mod+Mod1+Down  move workspace to output down
+bindsym $mod+Shift+Mod1+Left  move workspace to output left
+bindsym $mod+Shift+Mod1+Right move workspace to output right
+bindsym $mod+Shift+Mod1+Up    move workspace to output up
+bindsym $mod+Shift+Mod1+Down  move workspace to output down
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # ================
 # ==== resize ====
 # ================
 mode "resize" {
-  bindsym h resize shrink width  10 px or 5 ppt
-  bindsym j resize grow   height 10 px or 5 ppt
-  bindsym k resize shrink height 10 px or 5 ppt
-  bindsym l resize grow   width  10 px or 5 ppt
+  # bindsym h resize shrink width  10 px or 5 ppt
+  # bindsym j resize grow   height 10 px or 5 ppt
+  # bindsym k resize shrink height 10 px or 5 ppt
+  # bindsym l resize grow   width  10 px or 5 ppt
 
   bindsym Right resize shrink width  10 px or 5 ppt
   bindsym Up    resize grow   height 10 px or 5 ppt
   bindsym Down  resize shrink height 10 px or 5 ppt
   bindsym Left  resize grow   width  10 px or 5 ppt
 
+  bindsym minus gaps inner current minus 6
+  bindsym plus  gaps inner current plus 6
+  bindsym Shift+minus gaps inner current minus 12
+  bindsym Shift+plus  gaps inner current plus 12
+
   # back to normal: Enter or Escape
   bindsym Return mode "default"
   bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"

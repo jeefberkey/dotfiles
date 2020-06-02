@@ -13,7 +13,7 @@ bindsym $mod+Return exec gnome-terminal
 #bindsym $mod+Return exec alacritty
 
 # file manager
-bindsym $mod+Shift+f exec nautilus
+bindsym $mod+Shift+n exec nautilus
 
 bindsym $mod+Escape exec makoctl dismiss --all
 
@@ -24,9 +24,9 @@ bindsym $mod+Escape exec makoctl dismiss --all
 #bindsym $mod+Tab exec --no-startup-id "rofi -show window"
 
 # wofi (wayland program launcher)
-bindsym $mod+d exec wofi --conf ~/.config/wofi/config
+bindsym $mod+Space exec wofi --conf ~/.config/wofi/config
 
-bindsym $mod+Shift+d exec termite --name=launcher -e "bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse | xargs -r swaymsg -t command exec'"
+bindsym $mod+Shift+Space exec termite --name=launcher -e "bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse | xargs -r swaymsg -t command exec'"
 for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
 
 # lock and suspend button

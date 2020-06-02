@@ -10,7 +10,7 @@ exec systemctl --user start waybar.service
 
 # network manager
 # from AUR network-manager-applet-indicator
-exec nm-applet
+# exec nm-applet
 
 # notifiation deamon
 exec mako
@@ -41,4 +41,3 @@ exec swayidle \
     resume 'swaymsg "output * dpms on"' \
   before-sleep 'swaylock' \
   after-resume 'swaymsg "output * dpms on"'
-

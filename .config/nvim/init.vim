@@ -32,6 +32,8 @@ Plug 'dylanaraps/wal.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " better json
 Plug 'elzr/vim-json'
+" nix
+Plug 'LnL7/vim-nix'
 
 call plug#end()
 
