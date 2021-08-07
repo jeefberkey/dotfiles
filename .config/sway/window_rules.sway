@@ -11,7 +11,7 @@ hide_edge_borders smart
 # borders
 default_border pixel 3
 default_floating_border pixel 3
-gaps inner 6
+#gaps inner 6
 #gaps edge_gaps on
 
 # Floating windows

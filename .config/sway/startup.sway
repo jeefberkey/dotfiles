@@ -6,6 +6,7 @@
 # bar
 # exec waybar
 exec systemctl --user import-environment SWAYSOCK
+exec systemctl --user import-environment WAYLAND_DISPLAY
 exec systemctl --user start waybar.service
 
 # network manager
@@ -15,17 +16,17 @@ exec systemctl --user start waybar.service
 # notifiation deamon
 exec mako
 
+# color temperature shift for night
+exec gammastep -l 39.4817:-76.3270
+
 # # unlock keyring please
 # exec gnome-keyring-daemon --start
-
-# blue light reduction
-#exec redshift-gtk -m wayland
 
 # gestures?
 #exec libinput-gestures-setup start
 
-# set min brightness
-exec light -N 1
+# workstyle https://crates.io/crates/sworkstyle
+exec sworkstyle &> /tmp/sworkstyle.log
 
 # fix dbus stuff
 exec fish -c 'dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY'

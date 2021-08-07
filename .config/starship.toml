@@ -50,7 +50,7 @@ truncation_length = "40"
 
 [hostname]
 ssh_only = true
-prefix = "⟪"
-suffix = "⟫"
+#prefix = "⟪"
+#suffix = "⟫"
 disabled = false
 

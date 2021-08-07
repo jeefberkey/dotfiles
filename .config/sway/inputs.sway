@@ -4,13 +4,17 @@
 # input configuration
 
 # touchscreen
-#input 1267:8400:ELAN_Touchscreen {
-#  events enabled
-#  map_to_output eDP-1
-#}
+input 1386:20777:Wacom_HID_5129_Finger {
+  events enabled
+  map_to_output eDP-1
+}
+input 1386:20777:Wacom_HID_5129_Finger {
+  events enabled
+  map_to_output eDP-1
+}
 
 # touchpad
-input 1739:52390:DELL08A7:00_06CB:CCA6_Touchpad {
+input 1267:12443:ELAN0602:00_04F3:309B_Touchpad {
   events enabled
   tap enabled
   dwt enabled

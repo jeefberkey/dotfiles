@@ -17,14 +17,14 @@ output 'Ancor Communications Inc ASUS MG279 0x000003ED' res 2560x1440
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' scale 1
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' pos 1440 150
 
-# horizontal work monitor
-output 'Dell Inc. DELL U2717D 67YGV98QBWUU' res 2560x1440
-output 'Dell Inc. DELL U2717D 67YGV98QBWUU' scale 1
-output 'Dell Inc. DELL U2717D 67YGV98QBWUU' pos 1440 150
-
-# vertical work monitor
-output 'Dell Inc. DELL U2717D 67YGV985CGDU' res 2560x1440
-output 'Dell Inc. DELL U2717D 67YGV985CGDU' scale 1
-output 'Dell Inc. DELL U2717D 67YGV985CGDU' pos 0 0
-output 'Dell Inc. DELL U2717D 67YGV985CGDU' transform 90
-
+# # horizontal work monitor
+# output 'Dell Inc. DELL U2717D 67YGV98QBWUU' res 2560x1440
+# output 'Dell Inc. DELL U2717D 67YGV98QBWUU' scale 1
+# output 'Dell Inc. DELL U2717D 67YGV98QBWUU' pos 1440 150
+# 
+# # vertical work monitor
+# output 'Dell Inc. DELL U2717D 67YGV985CGDU' res 2560x1440
+# output 'Dell Inc. DELL U2717D 67YGV985CGDU' scale 1
+# output 'Dell Inc. DELL U2717D 67YGV985CGDU' pos 0 0
+# output 'Dell Inc. DELL U2717D 67YGV985CGDU' transform 90
+# 

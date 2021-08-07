@@ -8,7 +8,7 @@
   default = simple
 [core]
   editor = vim
-  pager = diff-so-fancy | less --tabs=2 -RFX
+  pager = delta
 # editor = atom --wait
 [merge]
   tool = meld
@@ -17,12 +17,22 @@
   cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [diff]
   algorithm = patience
-  tool = meld
+  # tool = meld
   wsErrorHighlight = context
 [difftool]
   prompt = false
 [difftool "meld"]
   cmd = meld "$LOCAL" "$REMOTE"
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
 
 # [commit]
 # gpgsign = true
@@ -48,5 +58,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[diff-so-fancy]
-	markEmptyLines = false
+[init]
+	defaultBranch = main
