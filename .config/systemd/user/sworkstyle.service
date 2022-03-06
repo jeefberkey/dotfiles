@@ -1,0 +1,10 @@
+[Unit]
+Description=Map workspace name to icons defined depending on the windows inside of the workspace
+Documentation=man:sworkstyle(1)
+ConditionEnvironment=SWAYSOCK
+
+[Service]
+ExecStart=sworkstyle
+Restart=on-failure
+
+[Install]

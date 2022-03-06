@@ -138,3 +138,14 @@ mode "resize" {
   bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# =====================
+# === notifications ===
+# =====================
+mode notifications {
+	bindsym Escape mode default
+	bindsym Return exec makoctl invoke; exec makoctl dismiss; mode default
+	bindsym d exec makoctl dismiss; mode default
+	bindsym Shift+d exec makoctl dismiss -a; mode default
+}
+bindsym $mod+n mode notifications

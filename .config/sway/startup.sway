@@ -5,8 +5,7 @@
 
 # bar
 # exec waybar
-exec systemctl --user import-environment SWAYSOCK
-exec systemctl --user import-environment WAYLAND_DISPLAY
+exec systemctl --user import-environment SWAYSOCK WAYLAND_DISPLAY
 exec systemctl --user start waybar.service
 
 # network manager
@@ -14,19 +13,29 @@ exec systemctl --user start waybar.service
 # exec nm-applet
 
 # notifiation deamon
-exec mako
+#exec mako
+exec systemctl --user start mako.service
 
 # color temperature shift for night
-exec gammastep -l 39.4817:-76.3270
+#exec gammastep -l 39.4817:-76.3270 -b 6500:3000
+exec systemctl --user start gammastep.service
+
+# polkit
+exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 # # unlock keyring please
 # exec gnome-keyring-daemon --start
 
-# gestures?
-#exec libinput-gestures-setup start
-
 # workstyle https://crates.io/crates/sworkstyle
-exec sworkstyle &> /tmp/sworkstyle.log
+#exec sworkstyle &> /tmp/sworkstyle.log
+exec systemctl --user start sworkstyle.service
+
+# autotiling https://github.com/nwg-piotr/autotiling
+exec autotiling
+
+# gestures
+#exec libinput-gestures
+exec systemctl --user start libinput-gestures.service
 
 # fix dbus stuff
 exec fish -c 'dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY'
@@ -34,11 +43,7 @@ exec fish -c 'dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDR
 # lock after 10 mins
 # turn screen off after 15 mins
 # lock screen before going to sleep
-exec swayidle \
-  lock 'swaylock' \
-  timeout 600 'light -U 20' \
-  timeout 610 'swaymsg "output * dpms off"' \
-  timeout 620 'swaylock' \
-    resume 'swaymsg "output * dpms on"' \
-  before-sleep 'swaylock' \
-  after-resume 'swaymsg "output * dpms on"'
+#exec swayidle \
+#  lock 'swaylock' \
+#  before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
+#  resume 'swaymsg "output * dpms on"; pkill -n swayidle'

@@ -32,9 +32,9 @@ charging_symbol = "⚡️"
 discharging_symbol = "💀"
 
 [character]
-symbol = "➜"
+#symbol = "➜"
 error_symbol = "✗"
-use_symbol_for_status = false
+#use_symbol_for_status = false
 
 [cmd_duration]
 min_time = 1

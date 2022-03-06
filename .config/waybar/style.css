@@ -3,7 +3,7 @@
 * {
   border: none;
   border-radius: 0px;
-  font-family: Noto Sans, "Font Awesome 5 Free", sans-serif;
+  font-family: "Noto Sans";
   font-size: 14px;
   min-height: 0px;
   color: @foreground;
@@ -12,7 +12,7 @@
 
 window#waybar {
   background: @background;
-  opacity: .8;
+  opacity: .7;
 }
 
 #workspaces button {

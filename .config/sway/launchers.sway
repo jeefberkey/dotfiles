@@ -26,7 +26,7 @@ bindsym $mod+Escape exec makoctl dismiss --all
 # wofi (wayland program launcher)
 bindsym $mod+Space exec wofi --conf ~/.config/wofi/config
 
-bindsym $mod+Shift+Space exec termite --name=launcher -e "bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse | xargs -r swaymsg -t command exec'"
+bindsym $mod+Shift+Space exec termite --name=launcher -e "bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse --history=.cache/fzf_launcher | xargs -r swaymsg -t command exec'"
 for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
 
 # lock and suspend button
@@ -40,9 +40,9 @@ bindsym Control+Mod1+l exec swaylock
 bindsym XF86AudioPrev         exec --no-startup-id playerctl prev
 bindsym XF86AudioPlay         exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext         exec --no-startup-id playerctl next
-bindsym XF86AudioLowerVolume  exec --no-startup-id pulseaudio-ctl down 2
-bindsym XF86AudioRaiseVolume  exec --no-startup-id pulseaudio-ctl up 4
-bindsym XF86AudioMute         exec --no-startup-id pulseaudio-ctl mute
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
-bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +5%
+bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer --decrease 2
+bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer --increase 4
+bindsym XF86AudioMute         exec --no-startup-id pamixer --toggle-mute
+#bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 10%-
+#bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl -q set +5%
 

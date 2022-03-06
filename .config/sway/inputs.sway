@@ -4,17 +4,13 @@
 # input configuration
 
 # touchscreen
-input 1386:20777:Wacom_HID_5129_Finger {
-  events enabled
-  map_to_output eDP-1
-}
-input 1386:20777:Wacom_HID_5129_Finger {
+input 1267:11144:ELAN901C:00_04F3:2B88 {
   events enabled
   map_to_output eDP-1
 }
 
 # touchpad
-input 1267:12443:ELAN0602:00_04F3:309B_Touchpad {
+input 1267:12608:MSFT0001:00_04F3:3140_Touchpad {
   events enabled
   tap enabled
   dwt enabled
@@ -26,9 +22,12 @@ input 1267:12443:ELAN0602:00_04F3:309B_Touchpad {
 
 input 4152:5922:SteelSeries_SteelSeries_Sensei_310_eSports_Mouse {
   left_handed enabled
+  natural_scroll enabled
+  accel_profile flat
+  scroll_factor 0.5
 }
 
-input 2362:9505:USB_OPTICAL_MOUSE {
+input 1133:16392:Logitech_M185 {
   left_handed enabled
 }
 

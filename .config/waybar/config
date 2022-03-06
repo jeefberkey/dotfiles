@@ -2,7 +2,6 @@
   "layer": "top",
   "position": "top",
   "height": 28,
-  "gtk-layer-shell": true,
 
   "modules-left": ["sway/workspaces","sway/mode","pulseaudio","custom/gpm"],
   "modules-center": ["sway/window"],
@@ -40,8 +39,8 @@
   "backlight": {
     "format": "{percent}% {icon}",
     "format-icons": ["", ""],
-    "on-scroll-down": "light -U 10",
-    "on-scroll-up": "light -A 5"
+    "on-scroll-down": "brightnessctl -q set 1%-",
+    "on-scroll-up": "brightnessctl -q set +1%"
   },
   "battery": {
     "states": {

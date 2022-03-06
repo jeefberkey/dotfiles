@@ -21,6 +21,7 @@ for_window [ class="Rofi" ] floating enable
 #for_window [ app_id="Files" ] floating enable
 for_window [ app_id="gnome-calculator" ] floating enable
 for_window [class="^zoom$"] floating enable
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, border none
 
 # Window workspace assignments
 #for_window [ title="Slack*" ] move window to workspace 1

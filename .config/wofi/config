@@ -13,4 +13,3 @@ normal-window=true
 lines=12
 insensitive
 cache-file=~/.cache/wofi.cache
-
