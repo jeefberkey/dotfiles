@@ -1,0 +1,8 @@
+[Unit]
+ConditionEnvironment=SWAYSOCK
+
+[Service]
+ExecStart=autotiling
+Restart=on-failure
+
+[Install]
