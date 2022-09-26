@@ -31,7 +31,8 @@ exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec systemctl --user start sworkstyle.service
 
 # autotiling https://github.com/nwg-piotr/autotiling
-exec autotiling
+#exec autotiling
+exec systemctl --user start autotiling.service
 
 # gestures
 #exec libinput-gestures

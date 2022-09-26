@@ -5,6 +5,7 @@
 
 # internal monitor
 output eDP-1 res 1920x1080
+output eDP-1 subpixel rgb
 #output eDP-1 pos 0 0
 output eDP-1 pos 1440 1590
 # enable/disable laptop screen based on lid switch
@@ -16,6 +17,10 @@ bindswitch lid:off output eDP-1 enable
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' res 2560x1440
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' scale 1
 output 'Ancor Communications Inc ASUS MG279 0x000003ED' pos 1440 150
+
+# 4k home monitor
+output 'Goldstar Company Ltd LG HDR 4K 103NTHML0321' scale 1.2
+output 'Goldstar Company Ltd LG HDR 4K 103NTHML0321' adaptive_sync on
 
 # # horizontal work monitor
 # output 'Dell Inc. DELL U2717D 67YGV98QBWUU' res 2560x1440

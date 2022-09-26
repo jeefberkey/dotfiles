@@ -19,7 +19,7 @@ for_window [ class="(?i)VirtualBox" title="(?i)Manager"] floating enable
 for_window [ class="(?i)VirtualBox" title="(?i)Oracle VM VirtualBox"] floating enable
 for_window [ class="Rofi" ] floating enable
 #for_window [ app_id="Files" ] floating enable
-for_window [ app_id="gnome-calculator" ] floating enable
+for_window [ app_id="Calculator" ] floating enable
 for_window [class="^zoom$"] floating enable
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, border none
 

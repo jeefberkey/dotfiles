@@ -9,7 +9,7 @@
 [core]
   editor = vim
   pager = delta
-# editor = atom --wait
+  editor = code --wait
 [merge]
   tool = meld
 [mergetool "meld"]
