@@ -2,14 +2,19 @@
 # https://cloudninja.pw/docs/wofi.html
 # vim: set ft=sh
 
-mode=drun
+mode=drun,run
 prompt=Run
+
+cache_file=.cache/wofi.cache
 #filter_rate=100
-allow-images=true
-allow-markup=true
+#normal_window=true
+
+allow_images=true
+allow_markup=true
+
 #colors=colors
 colors=/home/nick/.cache/wal/colors
-normal-window=true
-lines=12
+
+width=40%
+height=50%
 insensitive
-cache-file=~/.cache/wofi.cache

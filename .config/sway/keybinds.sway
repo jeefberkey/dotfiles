@@ -113,6 +113,16 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 0
 
+# ==================
+# ==== gestures ====
+# ==================
+bindgesture swipe:3:left workspace next_on_output
+bindgesture swipe:4:left workspace next_on_output
+bindgesture swipe:3:right workspace prev_on_output
+bindgesture swipe:4:right workspace prev_on_output
+bindgesture swipe:4:up scratchpad show
+bindgesture swipe:4:down scratchpad hide
+
 # ================
 # ==== resize ====
 # ================

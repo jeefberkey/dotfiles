@@ -14,6 +14,9 @@ default_floating_border pixel 3
 #gaps inner 6
 #gaps edge_gaps on
 
+# sway-launcher-desktop
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border none, opacity 0.9
+
 # Floating windows
 for_window [ class="(?i)VirtualBox" title="(?i)Manager"] floating enable
 for_window [ class="(?i)VirtualBox" title="(?i)Oracle VM VirtualBox"] floating enable
@@ -28,4 +31,3 @@ for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky
 #for_window [ title="Geary" ] move window to workspace 1
 #for_window [ title="*Firefox Nightly" ] move window to workspace 2
 #for_window [ class="f" ] move window to workspace 9
-

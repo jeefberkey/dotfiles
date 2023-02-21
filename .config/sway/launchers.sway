@@ -9,7 +9,8 @@ bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit'"
 
 # terminal emulator
-bindsym $mod+Return exec gnome-terminal
+#bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec kgx  # gnome-console
 #bindsym $mod+Return exec alacritty
 
 # file manager
@@ -17,19 +18,14 @@ bindsym $mod+Shift+n exec nautilus
 
 bindsym $mod+Escape exec makoctl dismiss --all
 
-# a rofi (a program launcher)
-# https://davedavenport.github.io/rofi/generator.html
-#bindsym $mod+d exec --no-startup-id rofi -show combi
-# program switcher
-#bindsym $mod+Tab exec --no-startup-id "rofi -show window"
-
 # wofi (wayland program launcher)
 bindsym $mod+Space exec wofi --conf ~/.config/wofi/config
 
-bindsym $mod+Shift+Space exec termite --name=launcher -e "bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse --history=.cache/fzf_launcher | xargs -r swaymsg -t command exec'"
-for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
+# # sway-launcher-desktop https://github.com/Biont/sway-launcher-desktop
+# bindsym $mod+Space exec termite --name=launcher -e /usr/bin/sway-launcher-desktop
+# bindsym $mod+Shift+Space exec termite --name=launcher -e "bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse --history=.cache/fzf_launcher | xargs -r swaymsg -t command exec'"
 
-# lock and suspend button
+# lock and suspend
 bindsym $mod+Shift+s exec swaylock && systemctl suspend
 # lock
 bindsym Control+Mod1+l exec swaylock
@@ -43,6 +39,5 @@ bindsym XF86AudioNext         exec --no-startup-id playerctl next
 bindsym XF86AudioLowerVolume  exec --no-startup-id pamixer --decrease 2
 bindsym XF86AudioRaiseVolume  exec --no-startup-id pamixer --increase 4
 bindsym XF86AudioMute         exec --no-startup-id pamixer --toggle-mute
-#bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 10%-
-#bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl -q set +5%
-
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 10%-
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl -q set +5%
