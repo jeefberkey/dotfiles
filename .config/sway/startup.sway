@@ -34,10 +34,6 @@ exec systemctl --user start sworkstyle.service
 #exec autotiling
 exec systemctl --user start autotiling.service
 
-# gestures
-#exec libinput-gestures
-# exec systemctl --user start libinput-gestures.service
-
 # fix dbus stuff
 exec fish -c 'dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY'
 

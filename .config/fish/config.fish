@@ -19,4 +19,6 @@ eval (starship init fish)
 direnv hook fish | source
 
 # 1pass plugins
-source ~/.config/op/plugins.sh
+if test -d ~/.config/op;
+  source ~/.config/op/plugins.sh
+end
