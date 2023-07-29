@@ -4,10 +4,12 @@
 # output configuration
 
 # internal monitor
-output eDP-1 res 1920x1080
+output eDP-1 res 2256x1504
 output eDP-1 subpixel rgb
+output eDP-1 scale 1.2
 #output eDP-1 pos 0 0
 output eDP-1 pos 1440 1590
+
 # enable/disable laptop screen based on lid switch
 bindswitch lid:on output eDP-1 disable
 bindswitch lid:off output eDP-1 enable
@@ -21,17 +23,17 @@ output 'Ancor Communications Inc ASUS MG279 0x000003ED' pos 1440 150
 # 4k home monitor
 output 'Goldstar Company Ltd LG HDR 4K 103NTHML0321' scale 1.3
 #output 'Goldstar Company Ltd LG HDR 4K 103NTHML0321' adaptive_sync on
-output 'Goldstar Company Ltd LG HDR 4K 103NTHML0321' pos 1080 150 
+output 'Goldstar Company Ltd LG HDR 4K 103NTHML0321' pos 1080 150
 output 'Goldstar Company Ltd LG HDR 4K 103NTHML0321' subpixel rgb
 
 # # horizontal work monitor
 # output 'Dell Inc. DELL U2717D 67YGV98QBWUU' res 2560x1440
 # output 'Dell Inc. DELL U2717D 67YGV98QBWUU' scale 1
 # output 'Dell Inc. DELL U2717D 67YGV98QBWUU' pos 1440 150
-# 
+#
 # # vertical work monitor
 # output 'Dell Inc. DELL U2717D 67YGV985CGDU' res 2560x1440
 # output 'Dell Inc. DELL U2717D 67YGV985CGDU' scale 1
 # output 'Dell Inc. DELL U2717D 67YGV985CGDU' pos 0 0
 # output 'Dell Inc. DELL U2717D 67YGV985CGDU' transform 90
-# 
+#
