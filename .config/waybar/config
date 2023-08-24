@@ -3,8 +3,8 @@
   "position": "top",
   "height": 36,
 
-  "modules-left": ["sway/workspaces","sway/mode","pulseaudio","custom/gpm"],
-  "modules-center": ["sway/window"],
+  "modules-left": ["sway/workspaces","hyprland/workspaces","sway/mode","pulseaudio","custom/gpm"],
+  "modules-center": ["sway/window","hyprland/window"],
   "modules-right": ["idle_inhibitor","network","backlight","battery","clock","tray"],
 
   "sway/workspaces": {
@@ -15,6 +15,12 @@
   "sway/mode": {
     "format": "<span style=\"oblique\">{}</span>"
   },
+  "hyprland/workspaces": {
+    "all-outputs": false,
+    "on-click": "activate",
+    "show-special": true,
+    "format": "{id}"
+  },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -23,6 +29,12 @@
     }
   },
   "sway/window": {
+    "format": "{}",
+    "max-length": 60,
+    "all-outputs": true,
+    "on-click": "makoctl dismiss -a"
+  },
+  "hyprland/window": {
     "format": "{}",
     "max-length": 60,
     "all-outputs": true,

@@ -4,17 +4,15 @@
 # programs to start in a sway session
 
 # bar
-# exec waybar
 exec systemctl --user import-environment SWAYSOCK WAYLAND_DISPLAY
 exec systemctl --user start waybar.service
+exec systemctl --user start xdg-desktop-portal-wlr.service
+exec systemctl --user start mako.service
 
 # network manager
 # from AUR network-manager-applet-indicator
 # exec nm-applet
 
-# notifiation deamon
-#exec mako
-exec systemctl --user start mako.service
 
 # color temperature shift for night
 #exec gammastep -l 39.4817:-76.3270 -b 6500:3000
@@ -27,15 +25,16 @@ exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 # exec gnome-keyring-daemon --start
 
 # workstyle https://crates.io/crates/sworkstyle
-#exec sworkstyle &> /tmp/sworkstyle.log
 exec systemctl --user start sworkstyle.service
 
 # autotiling https://github.com/nwg-piotr/autotiling
-#exec autotiling
 exec systemctl --user start autotiling.service
 
-# fix dbus stuff
-exec fish -c 'dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY'
+# auto darkmode if it works
+exec systemctl --user start darkman.service
+
+# fix dbus stuff for wlr portal
+exec fish -c 'exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway'
 
 # lock after 10 mins
 # turn screen off after 15 mins

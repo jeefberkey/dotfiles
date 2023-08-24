@@ -1,0 +1,8 @@
+# https://darkman.whynothugo.nl/
+---
+lat: 39.5
+lng: -76.0
+dbusserver: true
+portal: true
+usegeoclue: true
+

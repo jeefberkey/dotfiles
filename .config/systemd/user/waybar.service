@@ -4,7 +4,8 @@ Documentation=https://github.com/Alexays/Waybar/wiki/
 PartOf=
 After=
 Requisite=
-ConditionEnvironment=SWAYSOCK
+#ConditionEnvironment=SWAYSOCK
+#ConditionEnvironment=HYPRLAND_INSTANCE_SIGNATURE
 
 [Service]
 ExecStart=/usr/bin/waybar
