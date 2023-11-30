@@ -1,26 +1,39 @@
 [user]
-  email = nick.miller@octoenergy.com 
+  email = nick.miller@octoenergy.com
   name = Nick Miller
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEZiBttTupwVhy/kBQzaw/3GHAV8N92nPEpZTh9ED5xO
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = true
 [credential]
   username = jeefberkey
   helper = cache
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
-
 [core]
   editor = vim
   pager = delta
   editor = code --wait
   excludesfile = /Users/nick.miller/.config/git/ignore
+[fetch]
+  prune = true
 [push]
   default = simple
 [pull]
   rebase = true
+  autostash = true
+  prune = true
+  ff-only = true
 [rebase]
   autoStash = true
+  autosquash = true
 [rerere]
   enabled = true
-
+[gc]
+  pruneExpire = 5.days.ago
 [merge]
   tool = vscode
   conflictstyle = diff3
@@ -32,9 +45,18 @@
 [difftool "vscode"]
   cmd = code --wait --diff $LOCAL $REMOTE
 [mergetool "vscode"]
-    cmd = code --wait $MERGED
+  cmd = code --wait $MERGED
 [interactive]
 #  diffFilter = delta --color-only
+[help]
+  autocorrect = 8
+[alias]
+#  amend = commit --amend --no-edit
+   fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+[color]
+  ui = true
+[init]
+  defaultBranch = main
 [delta]
   navigate = true
   side-by-side = true
@@ -44,13 +66,3 @@
   commit-decoration-style = bold yellow box ul
   file-style = bold yellow ul
   file-decoration-style = none
-
-
-[help]
-  autocorrect = 8
-[alias]
-#  amend = commit --amend --no-edit
-[color]
-  ui = true
-[init]
-  defaultBranch = main

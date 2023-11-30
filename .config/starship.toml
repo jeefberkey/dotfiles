@@ -58,7 +58,23 @@ ssh_only = true
 
 [aws]
 disabled = false
-#format = 'on [$symbol($profile )]($style)'
+format = 'on [$symbol($profile )]($style)'
 #style = 'bold blue'
 #symbol = '☁️ '
 #force_display = true
+
+[python]
+format = 'via [${symbol}${pyenv_prefix}(\($virtualenv\) )]($style)'
+
+[kubernetes]
+disabled = false
+symbol = '☸ '
+format = '${symbol}${context} in '
+style = 'cyan bold'
+
+[ruby]
+disabled = true
+
+[nodejs]
+disabled = true
+

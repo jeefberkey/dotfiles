@@ -22,3 +22,4 @@ direnv hook fish | source
 if test -d ~/.config/op;
   source ~/.config/op/plugins.sh
 end
+
