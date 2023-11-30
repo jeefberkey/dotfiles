@@ -10,7 +10,7 @@ end
 
 # if this doesn't work
 # https://major.io/2022/08/05/use-gnome-keyring-with-sway/
-#set -gx SSH_AUTH_SOCK /run/user/(id -u)/keyring/ssh
+set -gx SSH_AUTH_SOCK /run/user/(id -u)/keyring/ssh
 
 # set theme using starship https://starship.rs
 eval (starship init fish)

@@ -6,7 +6,7 @@
 # internal monitor
 output eDP-1 res 2256x1504
 output eDP-1 subpixel rgb
-output eDP-1 scale 1.2
+output eDP-1 scale 1.1
 #output eDP-1 pos 0 0
 output eDP-1 pos 1440 1590
 
