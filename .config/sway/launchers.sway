@@ -20,7 +20,8 @@ bindsym $mod+Escape exec makoctl dismiss --all
 
 # wofi (wayland program launcher)
 #bindsym $mod+Space exec wofi --conf ~/.config/wofi/config
-bindsym $mod+Space exec tofi-drun --config ~/.config/tofi/config
+#bindsym $mod+Space exec tofi-drun --config ~/.config/tofi/config
+bindsym $mod+Space exec fuzzel
 
 # # sway-launcher-desktop https://github.com/Biont/sway-launcher-desktop
 # bindsym $mod+Space exec termite --name=launcher -e /usr/bin/sway-launcher-desktop
