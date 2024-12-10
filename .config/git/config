@@ -1,5 +1,5 @@
 [user]
-  email = nick.miller@octoenergy.com
+  email = nick.miller@kraken.tech
   name = Nick Miller
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEZiBttTupwVhy/kBQzaw/3GHAV8N92nPEpZTh9ED5xO
 [gpg]
@@ -39,7 +39,8 @@
   conflictstyle = diff3
 [diff]
   tool = vscode
-  colorMoved = default
+	colorMoved = default
+	algorithm = histogram
 [difftool]
   prompt = false
 [difftool "vscode"]
@@ -55,6 +56,8 @@
    fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 [color]
   ui = true
+[tag]
+  sort = version:refname
 [init]
   defaultBranch = main
 [delta]

@@ -78,3 +78,6 @@ disabled = true
 [nodejs]
 disabled = true
 
+[docker_context]
+disabled = true
+

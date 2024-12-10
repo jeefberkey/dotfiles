@@ -15,11 +15,9 @@ set -gx SSH_AUTH_SOCK /run/user/(id -u)/keyring/ssh
 # set theme using starship https://starship.rs
 eval (starship init fish)
 
-# direnv
-direnv hook fish | source
-
 # 1pass plugins
 if test -d ~/.config/op;
   source ~/.config/op/plugins.sh
 end
 
+mise activate fish | source
